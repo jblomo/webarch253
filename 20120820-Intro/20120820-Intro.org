@@ -1,0 +1,63 @@
+
+* Web Archetecture 253						    :slide:
+  + Jim Blomo & Vimal Kini
+* The Web is Important 						      :slide:
+  + Democratizes Information
+  + Decentralized
+  + Low Barrier to Entry
+* The Web is Important						      :slide:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/T90Na6opT4k" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+* Schedule							      :slide:
+  + Aug 24 Introduction & Web Browsers
+    + lab  Account Signups & Comparisons
+  + Aug 31 HTML & CSS
+    + lab  Git & Update Personal Pages
+  + Sep 7  GUEST Forms & Javascript
+    + lab  Update Personal Pages
+  + Sep 14 Server & URI HTTP
+    + lab  Server side personal pages
+  + Sep 21 Multimedia & Dynamic Webpages
+    + lab  Dynamic Charts & Project 1: URL Shortener
+  + Sep 28 REST APIs & Midterm Q&A
+    + lab  AWS Interaction
+  + Oct 5  (P1 Due) Internet Archetecture & DNS
+    + lab  Midterm Q&A
+  + Oct 12 Midterm
+  + Oct 19 GUEST Latencies & Packaging
+    + lab  CloudFront CDN
+  + Oct 26 GUEST PBS
+    + Midterm review (Vimal)
+  + Nov 2  Microformats & SEO
+    + lab  Google Metrics
+  + Nov 9  Mobile
+    + lab  Project 2: Mobilize & Discovery
+  + Nov 16 Analytics & Data Mining
+    + lab  mrjob
+  + Nov 23 THANKSGIVING
+  + Nov 30 (P2 Due) Security & Privacy
+    + lab  Exploits
+  + Dec 7  Scaling & CAP
+    + lab  Reverse Proxy setup
+  + Dec 14 FINAL
+ 
+* End
+
+#+TAGS: slide(s)
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# End:
