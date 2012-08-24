@@ -125,7 +125,7 @@
   + Network Stack
   + Internet
   + HTTP
-  + HTML
+  + HTML & CSS
   + Scripting (eg. Javascript)
   + Browsers & Devices
 ** Why is composability important? :notes:
@@ -238,6 +238,7 @@ layers</th>
   + HyperText: Text with links
   + HTML is the dominant, but not only, way to link text
   + HTML consists of elements, like a link or block of text
+  + Cascading Style Sheets (CSS) is used to modify the look of HTML
 ** Hypertext Editing System :notes:
    + Image shows another way to edit text
    + And you thought editing with a touch interface was new
