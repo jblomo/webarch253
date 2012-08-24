@@ -1,16 +1,61 @@
-
-* Web Archetecture 253						    :slide:
+* Web Architecture 253 :slide:
   + Jim Blomo & Vimal Kini
-* The Web is Important 						      :slide:
-  + Democratizes Information
-  + Decentralized
-  + Low Barrier to Entry
-* The Web is Important						      :slide:
-#+BEGIN_HTML
-<iframe width="560" height="315" src="http://www.youtube.com/embed/T90Na6opT4k" frameborder="0" allowfullscreen></iframe>
-#+END_HTML
 
-* Schedule							      :slide:
+* Course Goals :slide:
+  + Address Bar -> Web Page
+  + Challenges building Web Apps
+  + Leverage existing technology
+
+* We'll Do Stuff :slide:
+  + 12 Homework Assignments (graded on 9)
+  + 2 Projects: Building a simple web app
+  + lecture, break, lecture, break, lab -> homework
+  + Python
+** Homework Details :notes:
+  + HW and projects due at midnight Thursday before class
+  + Each 24 hours late == 10% off
+  + HW & Projects most often turned in by email
+
+* But Don't Worry :slide:
+  + This isn't a programming class
+  + Grades are based on understanding of the concepts, not the craziest app
+  + Vimal & I are here to help
+
+* This is a Graduate class :slide:
+  + Perform well without supervision
+  + Readings will mostly come from documentation and online guides
+  + TMTOWTDI
+  + Getting frameworks working on your computer
+** Style :notes:
+   + More firehouse than spoon feed, you'll need to follow up for 
+     understanding
+   + In exchange, grading will be relaxed and check for understanding
+   + Honor system: No copying code or answers. Helping each other with 
+     concepts is encouraged, but document it.
+
+* Lectures & Labs :slide:
+  + Start with Q&A for at least 10 minutes
+  + Expect to be asked a question
+  + Breaks
+  + Stick around and get the first question of HW done
+** Helpful tips :notes:
+   + Helpful to me if you say your name
+   + Sorry, I tend to forget names
+   + If I am not calling on you, check to make sure you are on the class list!
+   + I'm not taking attendance, but let me know if you can't make it so I 
+     won't call on you, Bueller Bueller Bueller
+
+* Office Hours :slide:
+  + We'll stay after class
+  + or schedule a Skype call
+  + [[http://piazza.com][Piazza]]... [[https://bspace.berkeley.edu/][bSpace]]?
+  + Slides will be posted... somewhere
+  + Wait list will be processed normally until 3rd week... then I'll accept 
+    everyone who's asked or answered a question
+
+* *Questions?* :slide:
+
+* Schedule :slide:
   + Aug 24 Introduction & Web Browsers
     + lab  Account Signups & Comparisons
   + Aug 31 HTML & CSS
@@ -43,7 +88,195 @@
     + lab  Reverse Proxy setup
   + Dec 14 FINAL
  
-* End
+* Hi, I'm Jim Blomo :slide:
+  [[file:jim-totem.jpg]]
+  + Cal EECS
+  + A9 - Amazon Search
+  + PBworks
+  + Yelp
+  + Lecturer?
+
+* Hi, I'm Vimal Kini :slide:
+  - 2nd year Master's student at School of Information
+  - Bachelors degree in Telecommunications Engineering from Bangalore University
+
+  - Worked as a Technology Analyst at Bank of America on the Online Banking Application.
+  - Product Management Intern at SmartRecruiters (Summer 2012)
+
+* The Web is Important :slide:
+  + Democratizes Information
+  + Decentralized
+  + Low Barrier to Entry
+** World Wide!  :notes:
+   + People are now getting educated by Berkeley professors that have never 
+     left their home village
+   + I am personally upset when people are denied opportunity, the web is 
+     changing that
+   + Diabetes diagnosis
+
+* The Web is Important :slide:center:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/T90Na6opT4k" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+* Why are *YOU* in this class? :slide:
+
+* The Web is built on composable parts :slide:
+  + Network Stack
+  + Internet
+  + HTTP
+  + HTML
+  + Scripting (eg. Javascript)
+  + Browsers & Devices
+** Why is composability important? :notes:
+   + Always dip down to lower levels for more control
+   + Ability to swap out components
+   + Gradual upgrades
+   + Can read HTML off a hard drive, or deliver by HTTP
+   + SSL can encrypt any type of traffic (HTTPS most common)
+
+** Highway vs. Railway :slide:
+   [[file:highway-fail.jpg]]
+   [[file:track-gauge.png]]
+** Highway: simple, composable :slide:
+   + Just need something with wheels to use it effectively
+   + Cars can drive on any highway, but also off-road
+   + Bikes can use roads, too
+   + Uncoordinated
+** Railway: complected :slide:
+   + Must have right width gauge
+   + Must coordinate with other traffic
+   + If you upgrade one part of the system, everything else must be upgraded
+   + Efficient
+   [[file:track-gauge.png]]
+
+*** Complected: to braid together :notes:
+    + Highways relatively inefficient: all cars need to power themselves 
+      individually
+    + traffic jams result from uncoordinated behavior
+    + ~10x fuel efficiency in commuter trains
+
+* Network Stack :slide:
+#+BEGIN_HTML
+<table class="wikitable" style="float:right; margin:0 0 1em 1em;">
+<tbody><tr>
+<th colspan="5">OSI Model</th>
+</tr>
+<tr>
+<th></th>
+<th>Data unit</th>
+<th>Layer</th>
+<th style="width:30em;">Function</th>
+</tr>
+<tr>
+<th rowspan="4">Host<br>
+layers</th>
+<td style="background:#d8ec9b;" rowspan="3"><a href="/wiki/Data_(computing)" title="Data (computing)">Data</a></td>
+<td style="background:#d8ec9b;">7. <a href="/wiki/Application_layer" title="Application layer">Application</a></td>
+<td style="background:#d8ec9c;"><small>Network process to application</small></td>
+</tr>
+<tr>
+<td style="background:#d8ec9b;">6. <a href="/wiki/Presentation_layer" title="Presentation layer">Presentation</a></td>
+<td style="background:#d8ec9b;"><small>Data representation, encryption and decryption, convert machine dependent data to machine independent data</small></td>
+</tr>
+<tr>
+<td style="background:#d8ec9b;">5. <a href="/wiki/Session_layer" title="Session layer">Session</a></td>
+<td style="background:#d8ec9b;"><small>Interhost communication, managing sessions between applications</small></td>
+</tr>
+<tr>
+<td style="background:#e7ed9c;"><a href="/wiki/Data_segment" title="Data segment">Segments</a></td>
+<td style="background:#e7ed9c;">4. <a href="/wiki/Transport_layer" title="Transport layer">Transport</a></td>
+<td style="background:#e7ed9c;"><small>End-to-end connections, reliability and <a href="/wiki/Flow_control_(data)" title="Flow control (data)">flow control</a></small></td>
+</tr>
+<tr>
+<th rowspan="3">Media<br>
+layers</th>
+<td style="background:#eddc9c;"><a href="/wiki/Network_packet" title="Network packet">Packet</a>/<a href="/wiki/Datagram" title="Datagram">Datagram</a></td>
+<td style="background:#eddc9c;">3. <a href="/wiki/Network_layer" title="Network layer">Network</a></td>
+<td style="background:#eddc9c;"><small>Path determination and <a href="/wiki/Logical_address" title="Logical address">logical addressing</a></small></td>
+</tr>
+<tr>
+<td style="background:#e9c189;"><a href="/wiki/Frame_(networking)" title="Frame (networking)">Frame</a></td>
+<td style="background:#e9c189;">2. <a href="/wiki/Data_link_layer" title="Data link layer">Data link</a></td>
+<td style="background:#e9c189;"><small><a href="/wiki/MAC_address" title="MAC address">Physical addressing</a></small></td>
+</tr>
+<tr>
+<td style="background:#e9988a;"><a href="/wiki/Bit" title="Bit">Bit</a></td>
+<td style="background:#e9988a;">1. <a href="/wiki/Physical_layer" title="Physical layer">Physical</a></td>
+<td style="background:#e9988a;"><small>Media, signal and binary transmission</small></td>
+</tr>
+</tbody></table>
+#+END_HTML
+** Mostly used as conceptual reference
+   + TCP/IP actually contains a section "Layering considered harmful"
+   + TCP/IP
+
+* :slide:
+  [[file:the-internet-a-series-of-tubes.jpg]]
+** Internet: A series of tubes :slide:
+   + Longest running computer system in the world
+   + Protocols are agnostic to their content
+   + Pieces can be upgraded incrementally
+   + Built on top of TCP/IP
+*** Bits :notes:
+    + How many computer system do you know that have never gone completely 
+      down, or needed to be upgraded?
+    + Ultimately the Internet is about moving bits around.
+    + With that ability you can build what you want on top
+    + From early email to streaming movies on your phone
+      
+* Protocols: Do you speak it? :slide:
+  [[file:understand.jpeg]]
+  + Protocols convey *data*
+  + Data can be interpreted as *information*
+** Metaphor :notes:
+   + Speech is a protocol: sending data via sound
+   + Understanding the words and their meaning in context is information
+
+* HyperText Markup Protocol :slide:
+  [[file:html-editing.jpg]]
+  + HyperText: Text with links
+  + HTML is the dominant, but not only, way to link text
+  + HTML consists of elements, like a link or block of text
+** Hypertext Editing System :notes:
+   + Image shows another way to edit text
+   + And you thought editing with a touch interface was new
+
+* Javascript
+  + General programming language, but designed with HTML in mind
+  + Can "edit" HTML live on the page
+  + Or "draw" on a canvas
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://alexhaefner.com/criticalmass/" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** How it works :notes:
+   + Elements like the text "Play" are shown or hidden depending on the state 
+     of the game
+   + When the game starts, balls are drawn on a "canvas"
+
+* Browsers show you HTML :slide:
+  + because who wants to look at
+#+begin_src html
+    <div class="topsearch ">
+        <form accept-charset="UTF-8" action="/search"
+        id="top_search_form" method="get">
+  <a href="/search" class="advanced-search tooltipped downwards"
+  title="Advanced Search">
+  <span class="mini-icon mini-icon-advanced-search"></span></a>
+  <div class="search placeholder-field js-placeholder-field">
+#+end_src
+** Lots of things are "browsers" :notes:
+   + Many application actually embed a browser in the program and are 
+     rendering HTML
+   + Again: because the ideas around the Web are composable, it has spread to 
+     many areas
+
+* Questions :slide:
+  + What is a type of HypterText?
+  + What is a Protocol?
+  + What are the advantages to composability?
+
+* *Break* :slide:
 
 #+TAGS: slide(s)
 
@@ -51,7 +284,7 @@
 #+STYLE: <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="projection.css" media="projection" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="presenter.css" media="presenter" />
-#+STYLE: <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
 <script type="text/javascript" src="org-html-slideshow.js"></script>

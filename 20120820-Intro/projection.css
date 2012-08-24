@@ -6,7 +6,7 @@
 body {
    margin: 18pt;
    font-size: 24pt;
-   background-color: #0F8790;
+   background-color: #05565E;
    color: rgba(255, 255, 255, 0.9);
 }
 
@@ -15,8 +15,23 @@ h1,h2,h3,h4,h5,h6,h7,h8 {
    font-size: 90pt;
    margin: 18pt;
    text-align: center;
-   font-family: 'Yanone Kaffeesatz', cursive;
-   color: #EDC716;
+   font-family: 'Yanone Kaffeesatz', sans;
+   color: #EDB716;
+}
+
+b {
+	font-family: 'Lobster Two', script;
+	font-weight: bold;
+	color: #D91442;
+	font-size: 200%;
+}
+
+h1 b,h2 b,h3 b,h4 b,h5 b,h6 b,h7 b,h8 {
+	display: block;
+}
+
+pre {
+	background-color: #65BFC8;
 }
 
 li {
@@ -28,6 +43,10 @@ li {
 p.image {
    text-align: center;
 }
+div.center {
+   text-align: center;
+}
+
 
 /* Hide Org-Mode tags in slide-show view. */
 span.tag {
