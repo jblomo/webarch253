@@ -48,7 +48,7 @@
      Javascript
    + Recursive :: Each of these steps have at many steps underneath them
 
-* What is a Browser?  :slide:
+* What is a Browser?  :slide:center:
 #+BEGIN_HTML
 <iframe width="560" height="315" src="http://www.youtube.com/embed/o4MwTvtyrUQ" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
@@ -68,8 +68,8 @@
 
 * Browser or Web Page?  :slide:
   +  [[file:ie8-logo.png]] Internet Explorer
-  + [[file::Google_logo.png]]
-  + [[file::nyt-logo.png]]
+  + [[file:Google_logo.png]]
+  + [[file:nyt-logo.png]]
   + Firefox [[file:firefox-logo.png]]
   + Others?
 

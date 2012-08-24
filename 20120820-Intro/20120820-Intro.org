@@ -38,6 +38,7 @@
   + Expect to be asked a question
   + Breaks
   + Stick around and get the first question of HW done
+  + Slides on http://jblomo.github.com/webarch253/
 ** Helpful tips :notes:
    + Helpful to me if you say your name
    + Sorry, I tend to forget names
@@ -49,7 +50,6 @@
   + We'll stay after class
   + or schedule a Skype call
   + [[http://piazza.com][Piazza]]... [[https://bspace.berkeley.edu/][bSpace]]?
-  + Slides will be posted... somewhere
   + Wait list will be processed normally until 3rd week... then I'll accept 
     everyone who's asked or answered a question
 
