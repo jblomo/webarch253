@@ -155,6 +155,7 @@
       individually
     + traffic jams result from uncoordinated behavior
     + ~10x fuel efficiency in commuter trains
+    + Tradeoff: flexibility for ease
 
 * Network Stack :slide:
 #+BEGIN_HTML
