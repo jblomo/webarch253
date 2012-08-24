@@ -28,6 +28,7 @@ b {
 
 h1 b,h2 b,h3 b,h4 b,h5 b,h6 b,h7 b,h8 {
 	display: block;
+	margin: -40px;
 }
 
 pre {

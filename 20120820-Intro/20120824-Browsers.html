@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="20120824-Browsers"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-08-24 00:33:33 PDT"/>
+<meta name="generated" content="2012-08-24 02:06:24 PDT"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -136,7 +136,25 @@
 <li><a href="#sec-11">11 Questions</a></li>
 <li><a href="#sec-12">12 Browsing Information Not a New Idea</a></li>
 <li><a href="#sec-13">13 World Brain</a></li>
-<li><a href="#sec-14">14 End</a></li>
+<li><a href="#sec-14">14 <b>Homework 1</b></a></li>
+<li><a href="#sec-15">15 What is <b>git?</b></a></li>
+<li><a href="#sec-16">16 <b>Demo</b></a>
+<ul>
+<li><a href="#sec-16-1">16.1 Commands</a>
+<ul>
+<li><a href="#sec-16-1-1">16.1.1 For every new homework:</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-17">17 Homework 1</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-17-1">17.1 Optional</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -452,17 +470,14 @@
 </div>
 
 <div id="outline-container-12" class="outline-2">
-<h2 id="sec-12"><span class="section-number-2">12</span> Browsing Information Not a New Idea &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-12"><span class="section-number-2">12</span> Browsing Information Not a New Idea &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
 <div class="outline-text-2" id="text-12">
 
 
 <iframe width="420" height="315" src="http://www.youtube.com/embed/hSyfZkVgasI" frameborder="0" allowfullscreen></iframe>
-<ul>
-<li>Paul Otlet
-</li>
-</ul>
-
-
+<p>
+  Paul Otlet
+</p>
 </div>
 
 </div>
@@ -486,8 +501,149 @@
 </div>
 
 <div id="outline-container-14" class="outline-2">
-<h2 id="sec-14"><span class="section-number-2">14</span> End</h2>
+<h2 id="sec-14"><span class="section-number-2">14</span> <b>Homework 1</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-14">
+
+<ul>
+<li>Learn <b>git</b> for future homework submissions
+</li>
+<li>practice sending a homework
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> What is <b>git?</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+<ul>
+<li>Version Control System
+<ul>
+<li>Keep track of different versions of code
+</li>
+<li>Don't accidentally delete stuff
+</li>
+<li>Go back to working versions
+</li>
+</ul>
+
+</li>
+<li>That is easy to share
+<ul>
+<li>Can send an email with all the code or questions
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> <b>Demo</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+
+</div>
+
+<div id="outline-container-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Commands &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+
+<ul>
+<li>Learn as much as you like at <a href="http://learn.github.com/p/intro.html">learn.github</a>
+</li>
+<li><a href="https://www.ischool.berkeley.edu/intranet/computing/connecting/files">ssh ischool</a>
+</li>
+</ul>
+
+
+
+
+<pre class="src src-bash">git config --global user.name Jim Blomo
+git config --global user.email jblomo@ischool.berkeley.edu
+git clone git@github.com:jblomo/webarch253.git
+cd webarch253
+</pre>
+
+
+</div>
+
+<div id="outline-container-16-1-1" class="outline-4">
+<h4 id="sec-16-1-1"><span class="section-number-4">16.1.1</span> For every new homework:</h4>
+<div class="outline-text-4" id="text-16-1-1">
+
+
+
+
+<pre class="src src-bash">git checkout -b hw1 master
+echo Jim Blomo &gt; $USER.txt
+git add $USER.txt
+git commit -m <span style="color: #8b2252;">"my first homework"</span>
+git format-patch --stdout master | sendmail jblomo@ischool.berkeley.edu
+</pre>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Homework 1 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+
+<ul>
+<li>`pico $USER.txt`
+</li>
+<li>Write two paragraphs:
+<ol>
+<li>Your experience with web archtecture. Have you written HTML before? 
+        Written Javascript? etc.
+</li>
+<li>What are your favorite features from at least 2 browsers?
+</li>
+</ol>
+
+</li>
+<li>Reading:
+<ul>
+<li><a href="http://www.w3.org/DesignIssues/TimBook-old/History.html">A Brief History of the Web</a>
+</li>
+<li><a href="http://www.scientificamerican.com/article.cfm?id=long-live-the-web&amp;print=true">Long Live the Web</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-17-1" class="outline-4">
+<h4 id="sec-17-1"><span class="section-number-4">17.1</span> Optional</h4>
+<div class="outline-text-4" id="text-17-1">
+
+<ul>
+<li>If you would like to use GitHub's advanced featues
+</li>
+<li>Signup for an account at <a href="https://github.com">GitHub</a>
+</li>
+<li>"Fork" <a href="https://github.com/jblomo/webarch253">https://github.com/jblomo/webarch253</a>
+</li>
+<li><b>Do not</b> share code or look for other's code
+</li>
+<li>All HW and Projects are submitted by email, not Pull Requests
+</li>
+</ul>
 
 
 
@@ -499,9 +655,10 @@
 </div>
 </div>
 </div>
+</div>
 
 <div id="postamble">
-<p class="date">Date: 2012-08-24 00:33:33 PDT</p>
+<p class="date">Date: 2012-08-24 02:06:24 PDT</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

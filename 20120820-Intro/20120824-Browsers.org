@@ -6,7 +6,7 @@
    + Runs Javascript
    + has plugins
 
-* What is the core? :slide:
+* What is the core?  :slide:
   [[file:www-gnu.png]]
   + [[http://en.wikipedia.org/wiki/WorldWideWeb][WorldWideWeb]] (confusingly named) the first browser
   + Tim Breners-Lee wrote it to share data with colleagues at CERN
@@ -48,12 +48,12 @@
      Javascript
    + Recursive :: Each of these steps have at many steps underneath them
 
-* What is a Browser? :slide:
+* What is a Browser?  :slide:
 #+BEGIN_HTML
 <iframe width="560" height="315" src="http://www.youtube.com/embed/o4MwTvtyrUQ" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
 
-* Why Separate the Browser from Websites? :slide:
+* Why Separate the Browser from Websites?  :slide:
   + Composability!
   + Improve the features around the website without upgrading the website
     + Original browser did not have Forward Back buttons
@@ -66,7 +66,7 @@
    + What if you could only view websites like a TV image. No cut+paste, 
      viewing on mobile vs. desktop
 
-* Browser or Web Page? :slide:
+* Browser or Web Page?  :slide:
   +  [[file:ie8-logo.png]] Internet Explorer
   + [[file::Google_logo.png]]
   + [[file::nyt-logo.png]]
@@ -92,18 +92,64 @@
    + What is CSS used for?
    + What are some of the utilities you use in your browser?
 
-* Browsing Information Not a New Idea :slide:
+* Browsing Information Not a New Idea :slide:center:
 #+BEGIN_HTML
 <iframe width="420" height="315" src="http://www.youtube.com/embed/hSyfZkVgasI" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
-  + Paul Otlet
+  Paul Otlet
 
 * World Brain :slide:
   + Proposals for Encyclopaedia from H.G. Wells 1937
   + Engelbart developed oN-Line System (NLS) that used HyperText 1960s
   + "Notecards" at Xerox PARC 1984
 
-* End :slide:
+* *Homework* :slide:
+  + Learn *git* for future homework submissions
+  + practice sending a homework
+  + reading
+
+* What is *git?* :slide:
+  + Version Control System
+    + Keep track of different versions of code
+    + Don't accidentally delete stuff
+    + Go back to working versions
+  + That is easy to share
+    + Can send an email with all the code or questions
+
+* *Demo* :slide:
+** Commands :notes:
+   + Learn as much as you like at [[http://learn.github.com/p/intro.html][learn.github]]
+   + [[https://www.ischool.berkeley.edu/intranet/computing/connecting/files][ssh ischool]]
+#+begin_src bash
+   git config --global user.name Jim Blomo
+   git config --global user.email jblomo@ischool.berkeley.edu
+   git clone git@github.com:jblomo/webarch253.git
+   cd webarch253
+#+end_src
+*** For every new homework:
+#+begin_src bash
+   git checkout -b hw1 master
+   echo Jim Blomo > $USER.txt
+   git add $USER.txt
+   git commit -m "my first homework"
+   git format-patch --stdout master | sendmail jblomo@ischool.berkeley.edu
+#+end_src
+
+* Homework 1 :slide:
+   + `pico $USER.txt`
+   + Write two paragraphs:
+     1. Your experience with web archtecture. Have you written HTML before? 
+        Written Javascript? etc.
+     2. What are your favorite features from at least 2 browsers?
+   + Reading:
+     + [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]]
+     + [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]]
+*** Optional
+   + If you would like to use GitHub's advanced featues
+   + Signup for an account at [[https://github.com][GitHub]]
+   + "Fork" https://github.com/jblomo/webarch253
+   + *Do not* share code or look for other's code
+   + All HW and Projects are submitted by email, not Pull Requests
 
 #+TAGS: slide(s)
 
