@@ -234,7 +234,7 @@ layers</th>
    + Speech is a protocol: sending data via sound
    + Understanding the words and their meaning in context is information
 
-* HyperText Markup Protocol :slide:
+* HyperText Markup Language :slide:
   [[file:html-editing.jpg]]
   + HyperText: Text with links
   + HTML is the dominant, but not only, way to link text

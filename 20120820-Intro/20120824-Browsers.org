@@ -123,7 +123,7 @@
 #+begin_src bash
    git config --global user.name Jim Blomo
    git config --global user.email jblomo@ischool.berkeley.edu
-   git clone git@github.com:jblomo/webarch253.git
+   git clone git://github.com/jblomo/webarch253.git
    cd webarch253
 #+end_src
 *** For every new homework:
