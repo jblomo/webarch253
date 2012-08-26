@@ -1,0 +1,45 @@
+* Web Architecture 253 :slide:
+  + Description :: Understanding the web technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser through interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
+  + Instructor :: Jim Blomo <jblomo@ischool>
+  + GSI :: Vamal Kini <vimalkini@ischool>
+
+
+* Syllabus :slide:
+
+| Date | Readings | Slides | Homework / Project |
+|------+----------+--------+--------------------|
+| 2012-08-25 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:20120820-Intro/20120820-Intro.html][Intro]] & [[file:20120820-Intro/20120824-Browsers.html][Browsers & HW1]] | See Browser slides |
+| Aug 24 | N/A | Introduction & Web Browsers | Account Signups & Comparisons |
+| Aug 31 | N/A | HTML & CSS | Git & Update Personal Pages |
+| Sep 7  | N/A | GUEST Forms & Javascript | Update Personal Pages |
+| Sep 14 | N/A | Server & URI HTTP | Server side personal pages |
+| Sep 21 | N/A | Multimedia & Dynamic Webpages | Dynamic Charts & Project 1: URL Shortener |
+| Sep 28 | N/A | REST APIs & Midterm Q&A | AWS Interaction |
+| Oct | N/A | 5  (P1 Due) Internet Archetecture & DNS | Midterm Q&A |
+| Oct 12 | N/A | Midterm | None |
+| Oct 19 | N/A | GUEST Latencies & Packaging | CloudFront CDN |
+| Oct 26 | N/A | GUEST PBS | midterm review (Vimal) |
+| Nov 2  | N/A | Microformats & SEO | Google Metrics |
+| Nov 9  | N/A | Mobile | Project 2: Mobilize & Discovery |
+| Nov 16 | N/A | Analytics & Data Mining | mrjob |
+| Nov 23 | N/A | THANKSGIVING | None |
+| Nov 30 | N/A | (P2 Due) Security & Privacy | Exploits |
+| Dec 7  | N/A | Scaling & CAP | Reverse Proxy setup |
+| Dec 14 | N/A | FINAL | Bye! |
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

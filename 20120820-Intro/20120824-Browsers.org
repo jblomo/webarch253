@@ -61,13 +61,11 @@
    + Tradeoff is the layouts need to follow rules, designers must design with 
      multiple audiences in mind
 ** Flexibility :notes:
-   + Separating the content from the presentation allows you more flexibility 
-     with how you want to use it
-   + What if you could only view websites like a TV image. No cut+paste, 
-     viewing on mobile vs. desktop
+   + Separating the content from the presentation allows you more flexibility with how you want to use it
+   + What if you could only view websites like a TV image. No cut+paste, viewing on mobile vs. desktop
 
 * Browser or Web Page?  :slide:
-  +  [[file:ie8-logo.png]] Internet Explorer
+  + [[file:ie8-logo.png]] Internet Explorer
   + [[file:Google_logo.png]]
   + [[file:nyt-logo.png]]
   + Firefox [[file:firefox-logo.png]]
@@ -144,7 +142,7 @@
    + Reading:
      + [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]]
      + [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]]
-*** Optional
+*** Optional :notes:
    + If you would like to use GitHub's advanced featues
    + Signup for an account at [[https://github.com][GitHub]]
    + "Fork" https://github.com/jblomo/webarch253
