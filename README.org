@@ -1,5 +1,5 @@
 * Web Architecture 253 :slide:
-  + Description :: Understanding the web technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser through interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
+  + Description :: Understanding the web's core technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser and interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
   + Instructor :: Jim Blomo <jblomo@ischool>
   + GSI :: Vamal Kini <vimalkini@ischool>
 
