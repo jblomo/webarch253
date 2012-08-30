@@ -9,6 +9,10 @@ body {
 	line-height: 30px;
 }
 
+li {
+	line-height: 30px;
+}
+
 dt,
 dd {
   line-height: 30px;

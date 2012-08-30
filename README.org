@@ -8,8 +8,7 @@
 
 | Date | Readings | Slides | Homework / Project |
 |------+----------+--------+--------------------|
-| 2012-08-25 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:20120820-Intro/20120820-Intro.html][Intro]] & [[file:20120820-Intro/20120824-Browsers.html][Browsers & HW1]] | See Browser slides |
-| Aug 24 | N/A | Introduction & Web Browsers | Account Signups & Comparisons |
+| Aug 24 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:20120820-Intro/20120820-Intro.html][Intro]] & [[file:20120820-Intro/20120824-Browsers.html][Browsers & HW1]] | See Browser slides |
 | Aug 31 | N/A | HTML & CSS | Git & Update Personal Pages |
 | Sep 7  | N/A | GUEST Forms & Javascript | Update Personal Pages |
 | Sep 14 | N/A | Server & URI HTTP | Server side personal pages |
