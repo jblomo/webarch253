@@ -5,32 +5,32 @@
 
 body {
 	margin: 18pt;
-	font-size: 28px;
-	line-height: 30px;
+	font-size: 48px;
+	line-height: 50px;
 }
 
 li {
-	line-height: 30px;
+	line-height: 50px;
 }
 
 dt,
 dd {
-  line-height: 30px;
+  line-height: 50px;
 }
 
 code, pre {
-	font-size: 24px;
-	line-height: 30px;
+	font-size: 41px;
+	line-height: 50px;
 }
 
 blockquote p {
-	font-size: 32px;
-	line-height: 40px;
+	font-size: 55px;
+	line-height: 60px;
 }
 
 legend {
-	font-size: 42px;
-	line-height: 60px;
+	font-size: 41px;
+	line-height: 50px;
 }
 
 label,
@@ -38,14 +38,14 @@ input,
 button,
 select,
 textarea {
-	font-size: 28px;
-	line-height: 35px;
+	font-size: 48px;
+	line-height: 50px;
 }
 
 /* Use all headings as slide titles, regardless of level. */
 h1,h2,h3,h4,h5,h6,h7,h8 {
-	font-size: 76px;
-	line-height: 80px;
+	font-size: 120px;
+	line-height: 130px;
 	margin: 18pt;
 	text-align: center;
 }

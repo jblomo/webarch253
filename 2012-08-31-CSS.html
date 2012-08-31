@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-08-31-CSS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-08-30 17:27:57 PDT"/>
+<meta name="generated" content="2012-08-31 00:01:38 PDT"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -16,7 +16,9 @@
 <link rel="stylesheet" type="text/css" href="production/common.css" />
 <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
 <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -149,12 +151,12 @@
 
 <pre class="src src-css"><span style="font-weight: bold;">strong </span>{
         <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold; <span style="font-weight: bold; font-style: italic;">color</span>: red;
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 30px;
+        <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
 }
 </pre>
 
 <div class="well">
-<strong style="font-size: 30px; font-weight: bold; color: red">hello</strong>
+<strong style="font-size: 45px; font-weight: bold; color: red">hello</strong>
 </div>
 
 </div>
@@ -174,7 +176,7 @@
 
 
 <pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">Warning: Invalid HTML </span><span style="font-weight: bold; font-style: italic;">--&gt;</span>
-&lt;<span style="font-weight: bold;">strong</span> <span style="font-weight: bold; font-style: italic;">font-color</span>=<span style="font-style: italic;">"red"</span> <span style="font-weight: bold; font-style: italic;">font-weight</span>=<span style="font-style: italic;">"30px"</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="font-weight: bold;">strong</span>&gt;
+&lt;<span style="font-weight: bold;">strong</span> <span style="font-weight: bold; font-style: italic;">font-color</span>=<span style="font-style: italic;">"red"</span> <span style="font-weight: bold; font-style: italic;">font-weight</span>=<span style="font-style: italic;">"45px"</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="font-weight: bold;">strong</span>&gt;
 </pre>
 
 
@@ -385,7 +387,7 @@
 <pre class="src src-css"><span style="font-weight: bold;">strong </span>{
         <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold;
         <span style="font-weight: bold; font-style: italic;">color</span>: red;
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 30px;
+        <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
 }
 </pre>
 
@@ -548,7 +550,7 @@
 </li>
 <li>`display: hidden`
 </li>
-<li>`height: 10px;` `height: 20px;` `height: 30px;`
+<li>`height: 10px;` `height: 20px;` `height: 45px;`
 </li>
 <li>Composability: they play well together, but <b>don't require</b> each other
 </li>
@@ -573,6 +575,8 @@
 <li>Let's us have a snapshot of your work
 </li>
 <li>It is part of the Lab experience
+</li>
+<li>TMTOWTDI But we need to get the email from you
 </li>
 </ul>
 
@@ -620,7 +624,7 @@ git format-patch --stdout master | sendmail &lt;YOUR LOGIN&gt; jblomo vimalkini
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-08-30 17:27:57 PDT</p>
+<p class="date">Date: 2012-08-31 00:01:38 PDT</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

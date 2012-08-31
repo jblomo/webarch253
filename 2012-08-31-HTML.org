@@ -1,4 +1,8 @@
-* *HTML* :slide:
+* Announcements :slide:
+  + [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Course Blog]]
+    + Updates for the class, homework assignments
+  + Mailing list i253@ischool
+  + Piazza
 ** Review Questions :notes:
    + What is composability?
    + Why is HTML composable?
@@ -7,6 +11,8 @@
    + What's the difference between a Language and a Protocol?
    + What are examples of Protocols used by the Internet?
    + What does a browser do?
+
+* *HTML* HyperText Markup Language :slide:
 
 * What is *HyperText* :slide:
 ** Answer :notes:
@@ -101,7 +107,7 @@ specific to this subsection...
   else if (window.attachEvent) window.attachEvent("onload", blink);
   else window.onload = blink;
 </script>
-<blink><h1>BLINK!</h1></blink>
+<blink><h1><b>BLINK!</b></h1></blink>
 #+END_HTML
 
 * Semantic Meaning :slide:
@@ -112,13 +118,13 @@ specific to this subsection...
 
 * Bad Examples :slide:
   + <font> <center> <i>
-  + why?
+  + Why?
 
 * Good Examples :slide:
   + <span> <strong> <em>
   + client can style these however it chooses (with help from CSS)
 
-* XHTML HTML4.01 HTML5 :slide:
+* XHTML → HTML4.01 → HTML5 :slide:
   + Use "HTML5" and check if your target browsers support it
   + Convoluted history
 
@@ -175,12 +181,12 @@ Hello World
 * Link Tag (a) :slide:
 #+begin_src html
 <h2>This is my header</h2>
-<a href="http://en.wikipedia.org/wiki/Hello_world_program">Hello World</a>
+<a href="http://www.yelp.com">Yelp</a>
 #+end_src
 #+BEGIN_HTML
 <div class="well">
 <h2>This is my header</h2>
-<a href="http://en.wikipedia.org/wiki/Hello_world_program">Hello World</a>
+<a href="http://www.yelp.com">Yelp</a>
 </div>
 #+END_HTML
  + anchor tag
@@ -227,7 +233,7 @@ Hello World
 #+END_HTML
 
 ** DOM Tree :slide:
-
+[[file:img/domtree.svg]]
 
 * Draw a Tree :slide:
 #+begin_src html
@@ -300,7 +306,9 @@ Hello World
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
 <script type="text/javascript" src="production/org-html-slideshow.js"></script>

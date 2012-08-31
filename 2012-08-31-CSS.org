@@ -17,12 +17,12 @@
 #+begin_src css
 strong {
 	font-weight: bold; color: red;
-	font-size: 30px;
+	font-size: 45px;
 }
 #+end_src
 #+BEGIN_HTML
 <div class="well">
-<strong style="font-size: 30px; font-weight: bold; color: red">hello</strong>
+<strong style="font-size: 45px; font-weight: bold; color: red">hello</strong>
 </div>
 #+END_HTML
 
@@ -30,7 +30,7 @@ strong {
   + Just like the funky ASCII symbols, we could set the style of each element
 #+begin_src html
 <!-- Warning: Invalid HTML -->
-<strong font-color="red" font-weight="30px">hello</strong>
+<strong font-color="red" font-size="45px">hello</strong>
 #+end_src
 ** Tradeoffs :notes:
    + HTML encodes semantics
@@ -41,7 +41,6 @@ strong {
 ** Themes :notes:
    + We got here because of choices
    + Make sure you understand the choices that were made with each technology
-
    + ASCII : American Standard Code for Information Interchange
 
 * CSS file :slide:
@@ -92,7 +91,7 @@ h1, h2, h3 {
 strong {
 	font-weight: bold;
 	color: red;
-	font-size: 30px;
+	font-size: 45px;
 }
 #+end_src
  + Selectors specify the element to apply a style
@@ -158,7 +157,7 @@ table a {
 * Sneak Peak :slide:
   + Javascript can manipulate CSS, too!
   + `display: hidden`
-  + `height: 10px;` `height: 20px;` `height: 30px;`
+  + `height: 10px;` `height: 20px;` `height: 45px;`
   + Composability: they play well together, but *don't require* each other
 
 * Homework 2 :slide:
@@ -191,7 +190,9 @@ git format-patch --stdout master | sendmail <YOUR LOGIN> jblomo vimalkini
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
 <script type="text/javascript" src="production/org-html-slideshow.js"></script>
