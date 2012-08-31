@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-08-31-HTML"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-08-31 00:21:54 PDT"/>
+<meta name="generated" content="2012-08-31 13:20:13 PDT"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -104,8 +104,13 @@
 </li>
 <li><a href="#sec-26">26 Head / Body</a></li>
 <li><a href="#sec-27">27 Don't loose your head</a></li>
-<li><a href="#sec-28">28 Why Head?</a></li>
-<li><a href="#sec-29">29 Summary</a></li>
+<li><a href="#sec-28">28 How do you load CSS?</a>
+<ul>
+<li><a href="#sec-28-1">28.1 Placement of tags</a></li>
+</ul>
+</li>
+<li><a href="#sec-29">29 Why Head?</a></li>
+<li><a href="#sec-30">30 Summary</a></li>
 </ul>
 </div>
 </div>
@@ -850,7 +855,11 @@ Hello World
         &lt;<span style="font-weight: bold;">head</span>&gt;
                 &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">My First HTML</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
                 &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"author"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"Jim Blomo"</span>&gt;
+                &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">http-equiv</span>=<span style="font-style: italic;">"Content-Type"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"text/html;charset=utf-8"</span>&gt;
         &lt;/<span style="font-weight: bold;">head</span>&gt;
+        &lt;<span style="font-weight: bold;">body</span>&gt;
+                Main Content
+        &lt;/<span style="font-weight: bold;">body</span>&gt;
 </pre>
 
 <ul>
@@ -871,8 +880,53 @@ Hello World
 </div>
 
 <div id="outline-container-28" class="outline-2">
-<h2 id="sec-28"><span class="section-number-2">28</span> Why Head? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-28"><span class="section-number-2">28</span> How do you load CSS? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-28">
+
+
+
+
+<pre class="src src-html">&lt;<span style="font-weight: bold;">head</span>&gt;
+        &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"production/bootstrap.min.css"</span>&gt;
+        &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"production/common.css"</span>&gt;
+        &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans"</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/css"</span>&gt;
+        &lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/javascript"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
+</pre>
+
+<ul>
+<li>Browser will download these references and use them for display
+</li>
+<li>CSS <code>link</code> tags should appear in <code>head</code>
+</li>
+<li><code>script</code> tags can appear in body
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-28-1" class="outline-3">
+<h3 id="sec-28-1"><span class="section-number-3">28.1</span> Placement of tags &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-28-1">
+
+<ul>
+<li>This is how you load CSS! No link tags, no style.
+</li>
+<li>In a future lesson, we'll talk about optimizing page load times by being
+         careful about when and how we load these resources
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-29" class="outline-2">
+<h2 id="sec-29"><span class="section-number-2">29</span> Why Head? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-29">
 
 <ul>
 <li>Semantic meaning
@@ -888,9 +942,9 @@ Hello World
 
 </div>
 
-<div id="outline-container-29" class="outline-2">
-<h2 id="sec-29"><span class="section-number-2">29</span> Summary &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-29">
+<div id="outline-container-30" class="outline-2">
+<h2 id="sec-30"><span class="section-number-2">30</span> Summary &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-30">
 
 <ul>
 <li>HTML provides a way to annotate text to convey semantic meaning or grouping
@@ -912,7 +966,7 @@ Hello World
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-08-31 00:21:54 PDT</p>
+<p class="date">Date: 2012-08-31 13:20:13 PDT</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-08-31-CSS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-08-31 00:01:38 PDT"/>
+<meta name="generated" content="2012-08-31 13:19:37 PDT"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -76,14 +76,21 @@
 <ul>
 <li><a href="#sec-11-1">11.1 Example</a></li>
 <li><a href="#sec-11-2">11.2 Descendent CSS :: ' '</a></li>
-<li><a href="#sec-11-3">11.3 Many More</a></li>
+<li><a href="#sec-11-3">11.3 Fun with Defaults</a></li>
+<li><a href="#sec-11-4">11.4 Many More</a></li>
 </ul>
 </li>
-<li><a href="#sec-12">12 CSS Zen Garden</a></li>
-<li><a href="#sec-13">13 Sneak Peak</a></li>
-<li><a href="#sec-14">14 Homework 2</a>
+<li><a href="#sec-12">12 What's the tradeoff?</a>
 <ul>
-<li><a href="#sec-14-1">14.1 Demo</a></li>
+<li><a href="#sec-12-1">12.1 We can't style individual tags!</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 <code>style</code> attribute</a></li>
+<li><a href="#sec-14">14 CSS Zen Garden</a></li>
+<li><a href="#sec-15">15 Sneak Peak</a></li>
+<li><a href="#sec-16">16 Homework 2</a>
+<ul>
+<li><a href="#sec-16-1">16.1 Demo</a></li>
 </ul>
 </li>
 </ul>
@@ -150,8 +157,8 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">strong </span>{
-        <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold; <span style="font-weight: bold; font-style: italic;">color</span>: red;
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
+    <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold; <span style="font-weight: bold; font-style: italic;">color</span>: red;
+    <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
 }
 </pre>
 
@@ -176,7 +183,7 @@
 
 
 <pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">Warning: Invalid HTML </span><span style="font-weight: bold; font-style: italic;">--&gt;</span>
-&lt;<span style="font-weight: bold;">strong</span> <span style="font-weight: bold; font-style: italic;">font-color</span>=<span style="font-style: italic;">"red"</span> <span style="font-weight: bold; font-style: italic;">font-weight</span>=<span style="font-style: italic;">"45px"</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="font-weight: bold;">strong</span>&gt;
+&lt;<span style="font-weight: bold;">strong</span> <span style="font-weight: bold; font-style: italic;">font-color</span>=<span style="font-style: italic;">"red"</span> <span style="font-weight: bold; font-style: italic;">font-size</span>=<span style="font-style: italic;">"45px"</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="font-weight: bold;">strong</span>&gt;
 </pre>
 
 
@@ -194,7 +201,7 @@
 <li>Must label every single tag!
 <ul>
 <li>What happens when we want to change the style of all strong tags? Or make
-           all headers (h1-h6) blue?
+       all headers (h1-h6) blue?
 </li>
 </ul>
 
@@ -213,7 +220,6 @@
 <li>We got here because of choices
 </li>
 <li>Make sure you understand the choices that were made with each technology
-
 </li>
 <li>ASCII : American Standard Code for Information Interchange
 </li>
@@ -233,8 +239,8 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">h1, h2, h3 </span>{
-        <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
-        <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
+    <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
+    <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
 }
 </pre>
 
@@ -385,9 +391,9 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">strong </span>{
-        <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold;
-        <span style="font-weight: bold; font-style: italic;">color</span>: red;
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
+    <span style="font-weight: bold; font-style: italic;">font-weight</span>: bold;
+    <span style="font-weight: bold; font-style: italic;">color</span>: red;
+    <span style="font-weight: bold; font-style: italic;">font-size</span>: 45px;
 }
 </pre>
 
@@ -410,8 +416,8 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">h1, h2, h3 </span>{
-        <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
-        <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
+    <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
+    <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
 }
 </pre>
 
@@ -433,13 +439,13 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">#logo </span>{
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 64px;
-        <span style="font-weight: bold; font-style: italic;">color</span>: red;
+    <span style="font-weight: bold; font-style: italic;">font-size</span>: 64px;
+    <span style="font-weight: bold; font-style: italic;">color</span>: red;
 }
 
 <span style="font-weight: bold;">.symbol </span>{
-        <span style="font-weight: bold; font-style: italic;">font-size</span>: 32px;
-        <span style="font-weight: bold; font-style: italic;">color</span>: DarkBlue;
+    <span style="font-weight: bold; font-style: italic;">font-size</span>: 32px;
+    <span style="font-weight: bold; font-style: italic;">color</span>: DarkBlue;
 }
 </pre>
 
@@ -498,7 +504,7 @@
 
 
 <pre class="src src-css"><span style="font-weight: bold;">table a </span>{
-        <span style="font-weight: bold; font-style: italic;">text-decoration</span>: underline;
+    <span style="font-weight: bold; font-style: italic;">text-decoration</span>: underline;
 }
 </pre>
 
@@ -508,12 +514,30 @@
 </div>
 
 <div id="outline-container-11-3" class="outline-3">
-<h3 id="sec-11-3"><span class="section-number-3">11.3</span> Many More &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> Fun with Defaults &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-11-3">
 
 <ul>
+<li><a href="http://html5boilerplate.com">HTML5 Boilerplate</a>
+</li>
+<li>Default selection <code>::selection</code>
+</li>
+<li><a href="http://data.nasa.gov">NASA</a>, <a href="http://www.ew.com/ew">EW</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11-4" class="outline-3">
+<h3 id="sec-11-4"><span class="section-number-3">11.4</span> Many More &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-4">
+
+<ul>
 <li>Covered in reading:
-         <a href="http://www.maxdesign.com.au/articles/css-inheritance/">CSS inheritance</a>
+     <a href="http://www.maxdesign.com.au/articles/css-inheritance/">CSS inheritance</a>
 </li>
 </ul>
 
@@ -524,8 +548,74 @@
 </div>
 
 <div id="outline-container-12" class="outline-2">
-<h2 id="sec-12"><span class="section-number-2">12</span> <a href="http://www.csszengarden.com">CSS Zen Garden</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-12"><span class="section-number-2">12</span> What's the tradeoff? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-12">
+
+<ul>
+<li>Now we can specify styles in another file
+</li>
+<li>Can select groups of tags or tags with IDs
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> We can't style individual tags! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>What if we can't change the style file?
+<ul>
+<li>Comments section
+</li>
+<li>HTML generated from a template
+</li>
+</ul>
+
+</li>
+<li>We want to test what a style would look like in one place
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> <code>style</code> attribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>change the style of individual elements inline in HTML
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="font-weight: bold;">h1</span> <span style="font-weight: bold; font-style: italic;">style</span>=<span style="font-style: italic;">"color: saddleBrown; background-color: lightYellow; font-family: script;"</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Individual</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+</pre>
+
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+<ul>
+<li>Value of the <code>style</code> attribute is the same format as the definition block
+</li>
+<li>Only for very special cases!
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> <a href="http://www.csszengarden.com">CSS Zen Garden</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
 
 <ul>
 <li>One site, many designs
@@ -541,16 +631,16 @@
 
 </div>
 
-<div id="outline-container-13" class="outline-2">
-<h2 id="sec-13"><span class="section-number-2">13</span> Sneak Peak &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Sneak Peak &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
 
 <ul>
 <li>Javascript can manipulate CSS, too!
 </li>
-<li>`display: hidden`
+<li><code>display: hidden</code>
 </li>
-<li>`height: 10px;` `height: 20px;` `height: 45px;`
+<li><code>height: 10px;</code> <code>height: 20px;</code> <code>height: 45px;</code>
 </li>
 <li>Composability: they play well together, but <b>don't require</b> each other
 </li>
@@ -561,9 +651,9 @@
 
 </div>
 
-<div id="outline-container-14" class="outline-2">
-<h2 id="sec-14"><span class="section-number-2">14</span> Homework 2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Homework 2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
 
 <ul>
 <li><a href="https://blogs.ischool.berkeley.edu/i253f12/assignments/">Homework 2</a>
@@ -571,15 +661,12 @@
 <li>Directions may appear more complicated than necessary
 <ul>
 <li>This is to practice using git and other industry tools
-<ul>
+</li>
 <li>Let's us have a snapshot of your work
 </li>
 <li>It is part of the Lab experience
 </li>
 <li>TMTOWTDI But we need to get the email from you
-</li>
-</ul>
-
 </li>
 </ul>
 
@@ -592,9 +679,9 @@
 
 </div>
 
-<div id="outline-container-14-1" class="outline-3">
-<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-14-1">
+<div id="outline-container-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
 
 
 
@@ -624,7 +711,7 @@ git format-patch --stdout master | sendmail &lt;YOUR LOGIN&gt; jblomo vimalkini
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-08-31 00:01:38 PDT</p>
+<p class="date">Date: 2012-08-31 13:19:37 PDT</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

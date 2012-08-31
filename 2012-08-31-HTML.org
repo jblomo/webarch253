@@ -286,11 +286,32 @@ Hello World
 	<head>
 		<title>My First HTML</title>
 		<meta name="author" content="Jim Blomo">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	</head>
+	<body>
+		Main Content
+	</body>
 #+end_src
   + Title shows up title bar of browser
   + meta tags convey general information
     + Don't need to be "closed"
+
+* How do you load CSS? :slide:
+#+begin_src html
+<head>
+	<link rel="stylesheet" type="text/css" href="production/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="production/common.css">
+	<link href="http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+</head>
+#+end_src
+ + Browser will download these references and use them for display
+ + CSS =link= tags should appear in =head=
+ + =script= tags can appear in body
+** Placement of tags :notes:
+   + This is how you load CSS! No link tags, no style.
+   + In a future lesson, we'll talk about optimizing page load times by being
+	 careful about when and how we load these resources
 
 * Why Head? :slide:
   + Semantic meaning

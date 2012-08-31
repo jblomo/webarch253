@@ -16,8 +16,8 @@
 #+end_src
 #+begin_src css
 strong {
-	font-weight: bold; color: red;
-	font-size: 45px;
+    font-weight: bold; color: red;
+    font-size: 45px;
 }
 #+end_src
 #+BEGIN_HTML
@@ -37,7 +37,7 @@ strong {
    + Composability
    + Must label every single tag!
      + What happens when we want to change the style of all strong tags? Or make
-	   all headers (h1-h6) blue?
+       all headers (h1-h6) blue?
 ** Themes :notes:
    + We got here because of choices
    + Make sure you understand the choices that were made with each technology
@@ -46,8 +46,8 @@ strong {
 * CSS file :slide:
 #+begin_src css
 h1, h2, h3 {
-	color: #B3D4FC; /* light blue */
-	text-align: center;
+    color: #B3D4FC; /* light blue */
+    text-align: center;
 }
 #+end_src
  + Now all headers of importance 1-3 are centered and have a light blue look
@@ -89,9 +89,9 @@ h1, h2, h3 {
 * Selectors :slide:
 #+begin_src css
 strong {
-	font-weight: bold;
-	color: red;
-	font-size: 45px;
+    font-weight: bold;
+    color: red;
+    font-size: 45px;
 }
 #+end_src
  + Selectors specify the element to apply a style
@@ -100,8 +100,8 @@ strong {
 ** Comma :: Or :slide:
 #+begin_src css
 h1, h2, h3 {
-	color: #B3D4FC; /* light blue */
-	text-align: center;
+    color: #B3D4FC; /* light blue */
+    text-align: center;
 }
 #+end_src
  + all h1 or h2 or h3 elements
@@ -109,13 +109,13 @@ h1, h2, h3 {
 ** id & class :slide:
 #+begin_src css
 #logo {
-	font-size: 64px;
-	color: red;
+    font-size: 64px;
+    color: red;
 }
 
 .symbol {
-	font-size: 32px;
-	color: DarkBlue;
+    font-size: 32px;
+    color: DarkBlue;
 }
 #+end_src
 #+begin_src html
@@ -141,13 +141,38 @@ h1, h2, h3 {
 ** Descendent CSS :: ' ' :slide:
 #+begin_src css
 table a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 #+end_src
 
+** Fun with Defaults :slide:
+  + [[http://html5boilerplate.com][HTML5 Boilerplate]]
+  + Default selection =::selection=
+  + [[http://data.nasa.gov][NASA]], [[http://www.ew.com/ew][EW]]
+
 ** Many More :slide:
    + Covered in reading:
-	 [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]]
+     [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]]
+
+* What's the tradeoff? :slide:
+  + Now we can specify styles in another file
+  + Can select groups of tags or tags with IDs
+** We can't style individual tags! :notes:
+   + What if we can't change the style file?
+     + Comments section
+     + HTML generated from a template
+   + We want to test what a style would look like in one place
+
+* =style= attribute :slide:
+  + change the style of individual elements inline in HTML
+#+begin_src html
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+#+end_src
+#+BEGIN_HTML
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+#+END_HTML
+ + Value of the =style= attribute is the same format as the definition block
+ + Only for very special cases!
 
 * [[http://www.csszengarden.com][CSS Zen Garden]] :slide:
   + One site, many designs
@@ -156,17 +181,17 @@ table a {
 
 * Sneak Peak :slide:
   + Javascript can manipulate CSS, too!
-  + `display: hidden`
-  + `height: 10px;` `height: 20px;` `height: 45px;`
+  + =display: hidden=
+  + =height: 10px;= =height: 20px;= =height: 45px;=
   + Composability: they play well together, but *don't require* each other
 
 * Homework 2 :slide:
   + [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Homework 2]]
   + Directions may appear more complicated than necessary
     + This is to practice using git and other industry tools
-	+ Let's us have a snapshot of your work
-	+ It is part of the Lab experience
-	+ TMTOWTDI But we need to get the email from you
+    + Let's us have a snapshot of your work
+    + It is part of the Lab experience
+    + TMTOWTDI But we need to get the email from you
   + I'll go over it quickly, but ask questions!
 
 ** Demo :slide:

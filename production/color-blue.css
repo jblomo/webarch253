@@ -3,6 +3,14 @@ body {
 	color: rgba(255, 255, 255, 0.9);
 }
 
+a {
+	color: rgba(0, 255, 255, 0.5);
+}
+
+/* Shoutout to H5BP */
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
 h1,h2,h3,h4,h5,h6,h7,h8 {
 	color: #EDB716;
 	font-family: 'Yanone Kaffeesatz', sans;

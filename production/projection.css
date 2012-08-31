@@ -43,7 +43,15 @@ textarea {
 }
 
 /* Use all headings as slide titles, regardless of level. */
-h1,h2,h3,h4,h5,h6,h7,h8 {
+h1,h2,h3,h4,h5,h6,h7,h8,
+h1 code,h2 code,h3 code,h4 code,h5 code,h6 code,h7 code,h8 code {
+	font-size: 120px;
+	line-height: 130px;
+	margin: 18pt;
+	text-align: center;
+}
+
+{
 	font-size: 120px;
 	line-height: 130px;
 	margin: 18pt;
