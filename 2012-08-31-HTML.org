@@ -1,6 +1,6 @@
 * *HTML* :slide:
 ** Review Questions :notes:
-   + What is compoasability?
+   + What is composability?
    + Why is HTML composable?
    + Why would you *not* want a composable system?
    + What's another example of a HyperText language?
@@ -20,7 +20,7 @@ This class is [[http://www.ischool.berkeley.edu/courses/253][Web Architecture]]
 #+end_src
 
 ** What about headers? :slide:
-   + We can add "stars" to the begining of sections
+   + We can add "stars" to the beginning of sections
 #+begin_src markdown
 * Main Header
 Important stuff in this
@@ -45,7 +45,7 @@ specific to this subsection...
    + Fonts
 
 * Take a step back :slide:
-  + Instead of thinking up clever characters to emmulate, be explicit
+  + Instead of thinking up clever characters to emulate, be explicit
   + THIS IS BOLD: "hello"
   + THIS IS ITALIC: "world"
 
@@ -57,13 +57,17 @@ specific to this subsection...
 #+end_src
 
 * Tags (Elements) :slide:
-  + tags wraped in angle brackets
+  + tags wrapped in angle brackets
   + enclose affected text
   + have semantic meaning
   + can nest
 #+begin_src html
 <strong><em>hello</em></strong>
 #+end_src
+** Terminology :notes:
+   + Tag :: the text marker that wraps text. Think opening and closing tags.
+   + Element :: The logical item denoted by the tags. Think of the entity in a
+	 DOM
 
 * A story :slide:
 [[file:img/Lynx-wikipedia.png]]
@@ -78,7 +82,7 @@ specific to this subsection...
 
 * The Blink Tag :slide:
   + "simply evil"  - Jakob Nielson
-  + "please make it stop" - everyone, everwhere
+  + "please make it stop" - everyone, everywhere
 #+begin_src html
 <blink>BLINK!</blink>
 #+end_src
@@ -103,7 +107,7 @@ specific to this subsection...
 * Semantic Meaning :slide:
   + blink tag also violates semantic rule
   + Tags should contain semantic meaning, presentation
-  + Improves accessability
+  + Improves accessibility
   + Clear line between HTML and CSS
 
 * Bad Examples :slide:
@@ -243,6 +247,27 @@ Hello World
 ** Tree :notes:
   [[file:img/ol-tree.png]]
 
+* Bullets :slide:
+  + How do you write multiple layers of bullets?
+  + (Laptops are OK)
+** Unordered List :notes:
+#+begin_src html
+<ul>
+	<li>item</li>
+	<ul>
+		<li>sub item</li>
+	</ul>
+</ul>
+#+end_src
+#+BEGIN_HTML
+<ul>
+	<li>item</li>
+	<ul>
+		<li>sub item</li>
+	</ul>
+</ul>
+#+END_HTML
+
 * Head / Body :slide:
   + So far we've been looking at the "body" of a document
   + Main section which contains page information
@@ -269,7 +294,7 @@ Hello World
 * Summary :slide:
   + HTML provides a way to annotate text to convey semantic meaning or grouping
   + Browser displays tags in standard ways
-  + Tags are named, can containe attributes, can be nested
+  + Tags are named, can contain attributes, can be nested
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
