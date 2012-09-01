@@ -45,12 +45,12 @@ strong {
 
 * CSS file :slide:
 #+begin_src css
-h1, h2, h3 {
+h1 {
     color: #B3D4FC; /* light blue */
     text-align: center;
 }
 #+end_src
- + Now all headers of importance 1-3 are centered and have a light blue look
+ + Now all main headers are centered and have a light blue look
  + What's the tradeoff we made?
 ** Individuality :notes:
    + How do we style individual components?
@@ -65,9 +65,9 @@ h1, h2, h3 {
   + Attributes are always specified in the start tag
   + Attributes come in name/value pairs like: name="value"
 
-* id & class Attributes :slide:
-  + id :: Identifier. Unique per page
-  + class :: Grouping. Multiple per page and per element
+* =id= & =class= Attributes :slide:
+  + =id= :: Identifier. Unique per page
+  + =class= :: Grouping. Multiple per page and per element
 #+begin_src html
 <strong id="logo" class="big red">Yelp</strong>
 #+end_src
@@ -97,16 +97,7 @@ strong {
  + Selectors specify the element to apply a style
  + This is selecting *all strong* elements
 
-** Comma :: Or :slide:
-#+begin_src css
-h1, h2, h3 {
-    color: #B3D4FC; /* light blue */
-    text-align: center;
-}
-#+end_src
- + all h1 or h2 or h3 elements
-
-** id & class :slide:
+** =id= & =class= :slide:
 #+begin_src css
 #logo {
     font-size: 64px;
@@ -130,6 +121,15 @@ h1, h2, h3 {
 <span style="color:DarkBlue; font-size: 32px;">NYT</span>
 </div>
 #+END_HTML
+
+** Comma :: Or :slide:
+#+begin_src css
+h1, h2, h3 {
+    color: #B3D4FC; /* light blue */
+    text-align: center;
+}
+#+end_src
+ + all h1 or h2 or h3 elements
 
 * Descendent :slide:
   + Let's write a table in HTML

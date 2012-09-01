@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-08-31-CSS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-08-31 13:19:37 PDT"/>
+<meta name="generated" content="2012-08-31 13:53:49 PDT"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -56,7 +56,7 @@
 <li><a href="#sec-7-1">7.1 Recall</a></li>
 </ul>
 </li>
-<li><a href="#sec-8">8 id &amp; class Attributes</a>
+<li><a href="#sec-8">8 <code>id</code> &amp; <code>class</code> Attributes</a>
 <ul>
 <li><a href="#sec-8-1">8.1 Problems</a></li>
 </ul>
@@ -68,8 +68,8 @@
 </li>
 <li><a href="#sec-10">10 Selectors</a>
 <ul>
-<li><a href="#sec-10-1">10.1 Comma :: Or</a></li>
-<li><a href="#sec-10-2">10.2 id &amp; class</a></li>
+<li><a href="#sec-10-1">10.1 <code>id</code> &amp; <code>class</code></a></li>
+<li><a href="#sec-10-2">10.2 Comma :: Or</a></li>
 </ul>
 </li>
 <li><a href="#sec-11">11 Descendent</a>
@@ -238,14 +238,14 @@
 
 
 
-<pre class="src src-css"><span style="font-weight: bold;">h1, h2, h3 </span>{
+<pre class="src src-css"><span style="font-weight: bold;">h1 </span>{
     <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
     <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
 }
 </pre>
 
 <ul>
-<li>Now all headers of importance 1-3 are centered and have a light blue look
+<li>Now all main headers are centered and have a light blue look
 </li>
 <li>What's the tradeoff we made?
 </li>
@@ -306,13 +306,13 @@
 </div>
 
 <div id="outline-container-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> id &amp; class Attributes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-8"><span class="section-number-2">8</span> <code>id</code> &amp; <code>class</code> Attributes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-8">
 
 <dl>
-<dt>id</dt><dd>Identifier. Unique per page
+<dt><code>id</code></dt><dd>Identifier. Unique per page
 </dd>
-<dt>class</dt><dd>Grouping. Multiple per page and per element
+<dt><code>class</code></dt><dd>Grouping. Multiple per page and per element
 </dd>
 </dl>
 
@@ -409,31 +409,8 @@
 </div>
 
 <div id="outline-container-10-1" class="outline-3">
-<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Comma :: Or &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> <code>id</code> &amp; <code>class</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-10-1">
-
-
-
-
-<pre class="src src-css"><span style="font-weight: bold;">h1, h2, h3 </span>{
-    <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
-    <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
-}
-</pre>
-
-<ul>
-<li>all h1 or h2 or h3 elements
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-10-2" class="outline-3">
-<h3 id="sec-10-2"><span class="section-number-3">10.2</span> id &amp; class &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-10-2">
 
 
 
@@ -460,6 +437,29 @@
 <span style="color:DarkBlue; font-size: 32px;">YELP</span>
 <span style="color:DarkBlue; font-size: 32px;">NYT</span>
 </div>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> Comma :: Or &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-2">
+
+
+
+
+<pre class="src src-css"><span style="font-weight: bold;">h1, h2, h3 </span>{
+    <span style="font-weight: bold; font-style: italic;">color</span>: #B3D4FC; <span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">light blue </span><span style="font-weight: bold; font-style: italic;">*/</span>
+    <span style="font-weight: bold; font-style: italic;">text-align</span>: center;
+}
+</pre>
+
+<ul>
+<li>all h1 or h2 or h3 elements
+</li>
+</ul>
+
 
 </div>
 </div>
@@ -711,7 +711,7 @@ git format-patch --stdout master | sendmail &lt;YOUR LOGIN&gt; jblomo vimalkini
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-08-31 13:19:37 PDT</p>
+<p class="date">Date: 2012-08-31 13:53:49 PDT</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
