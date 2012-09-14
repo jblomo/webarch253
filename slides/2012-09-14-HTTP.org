@@ -4,10 +4,10 @@
   + Uniform Resource Identifier
   + http://people.ischool.berkeley.edu/~ashams/i253/index.html
 
-* URI URL URN :slide:
-  + URI :: *Identifies* some resource (eg. person or file)
-    + URL :: Specifies the *Location* of an identifier
-    + URN :: Specifies the *Name* of an identifier
+* URI - URL - URN :slide:
+  + URI :: Identifies some resource (eg. person or file)
+  + URL :: Specifies the Location of an identifier
+  + URN :: Specifies the Name of an identifier
 ** Use in Industry :notes:
    + URL used day-to-day
    + URL technically a type of URI
@@ -19,7 +19,7 @@
   + http://people.ischool.berkeley.edu/~ashams/i253/index.html
 
 ** Scheme :slide:
-  + *http* ://people.ischool.berkeley.edu/~ashams/i253/index.html
+  + *http*://people.ischool.berkeley.edu/~ashams/i253/index.html
   + Typically protocols
 ** What are examples of Protocols? :notes:
    + http
@@ -27,31 +27,41 @@
    + mailto
 
 ** Hierarchical :slide:
-   + http: *//people.ischool.berkeley.edu/~ashams/i253/index.html*
+#+BEGIN_HTML
+   <ul><li>http:<b>//people.ischool.berkeley.edu/~ashams/i253/index.html</b></li></ul>
+#+END_HTML
    + "Directions" to the resource through hosts and folders
 
 ** Domain / Hostname :slide:
-   + http:// *people.ischool.berkeley.edu* /~ashams/i253/index.html
+#+BEGIN_HTML
+   <ul><li>http://<b>people.ischool.berkeley.edu</b>/~ashams/i253/index.html</li></ul>
+#+END_HTML
    + "Site" or machine name
 *** Preview :notes:
     + Later we'll talk about how the browser connection to the machine
 
 ** Path :slide:
-   + http://people.ischool.berkeley.edu */~ashams/i253/index.html*
+#+BEGIN_HTML
+   <ul><li>http://people.ischool.berkeley.edu<b>/~ashams/i253/index.html</b></li></ul>
+#+END_HTML
    + Similar to directories, but not necessarily linked!
    + Groups common resources together
 *** Paths and Directories :notes:
     + On the command line we've used directories
-    + For i-school HW, we've seen that paths reflect the underlying directories
+    + For ISchool HW, we've seen that paths reflect the underlying directories
     + But it doesn't have to be the case, as we'll see in the next lecture
 
 ** Query (Optional) :slide:
-   + https://www.google.com/ *?q=ischool&ref=class*
+#+BEGIN_HTML
+   <ul><li>https://www.google.com/<b>?q=ischool&ref=class</b></li></ul>
+#+END_HTML
    + Starts with =?=
    + key=value pairs, delimited by &
 
 ** Port :slide:
-   + https://www.ischool.berkeley.edu *:443* /index.php
+#+BEGIN_HTML
+   <ul><li>https://www.ischool.berkeley.edu<b>:443</b>/index.php</li></ul>
+#+END_HTML
    + Specifies a port number to connect to
    + Ports are like doorways to a server
    + Common ports: 80 for HTTP, 443 for HTTPS
@@ -62,7 +72,10 @@
     + Gave away Yelp interview question
 
 ** Fragment :slide:
-   + http://en.wikipedia.org/wiki/URI_scheme *#Generic_syntax*
+#+BEGIN_HTML
+   <ul><li>http://en.wikipedia.org/wiki/URI_scheme<b>#Examples</b></li></ul>
+#+END_HTML
+   + http://en.wikipedia.org/wiki/URI_scheme *#Examples*
    + Specify a sub-resource, eg. a section on a page
    + Browser will jump to element =id=
 
@@ -94,8 +107,7 @@ scheme              authority                    path   |    |    interpretable 
 * Files :slide:
   + Chunks of data
   + Typically =filename.ext=, but not required
-  + An extention only hints at file contents, but does not determine it
-** TODO funny story :notes:
+  + An extension only hints at file contents, but does not determine it
 
 * Directories (Folders) :slide:
   + Group together files 
@@ -119,8 +131,27 @@ scheme              authority                    path   |    |    interpretable 
   + People on the Internet are mean
   + =rm -rf /=
   + Most computers have protections against this
-** TODO mean internet :notes:
-   + bash.org password quote
+
+** Password :slide:
+#+begin_src html
+<Cthon98> hey, if you type in your pw, it will show as stars
+<Cthon98> ********* see!
+<AzureDiamond> hunter2
+<AzureDiamond> doesnt look like stars to me
+<Cthon98> <AzureDiamond> *******
+<Cthon98> thats what I see
+<AzureDiamond> oh, really?
+<Cthon98> Absolutely
+<AzureDiamond> you can go hunter2 my hunter2-ing hunter2
+<AzureDiamond> haha, does that look funny to you?
+<Cthon98> lol, yes. See, when YOU type hunter2, it shows to us as *******
+<AzureDiamond> thats neat, I didnt know IRC did that
+<Cthon98> yep, no matter how many times you type hunter2, it will show to us as *******
+<AzureDiamond> awesome!
+<AzureDiamond> wait, how do you know my pw?
+<Cthon98> er, I just copy pasted YOUR ******'s and it appears to YOU as hunter2 cause its your pw
+<AzureDiamond> oh, ok.
+#+end_src
 
 * Resource :slide:
   + Logical set of data
@@ -186,15 +217,36 @@ scheme              authority                    path   |    |    interpretable 
   + You can interact with a webserver by hand!
 ** Details :notes:
    + TCP is the network layer, which we'll study later
-   + Basically guaruntees that the data we send will either get to the
+   + Basically guarantees that the data we send will either get to the
      computer or we'll get an error
    + Text means you can write out the protocol with your keyboard
 
 * Demo :slide:
-  + TODO
+#+begin_src bash
+telnet people.ischool.berkeley.edu 80
+GET /~jblomo/ HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 14 Sep 2012 06:06:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
+ETag: "a6ec002-48-4c89822b95c80"
+Accept-Ranges: bytes
+Content-Length: 72
+Content-Type: text/html; charset=UTF-8
+
+<h1>Jim's page</h1>
+Pretty <strong>cool!</strong>
+
+Hello <em>class</em>
+#+end_src
+** HW :notes:
+   + HW sneak peek
 
 * Request Methods :slide:
-  + GET :: Retrieve representation without modifiying resource
+  + GET :: Retrieve representation without modifying resource
   + POST :: Update the representation with new data
   + HEAD :: Retrieve the metadata without modifying resource
   + PUT :: Create a new resource
@@ -220,9 +272,10 @@ scheme              authority                    path   |    |    interpretable 
 
 * HTTP version :slide:
   + 1.1 used for interacting with customers
-  + 1.0 used in datacenter for some achetectures
+  + 1.0 used in data center for some architectures
   + End users don't choose
 ** Flask :notes:
+   + Refer back to Demo
    + Flask will use 1.0: it will end the connection on each request
 
 * Headers :slide:
@@ -230,6 +283,7 @@ scheme              authority                    path   |    |    interpretable 
   + =Host= inform the server which service to request resource from
   + Multiple "hosts" can be served from one web server
 ** Example :notes:
+   + refer to demo
    + =ischool.berkeley.edu= and =people.ischool.berkeley.edu= could be served
      off same physical server
    + =Host= header tells the server which we want

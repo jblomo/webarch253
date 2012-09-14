@@ -30,8 +30,9 @@
   + Associate everything in =/~ashams/= with everything in =/home/ashams/public_html/=
   + This is a common feature of most webservers
   + =Apache= the most popular
+  [[file:img/wpid-overalld.png]]
 ** Webserver usage :notes:
-   + TODO find server usage
+   + Apache is an open source webserver, one of the original
 
 * Missing file? :slide:
   + What should we do if we request a file that is not there?
@@ -55,7 +56,26 @@
    + 500s :: Server errors
 
 * Demo 200 OK :slide:
-  + TODO show codes again
+#+begin_src bash
+telnet people.ischool.berkeley.edu 80
+GET /~jblomo/ HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 14 Sep 2012 06:06:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
+ETag: "a6ec002-48-4c89822b95c80"
+Accept-Ranges: bytes
+Content-Length: 72
+Content-Type: text/html; charset=UTF-8
+
+<h1>Jim's page</h1>
+Pretty <strong>cool!</strong>
+
+Hello <em>class</em>
+#+end_src
 
 * 300s :: Redirect :slide:
   + 301 :: Temporary Redirect
@@ -68,7 +88,29 @@
 * 400s :: Client errors :slide:
   + 404 :: Resource Not Found
 ** Hooray :notes:
-   + TODO another example
+#+begin_src bash
+telnet people.ischool.berkeley.edu 80
+GET /~jblomo/notfound.html HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 404 Not Found
+Date: Fri, 14 Sep 2012 06:07:58 GMT
+Server: Apache/2.2.22 (Fedora)
+Content-Length: 312
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL /~jblomo/notfound.html was not found on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Fedora) Server at people.ischool.berkeley.edu Port 80</address>
+</body></html>
+Connection closed by foreign host.
+#+end_src
    + We solved our problem: making a request for a file that's not there
 
 * 500s :: Server Errors :slide:
@@ -79,8 +121,9 @@
 
 * Fun :slide:
   + When things go wrong, chance to play
+  + [[http://heyzap.com/404][HeyZap]]
 ** Games, etc. :notes:
-   + TODO funny 404, 500 pages
+   + HeyZap built this during a hackathon
 
 * Response Headers :slide:
   + Gave metadata about request

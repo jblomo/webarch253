@@ -16,6 +16,42 @@ Content-Type: text/html; charset=ISO-8859-1
 ...
 #+end_src
 
+* Run webserver :slide:
+#+begin_src bash
+cd webarch253
+git checkout master
+git pull
+./server/app.py
+ * Running on http://127.0.0.1:60001/
+#+end_src
+ + http://people.ischool.berkeley.edu/~jblomo/server
+
+* Communicate with our webserver :slide:
+  + Keep =server/app.py= running, open another window
+#+begin_src bash
+telnet 127.0.0.1 60001
+GET / HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 12
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 14 Sep 2012 05:44:08 GMT
+#+end_src
+
+* HW Questions :slide:
+  + Using =127.0.0.1 <PORT>=
+    + What is the return code for =GET / HTTP/1.1=?
+    + What is the return code for =GET /foo HTTP/1.1=?
+      + What is the next HTTP statement a brwoser would send after this return
+        code?
+    + What is the return code for =PUT /foo HTTP/1.1=?
+  + Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server
+  + What is the return code for  http://people.ischool.berkeley.edu/~<USER>/i253/foobar.html?
+    + Paste the full telnet transcript for this request
+
+
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
