@@ -1,0 +1,133 @@
+* *HTTP* and *Servers* :slide:
+
+* Servers Return Representation :slide:
+  + Homework will be writing code to return HTML
+  + How do we decide which HTML to send?
+  + How do we use methods and headers?
+  + How do we represent errors?
+
+* What resource to return? :slide:
+  + How are resources specified?
+** With hostname and Path :notes:
+   + =people.ischool.berkeley.edu=
+   + =/~ashams/i253/index.html=
+     + Absolute path?
+
+** Hostname/Path => Resource :slide:
+   + http://people.ischool.berkeley.edu/~ashams/i253/index.html
+   + How to specify hostname with HTTP?
+   + How to specify path?
+   + What method to use?
+
+* Webserver :slide:
+  + Associate =/~ashams/i253/index.html= with =/home/ashams/public_html/i253/index.html=
+  + Associate  =/~ashams/i253/colors.css= with =/home/ashams/public_html/i253/colors.css=
+  + Associate ...
+** Gets old :notes:
+   + Instead of associating each file...
+
+* Extrapolate :slide:
+  + Associate everything in =/~ashams/= with everything in =/home/ashams/public_html/=
+  + This is a common feature of most webservers
+  + =Apache= the most popular
+** Webserver usage :notes:
+   + TODO find server usage
+
+* Missing file? :slide:
+  + What should we do if we request a file that is not there?
+  + Return nothing?
+  + Return "Oops!"
+** Ambiguous :notes:
+   + What about different languages?
+   + What about pages that you want to title "Oops!"
+   + How to tell the difference between an error and no data?
+   + Don't take these for granted. You are the innovators.
+
+* HTTP Response Codes :slide:
+  + Numbers are unambiguous, can be read by machines
+  + Always return a response code
+  + Return text as well for human readability
+
+** HTTP Response Numbers :slide:
+   + 200s :: OK
+   + 300s :: Redirect
+   + 400s :: Client errors
+   + 500s :: Server errors
+
+* Demo 200 OK :slide:
+  + TODO show codes again
+
+* 300s :: Redirect :slide:
+  + 301 :: Temporary Redirect
+  + 302 :: Permanent Redirect
+** Difference? :notes:
+   + Temporary :: Site is down, play elevator music
+   + Permanent :: Resource has moved (Another server, etc.) update your
+     bookmarks or links
+
+* 400s :: Client errors :slide:
+  + 404 :: Resource Not Found
+** Hooray :notes:
+   + TODO another example
+   + We solved our problem: making a request for a file that's not there
+
+* 500s :: Server Errors :slide:
+  + 500 :: Internal Server Error (Hard drive on fire)
+** See this? :notes:
+   + You might have a code problem
+   + Check your logs
+
+* Fun :slide:
+  + When things go wrong, chance to play
+** Games, etc. :notes:
+   + TODO funny 404, 500 pages
+
+* Response Headers :slide:
+  + Gave metadata about request
+  + Return metadata about response
+  + Size, Representation, Language
+** Reading :notes:
+   + [[http://www.cs.tut.fi/~jkorpela/http.html][Headers]]
+
+* How Many Resources? :slide:
+  + HTML
+  + CSS
+  + Javascript
+  + Images
+  + ...
+
+* HTTP Versions :slide:
+  + 1.0 :: Make a new connection each time
+  + 1.1 :: Optionally use same connection
+** HTTP Connection Handling :slide:
+[[file:img/http-phttp-pipeline.png]]
+
+* HTTP Versions :slide:
+  + 1.0 :: Serve one resource at a time
+  + 1.1 :: Accept requests while sending resources
+** HTTP Connection Handling :slide:
+[[file:img/http-phttp-pipeline.png]]
+
+* Why have different protocols? :slide:
+  + HTTP is about resource manipulation
+  + Specifying what you want to do with a resource
+  + How it is represented
+  + Optimized for web browsing
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
