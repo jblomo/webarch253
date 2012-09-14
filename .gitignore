@@ -1,7 +1,4 @@
-/lib/jars
-/lib/closure
-/out/development
+/server/venv
 *~
 *.sw[po]
 #*
-/.lein*

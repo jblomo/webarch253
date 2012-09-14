@@ -1,0 +1,35 @@
+* Talking HTTP :slide:
+  + Communicate with a server by typing
+  + Run our own webserver
+  + Report what we see
+
+* Communicate with a server by typing :slide:
+#+begin_src bash
+telnet google.com 80
+Host: www.google.com
+
+HTTP/1.1 200 OK
+Date: Fri, 14 Sep 2012 05:34:51 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+...
+#+end_src
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

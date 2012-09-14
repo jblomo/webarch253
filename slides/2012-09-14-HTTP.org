@@ -54,10 +54,12 @@
    + https://www.ischool.berkeley.edu *:443* /index.php
    + Specifies a port number to connect to
    + Ports are like doorways to a server
+   + Common ports: 80 for HTTP, 443 for HTTPS
 *** Ports covered later :notes:
     + We'll cover ports in more detail later in the class
     + Used to accept incoming connections
     + Different servers can run on different ports
+    + Gave away Yelp interview question
 
 ** Fragment :slide:
    + http://en.wikipedia.org/wiki/URI_scheme *#Generic_syntax*
@@ -217,9 +219,11 @@ scheme              authority                    path   |    |    interpretable 
    + HEAD
 
 * HTTP version :slide:
-  + 1.1 used almost universally for user facing web servers
+  + 1.1 used for interacting with customers
   + 1.0 used in datacenter for some achetectures
   + End users don't choose
+** Flask :notes:
+   + Flask will use 1.0: it will end the connection on each request
 
 * Headers :slide:
   + Provide Metadata about the request
