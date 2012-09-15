@@ -47,7 +47,9 @@ Date: Fri, 14 Sep 2012 05:44:08 GMT
       + What is the next HTTP statement a brwoser would send after this return
         code?
     + What is the return code for =PUT /foo HTTP/1.1=?
-  + Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server
+  + Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server/foo
+    + You can issue =GET= requests using =telnet= by specifying the server name,
+      =people.ischool.berkeley.edu=, using the default HTTP port, =80=.
   + What is the return code for  http://people.ischool.berkeley.edu/~<USER>/i253/foobar.html?
     + Paste the full telnet transcript for this request
 

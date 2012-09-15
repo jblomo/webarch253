@@ -78,12 +78,12 @@ Hello <em>class</em>
 #+end_src
 
 * 300s :: Redirect :slide:
-  + 301 :: Temporary Redirect
-  + 302 :: Permanent Redirect
+  + 301 :: Permanent Redirect
+  + 302 :: Temporary Redirect
 ** Difference? :notes:
-   + Temporary :: Site is down, play elevator music
    + Permanent :: Resource has moved (Another server, etc.) update your
      bookmarks or links
+   + Temporary :: Site is down, play elevator music
 
 * 400s :: Client errors :slide:
   + 404 :: Resource Not Found
@@ -143,13 +143,13 @@ Connection closed by foreign host.
   + 1.0 :: Make a new connection each time
   + 1.1 :: Optionally use same connection
 ** HTTP Connection Handling :slide:
-[[file:img/http-phttp-pipeline.png]]
+[[file:img/http-phttp-pipelining.png]]
 
 * HTTP Versions :slide:
   + 1.0 :: Serve one resource at a time
   + 1.1 :: Accept requests while sending resources
 ** HTTP Connection Handling :slide:
-[[file:img/http-phttp-pipeline.png]]
+[[file:img/http-phttp-pipelining.png]]
 
 * Why have different protocols? :slide:
   + HTTP is about resource manipulation
