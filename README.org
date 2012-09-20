@@ -12,7 +12,7 @@
 | Aug 31 | [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] | [[file:slides/2012-08-31-HTML.html][HTML]] & [[file:slides/2012-08-31-CSS.html][CSS]] | Git & [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Update Personal Pages]] |
 | Sep 7  | N/A | GUEST [[file:Forms and Javascript.pptx][Forms & Javascript]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Madlibs]] |
 | Sep 14 | [[http://www.cs.tut.fi/~jkorpela/http.html][HTTP headers reference]], [[http://www.w3.org/TR/webarch/][Architecture of the World Wide Web]] Sections 1 & 2 , (Optional) [[http://flask.pocoo.org/docs/][Flask]] | [[file:slides/2012-09-14-HTTP.html][URI and HTTP]] & [[file:slides/2012-09-14-Server.html][HTTP and Server]] | [[file:slides/2012-09-14-Telnet.html][Manual testing of personal webserver]] |
-| Sep 21 | N/A | Multimedia & Dynamic Webpages | Dynamic Charts & Project 1: URL Shortener |
+| Sep 21 | N/A | Multimedia & Dynamic Webpages | Project 1: URL Shortener |
 | Sep 28 | N/A | REST APIs & Midterm Q&A | AWS Interaction |
 | Oct 5  | N/A | (P1 Due) Internet Archetecture & DNS | Midterm Q&A |
 | Oct 12 | N/A | Midterm | None |
@@ -27,14 +27,15 @@
 | Dec 14 | N/A | FINAL | Bye! |
 
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/bootstrap.min.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/presenter.css" media="presenter" />
 
 #+BEGIN_HTML
-<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+<script type="text/javascript" src="slides/production/org-html-slideshow.js"></script>
+<a href="https://github.com/jblomo/webarch253"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 #+END_HTML
 
 # Local Variables:
