@@ -223,7 +223,6 @@ Stored wiki => http://disney.com
    + In the homework, remember to set the =Content-Type=
 
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

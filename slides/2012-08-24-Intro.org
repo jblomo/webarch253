@@ -89,7 +89,7 @@
   + Dec 14 FINAL
  
 * Hi, I'm Jim Blomo :slide:
-  [[file:jim-totem.jpg]]
+  [[file:img/jim-totem.jpg]]
   + Cal EECS
   + A9 - Amazon Search
   + PBworks
@@ -135,8 +135,8 @@
    + SSL can encrypt any type of traffic (HTTPS most common)
 
 ** Highway vs. Railway :slide:
-   [[file:highway-fail.jpg]]
-   [[file:track-gauge.png]]
+   [[file:img/highway-fail.jpg]]
+   [[file:img/track-gauge.png]]
 ** Highway: simple, composable :slide:
    + Just need something with wheels to use it effectively
    + Cars can drive on any highway, but also off-road
@@ -147,7 +147,7 @@
    + Must coordinate with other traffic
    + If you upgrade one part of the system, everything else must be upgraded
    + Efficient
-   [[file:track-gauge.png]]
+   [[file:img/track-gauge.png]]
 
 *** Complected: to braid together :notes:
     + Highways relatively inefficient: all cars need to power themselves 
@@ -212,7 +212,7 @@ layers</th>
    + TCP/IP
 
 * :slide:
-  [[file:the-internet-a-series-of-tubes.jpg]]
+  [[file:img/the-internet-a-series-of-tubes.jpg]]
 ** Internet: A series of tubes :slide:
    + Longest running computer system in the world
    + Protocols are agnostic to their content
@@ -226,7 +226,7 @@ layers</th>
     + From early email to streaming movies on your phone
       
 * Protocols: Do you speak it? :slide:
-  [[file:understand.jpeg]]
+  [[file:img/understand.jpeg]]
   + Protocols convey *data*
   + Data can be interpreted as *information*
 ** Metaphor :notes:
@@ -234,7 +234,7 @@ layers</th>
    + Understanding the words and their meaning in context is information
 
 * HyperText Markup Language :slide:
-  [[file:html-editing.jpg]]
+  [[file:img/html-editing.jpg]]
   + HyperText: Text with links
   + HTML is the dominant, but not only, way to link text
   + HTML consists of elements, like a link or block of text
@@ -243,7 +243,7 @@ layers</th>
    + Image shows another way to edit text
    + And you thought editing with a touch interface was new
 
-* Javascript
+* Javascript :slide:
   + General programming language, but designed with HTML in mind
   + Can "edit" HTML live on the page
   + Or "draw" on a canvas
@@ -279,19 +279,20 @@ layers</th>
 
 * *Break* :slide:
 
-#+TAGS: slide(s)
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="common.css" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="projection.css" media="projection" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="presenter.css" media="presenter" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
 #+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
-<script type="text/javascript" src="org-html-slideshow.js"></script>
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
 #+END_HTML
 
 # Local Variables:
 # org-export-html-style-include-default: nil
 # org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
 # End:

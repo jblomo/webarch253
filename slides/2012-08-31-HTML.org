@@ -323,7 +323,6 @@ Hello World
   + Browser displays tags in standard ways
   + Tags are named, can contain attributes, can be nested
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

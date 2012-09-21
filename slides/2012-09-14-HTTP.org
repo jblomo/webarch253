@@ -291,7 +291,6 @@ Hello <em>class</em>
 * To the Server! :slide:
   + We'll pick up on the server side to get more details
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

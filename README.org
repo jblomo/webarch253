@@ -8,7 +8,7 @@
 
 | Date | Readings | Slides | Homework / Project |
 |------+----------+--------+--------------------|
-| Aug 24 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:slides/20120820-Intro/20120820-Intro.html][Intro]] & [[file:slides/20120820-Intro/20120824-Browsers.html][Browsers & HW1]] | See Browser slides |
+| Aug 24 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:slides/2012-08-24-Intro.html][Intro]] & [[file:slides/2012-08-24-Browsers.html][Browsers & HW1]] | See Browser slides |
 | Aug 31 | [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] | [[file:slides/2012-08-31-HTML.html][HTML]] & [[file:slides/2012-08-31-CSS.html][CSS]] | Git & [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Update Personal Pages]] |
 | Sep 7  | N/A | GUEST [[file:Forms and Javascript.pptx][Forms & Javascript]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Madlibs]] |
 | Sep 14 | [[http://www.cs.tut.fi/~jkorpela/http.html][HTTP headers reference]], [[http://www.w3.org/TR/webarch/][Architecture of the World Wide Web]] Sections 1 & 2 , (Optional) [[http://flask.pocoo.org/docs/][Flask]] | [[file:slides/2012-09-14-HTTP.html][URI and HTTP]] & [[file:slides/2012-09-14-Server.html][HTTP and Server]] | [[file:slides/2012-09-14-Telnet.html][Manual testing of personal webserver]] |
@@ -27,7 +27,6 @@
 | Dec 14 | N/A | FINAL | Bye! |
 
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/projection.css" media="projection" />

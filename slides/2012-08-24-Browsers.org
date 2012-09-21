@@ -7,7 +7,7 @@
    + has plugins
 
 * What is the core?  :slide:
-  [[file:www-gnu.png]]
+  [[file:img/www-gnu.png]]
   + [[http://en.wikipedia.org/wiki/WorldWideWeb][WorldWideWeb]] (confusingly named) the first browser
   + Tim Breners-Lee wrote it to share data with colleagues at CERN
   + Display HTML with Style Sheets from remote servers
@@ -65,10 +65,10 @@
    + What if you could only view websites like a TV image. No cut+paste, viewing on mobile vs. desktop
 
 * Browser or Web Page?  :slide:
-  + [[file:ie8-logo.png]] Internet Explorer
-  + [[file:Google_logo.png]]
-  + [[file:nyt-logo.png]]
-  + Firefox [[file:firefox-logo.png]]
+  + [[file:img/ie8-logo.png]] Internet Explorer
+  + [[file:img/Google_logo.png]]
+  + [[file:img/nyt-logo.png]]
+  + Firefox [[file:img/firefox-logo.png]]
   + Others?
 
 * Browsers, Apps, Operating Systems :slide:
@@ -79,7 +79,7 @@
   + Some Apps now written entirely in Javascript
 
 * Market Share :slide:
-  [[file:browser-share.png]]
+  [[file:img/browser-share.png]]
 
 * Utilities :slide:
   + /Firefly/ for Firefox, /Developer Tools/ for Chrome
@@ -149,15 +149,21 @@
    + *Do not* share code or look for other's code
    + All HW and Projects are submitted by email, not Pull Requests
 
-#+TAGS: slide(s)
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="common.css" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="projection.css" media="projection" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="presenter.css" media="presenter" />
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
 #+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
-<script type="text/javascript" src="org-html-slideshow.js"></script>
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
 #+END_HTML
 
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

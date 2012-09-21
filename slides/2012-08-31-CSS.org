@@ -211,7 +211,6 @@ Testing on Chrome 18.0.1025.168, Firefox 11 on OS X"
 git format-patch --stdout master | sendmail <YOUR LOGIN> jblomo vimalkini
 #+end_src
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

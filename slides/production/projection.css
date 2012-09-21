@@ -3,81 +3,51 @@
  * These styles will apply only to the slide-show view.
  */
 
+html, body {
+	height: 100%;
+}
+
 body {
-	margin: 18pt;
-	font-size: 48px;
-	line-height: 50px;
-}
-
-li {
-	line-height: 50px;
-}
-
-dt,
-dd {
-  line-height: 50px;
-}
-
-code, pre {
-	font-size: 41px;
-	line-height: 50px;
-}
-
-blockquote p {
-	font-size: 55px;
-	line-height: 60px;
-}
-
-legend {
-	font-size: 41px;
-	line-height: 50px;
-}
-
-label,
-input,
-button,
-select,
-textarea {
-	font-size: 48px;
-	line-height: 50px;
+   margin: 18pt;
+   font-size: 34pt;
 }
 
 /* Use all headings as slide titles, regardless of level. */
-h1,h2,h3,h4,h5,h6,h7,h8,
-h1 code,h2 code,h3 code,h4 code,h5 code,h6 code,h7 code,h8 code {
-	font-size: 120px;
-	line-height: 130px;
-	margin: 18pt;
-	text-align: center;
+h1,h2,h3,h4,h5,h6,h7,h8 {
+   font-size: 90pt;
+   margin: 18pt;
+   text-align: center;
 }
 
-{
-	font-size: 120px;
-	line-height: 130px;
-	margin: 18pt;
-	text-align: center;
+.two_col .outline-text>p,
+.two_col .outline-text>table,
+.two_col .outline-text>ul,
+.two_col .outline-text>ol,
+.two_col .outline-text>dl {
+	float: left;
+	width: 45%;
 }
 
 li {
-	margin: 12pt;
+   margin: 12pt;
 }
 
-/* Center embedded images. */
-p.image {
-	text-align: center;
+/* Center embedded images and classed slides. */
+.center, p.image {
+   text-align: center;
 }
 
 /* Hide Org-Mode tags in slide-show view. */
 span.tag {
-	display: none;
+   display: none;
 }
 
 /* Hide Org-Mode section numbers in slide-show view. */
 span.section-number-1,span.section-number-2,span.section-number-3,span.section-number-4,span.section-number-5,span.section-number-6,span.section-number-7,span.section-number-8 {
-	display: none;
+   display: none;
 }
 
 .blue_background {
-	background: blue;
-	color: white;
+   background-color: #05565E;
+   color: rgba(255, 255, 255, 0.8);
 }

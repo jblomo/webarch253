@@ -56,7 +56,7 @@
   + Authentication: must send credentials each time, but browser mostly handles
     it
 
-* Fun with HTTP Status Codes :slide:animate:two_col:
+* Fun with HTTP Status Codes :slide:two_col:
   + =418= :: I'm a teapot (for HyperText Coffee Pot Control Protocol)
   + =420= :: Enhance Your Calm (Similar to =429 Too Many Requests=)
 
@@ -89,7 +89,7 @@
   + Static pages can be served out of RAM even faster
   + Dynamic pages can change
 
-* How fast? :slide:two_col:
+* How fast? :slide:
 [[file:img/test-nginx-1worker.png]]
 [[file:img/dynamic-throughput.png]]
   + compare "Hello World"s both static & Dynamic
@@ -171,7 +171,6 @@
 [[file:img/raptor-genie.jpg]]
 
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/bootstrap.min.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

@@ -1,6 +1,7 @@
 body {
 	background-color: #05565E;
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(255, 255, 255, 0.8);
+	font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -12,28 +13,20 @@ h1,h2,h3,h4,h5,h6,h7,h8 {
 	font-family: 'Yanone Kaffeesatz', sans;
 }
 
-li {
-   font-family: 'Open Sans', sans-serif;
-}
-
 th {
 	color: #D91442;
 }
 
 b {
-	font-family: 'Lobster Two', script;
 	font-weight: bold;
 	color: #D91442;
-	font-size: 200%;
-	line-height: 100%;
 }
 
 h1 b,h2 b,h3 b,h4 b,h5 b,h6 b,h7 b,h8 {
+	font-family: 'Lobster Two', script;
+	font-size: 200%;
+	line-height: 100%;
 	display: block;
-}
-
-.well, pre {
-	background-color: #65BFC8;
 }
 
 .well a {
