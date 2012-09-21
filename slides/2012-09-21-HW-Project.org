@@ -26,8 +26,16 @@ http://people.ischool.berkeley.edu/~jblomo/server/
    1. Use a POST to update the redirect target of http://people.ischool.berkeley.edu/~<USER>/server/wiki to a another new location.
    1. Update =app.py= to correctly return an image from  http://people.ischool.berkeley.edu/~<USER>/server/image
       + Use your browser to test
+      + Including the =Content-Type= in your submission
 *** Lab will discuss details :notes:
     + We'll go over =app.py=
+
+** Extra Credit :slide:
+   + Extra credit makes up for mistakes in that homework
+   + Each homework score is up to 100% (10)
+
+   + This week's extra credit: modify =app.py= to return either an image or text
+     based on the request's =Accept= header
 
 ** Submit via Email :slide:
    + Subject line: =[PATCH] HW4=
@@ -59,6 +67,11 @@ git add ... # all the files or directories you created or modified
 git commit -m "Project 1: http://people... tested on Chrome... Firefox..."
 git format-patch --stdout origin/master | sendmail $USER jblomo vimalkini
 #+end_src
+
+** Extra Credit: Adding bitly Features :slide:
+   + Automatically choose short path
+   + Use the same short path for existing URLs
+   + Show number of clicks when shortening an existing URL
 
 * =app.py= :slide:
   + Comments and docstrings

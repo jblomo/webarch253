@@ -4,8 +4,19 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+code, pre, .well {
+	background-color: rgba(255, 255, 255, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	color: rgba(0, 0, 0, 0.7);
+}
+
 a {
-	color: rgba(0, 255, 255, 0.5);
+	color: rgba(0, 200, 255, 0.5);
+}
+
+#c-panel a {
+   display: block;
+   color: #00E;
 }
 
 h1,h2,h3,h4,h5,h6,h7,h8 {

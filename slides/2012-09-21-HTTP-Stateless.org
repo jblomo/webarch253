@@ -60,9 +60,12 @@
   + =418= :: I'm a teapot (for HyperText Coffee Pot Control Protocol)
   + =420= :: Enhance Your Calm (Similar to =429 Too Many Requests=)
 
-[[file:img/coffee-pot.jpg]] From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP status codes]]
+[[file:img/coffee-pot.jpg]]
 
-* Server Generated Resources :slide:
+From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP status codes]]
+
+* Server Generated Resources :slide:center:
+*Review*
 ** Questions :notes:
    + Webservers map between URIs and what?
    + What is the actual data send back for a resource called?
