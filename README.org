@@ -12,12 +12,12 @@
 | Aug 31 | [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] | [[file:slides/2012-08-31-HTML.html][HTML]] & [[file:slides/2012-08-31-CSS.html][CSS]] | Git & [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Update Personal Pages]] |
 | Sep 7  | N/A | GUEST [[file:Forms and Javascript.pptx][Forms & Javascript]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Madlibs]] |
 | Sep 14 | [[http://www.cs.tut.fi/~jkorpela/http.html][HTTP headers reference]], [[http://www.w3.org/TR/webarch/][Architecture of the World Wide Web]] Sections 1 & 2 , (Optional) [[http://flask.pocoo.org/docs/][Flask]] | [[file:slides/2012-09-14-HTTP.html][URI and HTTP]] & [[file:slides/2012-09-14-Server.html][HTTP and Server]] | [[file:slides/2012-09-14-Telnet.html][Manual testing of personal webserver]] |
-| Sep 21 | N/A | Multimedia & Dynamic Webpages | Project 1: URL Shortener |
-| Sep 28 | N/A | REST APIs & Midterm Q&A | AWS Interaction |
-| Oct 5  | N/A | (P1 Due) Internet Archetecture & DNS | Midterm Q&A |
+| Sep 21 | [[http://www.w3.org/2001/tag/doc/state.html][State]] Sections 1-5; [[http://www.w3.org/TR/2012/WD-html5-20120329/forms.html#forms][HTML5 Forms]] Sections 4.10.1; [[http://www.w3schools.com/jsref/prop_submit_disabled.asp][Disabling buttons]]; [[http://learnpythonthehardway.org/book/ex39.html][Learn Python the Hard Way]] Exercise 39, Dictionaries; [[http://flask.pocoo.org/docs/quickstart/][Flask Quickstart]] Rendering Templates, The Request Object | [[file:slides/2012-09-21-HTTP-Stateless.html][State & Dynamic Webpages]] & [[file:slides/2012-09-21-HTTP-Data.html][HTTP Data]] | [[file:slides/2012-09-21-HW-Project.html][HTTP Data & Project 1: URL Shortener]] |
+| Sep 28 | N/A | Model-View-Controler & Cookies & REST APIs | AWS Interaction |
+| Oct 5  | N/A | Internet Archetecture & DNS | Midterm Q&A |
 | Oct 12 | N/A | Midterm | None |
-| Oct 19 | N/A | GUEST Latencies & Packaging | CloudFront CDN |
-| Oct 26 | N/A | GUEST PBS | midterm review (Vimal) |
+| Oct 19 | N/A | (*P1 Due*) GUEST Latencies & Packaging | CloudFront CDN |
+| Oct 26 | N/A | GUEST Data Storage | midterm review (Vimal) |
 | Nov 2  | N/A | Microformats & SEO | Google Metrics |
 | Nov 9  | N/A | Mobile | Project 2: Mobilize & Discovery |
 | Nov 16 | N/A | Analytics & Data Mining | mrjob |

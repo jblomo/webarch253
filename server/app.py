@@ -36,7 +36,7 @@ def image():
 
     resp = flask.make_response(
             check_output(['convert', '-size', '600x400', 'xc:transparent',
-                '-font', '/usr/share/fonts/truetype/liberation/LiberationSansNarrow-BoldItalic.ttf',
+                '-font', '/usr/share/fonts/thai-scalable/Waree-BoldOblique.ttf',
                 '-fill', 'black', '-pointsize', '32', '-draw',
                 "text 10,30 'My %s %s said i253 was %s'" % (relationship, name, adjective),
                 'png:-']), 200);
@@ -70,7 +70,8 @@ def redirect_wiki():
 # to store the POST information in =db=, and then later redirect a GET request
 # for that same word to the URL provided.  If there is no association between a
 # =short= word and a URL, then return a 404
-@app.route("/<short>", methods=['PUT', 'POST'])
+##/
+@app.route("/create", methods=['PUT', 'POST'])
 def create(short):
     """Create an association of =short= with the POST arguement =url="""
     raise NotImplementedError
