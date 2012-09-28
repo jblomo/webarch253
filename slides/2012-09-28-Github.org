@@ -51,7 +51,6 @@ Vary: Accept
 X-Content-Type-Options: nosniff
 X-GitHub-Media-Type: github.beta
 Cache-Control: public, max-age=60, s-maxage=60
-
 #+end_src
 
 #+begin_src json
@@ -817,9 +816,9 @@ b.com/mojombo/jekyll/pull/567.diff"
   1. Use the [[http://developer.github.com/v3/repos/][Repositories]] resource
      to discover which repositories (=full_name=) I am only a member of.
   1. Use the [[http://developer.github.com/v3/repos/][Repositories]] resource
-     to find the =login=s of the contributors to the =mrjob= repository owned
+     to find the =login= s of the contributors to the =mrjob= repository owned
      by =Yelp=
-  1. Use the [[http://developer.github.com/v3/repos/commits/][Commits] resource
+  1. Use the [[http://developer.github.com/v3/repos/commits/][Commits]] resource
      to find what the =message= was of the first commit to the =webarch253=
      repository owned by =jblomo=.
 

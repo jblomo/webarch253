@@ -94,13 +94,31 @@ GET /?name=World&title=Hello HTTP/1.1
 Host: localhost
 Cookie: visitor-id=1234; language=en
 #+end_src
+** Breakdown :notes:
+   + Send a request (no cookies)
+   + Server response normally, PLUS we get a cookie
+   + Subsequent requests include the cookie
 
 ** Cookie's Life  :slide:two_col:
 [[file:img/cookie_desktop.jpg]]
    + Initial request to server
    + Server response with =Set-Cookie= headers
+     + Key-Value pairs, one per header
    + Client saves cookie values
    + Subsequent requests, client sends cookie values
+     + Key-Value pairs, many per header
+
+* Cookie Attributes :slide:
+  + Specified after key-value in =Set-Cookie=
+
+
+  + Domain and Path :: Scope of a cookie - when is it active?
+  + Expires and Max-Age :: When should the browser delete the cookie?
+  + Secure and HttpOnly :: Further limits scope to a protocol
+** Security note :notes:
+   + HTTP requests are in plain text, you can see an copy other cookies
+   + So private cookies are only sent with HTTPS
+   + Further reading in [[http://en.wikipedia.org/wiki/HTTP_cookie#Cookie_attributes][Cookie attributes]]
 
 * Authentication :slide:
 #+begin_src http
