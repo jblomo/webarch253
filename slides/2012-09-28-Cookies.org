@@ -1,4 +1,4 @@
-* HTTP Cookies & MVC :slide:
+* HTTP Cookies :slide:
 ** Review :notes:
    + What is State?
    + Does a light switch have state?
@@ -28,7 +28,7 @@
 ** Examples :notes:
    + Knowing which user
    + Logged In / Logged Out
-   + Information in a multi-step wizzard
+   + Information in a multi-step wizard
 
 ** Identification :slide:
    + Using HTTP commands, can we tell if we've seen this client before?
@@ -65,7 +65,7 @@ Date: Fri, 21 Sep 2012 04:17:46 GMT
    + So how do we tell one user from another?
    + ie, how can we provide information about the request?
 
-* HTTP Headers are Metainformation :slide:
+* HTTP Headers are Meta-information :slide:
   + =Host= :: The host we're trying to contact
   + =Content-Type= :: The type and format of data in the response or request
   + =Cookie= :: Information about client, set by server
@@ -176,7 +176,7 @@ Cookie: visitor-id=e734a88a1110fa3d657454b2dd348822
   + Session :: Exists until browser is closed
   + Persistent :: Exists for a specified time
   + Secure :: Only sent over secure connections (HTTPS)
-  + Third-party :: Set for another domain, eg advertiser
+  + Third-party :: Set for another domain, eg. advertiser
   + Ever / Zombie :: Tricks to avoid clearing cookies
 
 * Cookie Review :slide:
@@ -197,6 +197,34 @@ Cookie: visitor-id=e734a88a1110fa3d657454b2dd348822
      contents
    + Variety of ACL schemes that allow you to give RWX privileges for
      different resources
+
+* Multi-step Wizards :slide:
+  + Process that takes input from multiple pages
+  + Doesn't do anything until final page is complete
+  + How is the handled by HTTP?
+
+** Example :slide:
+[[file:img/WordPress-Easy-Install-1.jpg]]
+
+** Example :slide:
+[[file:img/WordPress-Easy-Install-2.jpg]]
+*** Where are the choices? :notes:
+    + Where are the options we selected in step 1?
+    + We don't have any account yet, so usually can't store them in DB
+    + Often they are in =hidden= input types in the form
+    + Passed along in the wizard
+
+** Example :slide:
+[[file:img/WordPress-Easy-Install-4.jpg]]
+*** Final Step  :notes:
+    + The final step has all of the data, mixed between last page options and
+      =hidden= fields
+    + It creates the account with all of the options
+    + Another alternative is using a Cookie to track user
+      + Storing state for that user
+      + But how long do we store the data for? (We don't know for sure that the
+        user is done)
+      + What if the user explores options by using different tabs?
 
 * HTTP is Stateless :slide:
   + Cookies can simulate state
