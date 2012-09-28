@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>2012-09-28-Github</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="2012-09-28-Github"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-09-28 00:46:54 PDT"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">2012-09-28-Github</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 RESTful in Action</a></li>
+<li><a href="#sec-2">2 <code>curl</code></a>
+<ul>
+<li><a href="#sec-2-1">2.1 We'll just use command line</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Show Headers</a></li>
+<li><a href="#sec-4">4 Github API</a></li>
+<li><a href="#sec-5">5 Homework</a></li>
+<li><a href="#sec-6">6 Submit Homework by Email</a></li>
+<li><a href="#sec-7">7 Don't forget your Project</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> RESTful in Action &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Use Github's API
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <code>curl</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>Command-line URL
+</li>
+<li>Shortcut for manually making Telnet requests
+</li>
+<li>turned into a library
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> We'll just use command line &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Show Headers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+
+<pre class="src src-bash">curl -i http://people.ischool.berkeley.edu/~jblomo/
+</pre>
+
+
+
+<pre class="src src-http">HTTP/1.1 200 OK
+Date: Fri, 28 Sep 2012 06:25:13 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
+ETag: <span style="color: #8b2252;">"a6ec002-48-4c89822b95c80"</span>
+Accept-Ranges: bytes
+Content-Length: 72
+Content-Type: text/html; charset=UTF-8
+</pre>
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Jim's page</span>&lt;/<span style="color: #0000ff;">h1</span>&gt;
+Pretty &lt;<span style="color: #0000ff;">strong</span>&gt;<span style="font-weight: bold;">cool!</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+
+Hello &lt;<span style="color: #0000ff;">em</span>&gt;<span style="text-decoration: underline;">class</span>&lt;/<span style="color: #0000ff;">em</span>&gt;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> <a href="http://developer.github.com/v3/">Github API</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+
+
+
+<pre class="src src-bash">curl -i <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues?state=closed"</span>
+</pre>
+
+
+
+<pre class="src src-http">Server: nginx
+Date: Fri, 28 Sep 2012 06:33:23 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: <span style="color: #8b2252;">"67201385c23a16bed5fdad77505c9c19"</span>
+Link: &lt;https://api.github.com/repos/mojombo/jekyll/issues?page=2&amp;state=closed&gt;; rel=<span style="color: #8b2252;">"next"</span>, &lt;https://api.github.com/repos/mojombo/jekyll/issues?page=14&amp;state=closed&gt;; rel=<span style="color: #8b2252;">"last"</span>
+X-RateLimit-Remaining: 4994
+Content-Length: 42304
+Last-Modified: Fri, 28 Sep 2012 03:23:12 GMT
+X-RateLimit-Limit: 5000
+Vary: Accept
+X-Content-Type-Options: nosniff
+X-GitHub-Media-Type: github.beta
+Cache-Control: public, max-age=60, s-maxage=60
+</pre>
+
+
+
+<pre class="src src-json">[
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"I just hit feedburner's 512k limit on feed size, because jekyll includes every single post in the atom.xml file.\n\n--limit_posts is close to what I want, but I don't want to affect the HTML output, just atom.xml.\n\nSo another flag like --limit_atom_posts or something like that."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"stephenh"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/d1ab193da2440f9b2c6a3b196df8477b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 6401,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/stephenh"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"d1ab193da2440f9b2c6a3b196df8477b"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/646"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-09-22T19:36:45Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 7,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"limit posts only for atom.xml"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-09-23T14:27:45Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 646,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-09-25T10:02:45Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 7062785,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/646"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Hi all,\n\nI'm running my Jekyll-blog inside a subfolder called /blog. Apart from that, I'm using the default theme (tom). Jekyll is running in safe-mode. My BASE_PATH is set to \"/blog\".\n\nNow here's the problem: The links to the individual postings on the archive-page include the \"blog\"-subfolder, meaning they look like www.foo.bar/blog/2012/08/28/third-blogpost. Everything's alright there.\nThe links on the starting page however don't have the subfolder included. They look like this: www.foo.bar/2012/08/28/third-blogpost. The list of postings on the starting page is created by the snippet that's included in the default configuration of the theme:\n```\n&lt;ul class=\"posts\"&gt;\n  {% for post in site.posts %}\n    &lt;li&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;raquo; &lt;a href=\"{{ BASE_PATH }}{{ post.url }}\"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;\n  {% endfor %}\n&lt;/ul&gt;\n```\nDoes anyone have an idea why the subfolder (i.e. the BASE_PATH) isn't included in the rendered html-files, even though it should judging by the source code above?\n\nThanks in advance\nituri"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"ituri"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/a3ad34132e3a0b6eae9230f1023e0c21?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 871297,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/ituri"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"a3ad34132e3a0b6eae9230f1023e0c21"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/635"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-09-01T19:37:11Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 2,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"BASE_PATH / safe-mode confusion"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-09-02T08:31:35Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 635,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-09-02T08:31:35Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6597668,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/635"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Hi!\n\nI'm using:\n\n* Windows 8\n* Ruby 187\n* msysGit\n\nI created a folder, initialized a repo with git init and added some markdown files there. From that moment on if I run jekyll with the --auto switch it won't stop regenerating my entire site all the time.\n\nIf I remove the git repostory (by removing the .git dir) everything goes back to normal.\n\nSteps to reproduce:\n\n1. Create empty directory\n2. Run \"git init\"\n3. Throw some markdown files\n4. Run \"jekyll --server --auto\"\n\nThe output will be something like this:\n\n\tC:\\Dev\\Workspace\\blog.tucaz.net&gt;jekyll --server --auto\n\tConfiguration from C:/Dev/Workspace/blog.tucaz.net/_config.yml\n\tAuto-regenerating enabled: C:/Dev/Workspace/blog.tucaz.net -&gt; public\n\t[2012-08-30 19:08:30] INFO  WEBrick 1.3.1\n\t[2012-08-30 19:08:30] INFO  ruby 1.8.7 (2012-06-29) [i386-mingw32]\n\t[2012-08-30 19:08:30] INFO  WEBrick::HTTPServer#start: pid=3088 port=4000\n\t[2012-08-30 19:08:30] regeneration: 217 files changed\n\t[2012-08-30 19:08:31] regeneration: 107 files changed\n\t[2012-08-30 19:08:32] regeneration: 107 files changed\n\t[2012-08-30 19:08:33] regeneration: 107 files changed\n\t[2012-08-30 19:08:34] regeneration: 107 files changed\n\t[2012-08-30 19:08:35] regeneration: 107 files changed\n\nThanks much!"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tucaz"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/878e48ecc4d15478e75e65add66990bb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 111954,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tucaz"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"878e48ecc4d15478e75e65add66990bb"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/634"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-30T22:10:16Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Jekyll keeps regenerating pages all the time when ran in a git repository folder"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-30T22:13:50Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 634,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-30T22:13:50Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6566469,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/634"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/629.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/629"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/629.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"A modification of this pull request: https://github.com/mojombo/jekyll/pull/556"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"edeustace"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/0a5dd8dd6c5c518c224d971ef265da95?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 101623,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/edeustace"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"0a5dd8dd6c5c518c224d971ef265da95"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/629"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-23T10:10:24Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 0,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Add a configuration variable keep_files (default ['.git']) - these files don't get wiped during site#clean"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-23T10:12:50Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 629,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-23T10:12:50Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6403362,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/629"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/628.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/628"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/628.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"I cloned the repo and then was reading the code of the posterous importer\n\nthen I tried to run the command\n\n```ruby\nruby -r './lib/jekyll/migrators/posterous.rb' -e 'Jekyll::Posterous.process(\"EMAIL\", \"PASS\", \"API_KEY\")'\n```\n\nand I got an operation not found error, and trying to run it from the jekyll command I got \n\n```ruby\nruby -rubygems -e 'require \"jekyll/migrators/posterous\";  Jekyll::Posterous.process(\"EMAIL\", \"PASS\", \"API_KEY\")'\n/Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n/Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/1.9.1/net/http.rb:2632:in `error!': 500 \"Internal Server Error\" (Net::HTTPFatalError)\n\tfrom /Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/jekyll-0.11.2/lib/jekyll/migrators/posterous.rb:26:in `fetch'\n\tfrom /Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/jekyll-0.11.2/lib/jekyll/migrators/posterous.rb:32:in `process'\n\tfrom -e:1:in `&lt;main&gt;'\n```\n\nI was seeing the posterous API site and then I tried the url\n\nRequest URL: http://posterous.com/api/2/sites/fespinoza/posts Response: 200 OK\n\nfrom the site api and I that worked, when I modified it from the code, I assume that posterous people change its API"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"fespinoza"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/544e0d28a9aed9a3b3e8a60e2a2d1c4c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 167989,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/fespinoza"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"544e0d28a9aed9a3b3e8a60e2a2d1c4c"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/628"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-21T04:18:41Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 0,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Fixed posterous api url"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-31T03:19:38Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 628,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-31T03:19:38Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6342150,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/628"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"OS: Mountain Lion\nInstallation errors\n\n    sudo gem update --system\n    Password:\n    Latest version currently installed. Aborting.\n\n    sudo gem install jekyll\n\n    Building native extensions.  This could take a while...\n    ERROR:  Error installing jekyll:\n        ERROR: Failed to build gem native extension.\n\n            /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby extconf.rb\n    mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/ruby.h\n\n\n    Gem files will remain installed in /Library/Ruby/Gems/1.8/gems/fast-stemmer-1.0.1 for inspection.\n    Results logged to /Library/Ruby/Gems/1.8/gems/fast-stemmer-1.0.1/ext/gem_make.out\n\nWhy???\n\n\n"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"wangxian"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/20e0b94af31316f0a411b6fc758c2a15?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 639791,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/wangxian"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"20e0b94af31316f0a411b6fc758c2a15"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/627"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-21T02:40:18Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 3,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Mountain Lion - Error installing jekyll"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-21T05:51:59Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 627,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-21T05:52:10Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6341209,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/627"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"When Jekyll generates HTML from posts, it's currently converting `--` into `&amp;#8211;` (an en-dash) instead of `&amp;mdash;` or `&amp;#8212;`. This is more in the nature of a typographical issue than a serious bug, but it still seems visually wrong.\n\nIs this a deliberate design decision, or something for which a patch would be accepted?"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"CodeGnome"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/afa4c50c7af924d001bdae05755f9b55?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 385462,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/CodeGnome"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"afa4c50c7af924d001bdae05755f9b55"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/620"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-13T18:41:52Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 2,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Two dashes print as en-dash instead of em-dash."</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-14T02:04:04Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 620,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-14T02:04:04Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6198489,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/620"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Hey,\nI just wanted to publish a blog post for a little plugin I made. I wanted to show the syntax of the plugin {% ... %} in the post and so i put it in `.\nBut when I previewed the post I recognized that Jekyll tried to parse this through my plugin. Is there a way of preventing this behavior and just outputting the the markup?"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"soupdiver"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/ea09c93b9b8d47ea30af1a7cca61c348?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 800562,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/soupdiver"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"ea09c93b9b8d47ea30af1a7cca61c348"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/615"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-08T07:42:13Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 3,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Prevent backticked markup from getting parsed"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-08T08:18:55Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 615,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-08T08:19:51Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6097141,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/615"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Running `jekyll --no-auto` results in the following error:\n\n    /Users/davidleibovic/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n    Configuration from /Users/davidleibovic/hackerschool/processing-js.github.com/_config.yml\n    Building site: /Users/davidleibovic/hackerschool/processing-js.github.com -&gt; /Users/davidleibovic/hackerschool/processing-js.github.com/_site\n    /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/convertible.rb:37:in `read_yaml': invalid byte sequence in UTF-8 (ArgumentError)\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/page.rb:24:in `initialize'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:140:in `new'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:140:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `r
+ 37 42304   37 15753    0     0   3329      0  0:00:12  0:00:04  0:00:08  4776
+ 37 42304   37 15753    0     0   2993      0  0:00:14  0:00:05  0:00:09  4111ead_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:98:in `read'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:38:in `process'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/bin/jekyll:250:in `&lt;top (required)&gt;'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/bin/jekyll:19:in `load'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/bin/jekyll:19:in `&lt;main&gt;'    \n\nAdditionally, the `_site` directory will be empty."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"davidleibovic"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/1575e0f7ac55f26ab6067a7f950d08a3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 1332576,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/davidleibovic"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"1575e0f7ac55f26ab6067a7f950d08a3"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/612"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-04T21:26:01Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"invalid byte sequence in UTF-8 (ArgumentError)"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-04T21:30:36Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 612,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-04T21:30:54Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6032924,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/612"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Running\n\n    rake post title=\"[Some text] $PATH [other text]\n\nresults in an error saying that the post's title is too long because $PATH has been interpreted and the resulting title is \"some-text-really_long_text_containing_everything_in_your_path_variable-other-text\"."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"andreipetre"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/416ffae0c066ac331deaf2c2265bce28?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 1036164,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/andreipetre"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"416ffae0c066ac331deaf2c2265bce28"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/611"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-08-03T09:40:31Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 4,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Rake post interprets variable names in title"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-03T10:51:29Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 611,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-03T10:51:29Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 6011225,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/611"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/610.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/610"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/610.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Saw some erroring tests when rebasing my feature branch over the latest Jekyll changes. They were erroring because `Redcarpet.new` was being called rather than `Markdown.new`, which is the new way to invoke Redcarpet. All tests pass on this branch."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tubbo"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/0f985a758113f6502f668b09d2b15fc2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 113026,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tubbo"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"0f985a758113f6502f668b09d2b15fc2"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/610"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-07-29T06:36:10Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 2,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Fix broken tests related to old method of invoking Redcarpet."</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-07-30T14:10:05Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 610,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-07-30T14:10:06Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5901784,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/610"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/608.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/608"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/608.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Fixes #470"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/608"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-07-19T00:22:05Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 7,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Display exception message when using --auto"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:33Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 608,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:33Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5703017,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/608"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"I've created some new liquid tags to do a few things that seem usefu (an example being https://github.com/matthewowen/jekyll-json/blob/master/jekyll_json.rb). \n\nWhether I have the 'safe true' flag or not, they aren't working in safe mode. I can't get the 'render_time' example at https://github.com/mojombo/jekyll/wiki/Plugins to work in safe mode, either.\n\nCan extensions to Liquid::Tag be used in safe mode, or is it just Converters and Generators? I'd like to know if I should look for a solution in what I'm doing, or if this is a bit of a wild goose chase..."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"matthewowen"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/f41bf834bed6baa23a911370f1118bea?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 386231,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/matthewowen"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"f41bf834bed6baa23a911370f1118bea"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/600"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-07-11T20:36:04Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 4,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Custom liquid tags supported in --safe mode?"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-08T15:33:02Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 600,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-08T15:33:02Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5558054,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/600"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"*Preface: if this is already easily achievable with vanilla jekyll, please educate me and close this request.*\n\nFrom an organizational standpoint, it would be **awesome** if arbitrary collections, similar to posts, were supported (except date/creation time in file-names not really need to be supported). Any of these collections would be available off the `site` template variable somewhere, similar to posts.\n\nI would love to be able to organize other things like portfolio entries, past projects, etc... in a collection based fashion like is possible with posts.\n"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"jdc0589"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/0c90a042d49a6b128fec5f675825c03b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 327666,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/jdc0589"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"0c90a042d49a6b128fec5f675825c03b"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/598"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-07-11T04:09:51Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 5,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Support custom collection types in addition to 'posts'"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-17T19:32:20Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 598,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-17T19:37:14Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5540723,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/598"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"When the bullet list item starts from the non-ascii character, the list is not being rendered correctly.\n\nGitHub Markdown generates it fine. The following text\n\n``` markdown\n- &#1087;&#1088;&#1080;&#1074;&#1077;&#1090;\n- &#1084;&#1080;&#1088;\n```\nis shown as:\n\n- &#1087;&#1088;&#1080;&#1074;&#1077;&#1090;\n- &#1084;&#1080;&#1088;\n\nBut Jekyll Markdown fails. The same text:\n\n``` markdown\n- &#1087;&#1088;&#1080;&#1074;&#1077;&#1090;\n- &#1084;&#1080;&#1088;\n```\n\nis being rendered something like that:\n\n&gt;- &#1087;&#1088;&#1080;&#1074;&#1077;&#1090; - &#1084;&#1080;&#1088;\n\nTested on Ruby 1.8.7."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"ahitrin"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/6af884fbae0ab58d6640f98646c9ed9d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 587891,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/ahitrin"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"6af884fbae0ab58d6640f98646c9ed9d"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/586"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-28T16:34:56Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Non-ASCII symbols in bullet list"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-29T04:12:56Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 586,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-29T04:12:56Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5326452,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/586"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Thoughts on moving from OptionParser to Commander.rb (https://github.com/visionmedia/commander). This could essentially clean up `bin/jekyll` quite a bit."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/582"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-20T17:59:46Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 0,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"OptionParser -&gt; Commander"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-07-24T11:14:01Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 582,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-07-24T11:14:01Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5176616,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/582"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Reminds me of  a Bruce Springsteen song! Hope some time can be set aside to work through these."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"trans"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/45196398e9685000d195ec626d477f0e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 23423,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/trans"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"45196398e9685000d195ec626d477f0e"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/578"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-17T04:48:39Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 6,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"\"57 Pull Requests\""</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-19T01:00:20Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 578,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-28T03:08:46Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5110305,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/578"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/575.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/575"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/575.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"This pull request is based upon the work that @mojombo and I started working on refactoring the existing migrators, adding some structure and testability. It is also currently work in progress.\n\n## General\n\nImporters are simple classes in the `Jekyll::Importers` namespace, that extend `Importer` and implement 3 methods.\n\n* `self.help` - return a string of the usage and command line options required\n* `self.validate` - validate and return an array of error messages for command line options\n* `self.process` - process the import and return a specific data structure\n\n```ruby\nmodule Jekyll\n  module Importers\n    class CSV &lt; Importer\n      def self.help\n        # ...\n      end\n\n      def self.validate(options)\n        # ...\n      end\n\n      def self.process(options)\n        # ...\n      end\n    end\n  end\nend\n```\n\n## Help\n\nThe `self.help` method basically returns a string which will be used for the help message and if zero options are passed.\n\n## Validation\n\nThe `self.validate` method will check that the required options are present and valid in the `options` hash passed to the method. Should there be any errors, the messages for these errors should be pushed into an array that is returned by `self.validate`.\n\n## Processing\n\nThe `self.process` method will process the import and return a hash that the `write_files` method in `Importer` will use to write all the different files.\n\n### File Hash\n\nEach file to be written is represent with it's own hash with specific keys.\n\n```ruby\n{\n  :name =&gt; 'the-file-name.md',\n  :body =&gt; 'The contents to be written',\n\n  :header =&gt; {\n    :layout =&gt; 'post',\n    :title =&gt; 'The Title'\n  }\n}\n```\n\n### Files Hash\n\nThis is the hash that is going to be returned from the `self.process` method. Some importers may wish to import other types of files like `pages` from WordPress. Just specify another key in the array with the type of file and include an array of file hashes. The type will also determine which directory the files are written into.\n\n```ruby\n{\n  :posts =&gt; posts\n  # :pages =&gt; pages\n}\n```"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/575"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-13T00:27:32Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Refactoring migrators into importers"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:36Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 575,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:36Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5037888,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/575"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/574.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/574"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/574.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Remove the `rbx` testing and the pre-installation of pygments which isn't needed now due to `pygments.rb`."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/574"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-11T23:41:35Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 0,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Update travis-ci configuration file"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-11T23:53:45Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 574,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-11T23:53:45Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5014982,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/574"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"With the next release of Mac OS X not far off, I'm wondering if anyone's considered how Jekyll will/will not address the addition of a feature like Gatekeeper. Most of you are probably aware of this, but it's been on my mind lately so I thought I'd put it out there. \n\nCurrently, 3 modes are supported within Gatekeeper: \n\n1. Mac App Store only\n\n2. Mac App Store + \"Known developers\" (The Developer ID program)\n\n3. Install from anywhere\n\nThinking about how Jekyll (and its dependencies) fit in, it seems like only #2 and #3 are an option given the Sandboxing rules which apply to MAS applications. Does Jekyll plan to adopt Dev ID? I'm not aware of anything in the MIT License which would prevent this (as opposed to say, GPL, which might have stricter requirements), but I'm by no means an expert on it either.  \n\nFrom what I know, there is an override where you can right-click an application's icon to bypass the Gatekeeper dialog, but as Jekyll and the dependencies are run from a Terminal, this obviously doesn't work.  \n\nAs things stand, the default Gatekeeper setting is #2, which seems like a fair compromise, but since Jekyll is open source, the question remains.  From a security perspective, it would be reassuring to know that all the software I'm using has either been vetted (through the App Store) or comes from developers in good standing.\n\nI seem to remember that a number of the Jekyll developers are Mac users (TPW, for example), but I'm curious if they've decided how to handle this?"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"chrisfinazzo"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/955a3b84c237ea58f3da1a2ac6a618fe?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 1534882,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/chrisfinazzo"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"955a3b84c237ea58f3da1a2ac6a618fe"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/573"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-11T15:32:01Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 3,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Jekyll &amp; Gatekeeper"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-11T21:46:35Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 573,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-11T21:46:35Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 5005850,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/573"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: null,
+      <span style="color: #8b2252;">"html_url"</span>: null,
+      <span style="color: #8b2252;">"diff_url"</span>: null
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"I have been getting these errors since quite sometime. I dont know if its jekyll specific but anyways im bringing it into attention.  Im using arch linux. Any extra info can be provided.\n\n-&gt; jekyll --version\n\n\t/usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n\tJekyll 0.11.2\n\n-&gt; ruby --version\n\n\truby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]\n\n\n"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"jaseemabid"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/40901f06ff8e7bb58e200630c613d647?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 601714,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/jaseemabid"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"40901f06ff8e7bb58e200630c613d647"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/571"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-05T08:51:39Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 2,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"jekyll --version throws error messages"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-10T05:14:48Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 571,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-10T05:14:48Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 4904529,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/571"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/570.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/570"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/570.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Updates the version of Redcarpet to version 2. Also uses `Albino` to highlight the syntaxes in fenced code blocks. It also applies the SmartyPants rendering to everything, this could be changed. Not sure how valuable it would be to add the extra GitHub sugar as functionality."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/570"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-06-05T02:43:52Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 18,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Update Redcarpet support to version 2"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:40Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 570,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:40Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 4901213,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/570"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/569.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/569"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/569.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"This swaps out the `albino` gem for the better `pygments.rb`. This is one step further to getting Jekyll running on JRuby ala #213."</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/569"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-05-31T19:54:36Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Swap out albino for pygments.rb"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-11T23:19:40Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 569,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-11T23:19:40Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 4844625,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/569"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/568.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/568"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/568.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"Allows Jekyll to be tested on Travis-CI\n\n* Tests against: 1.9.3, 1.9.2, 1.8.7, rbx-18mode\n* Fixes #387\n\n**Notes**: `rbx-19mode` seems to fail on `liquid` for some reason. Not sure if it's worth pursuing as it runs on 1.8.7, 1.9.2, and 1.9.3 without issues.\n\nExample build output can be found here: http://travis-ci.org/#!/tombell/jekyll/builds/1490289"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/568"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-05-31T18:55:45Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 1,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Add travis-ci configuration file"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-06-11T22:52:58Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 568,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-06-11T22:52:58Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 4843451,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/568"</span>
+  },
+  {
+    <span style="color: #8b2252;">"pull_request"</span>: {
+      <span style="color: #8b2252;">"patch_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/567.patch"</span>,
+      <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/pull/567"</span>,
+      <span style="color: #8b2252;">"diff_url"</span>: <span style="color: #8b2252;">"https://githu
+100 42304  100 42304    0     0   7756      0  0:00:05  0:00:05 --:--:-- 10523</span>
+<span style="color: #8b2252;">b.com/mojombo/jekyll/pull/567.diff"</span>
+    },
+    <span style="color: #8b2252;">"body"</span>: <span style="color: #8b2252;">"This is the beginning of implementing support for #17. I currently have a ghetto `rake` task for creating empty posts ready to write, but it would be awesome to have this small feature right in Jekyll.\n\n```\njekyll generate post --title 'Amazing New Jekyll Generators'\n```\n\nThis will create a new file in `_posts` called `_posts/{todays-date}-amazing-new-jekyll-generators.md` containing the YAML header defaulting the `layout` to `post` and `title` to the given title.\n\n```\n---\nlayout: post\ntitle: Amazing New Jekyll Generators\n---\nTODO\n```\n\nI hope to add `--textile` and `--markdown` options to change the file extension which is used.\n\nI was thinking it may be best to extract the generating functionality into classes/modules in `lib/` but the naming seems like it would clash with the existing `generator` stuff, so any other alternative names would be welcomed.\n\nFor generating a skeleton site, would it be best to generate just the directory structure, empty layout files, and minimal configuration file or include a minimalist layout to get people started?"</span>,
+    <span style="color: #8b2252;">"user"</span>: {
+      <span style="color: #8b2252;">"login"</span>: <span style="color: #8b2252;">"tombell"</span>,
+      <span style="color: #8b2252;">"avatar_url"</span>: <span style="color: #8b2252;">"https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"</span>,
+      <span style="color: #8b2252;">"id"</span>: 129327,
+      <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/users/tombell"</span>,
+      <span style="color: #8b2252;">"gravatar_id"</span>: <span style="color: #8b2252;">"c32081ae1628cb285e6a5d0280b59caf"</span>
+    },
+    <span style="color: #8b2252;">"milestone"</span>: null,
+    <span style="color: #8b2252;">"assignee"</span>: null,
+    <span style="color: #8b2252;">"html_url"</span>: <span style="color: #8b2252;">"https://github.com/mojombo/jekyll/issues/567"</span>,
+    <span style="color: #8b2252;">"created_at"</span>: <span style="color: #8b2252;">"2012-05-31T14:37:55Z"</span>,
+    <span style="color: #8b2252;">"comments"</span>: 2,
+    <span style="color: #8b2252;">"title"</span>: <span style="color: #8b2252;">"Add initial generate command to generate posts"</span>,
+    <span style="color: #8b2252;">"closed_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:50Z"</span>,
+    <span style="color: #8b2252;">"number"</span>: 567,
+    <span style="color: #8b2252;">"state"</span>: <span style="color: #8b2252;">"closed"</span>,
+    <span style="color: #8b2252;">"updated_at"</span>: <span style="color: #8b2252;">"2012-08-10T03:38:50Z"</span>,
+    <span style="color: #8b2252;">"id"</span>: 4838012,
+    <span style="color: #8b2252;">"labels"</span>: [
+
+    ],
+    <span style="color: #8b2252;">"url"</span>: <span style="color: #8b2252;">"https://api.github.com/repos/mojombo/jekyll/issues/567"</span>
+  }
+]
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Homework &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ol>
+<li>Use the <a href="http://developer.github.com/v3/users/">Users</a> resource to
+     discover how many public repositories (<code>public_repos</code>) I have (<code>jblomo</code>).
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/">Repositories</a> resource
+     to discover which repositories (<code>full_name</code>) I am only a member of.
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/">Repositories</a> resource
+     to find the <code>login</code> s of the contributors to the <code>mrjob</code> repository owned
+     by <code>Yelp</code>
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/commits/">Commits</a> resource
+     to find what the <code>message</code> was of the first commit to the <code>webarch253</code>
+     repository owned by <code>jblomo</code>.
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Submit Homework by Email &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Include the answer, and the URL(s) needed to find the answer
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Don't forget your Project &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>October 18th (1/4 of your time is gone)
+</li>
+<li>There are 4 main parts:
+<ul>
+<li>HTML to submit the form
+</li>
+<li>Handle <code>POST</code> to <code>server/create</code> to store redirect and return result
+</li>
+<li>Handle <code>GET</code> to short URL and redirect
+</li>
+<li>Handle <code>GET</code> to unknown URL and 404
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-09-28 00:46:54 PDT</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

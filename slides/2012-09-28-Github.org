@@ -1,0 +1,852 @@
+* RESTful in Action :slide:center:
+Use Github's API
+
+* =curl= :slide:
+  + Command-line URL
+  + Shortcut for manually making Telnet requests
+  + turned into a library
+** We'll just use command line :notes:
+
+* Show Headers :slide:
+#+begin_src bash
+curl -i http://people.ischool.berkeley.edu/~jblomo/
+#+end_src
+
+#+begin_src http
+HTTP/1.1 200 OK
+Date: Fri, 28 Sep 2012 06:25:13 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
+ETag: "a6ec002-48-4c89822b95c80"
+Accept-Ranges: bytes
+Content-Length: 72
+Content-Type: text/html; charset=UTF-8
+#+end_src
+
+#+begin_src html
+<h1>Jim's page</h1>
+Pretty <strong>cool!</strong>
+
+Hello <em>class</em>
+#+end_src
+
+* [[http://developer.github.com/v3/][Github API]] :slide:
+#+begin_src bash
+curl -i "https://api.github.com/repos/mojombo/jekyll/issues?state=closed"
+#+end_src
+
+#+begin_src http
+Server: nginx
+Date: Fri, 28 Sep 2012 06:33:23 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: "67201385c23a16bed5fdad77505c9c19"
+Link: <https://api.github.com/repos/mojombo/jekyll/issues?page=2&state=closed>; rel="next", <https://api.github.com/repos/mojombo/jekyll/issues?page=14&state=closed>; rel="last"
+X-RateLimit-Remaining: 4994
+Content-Length: 42304
+Last-Modified: Fri, 28 Sep 2012 03:23:12 GMT
+X-RateLimit-Limit: 5000
+Vary: Accept
+X-Content-Type-Options: nosniff
+X-GitHub-Media-Type: github.beta
+Cache-Control: public, max-age=60, s-maxage=60
+#+end_src
+
+#+begin_src json
+[
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "I just hit feedburner's 512k limit on feed size, because jekyll includes every single post in the atom.xml file.\n\n--limit_posts is close to what I want, but I don't want to affect the HTML output, just atom.xml.\n\nSo another flag like --limit_atom_posts or something like that.",
+    "user": {
+      "login": "stephenh",
+      "avatar_url": "https://secure.gravatar.com/avatar/d1ab193da2440f9b2c6a3b196df8477b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 6401,
+      "url": "https://api.github.com/users/stephenh",
+      "gravatar_id": "d1ab193da2440f9b2c6a3b196df8477b"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/646",
+    "created_at": "2012-09-22T19:36:45Z",
+    "comments": 7,
+    "title": "limit posts only for atom.xml",
+    "closed_at": "2012-09-23T14:27:45Z",
+    "number": 646,
+    "state": "closed",
+    "updated_at": "2012-09-25T10:02:45Z",
+    "id": 7062785,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/646"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Hi all,\n\nI'm running my Jekyll-blog inside a subfolder called /blog. Apart from that, I'm using the default theme (tom). Jekyll is running in safe-mode. My BASE_PATH is set to \"/blog\".\n\nNow here's the problem: The links to the individual postings on the archive-page include the \"blog\"-subfolder, meaning they look like www.foo.bar/blog/2012/08/28/third-blogpost. Everything's alright there.\nThe links on the starting page however don't have the subfolder included. They look like this: www.foo.bar/2012/08/28/third-blogpost. The list of postings on the starting page is created by the snippet that's included in the default configuration of the theme:\n```\n<ul class=\"posts\">\n  {% for post in site.posts %}\n    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href=\"{{ BASE_PATH }}{{ post.url }}\">{{ post.title }}</a></li>\n  {% endfor %}\n</ul>\n```\nDoes anyone have an idea why the subfolder (i.e. the BASE_PATH) isn't included in the rendered html-files, even though it should judging by the source code above?\n\nThanks in advance\nituri",
+    "user": {
+      "login": "ituri",
+      "avatar_url": "https://secure.gravatar.com/avatar/a3ad34132e3a0b6eae9230f1023e0c21?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 871297,
+      "url": "https://api.github.com/users/ituri",
+      "gravatar_id": "a3ad34132e3a0b6eae9230f1023e0c21"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/635",
+    "created_at": "2012-09-01T19:37:11Z",
+    "comments": 2,
+    "title": "BASE_PATH / safe-mode confusion",
+    "closed_at": "2012-09-02T08:31:35Z",
+    "number": 635,
+    "state": "closed",
+    "updated_at": "2012-09-02T08:31:35Z",
+    "id": 6597668,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/635"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Hi!\n\nI'm using:\n\n* Windows 8\n* Ruby 187\n* msysGit\n\nI created a folder, initialized a repo with git init and added some markdown files there. From that moment on if I run jekyll with the --auto switch it won't stop regenerating my entire site all the time.\n\nIf I remove the git repostory (by removing the .git dir) everything goes back to normal.\n\nSteps to reproduce:\n\n1. Create empty directory\n2. Run \"git init\"\n3. Throw some markdown files\n4. Run \"jekyll --server --auto\"\n\nThe output will be something like this:\n\n\tC:\\Dev\\Workspace\\blog.tucaz.net>jekyll --server --auto\n\tConfiguration from C:/Dev/Workspace/blog.tucaz.net/_config.yml\n\tAuto-regenerating enabled: C:/Dev/Workspace/blog.tucaz.net -> public\n\t[2012-08-30 19:08:30] INFO  WEBrick 1.3.1\n\t[2012-08-30 19:08:30] INFO  ruby 1.8.7 (2012-06-29) [i386-mingw32]\n\t[2012-08-30 19:08:30] INFO  WEBrick::HTTPServer#start: pid=3088 port=4000\n\t[2012-08-30 19:08:30] regeneration: 217 files changed\n\t[2012-08-30 19:08:31] regeneration: 107 files changed\n\t[2012-08-30 19:08:32] regeneration: 107 files changed\n\t[2012-08-30 19:08:33] regeneration: 107 files changed\n\t[2012-08-30 19:08:34] regeneration: 107 files changed\n\t[2012-08-30 19:08:35] regeneration: 107 files changed\n\nThanks much!",
+    "user": {
+      "login": "tucaz",
+      "avatar_url": "https://secure.gravatar.com/avatar/878e48ecc4d15478e75e65add66990bb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 111954,
+      "url": "https://api.github.com/users/tucaz",
+      "gravatar_id": "878e48ecc4d15478e75e65add66990bb"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/634",
+    "created_at": "2012-08-30T22:10:16Z",
+    "comments": 1,
+    "title": "Jekyll keeps regenerating pages all the time when ran in a git repository folder",
+    "closed_at": "2012-08-30T22:13:50Z",
+    "number": 634,
+    "state": "closed",
+    "updated_at": "2012-08-30T22:13:50Z",
+    "id": 6566469,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/634"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/629.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/629",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/629.diff"
+    },
+    "body": "A modification of this pull request: https://github.com/mojombo/jekyll/pull/556",
+    "user": {
+      "login": "edeustace",
+      "avatar_url": "https://secure.gravatar.com/avatar/0a5dd8dd6c5c518c224d971ef265da95?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 101623,
+      "url": "https://api.github.com/users/edeustace",
+      "gravatar_id": "0a5dd8dd6c5c518c224d971ef265da95"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/629",
+    "created_at": "2012-08-23T10:10:24Z",
+    "comments": 0,
+    "title": "Add a configuration variable keep_files (default ['.git']) - these files don't get wiped during site#clean",
+    "closed_at": "2012-08-23T10:12:50Z",
+    "number": 629,
+    "state": "closed",
+    "updated_at": "2012-08-23T10:12:50Z",
+    "id": 6403362,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/629"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/628.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/628",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/628.diff"
+    },
+    "body": "I cloned the repo and then was reading the code of the posterous importer\n\nthen I tried to run the command\n\n```ruby\nruby -r './lib/jekyll/migrators/posterous.rb' -e 'Jekyll::Posterous.process(\"EMAIL\", \"PASS\", \"API_KEY\")'\n```\n\nand I got an operation not found error, and trying to run it from the jekyll command I got \n\n```ruby\nruby -rubygems -e 'require \"jekyll/migrators/posterous\";  Jekyll::Posterous.process(\"EMAIL\", \"PASS\", \"API_KEY\")'\n/Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n/Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/1.9.1/net/http.rb:2632:in `error!': 500 \"Internal Server Error\" (Net::HTTPFatalError)\n\tfrom /Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/jekyll-0.11.2/lib/jekyll/migrators/posterous.rb:26:in `fetch'\n\tfrom /Users/fespinoza/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/jekyll-0.11.2/lib/jekyll/migrators/posterous.rb:32:in `process'\n\tfrom -e:1:in `<main>'\n```\n\nI was seeing the posterous API site and then I tried the url\n\nRequest URL: http://posterous.com/api/2/sites/fespinoza/posts Response: 200 OK\n\nfrom the site api and I that worked, when I modified it from the code, I assume that posterous people change its API",
+    "user": {
+      "login": "fespinoza",
+      "avatar_url": "https://secure.gravatar.com/avatar/544e0d28a9aed9a3b3e8a60e2a2d1c4c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 167989,
+      "url": "https://api.github.com/users/fespinoza",
+      "gravatar_id": "544e0d28a9aed9a3b3e8a60e2a2d1c4c"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/628",
+    "created_at": "2012-08-21T04:18:41Z",
+    "comments": 0,
+    "title": "Fixed posterous api url",
+    "closed_at": "2012-08-31T03:19:38Z",
+    "number": 628,
+    "state": "closed",
+    "updated_at": "2012-08-31T03:19:38Z",
+    "id": 6342150,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/628"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "OS: Mountain Lion\nInstallation errors\n\n    sudo gem update --system\n    Password:\n    Latest version currently installed. Aborting.\n\n    sudo gem install jekyll\n\n    Building native extensions.  This could take a while...\n    ERROR:  Error installing jekyll:\n        ERROR: Failed to build gem native extension.\n\n            /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby extconf.rb\n    mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/ruby.h\n\n\n    Gem files will remain installed in /Library/Ruby/Gems/1.8/gems/fast-stemmer-1.0.1 for inspection.\n    Results logged to /Library/Ruby/Gems/1.8/gems/fast-stemmer-1.0.1/ext/gem_make.out\n\nWhy???\n\n\n",
+    "user": {
+      "login": "wangxian",
+      "avatar_url": "https://secure.gravatar.com/avatar/20e0b94af31316f0a411b6fc758c2a15?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 639791,
+      "url": "https://api.github.com/users/wangxian",
+      "gravatar_id": "20e0b94af31316f0a411b6fc758c2a15"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/627",
+    "created_at": "2012-08-21T02:40:18Z",
+    "comments": 3,
+    "title": "Mountain Lion - Error installing jekyll",
+    "closed_at": "2012-08-21T05:51:59Z",
+    "number": 627,
+    "state": "closed",
+    "updated_at": "2012-08-21T05:52:10Z",
+    "id": 6341209,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/627"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "When Jekyll generates HTML from posts, it's currently converting `--` into `&#8211;` (an en-dash) instead of `&mdash;` or `&#8212;`. This is more in the nature of a typographical issue than a serious bug, but it still seems visually wrong.\n\nIs this a deliberate design decision, or something for which a patch would be accepted?",
+    "user": {
+      "login": "CodeGnome",
+      "avatar_url": "https://secure.gravatar.com/avatar/afa4c50c7af924d001bdae05755f9b55?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 385462,
+      "url": "https://api.github.com/users/CodeGnome",
+      "gravatar_id": "afa4c50c7af924d001bdae05755f9b55"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/620",
+    "created_at": "2012-08-13T18:41:52Z",
+    "comments": 2,
+    "title": "Two dashes print as en-dash instead of em-dash.",
+    "closed_at": "2012-08-14T02:04:04Z",
+    "number": 620,
+    "state": "closed",
+    "updated_at": "2012-08-14T02:04:04Z",
+    "id": 6198489,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/620"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Hey,\nI just wanted to publish a blog post for a little plugin I made. I wanted to show the syntax of the plugin {% ... %} in the post and so i put it in `.\nBut when I previewed the post I recognized that Jekyll tried to parse this through my plugin. Is there a way of preventing this behavior and just outputting the the markup?",
+    "user": {
+      "login": "soupdiver",
+      "avatar_url": "https://secure.gravatar.com/avatar/ea09c93b9b8d47ea30af1a7cca61c348?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 800562,
+      "url": "https://api.github.com/users/soupdiver",
+      "gravatar_id": "ea09c93b9b8d47ea30af1a7cca61c348"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/615",
+    "created_at": "2012-08-08T07:42:13Z",
+    "comments": 3,
+    "title": "Prevent backticked markup from getting parsed",
+    "closed_at": "2012-08-08T08:18:55Z",
+    "number": 615,
+    "state": "closed",
+    "updated_at": "2012-08-08T08:19:51Z",
+    "id": 6097141,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/615"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Running `jekyll --no-auto` results in the following error:\n\n    /Users/davidleibovic/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n    Configuration from /Users/davidleibovic/hackerschool/processing-js.github.com/_config.yml\n    Building site: /Users/davidleibovic/hackerschool/processing-js.github.com -> /Users/davidleibovic/hackerschool/processing-js.github.com/_site\n    /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/convertible.rb:37:in `read_yaml': invalid byte sequence in UTF-8 (ArgumentError)\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/page.rb:24:in `initialize'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:140:in `new'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:140:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `r 37 42304   37 15753    0     0   3329      0  0:00:12  0:00:04  0:00:08  4776 37 42304   37 15753    0     0   2993      0  0:00:14  0:00:05  0:00:09  4111ead_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:135:in `block in read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `each'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:130:in `read_directories'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:98:in `read'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/lib/jekyll/site.rb:38:in `process'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/gems/jekyll-0.11.2/bin/jekyll:250:in `<top (required)>'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/bin/jekyll:19:in `load'\n        from /Users/davidleibovic/.rvm/gems/ruby-1.9.3-p125@rails3tutorial2ndEd/bin/jekyll:19:in `<main>'    \n\nAdditionally, the `_site` directory will be empty.",
+    "user": {
+      "login": "davidleibovic",
+      "avatar_url": "https://secure.gravatar.com/avatar/1575e0f7ac55f26ab6067a7f950d08a3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 1332576,
+      "url": "https://api.github.com/users/davidleibovic",
+      "gravatar_id": "1575e0f7ac55f26ab6067a7f950d08a3"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/612",
+    "created_at": "2012-08-04T21:26:01Z",
+    "comments": 1,
+    "title": "invalid byte sequence in UTF-8 (ArgumentError)",
+    "closed_at": "2012-08-04T21:30:36Z",
+    "number": 612,
+    "state": "closed",
+    "updated_at": "2012-08-04T21:30:54Z",
+    "id": 6032924,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/612"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Running\n\n    rake post title=\"[Some text] $PATH [other text]\n\nresults in an error saying that the post's title is too long because $PATH has been interpreted and the resulting title is \"some-text-really_long_text_containing_everything_in_your_path_variable-other-text\".",
+    "user": {
+      "login": "andreipetre",
+      "avatar_url": "https://secure.gravatar.com/avatar/416ffae0c066ac331deaf2c2265bce28?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 1036164,
+      "url": "https://api.github.com/users/andreipetre",
+      "gravatar_id": "416ffae0c066ac331deaf2c2265bce28"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/611",
+    "created_at": "2012-08-03T09:40:31Z",
+    "comments": 4,
+    "title": "Rake post interprets variable names in title",
+    "closed_at": "2012-08-03T10:51:29Z",
+    "number": 611,
+    "state": "closed",
+    "updated_at": "2012-08-03T10:51:29Z",
+    "id": 6011225,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/611"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/610.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/610",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/610.diff"
+    },
+    "body": "Saw some erroring tests when rebasing my feature branch over the latest Jekyll changes. They were erroring because `Redcarpet.new` was being called rather than `Markdown.new`, which is the new way to invoke Redcarpet. All tests pass on this branch.",
+    "user": {
+      "login": "tubbo",
+      "avatar_url": "https://secure.gravatar.com/avatar/0f985a758113f6502f668b09d2b15fc2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 113026,
+      "url": "https://api.github.com/users/tubbo",
+      "gravatar_id": "0f985a758113f6502f668b09d2b15fc2"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/610",
+    "created_at": "2012-07-29T06:36:10Z",
+    "comments": 2,
+    "title": "Fix broken tests related to old method of invoking Redcarpet.",
+    "closed_at": "2012-07-30T14:10:05Z",
+    "number": 610,
+    "state": "closed",
+    "updated_at": "2012-07-30T14:10:06Z",
+    "id": 5901784,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/610"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/608.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/608",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/608.diff"
+    },
+    "body": "Fixes #470",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/608",
+    "created_at": "2012-07-19T00:22:05Z",
+    "comments": 7,
+    "title": "Display exception message when using --auto",
+    "closed_at": "2012-08-10T03:38:33Z",
+    "number": 608,
+    "state": "closed",
+    "updated_at": "2012-08-10T03:38:33Z",
+    "id": 5703017,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/608"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "I've created some new liquid tags to do a few things that seem usefu (an example being https://github.com/matthewowen/jekyll-json/blob/master/jekyll_json.rb). \n\nWhether I have the 'safe true' flag or not, they aren't working in safe mode. I can't get the 'render_time' example at https://github.com/mojombo/jekyll/wiki/Plugins to work in safe mode, either.\n\nCan extensions to Liquid::Tag be used in safe mode, or is it just Converters and Generators? I'd like to know if I should look for a solution in what I'm doing, or if this is a bit of a wild goose chase...",
+    "user": {
+      "login": "matthewowen",
+      "avatar_url": "https://secure.gravatar.com/avatar/f41bf834bed6baa23a911370f1118bea?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 386231,
+      "url": "https://api.github.com/users/matthewowen",
+      "gravatar_id": "f41bf834bed6baa23a911370f1118bea"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/600",
+    "created_at": "2012-07-11T20:36:04Z",
+    "comments": 4,
+    "title": "Custom liquid tags supported in --safe mode?",
+    "closed_at": "2012-08-08T15:33:02Z",
+    "number": 600,
+    "state": "closed",
+    "updated_at": "2012-08-08T15:33:02Z",
+    "id": 5558054,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/600"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "*Preface: if this is already easily achievable with vanilla jekyll, please educate me and close this request.*\n\nFrom an organizational standpoint, it would be **awesome** if arbitrary collections, similar to posts, were supported (except date/creation time in file-names not really need to be supported). Any of these collections would be available off the `site` template variable somewhere, similar to posts.\n\nI would love to be able to organize other things like portfolio entries, past projects, etc... in a collection based fashion like is possible with posts.\n",
+    "user": {
+      "login": "jdc0589",
+      "avatar_url": "https://secure.gravatar.com/avatar/0c90a042d49a6b128fec5f675825c03b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 327666,
+      "url": "https://api.github.com/users/jdc0589",
+      "gravatar_id": "0c90a042d49a6b128fec5f675825c03b"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/598",
+    "created_at": "2012-07-11T04:09:51Z",
+    "comments": 5,
+    "title": "Support custom collection types in addition to 'posts'",
+    "closed_at": "2012-08-17T19:32:20Z",
+    "number": 598,
+    "state": "closed",
+    "updated_at": "2012-08-17T19:37:14Z",
+    "id": 5540723,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/598"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "When the bullet list item starts from the non-ascii character, the list is not being rendered correctly.\n\nGitHub Markdown generates it fine. The following text\n\n``` markdown\n- привет\n- мир\n```\nis shown as:\n\n- привет\n- мир\n\nBut Jekyll Markdown fails. The same text:\n\n``` markdown\n- привет\n- мир\n```\n\nis being rendered something like that:\n\n>- привет - мир\n\nTested on Ruby 1.8.7.",
+    "user": {
+      "login": "ahitrin",
+      "avatar_url": "https://secure.gravatar.com/avatar/6af884fbae0ab58d6640f98646c9ed9d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 587891,
+      "url": "https://api.github.com/users/ahitrin",
+      "gravatar_id": "6af884fbae0ab58d6640f98646c9ed9d"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/586",
+    "created_at": "2012-06-28T16:34:56Z",
+    "comments": 1,
+    "title": "Non-ASCII symbols in bullet list",
+    "closed_at": "2012-06-29T04:12:56Z",
+    "number": 586,
+    "state": "closed",
+    "updated_at": "2012-06-29T04:12:56Z",
+    "id": 5326452,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/586"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Thoughts on moving from OptionParser to Commander.rb (https://github.com/visionmedia/commander). This could essentially clean up `bin/jekyll` quite a bit.",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/582",
+    "created_at": "2012-06-20T17:59:46Z",
+    "comments": 0,
+    "title": "OptionParser -> Commander",
+    "closed_at": "2012-07-24T11:14:01Z",
+    "number": 582,
+    "state": "closed",
+    "updated_at": "2012-07-24T11:14:01Z",
+    "id": 5176616,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/582"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "Reminds me of  a Bruce Springsteen song! Hope some time can be set aside to work through these.",
+    "user": {
+      "login": "trans",
+      "avatar_url": "https://secure.gravatar.com/avatar/45196398e9685000d195ec626d477f0e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 23423,
+      "url": "https://api.github.com/users/trans",
+      "gravatar_id": "45196398e9685000d195ec626d477f0e"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/578",
+    "created_at": "2012-06-17T04:48:39Z",
+    "comments": 6,
+    "title": "\"57 Pull Requests\"",
+    "closed_at": "2012-06-19T01:00:20Z",
+    "number": 578,
+    "state": "closed",
+    "updated_at": "2012-08-28T03:08:46Z",
+    "id": 5110305,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/578"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/575.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/575",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/575.diff"
+    },
+    "body": "This pull request is based upon the work that @mojombo and I started working on refactoring the existing migrators, adding some structure and testability. It is also currently work in progress.\n\n## General\n\nImporters are simple classes in the `Jekyll::Importers` namespace, that extend `Importer` and implement 3 methods.\n\n* `self.help` - return a string of the usage and command line options required\n* `self.validate` - validate and return an array of error messages for command line options\n* `self.process` - process the import and return a specific data structure\n\n```ruby\nmodule Jekyll\n  module Importers\n    class CSV < Importer\n      def self.help\n        # ...\n      end\n\n      def self.validate(options)\n        # ...\n      end\n\n      def self.process(options)\n        # ...\n      end\n    end\n  end\nend\n```\n\n## Help\n\nThe `self.help` method basically returns a string which will be used for the help message and if zero options are passed.\n\n## Validation\n\nThe `self.validate` method will check that the required options are present and valid in the `options` hash passed to the method. Should there be any errors, the messages for these errors should be pushed into an array that is returned by `self.validate`.\n\n## Processing\n\nThe `self.process` method will process the import and return a hash that the `write_files` method in `Importer` will use to write all the different files.\n\n### File Hash\n\nEach file to be written is represent with it's own hash with specific keys.\n\n```ruby\n{\n  :name => 'the-file-name.md',\n  :body => 'The contents to be written',\n\n  :header => {\n    :layout => 'post',\n    :title => 'The Title'\n  }\n}\n```\n\n### Files Hash\n\nThis is the hash that is going to be returned from the `self.process` method. Some importers may wish to import other types of files like `pages` from WordPress. Just specify another key in the array with the type of file and include an array of file hashes. The type will also determine which directory the files are written into.\n\n```ruby\n{\n  :posts => posts\n  # :pages => pages\n}\n```",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/575",
+    "created_at": "2012-06-13T00:27:32Z",
+    "comments": 1,
+    "title": "Refactoring migrators into importers",
+    "closed_at": "2012-08-10T03:38:36Z",
+    "number": 575,
+    "state": "closed",
+    "updated_at": "2012-08-10T03:38:36Z",
+    "id": 5037888,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/575"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/574.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/574",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/574.diff"
+    },
+    "body": "Remove the `rbx` testing and the pre-installation of pygments which isn't needed now due to `pygments.rb`.",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/574",
+    "created_at": "2012-06-11T23:41:35Z",
+    "comments": 0,
+    "title": "Update travis-ci configuration file",
+    "closed_at": "2012-06-11T23:53:45Z",
+    "number": 574,
+    "state": "closed",
+    "updated_at": "2012-06-11T23:53:45Z",
+    "id": 5014982,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/574"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "With the next release of Mac OS X not far off, I'm wondering if anyone's considered how Jekyll will/will not address the addition of a feature like Gatekeeper. Most of you are probably aware of this, but it's been on my mind lately so I thought I'd put it out there. \n\nCurrently, 3 modes are supported within Gatekeeper: \n\n1. Mac App Store only\n\n2. Mac App Store + \"Known developers\" (The Developer ID program)\n\n3. Install from anywhere\n\nThinking about how Jekyll (and its dependencies) fit in, it seems like only #2 and #3 are an option given the Sandboxing rules which apply to MAS applications. Does Jekyll plan to adopt Dev ID? I'm not aware of anything in the MIT License which would prevent this (as opposed to say, GPL, which might have stricter requirements), but I'm by no means an expert on it either.  \n\nFrom what I know, there is an override where you can right-click an application's icon to bypass the Gatekeeper dialog, but as Jekyll and the dependencies are run from a Terminal, this obviously doesn't work.  \n\nAs things stand, the default Gatekeeper setting is #2, which seems like a fair compromise, but since Jekyll is open source, the question remains.  From a security perspective, it would be reassuring to know that all the software I'm using has either been vetted (through the App Store) or comes from developers in good standing.\n\nI seem to remember that a number of the Jekyll developers are Mac users (TPW, for example), but I'm curious if they've decided how to handle this?",
+    "user": {
+      "login": "chrisfinazzo",
+      "avatar_url": "https://secure.gravatar.com/avatar/955a3b84c237ea58f3da1a2ac6a618fe?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 1534882,
+      "url": "https://api.github.com/users/chrisfinazzo",
+      "gravatar_id": "955a3b84c237ea58f3da1a2ac6a618fe"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/573",
+    "created_at": "2012-06-11T15:32:01Z",
+    "comments": 3,
+    "title": "Jekyll & Gatekeeper",
+    "closed_at": "2012-06-11T21:46:35Z",
+    "number": 573,
+    "state": "closed",
+    "updated_at": "2012-06-11T21:46:35Z",
+    "id": 5005850,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/573"
+  },
+  {
+    "pull_request": {
+      "patch_url": null,
+      "html_url": null,
+      "diff_url": null
+    },
+    "body": "I have been getting these errors since quite sometime. I dont know if its jekyll specific but anyways im bringing it into attention.  Im using arch linux. Any extra info can be provided.\n\n-> jekyll --version\n\n\t/usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.\n\tJekyll 0.11.2\n\n-> ruby --version\n\n\truby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]\n\n\n",
+    "user": {
+      "login": "jaseemabid",
+      "avatar_url": "https://secure.gravatar.com/avatar/40901f06ff8e7bb58e200630c613d647?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 601714,
+      "url": "https://api.github.com/users/jaseemabid",
+      "gravatar_id": "40901f06ff8e7bb58e200630c613d647"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/571",
+    "created_at": "2012-06-05T08:51:39Z",
+    "comments": 2,
+    "title": "jekyll --version throws error messages",
+    "closed_at": "2012-06-10T05:14:48Z",
+    "number": 571,
+    "state": "closed",
+    "updated_at": "2012-06-10T05:14:48Z",
+    "id": 4904529,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/571"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/570.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/570",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/570.diff"
+    },
+    "body": "Updates the version of Redcarpet to version 2. Also uses `Albino` to highlight the syntaxes in fenced code blocks. It also applies the SmartyPants rendering to everything, this could be changed. Not sure how valuable it would be to add the extra GitHub sugar as functionality.",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/570",
+    "created_at": "2012-06-05T02:43:52Z",
+    "comments": 18,
+    "title": "Update Redcarpet support to version 2",
+    "closed_at": "2012-08-10T03:38:40Z",
+    "number": 570,
+    "state": "closed",
+    "updated_at": "2012-08-10T03:38:40Z",
+    "id": 4901213,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/570"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/569.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/569",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/569.diff"
+    },
+    "body": "This swaps out the `albino` gem for the better `pygments.rb`. This is one step further to getting Jekyll running on JRuby ala #213.",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/569",
+    "created_at": "2012-05-31T19:54:36Z",
+    "comments": 1,
+    "title": "Swap out albino for pygments.rb",
+    "closed_at": "2012-06-11T23:19:40Z",
+    "number": 569,
+    "state": "closed",
+    "updated_at": "2012-06-11T23:19:40Z",
+    "id": 4844625,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/569"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/568.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/568",
+      "diff_url": "https://github.com/mojombo/jekyll/pull/568.diff"
+    },
+    "body": "Allows Jekyll to be tested on Travis-CI\n\n* Tests against: 1.9.3, 1.9.2, 1.8.7, rbx-18mode\n* Fixes #387\n\n**Notes**: `rbx-19mode` seems to fail on `liquid` for some reason. Not sure if it's worth pursuing as it runs on 1.8.7, 1.9.2, and 1.9.3 without issues.\n\nExample build output can be found here: http://travis-ci.org/#!/tombell/jekyll/builds/1490289",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/568",
+    "created_at": "2012-05-31T18:55:45Z",
+    "comments": 1,
+    "title": "Add travis-ci configuration file",
+    "closed_at": "2012-06-11T22:52:58Z",
+    "number": 568,
+    "state": "closed",
+    "updated_at": "2012-06-11T22:52:58Z",
+    "id": 4843451,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/568"
+  },
+  {
+    "pull_request": {
+      "patch_url": "https://github.com/mojombo/jekyll/pull/567.patch",
+      "html_url": "https://github.com/mojombo/jekyll/pull/567",
+      "diff_url": "https://githu100 42304  100 42304    0     0   7756      0  0:00:05  0:00:05 --:--:-- 10523
+b.com/mojombo/jekyll/pull/567.diff"
+    },
+    "body": "This is the beginning of implementing support for #17. I currently have a ghetto `rake` task for creating empty posts ready to write, but it would be awesome to have this small feature right in Jekyll.\n\n```\njekyll generate post --title 'Amazing New Jekyll Generators'\n```\n\nThis will create a new file in `_posts` called `_posts/{todays-date}-amazing-new-jekyll-generators.md` containing the YAML header defaulting the `layout` to `post` and `title` to the given title.\n\n```\n---\nlayout: post\ntitle: Amazing New Jekyll Generators\n---\nTODO\n```\n\nI hope to add `--textile` and `--markdown` options to change the file extension which is used.\n\nI was thinking it may be best to extract the generating functionality into classes/modules in `lib/` but the naming seems like it would clash with the existing `generator` stuff, so any other alternative names would be welcomed.\n\nFor generating a skeleton site, would it be best to generate just the directory structure, empty layout files, and minimal configuration file or include a minimalist layout to get people started?",
+    "user": {
+      "login": "tombell",
+      "avatar_url": "https://secure.gravatar.com/avatar/c32081ae1628cb285e6a5d0280b59caf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 129327,
+      "url": "https://api.github.com/users/tombell",
+      "gravatar_id": "c32081ae1628cb285e6a5d0280b59caf"
+    },
+    "milestone": null,
+    "assignee": null,
+    "html_url": "https://github.com/mojombo/jekyll/issues/567",
+    "created_at": "2012-05-31T14:37:55Z",
+    "comments": 2,
+    "title": "Add initial generate command to generate posts",
+    "closed_at": "2012-08-10T03:38:50Z",
+    "number": 567,
+    "state": "closed",
+    "updated_at": "2012-08-10T03:38:50Z",
+    "id": 4838012,
+    "labels": [
+
+    ],
+    "url": "https://api.github.com/repos/mojombo/jekyll/issues/567"
+  }
+]
+#+end_src
+
+
+* Homework :slide:
+  1. Use the [[http://developer.github.com/v3/users/][Users]] resource to
+     discover how many public repositories (=public_repos=) I have (=jblomo=).
+  1. Use the [[http://developer.github.com/v3/repos/][Repositories]] resource
+     to discover which repositories (=full_name=) I am only a member of.
+  1. Use the [[http://developer.github.com/v3/repos/][Repositories]] resource
+     to find the =login= s of the contributors to the =mrjob= repository owned
+     by =Yelp=
+  1. Use the [[http://developer.github.com/v3/repos/commits/][Commits]] resource
+     to find what the =message= was of the first commit to the =webarch253=
+     repository owned by =jblomo=.
+
+* Submit Homework by Email :slide:
+  + Include the answer, and the URL(s) needed to find the answer
+
+* Don't forget your Project :slide:
+  + October 18th (1/4 of your time is gone)
+  + There are 4 main parts:
+    + HTML to submit the form
+    + Handle =POST= to =server/create= to store redirect and return result
+    + Handle =GET= to short URL and redirect
+    + Handle =GET= to unknown URL and 404
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
