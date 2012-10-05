@@ -6,7 +6,7 @@
   + "Closes the connection"
 What do they mean?
 
-* Internet Architecture is Composable :slide:two_col
+* Internet Architecture is Composable :slide:two_col:
 [[file:img/composable_parts_meme.gif]]
   + Emphasize flexibility
   + Allow for growth, incremental adoption
