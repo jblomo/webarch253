@@ -45,6 +45,14 @@
 ** Tradeoffs :notes:
    + Flexibility wins again
 
+* Browsers :slide:
+  + Type in a URL with domain name (eg. =yelp.com=)
+  + Browser uses DNS to find IP address (eg. =199.255.189.60=)
+  + Connects to address on a port (eg. =80=)
+  + Sends packets of data containing =GET / HTTP/1.1=
+** Packets :notes:
+   + Operating System typically breaks up a stream of data into packets
+
 * Highest selling domain names :slide:animate:
   + diamond.com $7.5 million
   + fb.com $8.5 million
@@ -58,10 +66,10 @@
   + How do we build a reliable Web on it?
 
 * Transport Control Protocol :slide:
-  + Correctness (data corruption)
-  + Reliability (delivery or error)
-  + Ordering (sequence numbers)
-  + Congestion (backoff)
+  + Correctness :: prevent data corruption
+  + Reliability :: ensure delivery or error
+  + Ordering :: add sequence numbers
+  + Congestion :: back off
 ** Accurate delivery :notes:
    + How do you know if the data you receive is the same as was sent? Checksum
    + How does the sender know if a packet was delivered? Ack
@@ -106,6 +114,15 @@
 ** Exponential :notes:
    + Wait 1 second, 2 seconds, 4, 8, 16...
    + Randomize wait, so not everyone tries again at the same time
+   + Then ramp up again: larger packets, bigger window
+
+* Telnet :slide:
+  + TCP/IP client
+  + Connects to a host at lower level
+  + Up to you to communicate with HTTP or any other protocol
+  + Does TCP/IP know about domains or hostnames?
+** No! :notes:
+   + That's why we must send =Host= header in HTTP
 
 * Flexibility :slide:two_col:
   + TCP/IP most commonly used, but not the only ones!
