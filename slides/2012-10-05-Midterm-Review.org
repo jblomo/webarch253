@@ -50,7 +50,7 @@
    + Purpose was to use different elements appropriately
    + =table= used for tabular data, =div= for layout
    + use CSS instead of =font= tag to set text styles
-   + TODO find example
+   + [[http://people.ischool.berkeley.edu/~ryanfbaker/i253/][Ryan's Profile]]
 
 * Forms :slide:
   + What does the =method= attribute in the form specify?
@@ -194,6 +194,16 @@ Date: Fri, 05 Oct 2012 07:20:41 GMT
    + =curl -i https://api.github.com/users/jblomo/repos?type=member=
    + =curl -i https://api.github.com/Yelp/repos/mrojob=
    + =curl -i https://api.github.com/users/jblomo/repos/webarch253/commits=
+
+* Project :slide:
+  + forms Demo
+#+begin_src html
+<form>
+        <input name="name" type="text">
+        <input type="submit">
+</form>
+#+end_src
+
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
