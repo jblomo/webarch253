@@ -72,7 +72,7 @@ def redirect_wiki():
 # =short= word and a URL, then return a 404
 ##/
 @app.route("/create", methods=['PUT', 'POST'])
-def create(short):
+def create():
     """Create an association of =short= with the POST arguement =url="""
     raise NotImplementedError
 
