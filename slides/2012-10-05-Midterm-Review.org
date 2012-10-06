@@ -192,8 +192,8 @@ Date: Fri, 05 Oct 2012 07:20:41 GMT
    + One of the emergent properties of the web: human understandable!
    + =curl -i https://api.github.com/users/jblomo=
    + =curl -i https://api.github.com/users/jblomo/repos?type=member=
-   + =curl -i https://api.github.com/Yelp/repos/mrojob=
-   + =curl -i https://api.github.com/users/jblomo/repos/webarch253/commits=
+   + =curl -i https://api.github.com/repos/Yelp/mrjob/contributors=
+   + =curl -i https://api.github.com/repos/jblomo/webarch253/commits=
 
 * Project :slide:
   + forms Demo
