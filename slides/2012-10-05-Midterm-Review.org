@@ -193,7 +193,7 @@ Date: Fri, 05 Oct 2012 07:20:41 GMT
    + =curl -i https://api.github.com/users/jblomo=
    + =curl -i https://api.github.com/users/jblomo/repos?type=member=
    + =curl -i https://api.github.com/repos/Yelp/mrjob/contributors=
-   + =curl -i https://api.github.com/repos/jblomo/webarch253/commits=
+   + =curl -i https://api.github.com/repos/jblomo/webarch253/commits?until=2012-08-023T00:00:00-07:00=
 
 * Project :slide:
   + forms Demo
