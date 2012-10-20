@@ -16,7 +16,7 @@
 | Sep 28 | [[http://en.wikipedia.org/wiki/HTTP_cookie][Cookie]]; [[http://www.eioba.com/a/1htn/how-i-explained-rest-to-my-wife][REST explained]]; RESTful APIs [[http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http][Part 1]] (especially note on how to model a transaction) and [[http://blog.steveklabnik.com/posts/2011-08-07-some-people-understand-rest-and-http][Part 2]] (careful, uses an older version of Github API); [[http://conferences.idealliance.org/extreme/html/2002/Prescod01/EML2002Prescod01.html][Roots of the REST/SOAP Debate]] (Optional) | [[file:slides/2012-09-28-Cookies.html][Cookies]] & [[file:slides/2012-09-28-REST.html][REST]] | [[file:slides/2012-09-28-Github.html][Github API]] and Project 1 |
 | Oct 5  | [[http://www.garykessler.net/library/tcpip.html][TCP/IP Overview]] (Read for Overview); [[http://amar-linux.blogspot.com/2012/05/how-dns-works.html][How DNS Works]]; [[http://dyn.com/dns-why-its-important-how-it-works/][DNS Steps]] | [[file:slides/2012-10-05-Internet.html][Internet Archetecture]] & [[file:slides/2012-10-05-TCP-DNS.html][DNS]] | [[file:slides/2012-10-05-Midterm-Review.html][Midterm Q&A]] |
 | Oct 12 | N/A | Midterm | None |
-| Oct 19 | N/A | (*P1 Due*) GUEST Latencies & Packaging | CloudFront CDN |
+| Oct 19 | [[http://developer.yahoo.com/performance/rules.html][Best Practices for Speeding Up Your Web Site]] | (*P1 Due*) GUEST [[http://jrheard.com/frontend_long/][Front-end Performance at Yelp]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Test Optimizations]] |
 | Oct 26 | N/A | GUEST Data Storage | midterm review (Vimal) |
 | Nov 2  | N/A | Microformats & SEO | Google Metrics |
 | Nov 9  | N/A | Mobile | Project 2: Mobilize & Discovery |
