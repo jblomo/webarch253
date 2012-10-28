@@ -17,7 +17,7 @@
 | Oct 5  | [[http://www.garykessler.net/library/tcpip.html][TCP/IP Overview]] (Read for Overview); [[http://amar-linux.blogspot.com/2012/05/how-dns-works.html][How DNS Works]]; [[http://dyn.com/dns-why-its-important-how-it-works/][DNS Steps]] | [[file:slides/2012-10-05-Internet.html][Internet Archetecture]] & [[file:slides/2012-10-05-TCP-DNS.html][DNS]] | [[file:slides/2012-10-05-Midterm-Review.html][Midterm Q&A]] |
 | Oct 12 | N/A | Midterm | None |
 | Oct 19 | [[http://developer.yahoo.com/performance/rules.html][Best Practices for Speeding Up Your Web Site]] & (Optional) [[http://www.stevesouders.com/blog/][Steve Souder's Blog]] | (*P1 Due*) GUEST [[http://jrheard.com/frontend_long/][Front-end Performance at Yelp]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Test Optimizations]] |
-| Oct 26 | N/A | GUEST Data Storage | midterm review (Vimal) |
+| Oct 26 | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] | GUEST [[file:slides/2012-10-26-storage-systems.pdf][Data Storage]] | midterm review (Vimal) |
 | Nov 2  | N/A | Microformats & SEO | Google Metrics |
 | Nov 9  | N/A | Mobile | Project 2: Mobilize & Discovery |
 | Nov 16 | N/A | Analytics & Data Mining | mrjob |
