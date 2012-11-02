@@ -1,6 +1,6 @@
 * *Search* :slide:
 
-* Decentralization :slide:two_col:
+* Decentralization :slide:
   + Democratic
   + Resilient
   + Innovative
@@ -13,15 +13,17 @@
   + Link from one document to another
   + But where to start?
 [[file:img/moznew.gif]]
+   + [[http://home.mcom.com/home/whatsnew/whats_new_0294.html][What's New]]
 ** What's New? :notes:
+   + Internet invisioned as moving through hyperlinks
    + A single web page that listed all the new websites
    + "Chess enthusiasts will be interested in the Internet Chess Library"
-   + [[http://home.mcom.com/home/whatsnew/whats_new_0294.html][What's New]]
 
-* Yahoo! :slide:
+* Yahoo! :slide:two_col:
   + "Jerry's guide to the world wide web"
   + Collection of hierarchical links
   + Added search, though not as core competency
+  [[file:img/early-yahoo.jpg]]
 ** History :notes:
    + Started as Tim Breners-Lee imagined, just a series of hyperlinks
    + But quickly clear that search was helpful
@@ -38,7 +40,7 @@
 
 * Search as Core Copetency :slide:
   + 1993 - JumpStation
-  + 1995 - AltaVista, Excite, Yahoo
+  + 1995 - AltaVista, Excite
   + 1996 - Inktomi (HotBot)
   + 1998 - Google, MSN Search (Bing)
   + 2008 - DuckDuckGo
@@ -48,6 +50,8 @@
    + Couple years later, many sprung up, many out of universities
    + A lot of activity between 1998-2008, but mostly false starts and
      acquisitions, dot-com bust
+   + DuckDuckGo: "Better search and no tracking"
+   + Blekko: "Spam free search"
 
 * Essential Features :slide:
   + Crawling :: Automated loading and processing of web pages
@@ -145,6 +149,7 @@
    + B: "He teaches Web Architecture 253."
    + C: "Internet Architecture is next."
 
+
    + ISchool: A
    + teaches: A B
    + Web: A B
@@ -179,9 +184,8 @@
 
 * PageRank :slide:
   + Google's first innovation
-  + Trustworthiness of a page varies with inbound links
+  + Trustworthiness of a page varies with *inbound links*
   + Example of a "static" or "indexing time" feature
-[[file:img/webcrawl6.png]]
 ** Current Use :notes:
    + PageRank type algorithms used to score influence on twitter, or groups of
      friends on Facebook
@@ -190,6 +194,15 @@
    + Static feature is independent of query
    + Dynamic or "query time" features depend on query
    + Static features ideal since you don't have to recalculate for new queries
+
+** PageRank :slide:two_col:
+[[file:img/webcrawl6.png]]
+
+
+[[file:img/webcrawl-pagerank.png]]
+*** Incoming Links :notes:
+   + If we scale size with imporance the links coming into some sites make them
+     more important or trustworthy
 
 * Scale Mattered :slide:two_col:
 [[file:img/Eric-Brewer-small.jpg]]
@@ -201,15 +214,18 @@
    + We'll cover CAP theorem later in class
    + Rigorous understanding of how to build websites
 
-* Scale Continues to Matter :slide:
-  + "Compilers don’t warn Jeff Dean. Jeff Dean warns compilers."
-    [[http://www.quora.com/Jeff-Dean/What-are-all-the-Jeff-Dean-facts][Facts]]
+* Scale Continues to Matter :slide:two_col:
   + Instrumental in scaling Google's systems
   + Many technologies for scaling follow his examples
+  + "Compilers don’t warn Jeff Dean. Jeff Dean warns compilers."
+    [[http://www.quora.com/Jeff-Dean/What-are-all-the-Jeff-Dean-facts][-Jeff Dean Facts]]
 [[file:img/jeffdean.jpg]]
 ** Details :notes:
-   + Like Chuck Norris facts, page has some geeky humor about Jeff Dean
    + "Reading" is watching one of his early videos on Google
+   + Scale can determine the ability and effectiveness of processing large
+     amounts of data
+   + Processing big data can lead to killer features
+   + Like Chuck Norris facts, page has some geeky humor about Jeff Dean
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />

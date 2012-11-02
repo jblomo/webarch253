@@ -1,0 +1,58 @@
+* Homework :slide:
+  + Improve the SEO of your portfolio page
+
+* Meta Information :slide:
+  + Make sure to set a descriptive =title= tag
+  + Fill out the =description= =meta= tag
+
+* Person :slide:
+  + Mark up your own information:
+    + name
+    + jobTitle
+    + affiliation
+    + 3 more from [[http://schema.org/Person][Schema.org Person]]
+  + Check on [[http://www.google.com/webmasters/tools/richsnippets][Structed
+    Data Testing Tool]]
+
+* Organization :slide:
+  + name
+  + url
+  + 3 more from [[http://schema.org/Organization][Schema.org Organization]]
+  + Check on [[http://www.google.com/webmasters/tools/richsnippets][Structed
+    Data Testing Tool]]
+
+* Other :slide:
+  + Choose any other schema
+  + Examples: Event, Place, Product
+  + [[http://schema.org/docs/schemas.html][Schema.org]]
+
+* Microdata :slide:
+  + =itemscope= :: attribute of parent node encompasing =itemprop=
+  + =itemtype= :: URL of schema, eg =http://schema.org/People=
+  + =itemprop= :: property of item being described. Encompasing text is the
+    value
+  + [[http://people.ischool.berkeley.edu/~jblomo/][Demo]] :: note: not complete
+
+* Summary :slide:
+  + Metadata
+  + Person Microdata
+  + Organization Microdata
+  + Other Microdata
+  + Submit via git
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
