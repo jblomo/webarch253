@@ -1,0 +1,145 @@
+* Developing Mobile Apps :slide:
+
+* Specifics :slide:
+  + =media= selected CSS
+  + =meta= tags for mobile
+  + Responsive Layouts
+  + Javascript APIs
+  + Local Data
+
+* Review :slide:
+  + What do you use to show the same content in different ways?
+** Style Sheets! :notes:
+   + CSS
+
+* Right CSS :slide:
+  + Display differently for different devices
+  + Traditionally, devices were general: print, screen, presentation
+#+begin_src html
+<link rel="stylesheet" media="print" href="printer.css">
+<link rel="stylesheet" media="screen,presentation" href="general.css">
+#+end_src
+** Browsers select CSS :notes:
+   + If the browser is not printing a page, doesn't apply =printer.css=
+   + other devices: braille, handheld, tty, tv
+   + printers, screen (desktop web), presentation (full screen)
+   + comma separates devices
+
+** Media Queries :slide:
+   + Addtionally require precise attributes
+   + Combine attributes with logical operators
+#+begin_src html
+<link rel="stylesheet"
+  media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
+<link rel="stylesheet"
+  media="only screen and (min-width: 641px) and (max-width: 800px)" href="ipad.css">
+#+end_src
+** Attributes :notes:
+   + width, height, orientation, aspect-ratio, color, resolution
+   + =only= keyword a backward compatable addition: browsers that don't
+     understand it will not apply because there is no 'only' device
+   + =@media= can be used inline in CSS (example later)
+
+** Now What?  :slide:
+   + Reduce white space
+   + Single column layouts
+   + =display: none= banner ads
+   + Avoid =opactiy= tweaks
+   + Smaller background image
+*** Mobile differences :notes:
+    + Now that you can specify a special mobile sheet, what's in it?
+    + Screen real estate valuable, reduce extra space
+    + slim down loayout, can't see sidebar anyway (we'll talk about doing this
+      automatically later; responsive design)
+    + large images or banner ads have to go
+    + =opacity= and other visual tricks are performance hits
+    + Download less data, eg. big pictures
+
+* Viewport :slide:animate:two_col:
+  + What happens when you load a traditional web page on your phone?
+  + Zoom!
+  + Now you are looking at a sub-section of the page: your viewport
+[[file:img/mobile_visualviewport.jpg]]
+** Zoom! :notes:
+   + Reading will have full details on viewport
+   + Browsers can't /say/ they only support 400px, because everything on the
+     screen would look crazy for normal web pages
+   + So instead they report 850px (eg), then zoom in
+   + But if we design the layout to be for 400px, then we need to tell the
+     browser to actually display page with 400px width
+
+** =meta= viewport :slide:
+   + Controlling viewport can feel more like a native app
+   + User is not zooming in or out
+#+begin_src html
+<meta name=viewport
+  content="width=device-width, initial-scale=1.0,
+           minimum-scale=0.5 maximum-scale=1.0">
+#+end_src
+*** Controlling viewport :notes:
+    + =user-scalable=yes= allow or prevent scaling
+    + instead of saying "400px" we say =device-width= to adapt to different
+      devices
+
+* Responsive Web Design :slide:
+  + Combines these techniques
+  + Sane defaults for all devices
+  + Examples in newer frameworks (Bootstrap, [[http://www.html5boilerplate.com][HTML5 Boilerplate]])
+#+begin_src css
+@media (min-width: 1200px) {
+  .row {
+    margin-left: -30px;
+    *zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  ...}
+@media (max-width: 480px) {
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  .page-header h1 small {
+    display: block;
+    line-height: 20px;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    border: 1px solid #ccc;
+  }
+  ...}
+
+.row-fluid {
+  width: 100%;
+  *zoom: 1;
+}
+#+end_src
+** Details :notes:
+  + =@media= queries to select styles
+  + "Fluid" grids based on relative values, eg. % or em
+
+* Javascript APIs :slide:
+  + Geolocation
+  + Touch Events
+  + Battery
+  +
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
