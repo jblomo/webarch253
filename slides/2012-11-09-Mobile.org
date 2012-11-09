@@ -82,7 +82,7 @@
      before the do something about it.
    + Small companies can try things out, ditch what doesn't work (risky!)
 
-* Bold :slide:
+* Bold :slide:center:
 #+BEGIN_HTML
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="386" id="utv2825" name="utv_n_548037"><param name="flashvars" value="loc=%2F&amp;autoplay=false&amp;vid=3848950" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.ustream.tv/flash/video/3848950" /><embed flashvars="loc=%2F&amp;autoplay=false&amp;vid=3848950" width="480" height="386" allowfullscreen="true" allowscriptaccess="always" id="utv2825" name="utv_n_548037" src="http://www.ustream.tv/flash/video/3848950" type="application/x-shockwave-flash" /></object>
 #+END_HTML
@@ -107,7 +107,7 @@
    + Browsers special apps that essentially can download and run other (web)
      apps
 
-* "Native" Applications :slide:
+* "Native" Applications :slide:two_col:
   + Written directly with libraries and services
   + Platform specific language: Java, Objective-C
   + Fewer constrains, but less compatibility
@@ -123,7 +123,7 @@
    + Gyroscope
    + Services (contacts)
 
-* Web Applications :slide:
+* Web Applications :slide:two_col:
 [[file:img/yelp-mobile.png]]
   + Written for the browser
   + Platform agnostic
@@ -155,7 +155,7 @@
    + Geolocation
    + Screen size, multitouch, finger "presses"
 
-* Closing the Gap :slide:
+* Closing the Gap :slide:two_col:
   + Native apps in HTML5
   + PhoneGap
 [[file:img/phonegap.png]]

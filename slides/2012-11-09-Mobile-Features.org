@@ -16,8 +16,10 @@
   + Display differently for different devices
   + Traditionally, devices were general: print, screen, presentation
 #+begin_src html
-<link rel="stylesheet" media="print" href="printer.css">
-<link rel="stylesheet" media="screen,presentation" href="general.css">
+<link rel="stylesheet" media="print"
+      href="printer.css">
+<link rel="stylesheet" media="screen,presentation"
+      href="general.css">
 #+end_src
 ** Browsers select CSS :notes:
    + If the browser is not printing a page, doesn't apply =printer.css=
