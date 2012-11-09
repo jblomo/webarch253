@@ -192,7 +192,7 @@
 <p id="geolocation">Click to get coordinates</p>
 <button onclick="getLocation()">Try It</button>
 <script>
-var x=document.getElementById("demo");
+var x=document.getElementById("geolocation");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -201,7 +201,9 @@ function getLocation() {
       x.innerHTML="Geolocation is not supported by this browser.";}
   }
 function showPosition(position) {
-  x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+    var position_desc = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = position_desc;
+  console.log(position_desc);
 }
 </script>
 #+END_HTML
@@ -211,7 +213,7 @@ function showPosition(position) {
 <p id="geolocation">Click to get coordinates</p>
 <button onclick="getLocation()">Try It</button>
 <script>
-var x=document.getElementById("demo");
+var x=document.getElementById("geolocation");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);

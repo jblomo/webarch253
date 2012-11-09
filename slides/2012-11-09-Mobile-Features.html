@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-11-09-Mobile-Features"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-09 10:46:12 PST"/>
+<meta name="generated" content="2012-11-09 12:05:21 PST"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -87,6 +87,7 @@
 <ul>
 <li><a href="#sec-9-1">9.1 Ways to find location</a></li>
 <li><a href="#sec-9-2">9.2 <code>navigation.geolocation</code></a></li>
+<li><a href="#sec-9-3">9.3 Code</a></li>
 </ul>
 </li>
 </ul>
@@ -197,7 +198,7 @@
 <div class="outline-text-3" id="text-4-2">
 
 <ul>
-<li>Addtionally require precise attributes
+<li>Additionally require precise attributes
 </li>
 <li>Combine attributes with logical operators
 </li>
@@ -640,20 +641,49 @@
 <p id="geolocation">Click to get coordinates</p>
 <button onclick="getLocation()">Try It</button>
 <script>
-var x=document.getElementById("demo");
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
+var x=document.getElementById("geolocation");
+function getLocation() {
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
-function showPosition(position)
-  {
-  x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;  
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
   }
+function showPosition(position) {
+    var position_desc = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = position_desc;
+  console.log(position_desc);
+}
 </script>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Code &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-3">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">p</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"geolocation"</span>&gt;Click to get coordinates&lt;/<span style="color: #0000ff;">p</span>&gt;
+&lt;<span style="color: #0000ff;">button</span> <span style="color: #a0522d;">onclick</span>=<span style="color: #8b2252;">"getLocation()"</span>&gt;Try It&lt;/<span style="color: #0000ff;">button</span>&gt;
+&lt;<span style="color: #0000ff;">script</span>&gt;
+var x=document.getElementById(<span style="color: #8b2252;">"geolocation"</span>);
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      <span style="color: #a0522d;">x.innerHTML</span>=<span style="color: #8b2252;">"Geolocation is not supported by this browser."</span>;}
+  }
+function showPosition(position) {
+  <span style="color: #a0522d;">x.innerHTML</span>=<span style="color: #8b2252;">"Latitude: "</span> + position.coords.latitude + <span style="color: #8b2252;">"&lt;br&gt;Longitude: "</span> + position.coords.longitude;  
+}
+&lt;/<span style="color: #0000ff;">script</span>&gt;
+</pre>
+
 
 
 <script type="text/javascript" src="production/org-html-slideshow.js"></script>
@@ -664,7 +694,7 @@ function showPosition(position)
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-11-09 10:46:12 PST</p>
+<p class="date">Date: 2012-11-09 12:05:21 PST</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
