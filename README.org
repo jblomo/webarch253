@@ -20,11 +20,11 @@
 | Oct 26 | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] | GUEST [[file:slides/2012-10-26-storage-systems.pdf][Data Storage]] | midterm review (Vimal) |
 | Nov 2  | [[http://www.uwtv.org/video/player.aspx?mediaid=16204855][Google: A
 Behind-the-Scenes Look]]; [[http://www.nytimes.com/2011/02/13/business/13search.html?pagewanted=all][The Dirty Little Secrets of Search]]; [[http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf][SEO Starter Guide]] (skim) | [[file:slides/2012-11-02-Search.html][Search]] & [[file:slides/2012-11-02-SEO.html][SEO]] | [[file:slides/2012-11-02-Microdata.html][Microdata]] |
-| Nov 9  | [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] | Mobile | Project 2: Mobilize & Discovery |
+| Nov 9  | [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] (both parts); [[http://www.html5rocks.com/en/mobile/touch/][Multi-touch Web Development]]; [[http://twitter.github.com/bootstrap/][Bootstrap]] (examine how columns change with screen size) [[http://www.w3.org/TR/mwabp/][Mobile Best Practices]] (skim); | [[file:slides/2012-11-09-Mobile.html][Mobile]] & [[file:slides/2012-11-09-Mobile-Features.html][Implementation]] | [[slides/2012-11-09-Project2.html][Project 2: Mobilize & Discovery]] |
 | Nov 16 | N/A | Analytics & Data Mining | mrjob |
 | Nov 23 | N/A | THANKSGIVING | None |
-| Nov 30 | N/A | (P2 Due) Security & Privacy | Exploits |
-| Dec 7  | N/A | Scaling & CAP | Reverse Proxy setup |
+| Nov 30 | N/A | Security & Privacy | Exploits |
+| Dec 7  | N/A | (P2 Due) Scaling & CAP | Reverse Proxy setup |
 | Dec 14 | N/A | FINAL | Bye! |
 
 

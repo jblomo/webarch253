@@ -26,7 +26,7 @@
    + comma separates devices
 
 ** Media Queries :slide:
-   + Addtionally require precise attributes
+   + Additionally require precise attributes
    + Combine attributes with logical operators
 #+begin_src html
 <link rel="stylesheet"
@@ -84,7 +84,7 @@
 * Responsive Web Design :slide:
   + Combines these techniques
   + Sane defaults for all devices
-  + Examples in newer frameworks (Bootstrap, [[http://www.html5boilerplate.com][HTML5 Boilerplate]])
+  + Examples in newer frameworks ([[http://twitter.github.com/bootstrap/][Bootstrap]], [[http://www.html5boilerplate.com][HTML5 Boilerplate]])
 #+begin_src css
 @media (min-width: 1200px) {
   .row {
@@ -122,10 +122,108 @@
   + "Fluid" grids based on relative values, eg. % or em
 
 * Javascript APIs :slide:
-  + Geolocation
-  + Touch Events
-  + Battery
-  +
+  + Touch Events :: Handle (multiple) finger movements
+  + Geolocation :: Report your location
+  + Battery :: Report device battery use
+  + getUserMedia :: Access to camera, video ([[http://shinydemos.com/getusermedia/][demos]])
+** Deep Dive :notes:
+   + There are many more HTML5 related APIs, eg. Fullscreen
+   + The first two are well supported so we'll discuss
+   + Second two are cutting edge
+   + But if you're interested, fire up phone and follow the link after class
+
+* Javascript events :slide:
+  + =onload=, =onchange= for general events
+  + =onclick=, =onmousedown=, =onmouseup= for mouse events
+  + New API needed for multitouch
+** One Mouse :notes:
+   + Since there's only one mouse, needed a new vocabulary to talk about touch
+     events
+   + Kind of unfortunate since there is overlap between potential mouse actions
+     and touch (eg. drag and drop)
+
+** Touch Events :slide:
+   + =touchstart=, =touchmove=, =touchend=
+   + =touches=, =targetTouches=, =changedTouches=
+   + =identifier=, =target=, coordinates, finger shape
+*** Details :notes:
+   + Point is: we're getting more data about *all* fingers, instead of one
+     mouse.
+   + Just like how Javascript composed well with CSS to enable complex
+     transitions, these simple touch events can be used for everything from
+     swiping to pinch-to-zoom
+
+
+   + touchstart :: a finger is placed on a DOM element.
+   + touchmove :: a finger is dragged along a DOM element.
+   + touchend :: a finger is removed from a DOM element.
+   + Each touch event includes three lists of touches ::
+   + 
+   + touches :: a list of all fingers currently on the screen.
+   + targetTouches :: a list of fingers on the current DOM element.
+   + changedTouches :: a list of fingers involved in the current event. For example, in a touchend event, this will be the finger that was removed.
+   + These lists consist of objects that contain touch information ::
+   + identifier :: a number that uniquely identifies the current finger in the touch session.
+   + target :: the DOM element that was the target of the action.
+   + client/page/screen coordinates :: where on the screen the action happened.
+   + radius coordinates and rotationAngle :: describe the ellipse that approximates finger shape.
+  source: http://www.html5rocks.com/en/mobile/touch/
+
+** Demo :slide:
+   + [[http://paulirish.com/demo/multi][Drawing]]
+
+* Location :slide:two_col:
+  + GPS
+  + IP ([[http://www.maxmind.com/en/locate_my_ip][Demo]])
+  + WiFi
+[[file:img/wifi-map.png]]
+** Ways to find location :notes:
+   + GPS, most obvious now, but recent
+   + We discussed how IPs were routed: through different networks
+   + If you have a good idea of where network is, you can start guessing on
+     where individual IPs are
+   + WiFi uses list of known network names or MACs (network card identifiers) to
+     guess where you are if you're connected to one.
+
+** =navigation.geolocation= :slide:
+   + Javascript API
+   + =navigator.geolocation.getCurrentPosition(callback)=
+#+BEGIN_HTML
+<p id="geolocation">Click to get coordinates</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position) {
+  x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+#+END_HTML
+
+** Code :slide:
+#+begin_src html
+<p id="geolocation">Click to get coordinates</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position) {
+  x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+#+end_src
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />

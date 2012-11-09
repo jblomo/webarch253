@@ -35,7 +35,7 @@
   + Inspiration with Pinterest
 
 * Mobile Catalyst :slide:
-  + Bridges devide beween real life and digital
+  + Bridges divide between real life and digital
   + Captures and delivers content to /you/
   + Starting to capture context
 ** Delivery :notes:
@@ -59,7 +59,7 @@
 [[file:img/yp.png]]
   + Advertising dollars still lagging
 ** Lag :notes:
-   + $14 Billion in revenue, mostly from Yellopages and Newspapers
+   + $14 Billion in revenue, mostly from Yellowpages and Newspapers
    + Where's that money going?
    + Not just mobile ad, but Internet advertising in general
 
@@ -74,7 +74,7 @@
 * How to Capitalize :slide:
   + "Shoot ahead of the duck"
   + Be bold
-  + Exparament
+  + Experiment
 ** Mobile :notes:
    + Trend is obviously toward mobile, but not majority yet: shoot there
    + Keep a fresh outlook, and go 100% toward what you believe
@@ -90,9 +90,9 @@
    + 2:30 Privacy
    + You may not agree with this statement, but you need to be doing stuff
      bigger companies are uncomfortable with
-   + Web Archetecture helps you here: no one has to approve your idea (you can
+   + Web Architecture helps you here: no one has to approve your idea (you can
      fail without a net or ceiling)
-   + Another example is iPod: evalutate what buttons you need, get rid of the
+   + Another example is iPod: evaluate what buttons you need, get rid of the
      rest, use technology to support your idea
 
 * Mobile Software Stack :slide:
@@ -108,21 +108,23 @@
      apps
 
 * "Native" Applications :slide:
-TODO Path
   + Written directly with libraries and services
   + Platform specific language: Java, Objective-C
-  + Fewer constrains, but less compatability
+  + Fewer constrains, but less compatibility
+[[file:img/path.png]]
 ** Trade-offs :notes:
    + Directly control UI, make use of phone's specific services
    + OTOH, must directly control UI, make use of the specific services for each
      phone you want to support
 
 ** Native Features :slide:
-   + TODO: rotation, compass, gyro, services (contacts)
-   +
+   + Rotation
+   + Compass
+   + Gyroscope
+   + Services (contacts)
 
 * Web Applications :slide:
-TODO mobile web app
+[[file:img/yelp-mobile.png]]
   + Written for the browser
   + Platform agnostic
   + Leverages existing technology stacks, but creates opaque dependencies
@@ -156,6 +158,7 @@ TODO mobile web app
 * Closing the Gap :slide:
   + Native apps in HTML5
   + PhoneGap
+[[file:img/phonegap.png]]
 ** Details :notes:
   + Write HTML5, Javascript, framework will render it for you
   + Use javascript to call platform specific abilities

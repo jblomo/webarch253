@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>2012-11-09-Project2</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="2012-11-09-Project2"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-09 10:59:44 PST"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">2012-11-09-Project2</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>Project 2</b></a></li>
+<li><a href="#sec-2">2 Mobile Layout</a></li>
+<li><a href="#sec-3">3 Logging</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Point</a></li>
+<li><a href="#sec-3-2">3.2 JSON</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Analysis</a>
+<ul>
+<li><a href="#sec-4-1">4.1 mrjob</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Extra Credit</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Submission</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Project 1</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 <code>git</code></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Project 2</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Mobilify your shortener
+</li>
+<li>Log data
+</li>
+<li>Analyze it
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Mobile Layout &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>Header (eg. nav bar)
+</li>
+<li>3 columns (content of your choosing)
+</li>
+<li>As screen width shrinks, changes to 2 columns, then 1 column
+</li>
+<li><code>ontouchstart</code> column background color must change
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Logging &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>Log access to the application in machine readable format
+</li>
+<li>Datetime
+</li>
+<li>Cookie ID
+</li>
+<li>Action (page load, save URL, redirect)
+<ul>
+<li>Information about action
+</li>
+</ul>
+
+</li>
+<li>User Agent (Browser)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Point &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>Purpose of logging is to be able to automatically parse it later
+</li>
+<li>Problems with parsing: CSVs: Have a comma in value, similar to escaping
+     problem
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> JSON &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li>One option: Use JSON
+</li>
+</ul>
+
+
+
+
+<pre class="src src-python"><span style="color: #a020f0;">import</span> json
+
+<span style="color: #a0522d;">logline</span> = json.dumps({<span style="color: #8b2252;">'datetime'</span>: ..., <span style="color: #8b2252;">'action'</span>: <span style="color: #8b2252;">'save'</span>,...})
+<span style="color: #b22222;"># logline is now a string that can be printed</span>
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Analysis &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>We'll cover analysis next lecture, deadline extended
+</li>
+<li>What are the counts per action per Browser?
+</li>
+<li>What are the most followed URLs?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> mrjob &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>We'll cover how to use a tool Yelp uses to data mine through its logs
+</li>
+<li>Overkill for our logs, but got to understand concepts
+</li>
+<li>In the meantime, just think what type of program you'd write if you were
+     given the logs you're producing
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Extra Credit &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>Move columns
+</li>
+<li>Log geolocation
+</li>
+<li>Trending URLs
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>Use touch events to enable drag+drop of columns
+</li>
+<li>Log geolocation data (eg. lat, long; city, state, country)
+</li>
+<li>Define what a trend is (biggest increase in clicks from yesterday?) and
+     find URL
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Submission &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li><code>git</code> 
+</li>
+<li>Teams of up to 2
+</li>
+<li>May use CSS frameworks, but must include HTML comments as to what mechanism
+    is being used
+</li>
+<li>December 6 
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Project 1 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>If you'd like to reuse your Project 1 branch, stay after
+</li>
+<li>Responsive frameworks use @media queries.  Use your comments to explain
+     what specific selectors and properties are being changed when screen size
+     varies
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> <code>git</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+
+
+
+<pre class="src src-bash">git checkout -b project2 project1
+git merge master
+# clean up conflicts, mostly around app.py def create(short)
+git add # changed files
+git commit # :wq
+#do your project
+git add # changed files
+git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
+</pre>
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-11-09 10:59:44 PST</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
