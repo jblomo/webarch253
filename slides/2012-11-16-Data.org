@@ -22,7 +22,7 @@
 
 * The Web is Used by Humans :slide:two_col:
   + Tool used to improve the lives of users
-  + How to improve the tools we have
+  + How to improve the tools we have?
   + Understand their use and their users
 [[file:img/fight-for-users.png]]
 
@@ -61,10 +61,15 @@
      concepts
    + No hard boundaries
 
-** Records :slide:
+** Phonographic Records :slide:two_col:
    + Data :: Grooves in the record material
    + Information :: Sound heard by a human
    + Knowledge :: Enjoyment of a song
+[[file:img/vinyl_record_lp_10inch.jpg]]
+** Notes :notes:
+   + Generally know how records work?
+   + Grooves cut into vinyl, needle moves over them, sound comes out
+   + image source: http://www.absurdintellectual.com/2009/04/17/celebrate-record-store-day-saturday-april-18/
 
 ** Web logs :slide:
    + Data :: Records of visits to a web page
@@ -79,7 +84,7 @@
    + Similarity to 5 Whys?
 
 * Web Frontier :slide:
-  + Web particularly well suited to this analysis
+  + Web particularly well suited to analysis
   + Easiest to instrument
   + Already require high technology
 ** Alternatives :notes:
@@ -97,7 +102,7 @@
   + Explore
   + Model
   + iNterpret
-[[file:img/mason.jpg]] TODO
+[[file:img/hilary_electronics.jpg]]
 ** Mason & Wiggins :notes:
    + [[http://www.dataists.com/2010/09/a-taxonomy-of-data-science/][Reading]] in
      which Hilary Mason and Chris Wiggens explain their interpretation of data
@@ -107,6 +112,7 @@
      steps
    + OSEMN
    + Mason Chief Scientist at Bit.ly, many good talks
+   + image source: http://www.hilarymason.com/about/
 
 * Obtain :slide:
   + Where to get the data?
@@ -147,9 +153,9 @@
    + Hard to extend customize
 
 * Scrub :slide:
-  + Reconcile inconsistencies
-  + Webserver has the wrong time
-  + Type of page
+  + Reconcile inconsistencies:
+    + Webserver has the wrong time
+    + Determine type of page
 ** Consistency :notes:
    + Make sure all activity happening in correct time zone
    + If a server had the wrong internal time, add error to logs
@@ -157,11 +163,11 @@
      + 'gif|png|jpg' => image
      + 'pdf|doc|xls' => document
 
-* Explore :slide:
+* Explore :slide:two_col:
   + Don't under estimate scrolling through data
   + Start simple: scatter plots, histograms
   + Find correlations
-[[file:img/1_Vp_screenshot_7_tiny.png]]
+[[file:img/1_Vp_screenshot_7_tiny.jpg]]
 ** Viewpoints :notes:
    + An example program that can plot multi-dimensional records
    + But don't do this advanced stuff first!
@@ -173,20 +179,20 @@
   + Mathimatical description of a phenomena
   + Main focus of Machine Learning (to some extent Data Mining)
   + Generally, best models are most accurate
-[[file:img/yelp_review.png]]
+[[file:img/yelp_reviews.png]]
 ** Example :notes:
    + Take the rate of reviews
    + How do you mathmatically describe the behavior?
    + image source: Yelp Factsheet http://yelp.com/press
 
 ** Lines :slide:
-[[file:img/yelp_review-linear.png]]
+[[file:img/yelp_reviews-linear.png]]
    + How well does this fit the data?
 *** Equation :notes:
     + y = mx + b
 
 ** Exponential :slide:
-[[file:img/yelp_review-exponential.png]]
+[[file:img/yelp_reviews-exponential.png]]
    + Fit better? How far do we go?
 *** Equation :notes:
    + y = mx^2 + b
@@ -211,7 +217,7 @@
    + Will you run out of money?
    + What's the likelyhood a customer will stay with you next year?
 
-* Analyzing Real World :slide:
+* Analyzing the Real World :slide:
   + How would you gain knowledge of rain forest data?
   + Obtain
   + Scrub

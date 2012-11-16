@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-11-16-Analysis"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-15 22:31:11 PST"/>
+<meta name="generated" content="2012-11-15 23:37:03 PST"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -115,20 +115,27 @@
 <li><a href="#sec-10-7-1">10.7.1 Details</a></li>
 </ul>
 </li>
-<li><a href="#sec-10-8">10.8 Implementation</a></li>
-<li><a href="#sec-10-9">10.9 Intermediate</a></li>
-<li><a href="#sec-10-10">10.10 "Shuffle"</a></li>
-<li><a href="#sec-10-11">10.11 Distribute</a></li>
-<li><a href="#sec-10-12">10.12 Inputs</a>
-<ul>
-<li><a href="#sec-10-12-1">10.12.1 Splitting Files</a></li>
+<li><a href="#sec-10-8">10.8 Example Output</a></li>
 </ul>
 </li>
-<li><a href="#sec-10-13">10.13 Meaning</a>
+<li><a href="#sec-11">11 Point?</a>
 <ul>
-<li><a href="#sec-10-13-1">10.13.1 No!</a></li>
+<li><a href="#sec-11-1">11.1 Details</a></li>
+<li><a href="#sec-11-2">11.2 Implementation</a></li>
+<li><a href="#sec-11-3">11.3 Intermediate</a></li>
+<li><a href="#sec-11-4">11.4 "Shuffle"</a></li>
+<li><a href="#sec-11-5">11.5 Distribute</a></li>
+<li><a href="#sec-11-6">11.6 Inputs</a>
+<ul>
+<li><a href="#sec-11-6-1">11.6.1 Splitting Files</a></li>
 </ul>
 </li>
+<li><a href="#sec-11-7">11.7 Incorrect Log Style</a>
+<ul>
+<li><a href="#sec-11-7-1">11.7.1 No!</a></li>
+</ul>
+</li>
+<li><a href="#sec-11-8">11.8 Correct Log Style</a></li>
 </ul>
 </li>
 </ul>
@@ -214,10 +221,10 @@
 </div>
 
 <div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Just the tip &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Just the tip &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
 <div class="outline-text-3" id="text-3-2">
 
-<p><img src="img/iceberg.jpg"  alt="img/iceberg.jpg" /> TODO
+<p><img src="img/iceberg11.jpg"  alt="img/iceberg11.jpg" />
 </p><ul>
 <li>Thousands of ways to calculate a model
 </li>
@@ -360,7 +367,7 @@
 </div>
 
 <div id="outline-container-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Classifiers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<h2 id="sec-5"><span class="section-number-2">5</span> Classifiers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span>&nbsp;<span class="animate">animate</span></span></h2>
 <div class="outline-text-2" id="text-5">
 
 <p><img src="img/viagra-spam-email-message.jpg"  alt="img/viagra-spam-email-message.jpg" />
@@ -480,11 +487,11 @@
 </div>
 
 <div id="outline-container-6-2" class="outline-3">
-<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Housing Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h3>
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Housing Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-6-2">
 
 <dl>
-<dt>Class</dt><dd>Customer likes it
+<dt>Class</dt><dd>Customer likes it or not
 </dd>
 <dt>Features</dt><dd>Price, city, square footage, # bed/bath
 </dd>
@@ -534,7 +541,7 @@
 </li>
 </ul>
 
-<p><a href="img/sqft-price.bmp">img/sqft-price.bmp</a>
+<p><img src="img/sqft-price.png"  alt="img/sqft-price.png" />
 </p>
 </div>
 
@@ -647,6 +654,13 @@
 </dl>
 
 
+
+<ul>
+<li>Simple: Each operation stateless
+</li>
+</ul>
+
+
 </div>
 
 <div id="outline-container-10-1" class="outline-3">
@@ -724,7 +738,7 @@
 </div>
 
 <div id="outline-container-10-4" class="outline-3">
-<h3 id="sec-10-4"><span class="section-number-3">10.4</span> Map Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h3>
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> Map Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-10-4">
 
 <dl>
@@ -751,6 +765,8 @@
 <li>Log line text: we hope it is machine readable so we can accurately extract
      the action
 </li>
+<li>It has datetime, cookie, action, etc.
+</li>
 <li>How many times has this action occurred? 1
 </li>
 </ul>
@@ -774,7 +790,8 @@ redirect        1
 redirect        1
 load            1
 redirect        1
-load            1 save          1
+load            1
+save            1
 redirect        1
 </pre>
 
@@ -840,13 +857,13 @@ redirect        1
 </div>
 
 <div id="outline-container-10-7" class="outline-3">
-<h3 id="sec-10-7"><span class="section-number-3">10.7</span> Reduce Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h3>
+<h3 id="sec-10-7"><span class="section-number-3">10.7</span> Reduce Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-10-7">
 
 <dl>
 <dt>Input Key</dt><dd>Action
 </dd>
-<dt>Input Values</dt><dd>Counts: <code>[1,1,1,1,1]</code>
+<dt>Input Values</dt><dd>Counts: <code>[1,1,1,1]</code>
 </dd>
 <dt>Output Key</dt><dd>Action
 </dd>
@@ -875,8 +892,67 @@ redirect        1
 </div>
 
 <div id="outline-container-10-8" class="outline-3">
-<h3 id="sec-10-8"><span class="section-number-3">10.8</span> Implementation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<h3 id="sec-10-8"><span class="section-number-3">10.8</span> Example Output &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
 <div class="outline-text-3" id="text-10-8">
+
+<dl>
+<dt>Output Key</dt><dd>Action
+</dd>
+<dt>Output Value</dt><dd>Total Count
+</dd>
+</dl>
+
+
+
+
+<pre class="src src-html">"redirect"  4
+"save"      2
+"load"      3
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Point? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>A lot of work for counting!
+</li>
+<li>More complex calculations can be done this way, eg. PageRank
+</li>
+<li>Stateless constraint means it can be used across thousands of computers
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+
+<ul>
+<li>By only looking at keys and values, can optimize a lot of backend work
+</li>
+<li>Where to send the results?
+</li>
+<li>What to do when a computer fails? (Just restart failed part)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="section-number-3">11.2</span> Implementation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-2">
 
 
 
@@ -896,9 +972,9 @@ redirect        1
 
 </div>
 
-<div id="outline-container-10-9" class="outline-3">
-<h3 id="sec-10-9"><span class="section-number-3">10.9</span> Intermediate &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-10-9">
+<div id="outline-container-11-3" class="outline-3">
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> Intermediate &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-3">
 
 <ul>
 <li>This was the situation after map
@@ -914,9 +990,9 @@ redirect        1
 
 </div>
 
-<div id="outline-container-10-10" class="outline-3">
-<h3 id="sec-10-10"><span class="section-number-3">10.10</span> "Shuffle" &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-10-10">
+<div id="outline-container-11-4" class="outline-3">
+<h3 id="sec-11-4"><span class="section-number-3">11.4</span> "Shuffle" &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-4">
 
 
 
@@ -936,9 +1012,9 @@ save            1
 
 </div>
 
-<div id="outline-container-10-11" class="outline-3">
-<h3 id="sec-10-11"><span class="section-number-3">10.11</span> Distribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-10-11">
+<div id="outline-container-11-5" class="outline-3">
+<h3 id="sec-11-5"><span class="section-number-3">11.5</span> Distribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-5">
 
 <ul>
 <li>Now it is easy to distribute, and can handle all the <code>load</code> at once
@@ -950,9 +1026,9 @@ save            1
 
 </div>
 
-<div id="outline-container-10-12" class="outline-3">
-<h3 id="sec-10-12"><span class="section-number-3">10.12</span> Inputs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-10-12">
+<div id="outline-container-11-6" class="outline-3">
+<h3 id="sec-11-6"><span class="section-number-3">11.6</span> Inputs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-6">
 
 <ul>
 <li>MapReduce distributes computing power by distributing input
@@ -966,9 +1042,9 @@ save            1
 
 </div>
 
-<div id="outline-container-10-12-1" class="outline-4">
-<h4 id="sec-10-12-1"><span class="section-number-4">10.12.1</span> Splitting Files &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
-<div class="outline-text-4" id="text-10-12-1">
+<div id="outline-container-11-6-1" class="outline-4">
+<h4 id="sec-11-6-1"><span class="section-number-4">11.6.1</span> Splitting Files &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-11-6-1">
 
 <ul>
 <li>Image you have a lot of large log files, GB each
@@ -995,9 +1071,9 @@ save            1
 
 </div>
 
-<div id="outline-container-10-13" class="outline-3">
-<h3 id="sec-10-13"><span class="section-number-3">10.13</span> Meaning &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-10-13">
+<div id="outline-container-11-7" class="outline-3">
+<h3 id="sec-11-7"><span class="section-number-3">11.7</span> Incorrect Log Style &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-7">
 
 <ul>
 <li>URL Shortener logging
@@ -1007,25 +1083,30 @@ save            1
 
 
 
-<pre class="src src-html">app.logger.info(<span style="color: #8b2252;">"Handling request for "</span> + cookie)
+<pre class="src src-python">app.logger.info(<span style="color: #8b2252;">"Handling request for "</span> + cookie)
 ...
-# find redirect
+<span style="color: #b22222;"># find redirect</span>
 ...
 app.logger.info(<span style="color: #8b2252;">"Redirecting to "</span> + destination)
 </pre>
 
 <ul>
-<li>When processing log, will you be able to associate the redirect with the
-      cookie? (eg. which cookie had the most redirects?)
+<li>Ability to associate the redirect with the
+      cookie?
+<ul>
+<li>eg. which cookie had the most redirects?
+</li>
+</ul>
+
 </li>
 </ul>
 
 
 </div>
 
-<div id="outline-container-10-13-1" class="outline-4">
-<h4 id="sec-10-13-1"><span class="section-number-4">10.13.1</span> No! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
-<div class="outline-text-4" id="text-10-13-1">
+<div id="outline-container-11-7-1" class="outline-4">
+<h4 id="sec-11-7-1"><span class="section-number-4">11.7.1</span> No! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-11-7-1">
 
 <ul>
 <li>Must log everything on same line
@@ -1038,6 +1119,29 @@ app.logger.info(<span style="color: #8b2252;">"Redirecting to "</span> + destina
 </ul>
 
 
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11-8" class="outline-3">
+<h3 id="sec-11-8"><span class="section-number-3">11.8</span> Correct Log Style &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-8">
+
+<ul>
+<li>Logging once
+</li>
+</ul>
+
+
+
+
+<pre class="src src-python">log_data[<span style="color: #8b2252;">'cookie'</span>] = cookie
+...
+<span style="color: #b22222;"># find redirect</span>
+log_data[<span style="color: #8b2252;">'action'</span>] = <span style="color: #8b2252;">'redirect'</span>
+app.logger.info(json.dumps(log_data))
+</pre>
 
 
 
@@ -1050,10 +1154,9 @@ app.logger.info(<span style="color: #8b2252;">"Redirecting to "</span> + destina
 </div>
 </div>
 </div>
-</div>
 
 <div id="postamble">
-<p class="date">Date: 2012-11-15 22:31:11 PST</p>
+<p class="date">Date: 2012-11-15 23:37:03 PST</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
