@@ -248,6 +248,37 @@ save		1
 ** Distribute :notes:
    + Now it is easy to distribute, and can handle all the =load= at once
 
+** Inputs :slide:
+   + MapReduce distributes computing power by distributing input
+   + Input is distributed by splitting on lines (records)
+   + You cannot depend on lines being "together" in MapReduce
+*** Splitting Files :notes:
+   + Image you have a lot of large log files, GB each
+   + You'd like to let different machines work on the same file
+   + Split file down the middle, well, at least on a newline
+   + Enable two separate machines to work on the parts
+   + You don't know what line came before this one
+   + You don't know if you will process the next line
+   + Only view is this line
+   + Real life slightly more complicated, but mostly hacks around this
+
+** Meaning :slide:
+   + URL Shortener logging
+#+begin_src html
+    app.logger.info("Handling request for " + cookie)
+    ...
+    # find redirect
+    ...
+    app.logger.info("Redirecting to " + destination)
+#+end_src
+    + When processing log, will you be able to associate the redirect with the
+      cookie? (eg. which cookie had the most redirects?)
+*** No! :notes:
+    + Must log everything on same line
+    + One machine could have the "Handling request.." Another could have
+      "Redirecting to..."
+    + Collect it all, then log it
+
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
