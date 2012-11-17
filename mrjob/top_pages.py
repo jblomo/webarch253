@@ -6,7 +6,11 @@ This program will take a CSV data file and output tab-seperated lines of
 
 To run:
 
-    python mrjob/top_pages.py mrjob/anonymous-msweb.data
+    python top_pages.py anonymous-msweb.data
+
+To store output:
+
+    python top_pages.py anonymous-msweb.data > top_pages.out
 """
 
 from mrjob.job import MRJob
