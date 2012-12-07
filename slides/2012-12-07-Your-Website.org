@@ -1,9 +1,3 @@
-* Updates :slide:
-  + Project 2 Due
-  + Final: Dec 14
-    + Similar to Midterm
-    + All topics, emphasis on post-midterm
-
 * *Your Website* :slide:
 
 * General vs. Practical :slide:

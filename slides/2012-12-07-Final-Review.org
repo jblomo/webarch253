@@ -1,5 +1,8 @@
 * Final Review :slide:
-  + Cumulative, emphasis on post-Midterm topics
+ + Project 2 Due
+  + Final: Dec 14
+    + Similar to Midterm
+    + All topics, emphasis on post-midterm
 
 * IP :slide:
   + What protocol does Telnet speak?
