@@ -1,0 +1,7 @@
+* Questions :slide:
+  + What protocol cares about the port?
+  +
+  + What is the difference between =Content-Type= and =Content-Encoding=?
+  + label these boxes (web servers, database)
+  + database partitioning?
+  +

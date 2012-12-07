@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>2012-12-07-Final-Review</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="2012-12-07-Final-Review"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-12-07 13:56:26 PST"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">2012-12-07-Final-Review</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Final Review</a></li>
+<li><a href="#sec-2">2 IP</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 TCP Provides?</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 DNS</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Site Performance</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Data Storage</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Search</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 SEO &amp; Microdata</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Mobile</a></li>
+<li><a href="#sec-10">10 Mobile Features</a></li>
+<li><a href="#sec-11">11 Data</a></li>
+<li><a href="#sec-12">12 Analysis &amp; Modeling</a></li>
+<li><a href="#sec-13">13 Security</a>
+<ul>
+<li><a href="#sec-13-1">13.1 Johnny Drop Tables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Final Review &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Cumulative, emphasis on post-Midterm topics
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> IP &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>What protocol does Telnet speak?
+</li>
+<li>How does a data packet get from here to Yelp?
+</li>
+<li>What is an IP address?
+</li>
+<li>What does TCP/IP stand for?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>TCP/IP
+</li>
+<li>Through intermediate hops, eg ischool router, Berkeley TelCo, Yelp
+     Datacenter, Yelp
+</li>
+<li>Numerical identifier of a logical host
+</li>
+<li>Transmission Control Protocol, Internet Protocol
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> TCP Provides? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<dl>
+<dt>Correctness</dt><dd>__
+</dd>
+<dt>Reliability</dt><dd>__
+</dd>
+<dt>Ordering</dt><dd>__
+</dd>
+<dt>Congestion</dt><dd>__
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>An IP packet has the data it was sent with
+</li>
+<li>A packet either arrives or we notice it failed
+</li>
+<li>Packets arrive in the order they were sent
+</li>
+<li>Stop sending so quickly if there are failures, or ramp up when there are
+     none
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> DNS &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>What does DNS stand for?
+</li>
+<li>DNS maps _________ to ____________
+</li>
+<li>What does TLD stand for?
+</li>
+<li>What is the TLD?
+<ul>
+<li>cnn.com
+</li>
+<li>berkeely.edu
+</li>
+<li>craigslist.org
+</li>
+<li>bankofamerica.secure
+</li>
+</ul>
+
+</li>
+<li>Does TCP/IP know about hostnames?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Domain Name Service
+</li>
+<li>Hosts to IPs
+</li>
+<li>Top Level Domain
+</li>
+<li>com, edu, org, secure
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Site Performance &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>Why does the browser make multiple requests for 1 page?
+</li>
+<li>What does <code>Content-Encoding: gzip</code> mean?
+</li>
+<li>Why is bundling resources necessary?
+</li>
+<li>RESTful states "Responses must &hellip; define themselves as cacheable, or not".
+    How does this help performance?
+</li>
+<li>What are the trade-offs for caching all the JS ever needed on the site, vs
+    breaking it up across each page?
+</li>
+<li>What is a Content Delivery Network (CDN)?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>Other resources: pictures, CSS, javascript
+</li>
+<li>Means message body is compressed
+</li>
+<li>Typically developed separately, but should combine for production
+     performance
+</li>
+<li>Browsers don't need to constantly reload resources like JS
+</li>
+<li>Initial slow experience, but fast subsequent vs. constant moderate
+     performance
+</li>
+<li>Stores resources closer to users so their downloads are faster.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Data Storage &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>If a RESTful service is stateless, where is state stored?
+</li>
+<li>What are some of the problems with our <code>app.py</code> "database"?
+</li>
+<li>SQL is a declarative language.  What other web languages are declarative?
+</li>
+<li>ACID properties:
+<dl>
+<dt>Atomicity</dt><dd>__
+</dd>
+<dt>Consistency</dt><dd>__
+</dd>
+<dt>Isolation</dt><dd>__
+</dd>
+<dt>Durability</dt><dd>__
+</dd>
+</dl>
+
+</li>
+<li>What is database Replication?
+</li>
+<li>What is the minimal API for a key/value store?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>A database, or data store
+</li>
+<li>Only lives on one server, easily deleted, can't be scaled, can't use
+     complex query logic, no enforced types,&hellip;
+</li>
+<li>HTML, CSS
+</li>
+<li>Applied all or none, constraints in the DB are upheld, transations don't
+     interact with one another, once we return "saved" contents are on disk
+</li>
+<li>Storing multiple copies of the same data
+</li>
+<li><code>get</code> <code>put</code>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Search &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Components:
+<dl>
+<dt>Crawling</dt><dd>__
+</dd>
+<dt>Indexing</dt><dd>__
+</dd>
+<dt>Searching</dt><dd>__
+</dd>
+</dl>
+
+</li>
+<li>What is the "crawling frontier"?
+</li>
+<li>An inverted index maps ____ to ____
+</li>
+<li>What is PageRank?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>"spider" to download and extract content
+</li>
+<li>Store words or features associated with a document
+</li>
+<li>Match queries or intent with documents
+</li>
+<li>The pages we know about but haven't downloaded yet
+</li>
+<li>words/features to documents/pages
+</li>
+<li>Way of measuring a page's popularity or relevance
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> SEO &amp; Microdata &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>When improving search rank, #1 priority is a) search engine, or b) user?
+</li>
+<li>With regard to user intent, why might "Pool" be a difficult query on Yelp?
+</li>
+<li>How can you communicate to a search engine that you do not want some page indexed?
+</li>
+<li>How is this enforced?
+</li>
+<li>Why is semantic HTML important for both accessibility and SEO?
+</li>
+<li>What type of content needs a <code>nofollow</code> attribute?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>user!
+</li>
+<li>pool hall, pool cleaning, lap pools
+</li>
+<li><code>robots.txt</code>
+</li>
+<li>It is not: spiders can still download those pages
+</li>
+<li>content can be transmitted in alternate ways (screen reader), content can
+     be understood and interpreted by machine
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Mobile &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>For mobile development, which technologies are still used: HTML, CSS,
+    Javascript, HTTP, TCP/IP, DNS
+</li>
+<li>What are the trade-offs for mobile web vs. mobile app?
+</li>
+<li>How are HTML5 and mobile web development related?
+</li>
+<li>What is the Mobile First philosophy?
+</li>
+<li>Is this the same as Mobile Only?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Mobile Features &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<ul>
+<li>What are <code>media</code> queries in CSS?
+</li>
+<li>Why do some printed web pages look different on screen?
+</li>
+<li>Can web pages use your geolocation?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>What advantages do web companies have with regard to using data to drive
+    products?
+</li>
+<li>What types of things might you need to "scrub" logs for?
+</li>
+<li>What types of things should you have in your logs?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Analysis &amp; Modeling &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>What are example problems can modeling or machine learning solve?
+</li>
+<li>What does "collaborative filtering" do?
+</li>
+<li>What are "features" in the example of a spam email?
+</li>
+<li>How would you assign the "relevant" label to search results?
+</li>
+<li>What are the pros and cons of the MapReduce paradigm?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Security &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>At what size should a company start thinking about security?
+</li>
+<li>Why is SSL used to wrap HTTP (ie HTTPS)?
+</li>
+<li>What is XSS?
+</li>
+<li>Can Javascript access Cookies?
+</li>
+<li>When can you trust user input?
+</li>
+<li>"Cross Site Referral Forgery" uses a link on one site to perform an action
+    on another.  How can you prevent it?
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Johnny Drop Tables &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>Explain this comic:
+</li>
+</ul>
+
+<p><img src="img/exploits_of_a_mom.png"  alt="img/exploits_of_a_mom.png" />
+</p>
+<p>
+<a href="http://xkcd.com/327/">XKCD</a>
+</p>
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-12-07 13:56:26 PST</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

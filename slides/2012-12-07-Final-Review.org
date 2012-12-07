@@ -1,0 +1,172 @@
+* Final Review :slide:
+  + Cumulative, emphasis on post-Midterm topics
+
+* IP :slide:
+  + What protocol does Telnet speak?
+  + How does a data packet get from here to Yelp?
+  + What is an IP address?
+  + What does TCP/IP stand for?
+** Answers :notes:
+   + TCP/IP
+   + Through intermediate hops, eg ischool router, Berkeley TelCo, Yelp
+     Datacenter, Yelp
+   + Numerical identifier of a logical host
+   + Transmission Control Protocol, Internet Protocol
+
+* TCP Provides? :slide:
+  + Correctness :: __
+  + Reliability :: __
+  + Ordering :: __
+  + Congestion :: __
+** Answers :notes:
+   + An IP packet has the data it was sent with
+   + A packet either arrives or we notice it failed
+   + Packets arrive in the order they were sent
+   + Stop sending so quickly if there are failures, or ramp up when there are
+     none
+
+* DNS :slide:
+  + What does DNS stand for?
+  + DNS maps _________ to ____________
+  + What does TLD stand for?
+  + What is the TLD?
+    + cnn.com
+    + berkeely.edu
+    + craigslist.org
+    + bankofamerica.secure
+  + Does TCP/IP know about hostnames?
+** Answers :notes:
+   + Domain Name Service
+   + Hosts to IPs
+   + Top Level Domain
+   + com, edu, org, secure
+
+* Site Performance :slide:
+  + Why does the browser make multiple requests for 1 page?
+  + What does =Content-Encoding: gzip= mean?
+  + Why is bundling resources necessary?
+  + RESTful states "Responses must ... define themselves as cacheable, or not".
+    How does this help performance?
+  + What are the trade-offs for caching all the JS ever needed on the site, vs
+    breaking it up across each page?
+  + What is a Content Delivery Network (CDN)?
+** Answers :notes:
+   + Other resources: pictures, CSS, javascript
+   + Means message body is compressed
+   + Typically developed separately, but should combine for production
+     performance
+   + Browsers don't need to constantly reload resources like JS
+   + Initial slow experience, but fast subsequent vs. constant moderate
+     performance
+   + Stores resources closer to users so their downloads are faster.
+
+* Data Storage :slide:
+  + If a RESTful service is stateless, where is state stored?
+  + What are some of the problems with our =app.py= "database"?
+  + SQL is a declarative language.  What other web languages are declarative?
+  + ACID properties:
+    + Atomicity :: __
+    + Consistency :: __
+    + Isolation :: __
+    + Durability :: __
+  + What is database Replication?
+  + What is the minimal API for a key/value store?
+** Answers :notes:
+   + A database, or data store
+   + Only lives on one server, easily deleted, can't be scaled, can't use
+     complex query logic, no enforced types,...
+   + HTML, CSS
+   + Applied all or none, constraints in the DB are upheld, transations don't
+     interact with one another, once we return "saved" contents are on disk
+   + Storing multiple copies of the same data
+   + =get= =put=
+
+* Search :slide:
+  + Components:
+    + Crawling :: __
+    + Indexing :: __
+    + Searching :: __
+  + What is the "crawling frontier"?
+  + An inverted index maps ____ to ____
+  + What is PageRank?
+** Answers :notes:
+   + "spider" to download and extract content
+   + Store words or features associated with a document
+   + Match queries or intent with documents
+   + The pages we know about but haven't downloaded yet
+   + words/features to documents/pages
+   + Way of measuring a page's popularity or relevance
+
+* SEO & Microdata :slide:
+  + When improving search rank, #1 priority is a) search engine, or b) user?
+  + With regard to user intent, why might "Pool" be a difficult query on Yelp?
+  + How can you communicate to a search engine that you do not want some page indexed?
+  + How is this enforced?
+  + Why is semantic HTML important for both accessibility and SEO?
+  + What type of content needs a =nofollow= attribute?
+** Answers :notes:
+   + user!
+   + pool hall, pool cleaning, lap pools
+   + =robots.txt=
+   + It is not: spiders can still download those pages
+   + content can be transmitted in alternate ways (screen reader), content can
+     be understood and interpreted by machine
+
+* Mobile :slide:
+  + For mobile development, which technologies are still used: HTML, CSS,
+    Javascript, HTTP, TCP/IP, DNS
+  + What are the trade-offs for mobile web vs. mobile app?
+  + How are HTML5 and mobile web development related?
+  + What is the Mobile First philosophy?
+  + Is this the same as Mobile Only?
+
+* Mobile Features :slide:
+  + What are =media= queries in CSS?
+  + Why do some printed web pages look different on screen?
+  + Can web pages use your geolocation?
+
+* Data :slide:
+  + What advantages do web companies have with regard to using data to drive
+    products?
+  + What types of things might you need to "scrub" logs for?
+  + What types of things should you have in your logs?
+
+* Analysis & Modeling :slide:
+  + What are example problems can modeling or machine learning solve?
+  + What does "collaborative filtering" do?
+  + What are "features" in the example of a spam email?
+  + How would you assign the "relevant" label to search results?
+  + What are the pros and cons of the MapReduce paradigm?
+
+* Security :slide:
+  + At what size should a company start thinking about security?
+  + Why is SSL used to wrap HTTP (ie HTTPS)?
+  + What is XSS?
+  + Can Javascript access Cookies?
+  + When can you trust user input?
+  + "Cross Site Referral Forgery" uses a link on one site to perform an action
+    on another.  How can you prevent it?
+
+** Johnny Drop Tables :slide:
+   + Explain this comic:
+[[file:img/exploits_of_a_mom.png]]
+
+[[http://xkcd.com/327/][XKCD]]
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
