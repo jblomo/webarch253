@@ -293,6 +293,8 @@
    + Employers look for engagement in these areas
    + Almost any are you want to focus in, your website can be your medium
 
+* *Thank You!* :slide:
+
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
