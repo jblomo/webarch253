@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="2012-12-07-Final-Review"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-12-07 14:02:06 PST"/>
+<meta name="generated" content="2012-12-13 08:26:56 PST"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -71,13 +71,31 @@
 <li><a href="#sec-8-1">8.1 Answers</a></li>
 </ul>
 </li>
-<li><a href="#sec-9">9 Mobile</a></li>
-<li><a href="#sec-10">10 Mobile Features</a></li>
-<li><a href="#sec-11">11 Data</a></li>
-<li><a href="#sec-12">12 Analysis &amp; Modeling</a></li>
+<li><a href="#sec-9">9 Mobile</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Mobile Features</a>
+<ul>
+<li><a href="#sec-10-1">10.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 Data</a>
+<ul>
+<li><a href="#sec-11-1">11.1 Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12 Analysis &amp; Modeling</a>
+<ul>
+<li><a href="#sec-12-1">12.1 Answers</a></li>
+</ul>
+</li>
 <li><a href="#sec-13">13 Security</a>
 <ul>
-<li><a href="#sec-13-1">13.1 Johnny Drop Tables</a></li>
+<li><a href="#sec-13-1">13.1 Answers</a></li>
+<li><a href="#sec-13-2">13.2 Johnny Drop Tables</a></li>
+<li><a href="#sec-13-3">13.3 Answer</a></li>
 </ul>
 </li>
 </ul>
@@ -472,6 +490,38 @@
 
 </div>
 
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>All of them!
+</li>
+<li>some trade-offs:
+<ul>
+<li>performance vs universal compatibility
+</li>
+<li>specialized UI vs quick development with standard elements
+</li>
+<li>access to special hardware features vs generic APIs
+</li>
+</ul>
+
+</li>
+<li>HTML5 contains many features geared toward handling mobile devices,
+     though is a general standard for all browsers.
+</li>
+<li>Target new web applications at mobile devices first to focus efforts and
+     ensure a great mobile experience
+</li>
+<li>No! Most web apps need a desktop version as well for best UX
+</li>
+</ul>
+
+
+</div>
+</div>
+
 </div>
 
 <div id="outline-container-10" class="outline-2">
@@ -488,6 +538,24 @@
 </ul>
 
 
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>A more advanced way to target CSS rules to the devices displaying content.
+     Eg. being able to specify dimensions of the device instead of just its type
+</li>
+<li>Their stylesheet specifies a <code>media=printer</code> rule
+</li>
+<li>Yes, using JS geolocation API
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
@@ -507,6 +575,34 @@
 </ul>
 
 
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+
+<ul>
+<li>Some advantages:
+<ul>
+<li>Easier to instrument user behavior
+</li>
+<li>Already have technical employees to write software models
+</li>
+<li>Easier to automatically change product behavior based on user models
+</li>
+</ul>
+
+</li>
+<li>Incorrect datetime formats, software bug that was outputing wrong user IDs
+     or cookies, or missing data
+</li>
+<li>datetime, any ID that was displayed on the page, user ID, HTTP request
+     (method and path)
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
@@ -529,6 +625,31 @@
 </ul>
 
 
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>Spam/Ham detection, product recommendations, pricing estimates based on
+     features (eg. housing)
+</li>
+<li>Recommend related items to users. user-user finds similar users, and
+     recommends their preferences; item-item finds similar items to the user's
+     preferences and recommends them
+</li>
+<li>words appearing in the email, the sender's IP, the sender's email domain
+</li>
+<li>One way is marking clicked-on results as relevant
+</li>
+<li>Scales up to large amount of data and machines with no change in program,
+     but is offline, batch oriented and can require a fixed startup time
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
@@ -554,12 +675,39 @@
 </ul>
 
 
-
 </div>
 
 <div id="outline-container-13-1" class="outline-3">
-<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Johnny Drop Tables &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Answers &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
 <div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>Any size!
+</li>
+<li>HTTP is a plain text protocol, sending data via this protocol can be viewed
+     by any intermediate machine, so is unsafe way to transfer sensitive data.
+     SSL enables end-to-end encryption.  Also can be used to verify identity of
+     participants.
+</li>
+<li>Cross Site Scripting attack: injecting user provided HTML into trusted page
+</li>
+<li>Yes, and can send them to untrusted party if they can inject JS
+</li>
+<li>Never! Always must escape/clean it
+</li>
+<li>Using a POST request and adding a unguessable token to the sensitive form
+     as a hidden field
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> Johnny Drop Tables &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-2">
 
 <ul>
 <li>Explain this comic:
@@ -570,7 +718,22 @@
 </p>
 <p>
 <a href="http://xkcd.com/327/">XKCD</a>
-</p>
+</p></div>
+
+</div>
+
+<div id="outline-container-13-3" class="outline-3">
+<h3 id="sec-13-3"><span class="section-number-3">13.3</span> Answer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-3">
+
+<ul>
+<li>This is a SQL injection: when entered into the school database, the boy's
+     name escaped the context of the INSERT statement and dropped (deleted) the
+     student table
+</li>
+</ul>
+
+
 
 
 
@@ -583,7 +746,7 @@
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-12-07 14:02:06 PST</p>
+<p class="date">Date: 2012-12-13 08:26:56 PST</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

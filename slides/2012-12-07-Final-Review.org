@@ -122,17 +122,42 @@
   + How are HTML5 and mobile web development related?
   + What is the Mobile First philosophy?
   + Is this the same as Mobile Only?
+** Answers :notes:
+   + All of them!
+   + some trade-offs:
+     + performance vs universal compatibility
+     + specialized UI vs quick development with standard elements
+     + access to special hardware features vs generic APIs
+   + HTML5 contains many features geared toward handling mobile devices,
+     though is a general standard for all browsers.
+   + Target new web applications at mobile devices first to focus efforts and
+     ensure a great mobile experience
+   + No! Most web apps need a desktop version as well for best UX
 
 * Mobile Features :slide:
   + What are =media= queries in CSS?
   + Why do some printed web pages look different on screen?
   + Can web pages use your geolocation?
+** Answers :notes:
+   + A more advanced way to target CSS rules to the devices displaying content.
+     Eg. being able to specify dimensions of the device instead of just its type
+   + Their stylesheet specifies a =media=printer= rule
+   + Yes, using JS geolocation API
 
 * Data :slide:
   + What advantages do web companies have with regard to using data to drive
     products?
   + What types of things might you need to "scrub" logs for?
   + What types of things should you have in your logs?
+** Answers :notes:
+   + Some advantages:
+     + Easier to instrument user behavior
+     + Already have technical employees to write software models
+     + Easier to automatically change product behavior based on user models
+   + Incorrect datetime formats, software bug that was outputing wrong user IDs
+     or cookies, or missing data
+   + datetime, any ID that was displayed on the page, user ID, HTTP request
+     (method and path)
 
 * Analysis & Modeling :slide:
   + What are example problems can modeling or machine learning solve?
@@ -140,6 +165,16 @@
   + What are "features" in the example of a spam email?
   + How would you assign the "relevant" label to search results?
   + What are the pros and cons of the MapReduce paradigm?
+** Answers :notes:
+   + Spam/Ham detection, product recommendations, pricing estimates based on
+     features (eg. housing)
+   + Recommend related items to users. user-user finds similar users, and
+     recommends their preferences; item-item finds similar items to the user's
+     preferences and recommends them
+   + words appearing in the email, the sender's IP, the sender's email domain
+   + One way is marking clicked-on results as relevant
+   + Scales up to large amount of data and machines with no change in program,
+     but is offline, batch oriented and can require a fixed startup time
 
 * Security :slide:
   + At what size should a company start thinking about security?
@@ -149,12 +184,27 @@
   + When can you trust user input?
   + "Cross Site Referral Forgery" uses a link on one site to perform an action
     on another.  How can you prevent it?
+** Answers :notes:
+   + Any size!
+   + HTTP is a plain text protocol, sending data via this protocol can be viewed
+     by any intermediate machine, so is unsafe way to transfer sensitive data.
+     SSL enables end-to-end encryption.  Also can be used to verify identity of
+     participants.
+   + Cross Site Scripting attack: injecting user provided HTML into trusted page
+   + Yes, and can send them to untrusted party if they can inject JS
+   + Never! Always must escape/clean it
+   + Using a POST request and adding a unguessable token to the sensitive form
+     as a hidden field
 
 ** Johnny Drop Tables :slide:
    + Explain this comic:
 [[file:img/exploits_of_a_mom.png]]
 
 [[http://xkcd.com/327/][XKCD]]
+** Answer :notes:
+   + This is a SQL injection: when entered into the school database, the boy's
+     name escaped the context of the INSERT statement and dropped (deleted) the
+     student table
 
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
