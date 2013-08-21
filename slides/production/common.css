@@ -14,6 +14,20 @@ span.tag {
    display: none;
 }
 
+/* midterm
+.slide {
+	page-break-inside: avoid;
+}
+
+#table-of-contents {
+	display: none;
+}
+
+#postamble {
+	display: none;
+}
+*/
+
 code, pre {
    font-family: Monaco, "Courier New", monospace;
 }
