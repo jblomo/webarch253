@@ -1,31 +1,29 @@
 * Web Architecture 253 :slide:
   + Description :: Understanding the web's core technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser and interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
+  + Grading :: Homework (30%), midterm (30%), project (40%). 
   + Instructor :: Jim Blomo <jblomo@ischool>
-  + GSI :: Vamal Kini <vimalkini@ischool>
-
+  + GSI :: Sonali Sharma <sonalisharma@berkeley>
 
 * Syllabus :slide:
 
 | Date | Readings | Slides | Homework / Project |
 |------+----------+--------+--------------------|
-| Aug 24 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | [[file:slides/2012-08-24-Intro.html][Intro]] & [[file:slides/2012-08-24-Browsers.html][Browsers & HW1]] | See Browser slides |
-| Aug 31 | [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] | [[file:slides/2012-08-31-HTML.html][HTML]] & [[file:slides/2012-08-31-CSS.html][CSS]] | Git & [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Update Personal Pages]] |
-| Sep 7  | N/A | GUEST [[file:slides/Forms and Javascript.pptx][Forms & Javascript]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Madlibs]] |
-| Sep 14 | [[http://www.cs.tut.fi/~jkorpela/http.html][HTTP headers reference]], [[http://www.w3.org/TR/webarch/][Architecture of the World Wide Web]] Sections 1 & 2 , (Optional) [[http://flask.pocoo.org/docs/][Flask]] | [[file:slides/2012-09-14-HTTP.html][URI and HTTP]] & [[file:slides/2012-09-14-Server.html][HTTP and Server]] | [[file:slides/2012-09-14-Telnet.html][Manual testing of personal webserver]] |
-| Sep 21 | [[http://www.w3.org/2001/tag/doc/state.html][State]] Sections 1-5; [[http://www.w3.org/TR/2012/WD-html5-20120329/forms.html#forms][HTML5 Forms]] Sections 4.10.1; [[http://www.w3schools.com/jsref/prop_submit_disabled.asp][Disabling buttons]]; [[http://learnpythonthehardway.org/book/ex39.html][Learn Python the Hard Way]] Exercise 39, Dictionaries; [[http://flask.pocoo.org/docs/quickstart/][Flask Quickstart]] Rendering Templates, The Request Object | [[file:slides/2012-09-21-HTTP-Stateless.html][State & Dynamic Webpages]] & [[file:slides/2012-09-21-HTTP-Data.html][HTTP Data]] | [[file:slides/2012-09-21-HW-Project.html][HTTP Data & Project 1: URL Shortener]] |
-| Sep 28 | [[http://en.wikipedia.org/wiki/HTTP_cookie][Cookie]]; [[http://www.eioba.com/a/1htn/how-i-explained-rest-to-my-wife][REST explained]]; RESTful APIs [[http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http][Part 1]] (especially note on how to model a transaction) and [[http://blog.steveklabnik.com/posts/2011-08-07-some-people-understand-rest-and-http][Part 2]] (careful, uses an older version of Github API); [[http://conferences.idealliance.org/extreme/html/2002/Prescod01/EML2002Prescod01.html][Roots of the REST/SOAP Debate]] (Optional) | [[file:slides/2012-09-28-Cookies.html][Cookies]] & [[file:slides/2012-09-28-REST.html][REST]] | [[file:slides/2012-09-28-Github.html][Github API]] and Project 1 |
-| Oct 5  | [[http://www.garykessler.net/library/tcpip.html][TCP/IP Overview]] (Read for Overview); [[http://amar-linux.blogspot.com/2012/05/how-dns-works.html][How DNS Works]]; [[http://dyn.com/dns-why-its-important-how-it-works/][DNS Steps]] | [[file:slides/2012-10-05-Internet.html][Internet Archetecture]] & [[file:slides/2012-10-05-TCP-DNS.html][DNS]] | [[file:slides/2012-10-05-Midterm-Review.html][Midterm Q&A]] |
-| Oct 12 | N/A | Midterm | None |
-| Oct 19 | [[http://developer.yahoo.com/performance/rules.html][Best Practices for Speeding Up Your Web Site]] & (Optional) [[http://www.stevesouders.com/blog/][Steve Souder's Blog]] | (*P1 Due*) GUEST [[http://jrheard.com/frontend_long/][Front-end Performance at Yelp]] | [[https://blogs.ischool.berkeley.edu/i253f12/assignments/][Test Optimizations]] |
-| Oct 26 | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] | GUEST [[file:slides/2012-10-26-storage-systems.pdf][Data Storage]] | midterm review (Vimal) |
-| Nov 2  | [[http://www.uwtv.org/video/player.aspx?mediaid=16204855][Google: A Behind-the-Scenes Look]]; [[http://www.nytimes.com/2011/02/13/business/13search.html?pagewanted=all][The Dirty Little Secrets of Search]]; [[http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf][SEO Starter Guide]] (skim) | [[file:slides/2012-11-02-Search.html][Search]] & [[file:slides/2012-11-02-SEO.html][SEO]] | [[file:slides/2012-11-02-Microdata.html][Microdata]] |
-| Nov 9  | [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] (both parts); [[http://www.html5rocks.com/en/mobile/touch/][Multi-touch Web Development]]; [[http://twitter.github.com/bootstrap/][Bootstrap]] (examine how columns change with screen size) [[http://www.w3.org/TR/mwabp/][Mobile Best Practices]] (skim); | [[file:slides/2012-11-09-Mobile.html][Mobile]] & [[file:slides/2012-11-09-Mobile-Features.html][Implementation]] | [[file:slides/2012-11-09-Project2.html][Project 2: Mobilize & Discovery]] |
-| Nov 16 | [[http://www.dataists.com/2010/09/a-taxonomy-of-data-science/][A Taxonomy of Data Science]]; [[http://www.youtube.com/watch?v=SS27F-hYWfU][Apache Hadoop: Petabytes and Terawatts]] ([[http://prezi.com/u0ukvqzpyh5p/apache-hadoop-petabytes-and-terawatts/][slides]]); [[http://packages.python.org/mrjob/][mrjob]] (for homework) | [[file:slides/2012-11-16-Data.html][Data Mining]] & [[file:slides/2012-11-16-Analysis.html][Analysis]] | [[file:slides/2012-11-16-mrjob.org][mrjob]] |
-| Nov 23 | N/A | THANKSGIVING | None |
-| Nov 30 | [[http://www.unixwiz.net/techtips/sql-injection.html][SQL Injection]]; [[http://www.acunetix.com/websitesecurity/xss/][XSS example]]; | [[file:slides/2012-11-30-Security-Privacy.pdf][Security & Privacy]] | N/A |
-| Dec 7  | All Prior Readings | (P2 Due) [[file:slides/2012-12-07-Final-Review.html][Final Review]] & [[file:slides/2012-12-07-Your-Website.html][Your Website]] | None |
-| Dec 14 | 1 cheat-sheet | FINAL | Bye! |
-
+| Aug 30 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] | Intro & Browsers | Git & HW1 |
+| Sep 6  | HTML & CSS |
+| Sep 13 | Forms & Javascript | | |
+| Sep 20 | URL & HTTP | | |
+| Sep 27 | GUEST: Dynamic Webpages & Cookies | | |
+| Oct 4  | Internet & DNS | | |
+| Oct 11 | GUEST Front-end Performance | | |
+| Oct 18 | ReST & HTTP Data | | |
+| Oct 25 | Midterm | | |
+| Nov 1  | Data Storage | | |
+| Nov 8  | SEO & Microdata | | |
+| Nov 15 | GUEST Mobile | | |
+| Nov 22 | Data Mining | | |
+| Nov 29 | Thanksgiving | | |
+| Dec 6 | Security & Your Website | | |
+| Dec 13 | Project Presentations | | |
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/screen.css" media="screen" />
