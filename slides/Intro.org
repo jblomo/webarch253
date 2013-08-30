@@ -1,0 +1,234 @@
+* Web Architecture 253 :slide:
+  + Jim Blomo & Sonali Sharma
+
+* Course Goals :slide:
+  + Address Bar -> Web Page
+  + Challenges building Web Apps
+  + Leverage existing technology
+
+* We'll Do Stuff :slide:
+  + 11 Homework Assignments
+  + 1 Projects: Building a simple web app
+  + lecture, break, lecture, break, lab -> homework
+  + Python
+** Homework Details :notes:
+  + HW and projects due at midnight Thursday before class
+  + Each 24 hours late == 10% off
+  + HW & Projects most often turned in by GitHub
+
+* But Don't Worry :slide:
+  + This isn't a programming class
+  + Grades are based on understanding of the concepts, not the craziest app
+  + Sonali & I are here to help
+
+* This is a Graduate class :slide:
+  + Perform well without supervision
+  + Readings will mostly come from documentation and online guides
+  + TMTOWTDI
+  + Getting frameworks working on your computer
+** Style :notes:
+   + More firehouse than spoon feed, you'll need to follow up for 
+     understanding
+   + In exchange, grading will be relaxed and check for understanding
+   + Honor system: No copying code or answers. Helping each other with 
+     concepts is encouraged, but document it.
+
+* Lectures & Labs :slide:
+  + Start with Q&A for at least 10 minutes
+  + Expect to be asked a question
+  + Breaks
+  + Stick around and get the first question of HW done
+  + Slides on http://jblomo.github.io/webarch253/
+** Helpful tips :notes:
+   + Helpful to me if you say your name
+   + Sorry, I tend to forget names
+   + If I am not calling on you, check to make sure you are on the class list!
+   + I'm not taking attendance, but let me know if you can't make it so I 
+     won't call on you, Bueller Bueller Bueller
+
+* Office Hours :slide:
+  + We'll stay after class
+  + or schedule a Hangout call
+  + [[http://piazza.com][Piazza]]
+  + Wait list will be processed normally until 3rd week... then I'll accept 
+    everyone who's asked or answered a question
+
+* Grades :slide:
+  + 30% Homework
+  + 30% Midterm
+  + 40% Project
+  [[file:img/calvin-grade.gif]]
+** Grading :notes:
+   + In the past, I've used straight grading (90 A- 92.5 A 97.5 A+)
+
+* *Questions?* :slide:
+
+* Hi, I'm Jim Blomo :slide:two_col:
+  [[file:img/jim-totem.jpg]]
+  + Cal EECS
+  + A9 - Amazon Search
+  + PBworks
+  + Yelp
+  + Lecturer
+
+* Hi, I'm Sonali Sharma :slide:
+  + TODO
+
+* The Web is Important :slide:
+  + Democratizes Information
+  + Decentralized
+  + Low Barrier to Entry
+** World Wide!  :notes:
+   + People are now getting educated by Berkeley professors that have never 
+     left their home village
+   + I am personally upset when people are denied opportunity, the web is 
+     changing that
+   + Diabetes diagnosis
+
+* The Web is Important :slide:center:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/T90Na6opT4k" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+* Why are *YOU* in this class? :slide:
+
+* The Web is built on composable parts :slide:
+  + Network Stack
+  + Internet
+  + HTTP
+  + HTML & CSS
+  + Scripting (eg. Javascript)
+  + Browsers & Devices
+** Why is composability important? :notes:
+   + Always dip down to lower levels for more control
+   + Ability to swap out components
+   + Gradual upgrades
+   + Can read HTML off a hard drive, or deliver by HTTP
+   + SSL can encrypt any type of traffic (HTTPS most common)
+
+** Highway vs. Railway :slide:
+   [[file:img/Los-Angeles-Highway-USA.jpeg]]
+
+   vs
+
+   [[file:img/Amberley_narrow_gauge_track.jpg]]
+
+   [[file:img/track-gauge.png]]
+** Trade-offs :notes:
+   + You will hear a lot about trade-offs this semester
+   + There is no "best" technical solution for every circumstance, engineering
+     is fundamentally about trade-offs in the current situation
+   + Here's an example trade-off: railway vs roads
+
+** Highway: simple, composable :slide:
+   + Just need something with wheels to use it effectively
+   + Cars can drive on any highway, but also off-road
+   + Bikes can use roads, too
+   + Uncoordinated
+
+** Railway: complected :slide:
+   + Must have right width gauge
+   + Must coordinate with other traffic
+   + If you upgrade one part of the system, everything else must be upgraded
+   + Efficient
+   [[file:img/track-gauge.png]]
+
+*** Complected: to braid together :notes:
+    + Highways relatively inefficient: all cars need to power themselves 
+      individually
+    + traffic jams result from uncoordinated behavior
+    + ~10x fuel efficiency in commuter trains
+    + Tradeoff: flexibility for ease
+    + wikimedia.org
+
+* Network Stack :slide:
+[[file:img/Osi-model.png]]
+** Mostly used as conceptual reference
+   + TCP/IP actually contains a section "Layering considered harmful"
+   + TCP/IP
+   + http://commons.wikimedia.org/wiki/File:Osi-model.png
+
+* :slide:
+  [[file:img/the-internet-a-series-of-tubes.jpg]]
+** Internet: A series of tubes :slide:
+   + Longest running computer system in the world
+   + Protocols are agnostic to their content
+   + Pieces can be upgraded incrementally
+   + Built on top of TCP/IP
+*** Bits :notes:
+    + How many computer system do you know that have never gone completely 
+      down, or needed to be upgraded?
+    + Ultimately the Internet is about moving bits around.
+    + With that ability you can build what you want on top
+    + From early email to streaming movies on your phone
+      
+* Protocols: Do you speak it? :slide:
+  [[file:img/understand.jpeg]]
+  + Protocols convey *data*
+  + Data can be interpreted as *information*
+** Metaphor :notes:
+   + Speech is a protocol: sending data via sound
+   + Understanding the words and their meaning in context is information
+
+* HyperText Markup Language :slide:
+  [[file:img/html-editing.jpg]]
+  + HyperText: Text with links
+  + HTML is the dominant, but not only, way to link text
+  + HTML consists of elements, like a link or block of text
+  + Cascading Style Sheets (CSS) is used to modify the look of HTML
+** Hypertext Editing System :notes:
+   + Image shows another way to edit text
+   + And you thought editing with a touch interface was new
+
+* Javascript :slide:
+  + General programming language, but designed with HTML in mind
+  + Can "edit" HTML live on the page
+  + Or "draw" on a canvas
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://bl.ocks.org/mbostock/raw/1256572/f10264136284a7ef433aabb6dd037ece4174017b/" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** How it works :notes:
+   + Elements represent different areas
+   + Element attributes are manipulated
+
+* Browsers show you HTML :slide:
+  + because who wants to look at
+#+begin_src html
+    <div class="topsearch ">
+        <form accept-charset="UTF-8" action="/search"
+        id="top_search_form" method="get">
+  <a href="/search" class="advanced-search tooltipped downwards"
+  title="Advanced Search">
+  <span class="mini-icon mini-icon-advanced-search"></span></a>
+  <div class="search placeholder-field js-placeholder-field">
+#+end_src
+** Lots of things are "browsers" :notes:
+   + Many application actually embed a browser in the program and are 
+     rendering HTML
+   + Again: because the ideas around the Web are composable, it has spread to 
+     many areas
+
+* Questions :slide:
+  + What is a type of HypterText?
+  + What is a Protocol?
+  + What are the advantages to composability?
+
+* *Break* :slide:
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

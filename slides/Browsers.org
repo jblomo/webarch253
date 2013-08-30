@@ -1,0 +1,201 @@
+* What is a *Web Browser?* :slide:
+** Many things :notes:
+   + "Thing I type Google into"
+   + Loads data from the Internet
+   + Displays it
+   + Runs Javascript
+   + has plugins
+
+* What is the core?  :slide:
+  [[file:img/www-gnu.png]]
+  + [[http://en.wikipedia.org/wiki/WorldWideWeb][WorldWideWeb]] (confusingly named) the first browser
+  + Tim Breners-Lee wrote it to share data with colleagues at CERN
+  + Display HTML with Style Sheets from remote servers
+  + Editing was built into the first version
+  + Support different Protocols: FTP, HTTP, NNTP, local files
+** Symmetric usage :notes:
+   + Belief was that one would be creating as much as consuming information
+   + Plus, can't build a browser if there's nothing to browse!
+   + Already supported protocols for transferring files, reading newsgroups
+   + Images originally displayed in a separate window.  Eventually inlined.
+
+* Features :slide:
+  + Network access
+  + Interpreting the fetched data
+    + Possibly fetching and interpreting dependencies like images
+  + Rendering HTML with CSS rules
+  + Running scripts in the context of the web page
+  + Utility functions
+** Examples :notes:
+   + Network access :: HTTP
+   + Fetched Data :: HTML, CSS
+   + Rendering :: Displaying a table with row and column lines
+   + Scripts :: Validating a password before submitting
+   + Utility functions :: tabs, bookmarks, plugins
+
+* Address Bar -> Web Page :slide:
+  1. Analyze address bar to determine protocol and server
+  1. Connect to server, download data and all dependencies
+  1. Analyze HTML, generate a Document Object Model (DOM)
+  1. Apply CSS to the DOM
+  1. Display the DOM
+  1. Start executing scripting code and re-render the DOM as required
+  1. Continue executing and interpreting user actions
+** Definitions :notes:
+   + DOM :: A way of representing the HTML so that it can be analyzed and 
+     modified
+   + scripting :: programming language designed to work with web pages, eg. 
+     Javascript
+   + Recursive :: Each of these steps have at many steps underneath them
+
+* What is a Browser?  :slide:center:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/o4MwTvtyrUQ" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+* Why Separate the Browser from Websites?  :slide:
+  + Composability!
+  + Improve the features around the website without upgrading the website
+    + Original browser did not have Forward Back buttons
+  + Accessibility
+   + Tradeoff is the layouts need to follow rules, designers must design with 
+     multiple audiences in mind
+** Flexibility :notes:
+   + Separating the content from the presentation allows you more flexibility with how you want to use it
+   + What if you could only view websites like a TV image. No cut+paste, viewing on mobile vs. desktop
+
+* Browser or Web Page?  :slide:
+  + [[file:img/ie8-logo.png]] Internet Explorer
+  + [[file:img/Google_logo.png]]
+  + [[file:img/nyt-logo.png]]
+  + Firefox [[file:img/firefox-logo.png]]
+  + Others?
+
+* Browsers, Apps, Operating Systems :slide:
+  + Traditionally, browsers were applications running in an OS like Windows
+  + Scripting enables browsers to run their own code
+  + Complex web pages (eg. Gmail) behave almost like an application
+  + Browsers could become an OS themselves, ala ChromeOS
+  + Some Apps now written entirely in Javascript
+
+* Market Share :slide:
+#+BEGIN_HTML
+<table style="border-collapse:collapse; width:100%;">
+<tbody><tr style="background:#DDD">
+<th colspan="5">Non-mobile web browser statistics on Wikimedia</th>
+</tr>
+<tr style="font-size:88%; height:4px;">
+<td style="padding:0 4px;"></td>
+<td style="padding:0 4px; text-align:right;"></td>
+<td style="width:250px;"></td>
+<td style="padding:0 4px; width:5em; text-align:right;"></td>
+<td style="padding:0 4px; text-align:right;"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Google_Chrome" title="Google Chrome">Chrome</a></td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#37C837; width:92.04%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">46.02%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Internet_Explorer" title="Internet Explorer">Internet Explorer</a></td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#0066FF; width:40.94%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">20.47%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Firefox" title="Firefox">Firefox</a></td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#FF9900; width:35.42%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">17.71%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em">Others</td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#CCCCCC; width:14.50%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">7.25%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a></td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#FF0000; width:10.90%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">5.45%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a></td>
+<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
+<div style="background:#FF1493; width:6.20%; overflow:hidden">&nbsp; </div>
+</td>
+<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">3.10%</td>
+</tr>
+<tr>
+<td colspan="5" style="height:2px"></td>
+</tr>
+<tr>
+<td colspan="5" style="padding:5px">Non-mobile web browser usage for Wikimedia visitors as of June 2013<sup class="plainlinks noprint asof-tag update" style="display:none;"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Usage_share_of_web_browsers&amp;action=edit">[update]</a></sup>.<sup id="cite_ref-wikimedia-stats_11-0" class="reference"><a href="#cite_note-wikimedia-stats-11"><span>[</span>11<span>]</span></a></sup></td>
+</tr>
+</tbody></table>
+#+END_HTML
+
+* Utilities :slide:
+  + /Firefly/ for Firefox, /Developer Tools/ for Chrome
+  + Enable you to modify the page as you're viewing it
+  + Valuable for understanding how HTML and CSS are rendered
+
+* Questions :slide:
+   + What is CSS used for?
+   + What are some of the utilities you use in your browser?
+
+* Browsing Information Not a New Idea :slide:center:
+#+BEGIN_HTML
+<iframe width="420" height="315" src="http://www.youtube.com/embed/hSyfZkVgasI" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+  Paul Otlet
+
+* World Brain :slide:
+  + Proposals for Encyclopaedia from H.G. Wells 1937
+  + Engelbart developed oN-Line System (NLS) that used HyperText 1960s
+  + "Notecards" at Xerox PARC 1984
+
+* *Homework* :slide:
+  + Learn *git* for future homework submissions
+  + practice sending a homework
+  + reading
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

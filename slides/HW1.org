@@ -1,0 +1,180 @@
+* HW1: Explore Browsers :slide:
+  + Setup GitHub account
+  + Try out different browsers
+  + Submit assignment via GitHub
+
+* What is git? :slide:
+  + Revision control software
+  + Manage versions, changes
+  + Collaborate with others
+
+* Why GitHub? :slide:
+  + =git= tool is standard in industry
+  + GitHub provides best tools for sharing, commenting code
+  + This assignment will not have code, just practice submitting
+** Don't sweat :notes:
+   + In the future, if you're having trouble with git or GitHub, you may submit
+     the assignment by email
+   + I think introducing you to git is useful, but it is not something I'm
+     grading on, so I don't want it to affect your grade
+
+* Setup GitHub account :slide:
+  + Create a [[https://github.com/signup/free][GitHub Account]], making sure to
+    use your .edu address
+  + Use [[https://github.com/edu][GitHub/Edu]] to request a free micro plan:
+    these let us use private accounts
+  + Setup a [[https://help.github.com/articles/generating-ssh-keys][GitHub SSH Key]]
+
+* Setup git repository on ischool server :slide:
+  + On the server ischool.berkeley.edu
+#+begin_src bash
+$ git config --global user.name Jim Blomo
+$ git config --global user.email jblomo@ischool.berkeley.edu
+$ git config --global push.default current
+$ git clone git://github.com/jblomo/webarch253.git webarch2013
+#+end_src
+  + On the server, in the webarch2013 directory run 
+#+begin_src bash
+$ git remote rename origin jblomo
+#+end_src
+
+* Git Concepts :slide:
+  + clone :: make a copy of another repository
+  + branch :: create an "alternate universe" to do an assignment
+  + checkout :: swtich to a given branch
+  + add :: mark file to be committed
+  + commit :: checkpoint the current state of the universe
+  + push :: make your code publicly available
+  + Pull Request :: submit assingment on GitHub
+
+* Walk through :slide:
+  + demo
+** Notes :notes:
+   + clone my repository
+   + branch, Start working on next week's slides
+   + add and commit the change, no spell check yet
+   + oh no! Sonali found a mistake in this week's slides
+   + Normally, I'd have to save a the file I was working on, but make sure not
+     to publish it yet, and work on another file. lots of versioned directories
+     would ensue
+   + git lets you use one directory, but has the concept of branches
+   + checkout back to published version - master branch
+   + create a branch to make fix
+   + push to github
+   + Pull Reqest
+   + now go back to next week's slides and spell check
+   + add, commit
+   + push to github
+   + Pull Request
+
+* Git Concepts :slide:
+  + clone :: make a copy of another repository
+  + branch :: create an "alternate universe" to do an assignment
+  + checkout :: swtich to a given branch
+  + master :: the "main" branch
+  + add :: mark file to be committed
+  + commit :: checkpoint the current state of the universe
+  + push :: make your code publicly available
+  + Pull Request :: submit assingment on GitHub
+
+* Git vs Directories :slide:
+  + Keeps a history of changes
+  + Less space
+  + Advanced features
+** Specifics :notes:
+   + Git repository is in one directory. Files in that directory will change
+     when you run =git checkout=
+   + changes: so you're not just relying on your crazy naming scheme for
+     directories. Know what when why
+   + git only stores differences between branches
+   + merging, reverting, comparing differences, tagging, syncing
+
+* Git vs GitHub :slide:
+  + jblomo's GitHub: homework code & slides
+  + Directory on ischool: work and commit
+  + GitHub pushed copy
+  + GitHub Pull Request: homework submission
+
+* Git vs GitHub :slide:
+  [[file:img/git-ischool.png]]
+
+* Connect it to GitHub :slide:
+  + After you recieve your free micro account on GitHub, create a private repository called =webarch2013=
+  + It will provide you with an SSH git path, let's call it PATH
+  + You must use the *SSH* PATH starting with =git://=
+  + On the server, in the webarch2013 directory, run
+#+begin_src html
+$ git remote add origin PATH
+$ git push origin master
+#+end_src
+
+* Share with us :slide:
+  + Hopefully you now have a private copy of my repository
+  + Add Sonali and me (users: sonalisharma, jblomo) as a contributor to your private repository
+
+* Submit Homework :slide:
+  + On the ischool server, create a branch called =hw1-browsers=
+  + Create a text file to write the solution, a simple editor to use is =pico=
+  + =git add= the file
+  + =git commit= the change
+  + =git push origin= to put it on GitHub
+  + on github, submit a "pull request" from the =hw1-browsers= branch to your master branch
+** Pull Requests :notes:
+   + Pull requests are a way of showing updates in a way that lets me provide
+     comments, get notifications
+   + This is the first time I've tried it for class, so you're on the cutting
+     edge. Hopefully it will work, give me feedback if it is not
+
+* Going Forward :slide:
+  + Other homework assignments will be completing code
+  + General work-flow:
+    + Sync with my repository
+    + Start a new branch
+    + Add required files
+    + push to GitHub
+    + Submit Pull Request
+
+* *Demo* :slide:
+** Commands :notes:
+   + Learn as much as you like at [[http://try.github.io][Try Git]]
+   + [[https://www.ischool.berkeley.edu/intranet/computing/connecting/files][ssh ischool]]
+#+begin_src bash
+   git clone git://github.com/jblomo/webarch253.git webarch2013
+   cd webarch2013
+#+end_src
+*** For every new homework:
+#+begin_src bash
+   git checkout -b hw1-browsers master
+   echo Jim Blomo > $USER.txt
+   git add $USER.txt
+   git commit -m "my first homework"
+   git push origin
+#+end_src
+
+* Homework 1 :slide:
+   + =pico $USER.txt=
+   + Write two paragraphs:
+     1. Your experience with web archtecture. Have you written HTML before? 
+        Written Javascript? etc.
+     2. What are your favorite features from at least 2 browsers?
+   + Reading:
+     + [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]]
+     + [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]]
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
