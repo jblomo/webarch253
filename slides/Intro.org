@@ -71,8 +71,14 @@
   + Yelp
   + Lecturer
 
-* Hi, I'm Sonali Sharma :slide:
-  + TODO
+* Hi, I'm Sonali Sharma :slide:two_col:
+  + 2nd year MIMS student
+  + Computer Science Undergrad
+  + Data enthusiast
+  + Dreams about having a REALLY cool self made personal webpage
+  + Traveller
+  [[file:img/sonali.jpg]]
+
 
 * The Web is Important :slide:
   + Democratizes Information
