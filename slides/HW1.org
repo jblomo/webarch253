@@ -94,6 +94,9 @@ $ git remote rename origin jblomo
   + Directory on ischool: work and commit
   + GitHub pushed copy
   + GitHub Pull Request: homework submission
+** Don't merge :notes:
+  + During this class, you will almost never have to merge. Exception could be
+    when working in groups on a Project
 
 * Git vs GitHub :slide:
   [[file:img/git-ischool.png]]
