@@ -101,12 +101,18 @@ $ git remote rename origin jblomo
 * Connect it to GitHub :slide:
   + After you recieve your free micro account on GitHub, create a private repository called =webarch2013=
   + It will provide you with an SSH git path, let's call it PATH
-  + You must use the *SSH* PATH starting with =git://=
+  + You must use the *SSH* PATH starting with =git@=
   + On the server, in the webarch2013 directory, run
 #+begin_src html
 $ git remote add origin PATH
 $ git push origin master
 #+end_src
+** Push Failures :notes:
+   + If you see an error about authorization failure, it is possible you do not
+     have the SSH keys availabile
+   + This can happen if you generated the keys on your laptop, but are trying to
+     push from =ischool=
+   + A solution is to copy the keys to =ischool=: =scp ~/.ssh/id* USERNAME@ischool.berkeley.edu:.ssh/=
 
 * Share with us :slide:
   + Hopefully you now have a private copy of my repository
