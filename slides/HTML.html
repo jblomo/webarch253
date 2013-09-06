@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HTML</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="HTML"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-09-06T00:00-0700"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">HTML</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Announcements</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Review Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 <b>HTML</b> HyperText Markup Language</a></li>
+<li><a href="#sec-3">3 What is <b>HyperText</b></a>
+<ul>
+<li><a href="#sec-3-1">3.1 Answer</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Let's start simple</a>
+<ul>
+<li><a href="#sec-4-1">4.1 What about headers?</a></li>
+<li><a href="#sec-4-2">4.2 Bold? Italics?</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 What is hard to encode in this scheme?</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Difficult</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Why Text?</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Alternatives?</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Take a step back</a></li>
+<li><a href="#sec-8">8 Markup</a></li>
+<li><a href="#sec-9">9 Tags (Elements)</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Terminology</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 A story</a>
+<ul>
+<li><a href="#sec-10-1">10.1 A long, long time ago</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 The Blink Tag</a></li>
+<li><a href="#sec-12">12 Semantic Meaning</a></li>
+<li><a href="#sec-13">13 Bad Examples</a></li>
+<li><a href="#sec-14">14 Good Examples</a></li>
+<li><a href="#sec-15">15 XHTML → HTML4.01 → HTML5</a>
+<ul>
+<li><a href="#sec-15-1">15.1 XML</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16 Convoluted History</a>
+<ul>
+<li><a href="#sec-16-1">16.1 Explanation</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17 Who decides this stuff?</a>
+<ul>
+<li><a href="#sec-17-1">17.1 HTML5 still not done</a></li>
+</ul>
+</li>
+<li><a href="#sec-18">18 How?</a>
+<ul>
+<li><a href="#sec-18-1">18.1 Phases</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19 Request For Comments</a></li>
+<li><a href="#sec-20">20 Start Simple</a>
+<ul>
+<li><a href="#sec-20-1">20.1 Not complete</a></li>
+</ul>
+</li>
+<li><a href="#sec-21">21 Add a Section Header</a>
+<ul>
+<li><a href="#sec-21-1">21.1 What's the more important tag for HTML?</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22 Link Tag (a)</a></li>
+<li><a href="#sec-23">23 Attributes</a></li>
+<li><a href="#sec-24">24 Tables Have Nested Tags</a>
+<ul>
+<li><a href="#sec-24-1">24.1 DOM Tree</a></li>
+</ul>
+</li>
+<li><a href="#sec-25">25 Draw a Tree</a>
+<ul>
+<li><a href="#sec-25-1">25.1 Tree</a></li>
+</ul>
+</li>
+<li><a href="#sec-26">26 Bullets</a>
+<ul>
+<li><a href="#sec-26-1">26.1 Unordered List</a></li>
+</ul>
+</li>
+<li><a href="#sec-27">27 Head / Body</a></li>
+<li><a href="#sec-28">28 Don't loose your head</a></li>
+<li><a href="#sec-29">29 HTML Version:slide:</a></li>
+<li><a href="#sec-30">30 How do you load CSS?</a>
+<ul>
+<li><a href="#sec-30-1">30.1 Placement of tags</a></li>
+</ul>
+</li>
+<li><a href="#sec-31">31 Why Head?</a></li>
+<li><a href="#sec-32">32 Summary</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Announcements &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li><a href="https://piazza.com/berkeley/fall2013/info253/home">Piazza</a>: Great place
+    to post questions
+</li>
+<li>Do not merge Pull Requests, instructors will close after grading
+</li>
+<li>Waiting list has opened up a few more slots
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Review Questions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li>What is composability?
+</li>
+<li>Why is HTML composable?
+</li>
+<li>Why would you <b>not</b> want a composable system?
+</li>
+<li>What's another example of a HyperText language?
+</li>
+<li>What's the difference between a Language and a Protocol?
+</li>
+<li>What are examples of Protocols used by the Internet?
+</li>
+<li>What does a browser do?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <b>HTML</b> HyperText Markup Language &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> What is <b>HyperText</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Answer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>Text with references to other text
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Let's start simple &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>Text
+</li>
+<li>with links
+</li>
+</ul>
+
+
+
+
+<pre class="src src-text">This college is
+[[http://berkeley.edu][Berkeley]]
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> What about headers? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>We can add "stars" to the beginning of sections
+</li>
+</ul>
+
+
+
+
+<pre class="src src-markdown"><span style="color: #7a378b;">* </span>Main Header
+Important stuff in this
+paragraph...
+
+** This is a "level 2" header
+Info supporting main section,
+specific to this subsection...
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Bold? Italics? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>"earmuffs" "goal posts"
+</li>
+</ul>
+
+
+
+
+<pre class="src src-markdown"><span style="color: #a0522d; font-style: italic;">*looks bold*</span> /in italics/
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> What is hard to encode in this scheme? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>&amp;color&amp;
+</li>
+<li>| tables |
+</li>
+<li>/*nested/*
+</li>
+<li>fonts?
+</li>
+<li>Normal use of characters? <code>2 * 3 * 4 = 24</code>
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Difficult &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>Color
+</li>
+<li>Columns (sidebars)
+</li>
+<li>Nested formatting
+</li>
+<li>Fonts
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Why Text? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Computers store streams of bits
+</li>
+<li>Hard for a person to read
+</li>
+<li>Instead, store streams of characters
+</li>
+<li>Lowest level, most flexible format that can be easily understood
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Alternatives? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>Word is WYSIWYG, but how is it stored on disk?
+</li>
+<li>bits aren't blue, red, bigger, smaller
+</li>
+<li>styling is stored with bytes
+</li>
+<li>What if you wanted to peer into the file, understand why something didn't
+     look the right color? Humans can't read bytes easily
+</li>
+<li>Store in text: easier to understand an manipulate
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Take a step back &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Instead of thinking up clever characters to emulate, be explicit
+</li>
+<li>THIS IS BOLD: "hello"
+</li>
+<li>THIS IS ITALIC: "world"
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Markup &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>annotation to existing text
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">strong</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+&lt;<span style="color: #0000ff;">em</span>&gt;<span style="text-decoration: underline;">world</span>&lt;/<span style="color: #0000ff;">em</span>&gt;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Tags (Elements) &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>tags wrapped in angle brackets
+</li>
+<li>enclose affected text
+</li>
+<li>have <b>semantic</b> meaning
+</li>
+<li>can nest
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">strong</span>&gt;&lt;<span style="color: #0000ff;">em</span>&gt;<span style="text-decoration: underline;">hello</span>&lt;/<span style="color: #0000ff;">em</span>&gt;&lt;/<span style="color: #0000ff;">strong</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Terminology &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<dl>
+<dt>Tag</dt><dd>the text marker that wraps text. Think opening and closing tags.
+</dd>
+<dt>Element</dt><dd>The logical item denoted by the tags. Think of the entity in a
+         DOM
+</dd>
+</dl>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> A story &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<p><img src="img/Lynx-wikipedia.png"  alt="img/Lynx-wikipedia.png" />
+</p><ul>
+<li>Lynx
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> A long, long time ago &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>Author of Lynx was wondering what features his text-only browser would
+         share with the next gen browsers
+</li>
+<li>Almost the only thing was the ability to blink
+</li>
+<li>Big Joke: a blink tag
+</li>
+<li>Come next morning there it was
+</li>
+<li>Then the advertisers got a hold of it
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> The Blink Tag &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>"simply evil"  - Jakob Nielson
+</li>
+<li>"please make it stop" - everyone, everywhere
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">blink</span>&gt;<span style="background-color: #b4eeb4;">BLINK!</span>&lt;/<span style="color: #0000ff;">blink</span>&gt;
+</pre>
+
+<script type="text/javascript">
+  function blink() {
+    var blinks = document.getElementsByTagName('blink');
+    for (var i = blinks.length - 1; i >= 0; i--) {
+      var s = blinks[i];
+      s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+    }
+    window.setTimeout(blink, 1000);
+  }
+  if (document.addEventListener) document.addEventListener("DOMContentLoaded", blink, false);
+  else if (window.addEventListener) window.addEventListener("load", blink, false);
+  else if (window.attachEvent) window.attachEvent("onload", blink);
+  else window.onload = blink;
+</script>
+<blink><h1><b>BLINK!</b></h1></blink>
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Semantic Meaning &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>blink tag also violates semantic rule
+</li>
+<li>Tags should contain semantic meaning, not presentation
+</li>
+<li>Improves accessibility
+</li>
+<li>Clear line between HTML and CSS
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Bad Examples &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>&lt;font&gt; &lt;center&gt; &lt;i&gt;
+</li>
+<li>Why?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Good Examples &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li>&lt;span&gt; &lt;strong&gt; &lt;em&gt;
+</li>
+<li>client can style these however it chooses (with help from CSS)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> XHTML → HTML4.01 → HTML5 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+<ul>
+<li>Use "HTML5" and check if your target browsers support it
+</li>
+<li>Convoluted history
+</li>
+<li>XML: eXtensible Markup Language
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> XML &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+
+<ul>
+<li>XML also a markup language
+</li>
+<li>Designed to carry data and be extensible
+</li>
+<li>Had very rigorous requirements designed to make it easy to parse by
+     machines 
+</li>
+<li>ended up being very heavyweight for human use
+</li>
+<li>and we don't want much extensibility with HTML anyway
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Convoluted History &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+<dl>
+<dt>HTML</dt><dd>hippies
+</dd>
+<dt>XHTML</dt><dd>reformed hippies
+</dd>
+<dt>XHTML2.0</dt><dd>fresh start
+</dd>
+<dt>HTML5</dt><dd>Eh, too hard. Let's be hipsters instead!
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Explanation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+
+<dl>
+<dt>HTML</dt><dd>hippies, anything goes! blink tag, font tag, very mixed browser
+     support
+</dd>
+<dt>XHTML</dt><dd>reformed hippies, this is too crazy, bring in XML verboseness.
+     Very strict about what tags could be closed, used, etc
+</dd>
+<dt>XHTML2.0</dt><dd>fresh start, break compatibility&hellip; but never completed
+</dd>
+<dt>HTML5</dt><dd>hipsters, learned from their parents, but focused on looking
+     cool. Support for crazy new features (canvas for drawing graphics), but
+     stayed semantic, runs on mobile
+</dd>
+</dl>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Who decides this stuff? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+
+<ul>
+<li><a href="http://www.w3.org">World Wide Web Consortium</a>
+</li>
+<li>Authority on standards
+</li>
+<li>Ideas are often tried in browsers, then suggested as standards, then
+        accepted
+</li>
+<li>Can be a multi-year process
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-17-1" class="outline-3">
+<h3 id="sec-17-1"><span class="section-number-3">17.1</span> HTML5 still not done &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-1">
+
+<ul>
+<li>HTML5 is a "candidate recommendation", meaning they still may update it,
+     but probably won't remove any features
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> How? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-18">
+
+<ul>
+<li>Committees!
+</li>
+<li>Recommendations
+</li>
+<li>Request For Comments (RFC)
+</li>
+</ul>
+
+
+
+
+
+<pre class="src src-text">Request for Comments on Request for Comments
+
+Instructions to RFC Authors
+
+Status of this Memo
+
+   This RFC specifies a standard for the Internet community.  Authors of
+   RFCs are expected to adopt and implement this standard.  Distribution
+   of this memo is unlimited.
+</pre>
+
+
+</div>
+
+<div id="outline-container-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Phases &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+
+<ul>
+<li>HTML typically goes through W3 process: Working Draft, Candidate
+     Recommendation (feedback from implementers), Proposed Rec (submitted),
+     W3C Rec (fully out as a standard)
+</li>
+<li>Internet technologies (Internet Engineering Task Force) typically use RFC
+     process: send out a proposal for peer review, some get accepted
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Request For Comments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-19">
+
+<p><img src="img/Homing_pigeon.jpg"  alt="img/Homing_pigeon.jpg" />
+</p><ul>
+<li>Anyone can write an RFC
+</li>
+<li><a href="http://tools.ietf.org/html/rfc1149">A Standard for the Transmission of IP Datagrams on Avian Carriers</a>
+</li>
+<li>MUST SHOULD MAY
+<ul>
+<li>Phrasing itself is in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Start Simple &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-20">
+
+
+
+
+<pre class="src src-html">Hello World
+</pre>
+
+<div class="well">
+Hello World
+</div>
+
+</div>
+
+<div id="outline-container-20-1" class="outline-3">
+<h3 id="sec-20-1"><span class="section-number-3">20.1</span> Not complete &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-20-1">
+
+<ul>
+<li>Won't validate as a <b>complete</b> HTML document, but it is a valid HTML
+     snippet
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Add a Section Header &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-21">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">This is my header</span>&lt;/<span style="color: #0000ff;">h2</span>&gt;
+Hello World
+</pre>
+
+<div class="well">
+<h2>This is my header</h2>
+Hello World
+</div>
+<ul>
+<li>h1 is more important
+</li>
+<li>h6 least
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> What's the more important tag for HTML? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+
+<ul>
+<li>Clue: HyperText
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Link Tag (a) &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-22">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">This is my header</span>&lt;/<span style="color: #0000ff;">h2</span>&gt;
+&lt;<span style="color: #0000ff;">a</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"http://www.yelp.com"</span>&gt;Yelp&lt;/<span style="color: #0000ff;">a</span>&gt;
+</pre>
+
+<div class="well">
+<h2>This is my header</h2>
+<a href="http://www.yelp.com">Yelp</a>
+</div>
+<ul>
+<li>anchor tag
+</li>
+<li>hypertext reference <b>attribute</b> (href)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> <a href="http://www.w3schools.com/html/html_attributes.asp">Attributes</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-23">
+
+<ul>
+<li>HTML elements can have attributes
+</li>
+<li>Attributes provide additional information about an element
+</li>
+<li>Attributes are always specified in the start tag
+</li>
+<li>Attributes come in name/value pairs like: name="value"
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> Tables Have Nested Tags &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-24">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">table</span>&gt;
+        &lt;<span style="color: #0000ff;">tr</span>&gt;
+                &lt;<span style="color: #0000ff;">th</span>&gt;First Name&lt;/<span style="color: #0000ff;">th</span>&gt;
+                &lt;<span style="color: #0000ff;">th</span>&gt;Last Name&lt;/<span style="color: #0000ff;">th</span>&gt;
+                &lt;<span style="color: #0000ff;">th</span>&gt;Class&lt;/<span style="color: #0000ff;">th</span>&gt;
+        &lt;/<span style="color: #0000ff;">tr</span>&gt;
+
+        &lt;<span style="color: #0000ff;">tr</span>&gt;
+                &lt;<span style="color: #0000ff;">td</span>&gt;Jim&lt;/<span style="color: #0000ff;">td</span>&gt;
+                &lt;<span style="color: #0000ff;">td</span>&gt;Blomo&lt;/<span style="color: #0000ff;">td</span>&gt;
+                &lt;<span style="color: #0000ff;">td</span>&gt;Web Architecture&lt;/<span style="color: #0000ff;">td</span>&gt;
+        &lt;/<span style="color: #0000ff;">tr</span>&gt;
+
+&lt;/<span style="color: #0000ff;">table</span>&gt;
+</pre>
+
+<table>
+        <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class</th>
+        </tr>
+
+        <tr>
+                <td>Jim</td>
+                <td>Blomo</td>
+                <td>Web Architecture</td>
+        </tr>
+
+</table>
+
+
+</div>
+
+<div id="outline-container-24-1" class="outline-3">
+<h3 id="sec-24-1"><span class="section-number-3">24.1</span> DOM Tree &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-24-1">
+
+<p><img src="img/domtree.svg"  alt="img/domtree.svg" />
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> Draw a Tree &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-25">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">ol</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;&lt;<span style="color: #0000ff;">a</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"http://yelp.com"</span>&gt;Yelp&lt;/<span style="color: #0000ff;">a</span>&gt;&lt;/<span style="color: #0000ff;">li</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;&lt;<span style="color: #0000ff;">a</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"http://wikipedia.org"</span>&gt;Wikipedia&lt;/<span style="color: #0000ff;">a</span>&gt;&lt;/<span style="color: #0000ff;">li</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;&lt;<span style="color: #0000ff;">a</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"http://google.com"</span>&gt;Google&lt;/<span style="color: #0000ff;">a</span>&gt;&lt;/<span style="color: #0000ff;">li</span>&gt;
+&lt;/<span style="color: #0000ff;">ol</span>&gt;
+</pre>
+
+<ol>
+        <li><a href="http://yelp.com">Yelp</a></li>
+        <li><a href="http://wikipedia.org">Wikipedia</a></li>
+        <li><a href="http://google.com">Google</a></li>
+</ol>
+
+</div>
+
+<div id="outline-container-25-1" class="outline-3">
+<h3 id="sec-25-1"><span class="section-number-3">25.1</span> Tree &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-25-1">
+
+<p>  <img src="img/ol-tree.png"  alt="img/ol-tree.png" />
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-26" class="outline-2">
+<h2 id="sec-26"><span class="section-number-2">26</span> Bullets &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-26">
+
+<ul>
+<li>How do you write multiple layers of bullets?
+</li>
+<li>(Laptops are OK)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-26-1" class="outline-3">
+<h3 id="sec-26-1"><span class="section-number-3">26.1</span> Unordered List &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-26-1">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">ul</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;item&lt;/<span style="color: #0000ff;">li</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;
+      &lt;<span style="color: #0000ff;">ul</span>&gt;
+        &lt;<span style="color: #0000ff;">li</span>&gt;sub item&lt;/<span style="color: #0000ff;">li</span>&gt;
+      &lt;/<span style="color: #0000ff;">ul</span>&gt;
+    &lt;/<span style="color: #0000ff;">li</span>&gt;
+&lt;/<span style="color: #0000ff;">ul</span>&gt;
+</pre>
+
+<ul>
+        <li>item</li>
+    <li>
+       <ul>
+           <li>sub item</li>
+       </ul>
+    </li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-27" class="outline-2">
+<h2 id="sec-27"><span class="section-number-2">27</span> Head / Body &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-27">
+
+<ul>
+<li>So far we've been looking at the "body" of a document
+</li>
+<li>Main section which contains page information
+</li>
+<li>Head contains <i>meta</i> information
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-28" class="outline-2">
+<h2 id="sec-28"><span class="section-number-2">28</span> Don't loose your head &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-28">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #0000ff;">html</span>&gt;
+        &lt;<span style="color: #0000ff;">head</span>&gt;
+                &lt;<span style="color: #0000ff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">My First HTML</span>&lt;/<span style="color: #0000ff;">title</span>&gt;
+                &lt;<span style="color: #0000ff;">meta</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"author"</span> <span style="color: #a0522d;">content</span>=<span style="color: #8b2252;">"Jim Blomo"</span>&gt;
+                &lt;<span style="color: #0000ff;">meta</span> <span style="color: #a0522d;">http-equiv</span>=<span style="color: #8b2252;">"Content-Type"</span> <span style="color: #a0522d;">content</span>=<span style="color: #8b2252;">"text/html;charset=utf-8"</span>&gt;
+        &lt;/<span style="color: #0000ff;">head</span>&gt;
+        &lt;<span style="color: #0000ff;">body</span>&gt;
+                Main Content
+        &lt;/<span style="color: #0000ff;">body</span>&gt;
+</pre>
+
+<ul>
+<li>Title shows up title bar of browser
+</li>
+<li>meta tags convey general information
+<ul>
+<li>Don't need to be "closed"
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-29" class="outline-2">
+<h2 id="sec-29"><span class="section-number-2">29</span> HTML Version&nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-29">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+</pre>
+
+<ul>
+<li>Tells browser how to interperate the rest of the HTML
+</li>
+<li><code>html</code> means HTML5
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html PUBLIC <span style="color: #8b2252;">"-//W3C//DTD XHTML 1.0 Strict//EN"</span> <span style="color: #8b2252;">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</span>&gt;
+</pre>
+
+<ul>
+<li>Referencing DTDs a sign of "stricter"/XML versions of HTML
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-30" class="outline-2">
+<h2 id="sec-30"><span class="section-number-2">30</span> How do you load CSS? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-30">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">head</span>&gt;
+        &lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text/css"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"production/bootstrap.min.css"</span>&gt;
+        &lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text/css"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"production/common.css"</span>&gt;
+        &lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans"</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text/css"</span>&gt;
+        &lt;<span style="color: #0000ff;">script</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text/javascript"</span> <span style="color: #a0522d;">src</span>=<span style="color: #8b2252;">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"</span>&gt;&lt;/<span style="color: #0000ff;">script</span>&gt;
+&lt;/<span style="color: #0000ff;">head</span>&gt;
+</pre>
+
+<ul>
+<li>Browser will download these references and use them for display
+</li>
+<li>CSS <code>link</code> tags should appear in <code>head</code>
+</li>
+<li><code>script</code> tags can appear in body
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-30-1" class="outline-3">
+<h3 id="sec-30-1"><span class="section-number-3">30.1</span> Placement of tags &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-30-1">
+
+<ul>
+<li>This is how you load CSS! No link tags, no style.
+</li>
+<li>In a future lesson, we'll talk about optimizing page load times by being
+         careful about when and how we load these resources
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-31" class="outline-2">
+<h2 id="sec-31"><span class="section-number-2">31</span> Why Head? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-31">
+
+<ul>
+<li>Semantic meaning
+</li>
+<li>Title bar
+</li>
+<li>Search engines
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-32" class="outline-2">
+<h2 id="sec-32"><span class="section-number-2">32</span> Summary &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-32">
+
+<ul>
+<li>HTML provides a way to annotate text to convey semantic meaning or grouping
+</li>
+<li>Browser displays tags in standard ways
+</li>
+<li>Tags are named, can contain attributes, can be nested
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-09-06T00:00-0700</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

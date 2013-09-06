@@ -8,8 +8,8 @@
 
 | Date | Readings | Slides | Homework / Project |
 |------+----------+--------+--------------------|
-| Aug 30 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] Optional: [[http://try.github.io][Try Git]] | [[file:slides/Intro.html][Intro]] & [[file:slides/Browsers.html][Browsers]] | [[file:slides/HW1.html][Git & HW1]] |
-| Sep 6  | HTML & CSS | | |
+| Aug 30 | [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]] & [[http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true][Long Live the Web]] Optional: [[http://try.github.io][Try Git]] | [[file:slides/Intro.html][Intro]] & [[file:slides/Browsers.html][Browsers]] | [[file:slides/HW1.html][Git & HW1 - browsers]] |
+| Sep 6  | [[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list][HTML5 Elements]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] ; [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] ; Optional: [[http://www.montulli.org/theoriginofthe%3Cblink%3Etag][Blink Tag]]| [[file:slides/HTML.html][HTML]] & [[file:slides/CSS.html][CSS]] | [[file:slides/HW2.org][HW2 - Personal Page]] |
 | Sep 13 | Forms & Javascript | | |
 | Sep 20 | URL & HTTP | | |
 | Sep 27 | GUEST: Dynamic Webpages & Cookies | | |

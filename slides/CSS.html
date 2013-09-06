@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>CSS</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="CSS"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-09-05T23:59-0700"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">CSS</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>CSS</b></a></li>
+<li><a href="#sec-2">2 Style</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Composability</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 CSS</a></li>
+<li><a href="#sec-4">4 How Else Could We Do It</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Tradeoffs</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 CSS file</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Individuality</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 HTML <b>Attributes</b></a>
+<ul>
+<li><a href="#sec-6-1">6.1 Recall</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 <code>id</code> &amp; <code>class</code> Attributes</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Problems</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Compromises</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Leaky Abstraction</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Selectors</a>
+<ul>
+<li><a href="#sec-9-1">9.1 <code>id</code> &amp; <code>class</code></a></li>
+<li><a href="#sec-9-2">9.2 Selectors</a></li>
+<li><a href="#sec-9-3">9.3 Comma = Or</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Descendent</a>
+<ul>
+<li><a href="#sec-10-1">10.1 Example</a></li>
+<li><a href="#sec-10-2">10.2 Descendent CSS = '_' (space)</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 Cascading &amp; Inheritance</a></li>
+<li><a href="#sec-12">12 Cascading</a>
+<ul>
+<li><a href="#sec-12-1">12.1 Cascading</a></li>
+<li><a href="#sec-12-2">12.2 Fun with Defaults</a></li>
+<li><a href="#sec-12-3">12.3 Many More</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 What's the trade-off?</a>
+<ul>
+<li><a href="#sec-13-1">13.1 We can't style individual tags!</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14 <code>style</code> attribute</a></li>
+<li><a href="#sec-15">15 CSS Zen Garden</a></li>
+<li><a href="#sec-16">16 Sneak Peak</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>CSS</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Cascading Style Sheets
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Style &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>color, size, visibility, positioning
+</li>
+<li>specified separately from HTML
+</li>
+<li>Why separate?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Composability &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>Can incrementally upgrade styles without changing layout
+</li>
+<li>Apply different displays to the same HTML (these slides!)
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> CSS &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">strong</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+</pre>
+
+
+<pre class="src src-css"><span style="color: #0000ff;">strong </span>{
+    <span style="color: #a0522d;">font-weight</span>: bold; <span style="color: #a0522d;">color</span>: red;
+    <span style="color: #a0522d;">font-size</span>: 45px;
+}
+</pre>
+
+<div class="well">
+<strong style="font-size: 45px; font-weight: bold; color: red">hello</strong>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> How Else Could We Do It &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>Just like the funky ASCII symbols, we could set the style of each element
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html"><span style="color: #b22222;">&lt;!-- </span><span style="color: #b22222;">Warning: Invalid HTML </span><span style="color: #b22222;">--&gt;</span>
+&lt;<span style="color: #0000ff;">strong</span> <span style="color: #a0522d;">font-color</span>=<span style="color: #8b2252;">"red"</span> <span style="color: #a0522d;">font-size</span>=<span style="color: #8b2252;">"45px"</span>&gt;<span style="font-weight: bold;">hello</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Tradeoffs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>HTML encodes semantics
+</li>
+<li>Composability
+</li>
+<li>Must label every single tag!
+<ul>
+<li>What happens when we want to change the style of all strong tags? Or make
+       all headers (h1-h6) blue?
+</li>
+</ul>
+
+</li>
+<li>We got here because of choices
+</li>
+<li>Make sure you understand the choices that were made with each technology
+</li>
+<li>ASCII : American Standard Code for Information Interchange
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> CSS file &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+
+
+
+<pre class="src src-css"><span style="color: #0000ff;">h1 </span>{
+    <span style="color: #a0522d;">color</span>: #B3D4FC; <span style="color: #b22222;">/* </span><span style="color: #b22222;">light blue </span><span style="color: #b22222;">*/</span>
+    <span style="color: #a0522d;">text-align</span>: center;
+}
+</pre>
+
+<ul>
+<li>Now all main headers are centered and have a light blue look
+</li>
+<li>What's the trade-off we made?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Individuality &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>How do we style individual components?
+</li>
+<li>Use the id or class attribute
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> HTML <a href="http://www.w3schools.com/html/html_attributes.asp"><b>Attributes</b></a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<p><img src="img/hungergames.jpg"  alt="img/hungergames.jpg" />
+</p><ul>
+<li>A tribute
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Recall &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>HTML elements can have attributes
+</li>
+<li>Attributes provide additional information about an element
+</li>
+<li>Attributes are always specified in the start tag
+</li>
+<li>Attributes come in name/value pairs like: name="value"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> <code>id</code> &amp; <code>class</code> Attributes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<dl>
+<dt><code>id</code></dt><dd>Identifier. Unique per page
+</dd>
+<dt><code>class</code></dt><dd>Grouping. Multiple per page and per element
+</dd>
+</dl>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">strong</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"logo"</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"big red"</span>&gt;<span style="font-weight: bold;">Yelp</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+</pre>
+
+<ul>
+<li>What's wrong with the above?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Problems &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>Ideally HTML is semantic
+</li>
+<li>"big" and "red" are presentation details, not semantic
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Compromises &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>Truth is, most sophisticated sites make a compromise
+</li>
+<li>Sharing styles between semantic elements
+</li>
+<li>Frameworks that are used by different sites
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Leaky Abstraction &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<p><img src="img/dripping-faucet.jpg"  alt="img/dripping-faucet.jpg" />
+</p><ul>
+<li>When details of the composition or layers merge
+</li>
+<li>Often must write your HTML with knowledge of how you will style it
+</li>
+<li>But avoid too much coupling!
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Selectors &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+
+
+
+<pre class="src src-css"><span style="color: #0000ff;">strong </span>{
+    <span style="color: #a0522d;">font-weight</span>: bold;
+    <span style="color: #a0522d;">color</span>: red;
+    <span style="color: #a0522d;">font-size</span>: 45px;
+}
+</pre>
+
+<ul>
+<li>Selectors specify the element to apply a style
+</li>
+<li>This is selecting <b>all strong</b> elements
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> <code>id</code> &amp; <code>class</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+
+
+
+<pre class="src src-css"><span style="color: #0000ff;">#logo </span>{
+    <span style="color: #a0522d;">font-size</span>: 64px;
+    <span style="color: #a0522d;">color</span>: red;
+}
+
+<span style="color: #0000ff;">.symbol </span>{
+    <span style="color: #a0522d;">font-size</span>: 32px;
+    <span style="color: #a0522d;">color</span>: DarkBlue;
+}
+</pre>
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"logo"</span>&gt;Yelp&lt;/<span style="color: #0000ff;">span</span>&gt;
+&lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"symbol"</span>&gt;YELP&lt;/<span style="color: #0000ff;">span</span>&gt;
+&lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"symbol"</span>&gt;NYT&lt;/<span style="color: #0000ff;">span</span>&gt;
+</pre>
+
+<div class="well">
+<span style="color:red; font-size: 64px;">Yelp</span>
+<span style="color:DarkBlue; font-size: 32px;">YELP</span>
+<span style="color:DarkBlue; font-size: 32px;">NYT</span>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Selectors &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-2">
+
+<ul>
+<li><code>id</code> uses #
+</li>
+<li><code>class</code> uses .
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Comma = Or &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-3">
+
+
+
+
+<pre class="src src-css"><span style="color: #0000ff;">h1, h2, h3 </span>{
+    <span style="color: #a0522d;">color</span>: #B3D4FC; <span style="color: #b22222;">/* </span><span style="color: #b22222;">light blue </span><span style="color: #b22222;">*/</span>
+    <span style="color: #a0522d;">text-align</span>: center;
+}
+</pre>
+
+<ul>
+<li>all h1 or h2 or h3 elements
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Descendent &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<ul>
+<li>Let's write a table in HTML
+</li>
+<li>What is an example of a descendent?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>td (table data) is a descendent of tr and table
+</li>
+<li>tr is a descendent of table
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> Descendent CSS = '_' (space) &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-2">
+
+
+
+
+<pre class="src src-css"><span style="color: #0000ff;">table a </span>{
+    <span style="color: #a0522d;">text-decoration</span>: underline;
+}
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Cascading &amp; Inheritance &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>Some properties are passed down to descendants, like <code>font-family</code>
+</li>
+<li>Some elements may be affected by multiple rules, which "cascade"
+</li>
+<li>Most specific wins
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Cascading &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+
+
+
+<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">fileA.css </span><span style="color: #b22222;">*/</span>
+<span style="color: #0000ff;">table </span>{
+  <span style="color: #a0522d;">font-family</span>: sans-serif;
+}
+
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">fileB.css </span><span style="color: #b22222;">*/</span>
+<span style="color: #0000ff;">.data </span>{
+  <span style="color: #a0522d;">border</span>: 1px solid rgba(0, 0, 0, 0.2);
+}
+</pre>
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">table</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"data"</span>&gt;...&lt;/<span style="color: #0000ff;">table</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Cascading &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>both rules "cascade" over element, causing it to both have the
+     <code>font-family</code> property and the border
+</li>
+<li>If they conflicted, most precise would win (in this case class selector)
+</li>
+<li><code>font-family</code> will be inherited in all of the descendants of table
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Fun with Defaults &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
+
+<ul>
+<li><a href="http://html5boilerplate.com">HTML5 Boilerplate</a>
+</li>
+<li>Default selection <code>::selection</code>
+</li>
+<li><a href="http://data.nasa.gov">NASA</a>, <a href="http://www.ew.com/ew">EW</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12-3" class="outline-3">
+<h3 id="sec-12-3"><span class="section-number-3">12.3</span> Many More &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-3">
+
+<ul>
+<li>Covered in reading:
+     <a href="http://www.maxdesign.com.au/articles/css-inheritance/">CSS inheritance</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> What's the trade-off? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>Now we can specify styles in another file
+</li>
+<li>Can select groups of tags or tags with IDs
+</li>
+<li>But how can we style individual tags?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> We can't style individual tags! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>What if we can't change the style file?
+<ul>
+<li>Comments section
+</li>
+<li>HTML generated from a template
+</li>
+</ul>
+
+</li>
+<li>We want to test what a style would look like in one place
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> <code>style</code> attribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li>change the style of individual elements inline in HTML
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">h1</span> <span style="color: #a0522d;">style</span>=<span style="color: #8b2252;">"color: saddleBrown; background-color: lightYellow; font-family: script;"</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Individual</span>&lt;/<span style="color: #0000ff;">h1</span>&gt;
+</pre>
+
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+<ul>
+<li>Value of the <code>style</code> attribute is the same format as the definition block
+</li>
+<li>Only for very special cases!
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> <a href="http://www.csszengarden.com">CSS Zen Garden</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+<ul>
+<li>One site, many designs
+</li>
+<li><a href="http://www.csszengarden.com/?cssfile=206/206.css">Garden</a>
+</li>
+<li><a href="http://www.csszengarden.com/?cssfile=/213/213.css&amp;page=0">Under the Sea</a>
+</li>
+</ul>
+
+<p>  <img src="img/css-zen.png"  alt="img/css-zen.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Sneak Peak &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+<ul>
+<li>Javascript can manipulate CSS, too!
+</li>
+<li><code>display: hidden</code>
+</li>
+<li><code>height: 10px;</code> <code>height: 20px;</code> <code>height: 45px;</code>
+</li>
+<li>Composability: they play well together, but <b>don't require</b> each other
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-09-05T23:59-0700</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

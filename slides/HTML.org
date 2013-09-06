@@ -1,0 +1,417 @@
+* Announcements :slide:
+  + [[https://piazza.com/berkeley/fall2013/info253/home][Piazza]]: Great place
+    to post questions
+  + Do not merge Pull Requests, instructors will close after grading
+  + Waiting list has opened up a few more slots
+** Review Questions :notes:
+   + What is composability?
+   + Why is HTML composable?
+   + Why would you *not* want a composable system?
+   + What's another example of a HyperText language?
+   + What's the difference between a Language and a Protocol?
+   + What are examples of Protocols used by the Internet?
+   + What does a browser do?
+
+* *HTML* HyperText Markup Language :slide:
+
+* What is *HyperText* :slide:
+** Answer :notes:
+   + Text with references to other text
+
+* Let's start simple :slide:
+  + Text
+  + with links
+#+begin_src text
+This college is
+[[http://berkeley.edu][Berkeley]]
+#+end_src
+
+** What about headers? :slide:
+   + We can add "stars" to the beginning of sections
+#+begin_src markdown
+* Main Header
+Important stuff in this
+paragraph...
+
+** This is a "level 2" header
+Info supporting main section,
+specific to this subsection...
+#+end_src
+
+** Bold? Italics? :slide:
+   + "earmuffs" "goal posts"
+#+begin_src markdown
+	*looks bold* /in italics/
+#+end_src
+
+* What is hard to encode in this scheme? :slide:animate:
+  + &color&
+  + | tables |
+  + /*nested/*
+  + fonts?
+  + Normal use of characters? =2 * 3 * 4 = 24=
+** Difficult :notes:
+   + Color
+   + Columns (sidebars)
+   + Nested formatting
+   + Fonts
+
+* Why Text? :slide:
+  + Computers store streams of bits
+  + Hard for a person to read
+  + Instead, store streams of characters
+  + Lowest level, most flexible format that can be easily understood
+** Alternatives? :notes:
+   + Word is WYSIWYG, but how is it stored on disk?
+   + bits aren't blue, red, bigger, smaller
+   + styling is stored with bytes
+   + What if you wanted to peer into the file, understand why something didn't
+     look the right color? Humans can't read bytes easily
+   + Store in text: easier to understand an manipulate
+
+* Take a step back :slide:
+  + Instead of thinking up clever characters to emulate, be explicit
+  + THIS IS BOLD: "hello"
+  + THIS IS ITALIC: "world"
+
+* Markup :slide:
+  + annotation to existing text
+#+begin_src html
+<strong>hello</strong>
+<em>world</em>
+#+end_src
+
+* Tags (Elements) :slide:
+  + tags wrapped in angle brackets
+  + enclose affected text
+  + have *semantic* meaning
+  + can nest
+#+begin_src html
+<strong><em>hello</em></strong>
+#+end_src
+** Terminology :notes:
+   + Tag :: the text marker that wraps text. Think opening and closing tags.
+   + Element :: The logical item denoted by the tags. Think of the entity in a
+	 DOM
+
+* A story :slide:
+[[file:img/Lynx-wikipedia.png]]
+  + Lynx
+** A long, long time ago :notes:
+   + Author of Lynx was wondering what features his text-only browser would
+	 share with the next gen browsers
+   + Almost the only thing was the ability to blink
+   + Big Joke: a blink tag
+   + Come next morning there it was
+   + Then the advertisers got a hold of it
+
+* The Blink Tag :slide:
+  + "simply evil"  - Jakob Nielson
+  + "please make it stop" - everyone, everywhere
+#+begin_src html
+<blink>BLINK!</blink>
+#+end_src
+#+BEGIN_HTML
+<script type="text/javascript">
+  function blink() {
+    var blinks = document.getElementsByTagName('blink');
+    for (var i = blinks.length - 1; i >= 0; i--) {
+      var s = blinks[i];
+      s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+    }
+    window.setTimeout(blink, 1000);
+  }
+  if (document.addEventListener) document.addEventListener("DOMContentLoaded", blink, false);
+  else if (window.addEventListener) window.addEventListener("load", blink, false);
+  else if (window.attachEvent) window.attachEvent("onload", blink);
+  else window.onload = blink;
+</script>
+<blink><h1><b>BLINK!</b></h1></blink>
+#+END_HTML
+
+* Semantic Meaning :slide:
+  + blink tag also violates semantic rule
+  + Tags should contain semantic meaning, not presentation
+  + Improves accessibility
+  + Clear line between HTML and CSS
+
+* Bad Examples :slide:
+  + <font> <center> <i>
+  + Why?
+
+* Good Examples :slide:
+  + <span> <strong> <em>
+  + client can style these however it chooses (with help from CSS)
+
+* XHTML → HTML4.01 → HTML5 :slide:
+  + Use "HTML5" and check if your target browsers support it
+  + Convoluted history
+  + XML: eXtensible Markup Language
+** XML :notes:
+   + XML also a markup language
+   + Designed to carry data and be extensible
+   + Had very rigorous requirements designed to make it easy to parse by
+     machines 
+   + ended up being very heavyweight for human use
+   + and we don't want much extensibility with HTML anyway
+
+* Convoluted History :slide:
+  + HTML :: hippies
+  + XHTML :: reformed hippies
+  + XHTML2.0 :: fresh start
+  + HTML5 :: Eh, too hard. Let's be hipsters instead!
+** Explanation :notes:
+   + HTML :: hippies, anything goes! blink tag, font tag, very mixed browser
+     support
+   + XHTML :: reformed hippies, this is too crazy, bring in XML verboseness.
+     Very strict about what tags could be closed, used, etc
+   + XHTML2.0 :: fresh start, break compatibility... but never completed
+   + HTML5 :: hipsters, learned from their parents, but focused on looking
+     cool. Support for crazy new features (canvas for drawing graphics), but
+     stayed semantic, runs on mobile
+
+* Who decides this stuff? :slide:
+  + [[http://www.w3.org][World Wide Web Consortium]]
+  + Authority on standards
+  + Ideas are often tried in browsers, then suggested as standards, then
+	accepted
+  + Can be a multi-year process
+** HTML5 still not done :notes:
+   + HTML5 is a "candidate recommendation", meaning they still may update it,
+     but probably won't remove any features
+
+* How? :slide:
+  + Committees!
+  + Recommendations
+  + Request For Comments (RFC)
+
+#+begin_src text
+Request for Comments on Request for Comments
+
+Instructions to RFC Authors
+
+Status of this Memo
+
+   This RFC specifies a standard for the Internet community.  Authors of
+   RFCs are expected to adopt and implement this standard.  Distribution
+   of this memo is unlimited.
+#+end_src
+** Phases :notes:
+   + HTML typically goes through W3 process: Working Draft, Candidate
+     Recommendation (feedback from implementers), Proposed Rec (submitted),
+     W3C Rec (fully out as a standard)
+   + Internet technologies (Internet Engineering Task Force) typically use RFC
+     process: send out a proposal for peer review, some get accepted
+
+* Request For Comments :slide:two_col:
+[[file:img/Homing_pigeon.jpg]]
+   + Anyone can write an RFC
+   + [[http://tools.ietf.org/html/rfc1149][A Standard for the Transmission of IP Datagrams on Avian Carriers]]
+  + MUST SHOULD MAY
+    + Phrasing itself is in [[http://www.ietf.org/rfc/rfc2119.txt][RFC 2119]]
+
+* Start Simple :slide:
+#+begin_src html
+Hello World
+#+end_src
+#+BEGIN_HTML
+<div class="well">
+Hello World
+</div>
+#+END_HTML
+** Not complete :notes:
+   + Won't validate as a *complete* HTML document, but it is a valid HTML
+     snippet
+
+* Add a Section Header :slide:
+#+begin_src html
+<h2>This is my header</h2>
+Hello World
+#+end_src
+#+BEGIN_HTML
+<div class="well">
+<h2>This is my header</h2>
+Hello World
+</div>
+#+END_HTML
+ + h1 is more important
+ + h6 least
+** What's the more important tag for HTML? :notes:
+   + Clue: HyperText
+
+* Link Tag (a) :slide:
+#+begin_src html
+<h2>This is my header</h2>
+<a href="http://www.yelp.com">Yelp</a>
+#+end_src
+#+BEGIN_HTML
+<div class="well">
+<h2>This is my header</h2>
+<a href="http://www.yelp.com">Yelp</a>
+</div>
+#+END_HTML
+ + anchor tag
+ + hypertext reference *attribute* (href)
+
+* [[http://www.w3schools.com/html/html_attributes.asp][Attributes]] :slide:
+  + HTML elements can have attributes
+  + Attributes provide additional information about an element
+  + Attributes are always specified in the start tag
+  + Attributes come in name/value pairs like: name="value"
+
+* Tables Have Nested Tags :slide:
+#+begin_src html
+<table>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Class</th>
+	</tr>
+
+	<tr>
+		<td>Jim</td>
+		<td>Blomo</td>
+		<td>Web Architecture</td>
+	</tr>
+
+</table>
+#+end_src
+#+BEGIN_HTML
+<table>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Class</th>
+	</tr>
+
+	<tr>
+		<td>Jim</td>
+		<td>Blomo</td>
+		<td>Web Architecture</td>
+	</tr>
+
+</table>
+#+END_HTML
+
+** DOM Tree :slide:
+[[file:img/domtree.svg]]
+
+* Draw a Tree :slide:
+#+begin_src html
+<ol>
+	<li><a href="http://yelp.com">Yelp</a></li>
+	<li><a href="http://wikipedia.org">Wikipedia</a></li>
+	<li><a href="http://google.com">Google</a></li>
+</ol>
+#+end_src
+#+BEGIN_HTML
+<ol>
+	<li><a href="http://yelp.com">Yelp</a></li>
+	<li><a href="http://wikipedia.org">Wikipedia</a></li>
+	<li><a href="http://google.com">Google</a></li>
+</ol>
+#+END_HTML
+** Tree :notes:
+  [[file:img/ol-tree.png]]
+
+* Bullets :slide:
+  + How do you write multiple layers of bullets?
+  + (Laptops are OK)
+** Unordered List :notes:
+#+begin_src html
+<ul>
+	<li>item</li>
+	<li>
+      <ul>
+      	<li>sub item</li>
+      </ul>
+    </li>
+</ul>
+#+end_src
+#+BEGIN_HTML
+<ul>
+	<li>item</li>
+    <li>
+       <ul>
+           <li>sub item</li>
+       </ul>
+    </li>
+</ul>
+#+END_HTML
+
+* Head / Body :slide:
+  + So far we've been looking at the "body" of a document
+  + Main section which contains page information
+  + Head contains /meta/ information
+
+* Don't loose your head :slide:
+#+begin_src html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My First HTML</title>
+		<meta name="author" content="Jim Blomo">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	</head>
+	<body>
+		Main Content
+	</body>
+#+end_src
+  + Title shows up title bar of browser
+  + meta tags convey general information
+    + Don't need to be "closed"
+
+* HTML Version:slide:
+#+begin_src html
+<!DOCTYPE html>
+#+end_src
+  + Tells browser how to interperate the rest of the HTML
+  + =html= means HTML5
+#+begin_src html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+#+end_src
+  + Referencing DTDs a sign of "stricter"/XML versions of HTML
+
+* How do you load CSS? :slide:
+#+begin_src html
+<head>
+	<link rel="stylesheet" type="text/css" href="production/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="production/common.css">
+	<link href="http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+</head>
+#+end_src
+ + Browser will download these references and use them for display
+ + CSS =link= tags should appear in =head=
+ + =script= tags can appear in body
+** Placement of tags :notes:
+   + This is how you load CSS! No link tags, no style.
+   + In a future lesson, we'll talk about optimizing page load times by being
+	 careful about when and how we load these resources
+
+* Why Head? :slide:
+  + Semantic meaning
+  + Title bar
+  + Search engines
+
+* Summary :slide:
+  + HTML provides a way to annotate text to convey semantic meaning or grouping
+  + Browser displays tags in standard ways
+  + Tags are named, can contain attributes, can be nested
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

@@ -1,0 +1,233 @@
+* *CSS* :slide:
+  + Cascading Style Sheets
+
+* Style :slide:
+  + color, size, visibility, positioning
+  + specified separately from HTML
+  + Why separate?
+** Composability :notes:
+   + Can incrementally upgrade styles without changing layout
+   + Apply different displays to the same HTML (these slides!)
+
+* CSS :slide:
+#+begin_src html
+<strong>hello</strong>
+#+end_src
+#+begin_src css
+strong {
+    font-weight: bold; color: red;
+    font-size: 45px;
+}
+#+end_src
+#+BEGIN_HTML
+<div class="well">
+<strong style="font-size: 45px; font-weight: bold; color: red">hello</strong>
+</div>
+#+END_HTML
+
+* How Else Could We Do It :slide:
+  + Just like the funky ASCII symbols, we could set the style of each element
+#+begin_src html
+<!-- Warning: Invalid HTML -->
+<strong font-color="red" font-size="45px">hello</strong>
+#+end_src
+** Tradeoffs :notes:
+   + HTML encodes semantics
+   + Composability
+   + Must label every single tag!
+     + What happens when we want to change the style of all strong tags? Or make
+       all headers (h1-h6) blue?
+   + We got here because of choices
+   + Make sure you understand the choices that were made with each technology
+   + ASCII : American Standard Code for Information Interchange
+
+* CSS file :slide:
+#+begin_src css
+h1 {
+    color: #B3D4FC; /* light blue */
+    text-align: center;
+}
+#+end_src
+ + Now all main headers are centered and have a light blue look
+ + What's the trade-off we made?
+** Individuality :notes:
+   + How do we style individual components?
+   + Use the id or class attribute
+
+* HTML [[http://www.w3schools.com/html/html_attributes.asp][*Attributes*]] :slide:
+[[file:img/hungergames.jpg]]
+  + A tribute
+** Recall :notes:
+  + HTML elements can have attributes
+  + Attributes provide additional information about an element
+  + Attributes are always specified in the start tag
+  + Attributes come in name/value pairs like: name="value"
+
+* =id= & =class= Attributes :slide:
+  + =id= :: Identifier. Unique per page
+  + =class= :: Grouping. Multiple per page and per element
+#+begin_src html
+<strong id="logo" class="big red">Yelp</strong>
+#+end_src
+ + What's wrong with the above?
+** Problems :notes:
+   + Ideally HTML is semantic
+   + "big" and "red" are presentation details, not semantic
+
+* Compromises :slide:
+  + Truth is, most sophisticated sites make a compromise
+  + Sharing styles between semantic elements
+  + Frameworks that are used by different sites
+** Leaky Abstraction :slide:two_col:
+[[file:img/dripping-faucet.jpg]]
+   + When details of the composition or layers merge
+   + Often must write your HTML with knowledge of how you will style it
+   + But avoid too much coupling!
+
+* Selectors :slide:
+#+begin_src css
+strong {
+    font-weight: bold;
+    color: red;
+    font-size: 45px;
+}
+#+end_src
+ + Selectors specify the element to apply a style
+ + This is selecting *all strong* elements
+
+** =id= & =class= :slide:
+#+begin_src css
+#logo {
+    font-size: 64px;
+    color: red;
+}
+
+.symbol {
+    font-size: 32px;
+    color: DarkBlue;
+}
+#+end_src
+#+begin_src html
+<span id="logo">Yelp</span>
+<span class="symbol">YELP</span>
+<span class="symbol">NYT</span>
+#+end_src
+#+BEGIN_HTML
+<div class="well">
+<span style="color:red; font-size: 64px;">Yelp</span>
+<span style="color:DarkBlue; font-size: 32px;">YELP</span>
+<span style="color:DarkBlue; font-size: 32px;">NYT</span>
+</div>
+#+END_HTML
+** Selectors :notes:
+   + =id= uses #
+   + =class= uses .
+
+** Comma = Or :slide:
+#+begin_src css
+h1, h2, h3 {
+    color: #B3D4FC; /* light blue */
+    text-align: center;
+}
+#+end_src
+ + all h1 or h2 or h3 elements
+
+* Descendent :slide:animate:
+  + Let's write a table in HTML
+  + What is an example of a descendent?
+** Example :notes:
+   + td (table data) is a descendent of tr and table
+   + tr is a descendent of table
+
+** Descendent CSS = '\_' (space) :slide:
+#+begin_src css
+table a {
+    text-decoration: underline;
+}
+#+end_src
+
+* Cascading & Inheritance :slide:
+  + Some properties are passed down to descendants, like =font-family=
+  + Some elements may be affected by multiple rules, which "cascade"
+  + Most specific wins
+
+* Cascading :slide:
+#+begin_src css
+/* fileA.css */
+table {
+  font-family: sans-serif;
+}
+
+/* fileB.css */
+.data {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+#+end_src
+
+#+begin_src html
+<table class="data">...</table>
+#+end_src
+** Cascading :notes:
+   + both rules "cascade" over element, causing it to both have the
+     =font-family= property and the border
+   + If they conflicted, most precise would win (in this case class selector)
+   + =font-family= will be inherited in all of the descendants of table
+
+** Fun with Defaults :slide:
+  + [[http://html5boilerplate.com][HTML5 Boilerplate]]
+  + Default selection =::selection=
+  + [[http://data.nasa.gov][NASA]], [[http://www.ew.com/ew][EW]]
+
+** Many More :slide:
+   + Covered in reading:
+     [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]]
+
+* What's the trade-off? :slide:animate:
+  + Now we can specify styles in another file
+  + Can select groups of tags or tags with IDs
+  + But how can we style individual tags?
+** We can't style individual tags! :notes:
+   + What if we can't change the style file?
+     + Comments section
+     + HTML generated from a template
+   + We want to test what a style would look like in one place
+
+* =style= attribute :slide:
+  + change the style of individual elements inline in HTML
+#+begin_src html
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+#+end_src
+#+BEGIN_HTML
+<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+#+END_HTML
+ + Value of the =style= attribute is the same format as the definition block
+ + Only for very special cases!
+
+* [[http://www.csszengarden.com][CSS Zen Garden]] :slide:two_col:
+  + One site, many designs
+  + [[http://www.csszengarden.com/?cssfile=206/206.css][Garden]]
+  + [[http://www.csszengarden.com/?cssfile=/213/213.css&page=0][Under the Sea]]
+  [[file:img/css-zen.png]]
+
+* Sneak Peak :slide:
+  + Javascript can manipulate CSS, too!
+  + =display: hidden=
+  + =height: 10px;= =height: 20px;= =height: 45px;=
+  + Composability: they play well together, but *don't require* each other
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

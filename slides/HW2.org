@@ -1,0 +1,76 @@
+* HW2 - Personal Site :slide:
+  + Write HTML for a personal page
+  + Write CSS to style it
+  + Test it (validate, browser test)
+
+* HTML :slide:
+  + Required elements:
+    + html
+    + title
+    + head
+    + link
+    + body
+    + div
+    + a
+    + ul/ol
+    + li
+    + img
+    + p
+    + h1/h2/h3/h4
+    + <!-- comments -->
+
+* CSS :slide:
+  + More than 1 CSS file
+  + Styles that "cascade", ie some element whose style is affected by more
+    than 1 declaration
+  + 1 or more use of inline CSS
+  + Semantic use of =class=, =id= attributes
+  + / * comments * /
+
+* Testing :slide:
+  + HTML validates in http://validator.w3.org/
+  + CSS validates in http://jigsaw.w3.org/css-validator/
+  + Warnings OK
+  + Test in two browsers
+
+* Pull Request :slide:
+  + Should have all the files
+  + In the description, include which browsers you tested with, including
+    versions
+  + The URL to your page
+
+* public\_html :slide:
+  + Make your page public
+#+begin_src html
+cd ~/public_html
+ln -s ../webarch2013/public_html webarch2013
+#+end_src
+   + http://people.ischool.berkeley.edu/~jblomo/webarch2013/
+
+* Extra Credit :slide:
+  + Create an /additional/ page with [[http://getbootstrap.com/][Bootstrap]]
+  + Use at least 1 [[http://getbootstrap.com/components/][Component]]
+  + Extra credit applies *up to* full credit on a particular assignment
+** Motivation :notes:
+   + Main motivation is for those looking to become web developers, what can
+     you do to set yourself apart?
+   + Will make up for mistakes in the main project
+   + Amount of extra credit given will depend on assignment, effort, and will
+     be at instructor's discretion
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
