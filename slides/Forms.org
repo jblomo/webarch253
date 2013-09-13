@@ -34,7 +34,7 @@
      suggest what you want filled
 
 * Forms are HTML :slide:
-  + Declaritive
+  + Declarative
   + Standardized
   + Semantic 
   + Styled
