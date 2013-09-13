@@ -192,7 +192,74 @@ $('#to-do-list .item').css('background', 'green');
    + Handle click event
    + =href= of "#" means "don't actually go anywhere"
 
-* TODO form validation  :slide:
+* Listen to events :slide:
+#+begin_src javascript
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+#+end_src
+#+BEGIN_HTML
+<p id="ticker">tick</p>
+<script>
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+</script>
+#+END_HTML
+** Callbacks :notes:
+   + =increment= function is called when the click event happens
+   + when we specify =increment= it is the "callback"
+
+* jQuery :slide:
+#+begin_src javascript
+$("#ticker").click(function() {...});
+#+end_src
+** Inline :notes:
+   + jQuery hides the specific calls needed
+   + functions can be specified inline, you don't need to declare them
+   + Although it often helps readability
+
+* AJAX :slide:
+  + Asynchronous Javascript And XML*
+  + Allows Javascript to make additional requests
+  + Why?
+** More Info :notes:
+   + Gather more information, eg. sophisticated auto complete
+   + Fill in information in place
+   + Infinite scroll
+   + *Actually doesn't use XML much anymore: HTML snippets and JSON
+
+* Infinite Scroll :slide:
+  + [[http://www.pinterest.com/search/?q=programmers][Pinterest]]
+  [[file:img/stackoverflow.jpg]]
+** AJAX :notes:
+   + When the scroll event or view events happen, javascript will make an AJAX
+     call to server
+   + Server will respond with HTML inside JSON
+
+* jQuery AJAX :slide:
+#+begin_src html
+$('#get-homework').click(function(event) {
+  $.ajax('/snippet', {
+    success: function(data) {
+      $('#ajax-snippet').append(data);
+      event.stopPropagation();
+    }
+  })
+});
+#+end_src
+** Callbacks :notes:
+   + Again, we're using callbacks
+   + We can't wait around while the server responds: maybe the user is clicking
+     somewhere else!
+   + Instead we specify what to do when the call returns
+   + Also callbacks for =error=, other conditions
 
 * JSON :slide:
   + Pass data as if it were a Javascript Object
@@ -203,6 +270,11 @@ school: "Berkeley", jobs: ["Yelp", "A9"]}
 #+end_src
 ** Javascript Object Notation :notes:
    + used in place of XML
+
+* Summary :slide:
+  + Javascript used to manipulate DOM, CSS styles
+  + Javascript is a full, asynchronous programming language
+  + Used to enhance existing, semantic HTML
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />

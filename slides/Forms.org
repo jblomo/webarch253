@@ -1,11 +1,16 @@
 * Announcements :slide:
   + Waitlist has been accepted
-    + If you're not in the class, email or private Piaza
+    + If you're not in the class, email or private Piazza
   + HW1 graded
-    + If you haven't seen the grade, email or private Piaza
+    + If you haven't seen the grade, email or private Piazza
   + HW2: make sure you included a public URL
 ** Questions :notes:
-   + TODO
+   + Examples of semantic vs. display tags?
+   + Why is the =id= attribute special?
+   + How to use =class= attribute in CSS?
+   + What types of CSS styles to elements inherit?
+   + Can multiple CSS declarations affect a single element?
+   + What is the DOM?
 
 * *Forms* :slide:
 
@@ -35,7 +40,7 @@
   + Styled
 ** Don't forget! :notes:
    + HTML should be communicating the intention of the page semantically and
-     declaritively
+     declaratively
    + We may have different ways to interact with forms, eg click vs touch
    + Or showing a pop-up selection vs dropdown (mobile)
    + Use standard form elements
@@ -282,7 +287,7 @@
    + Autocomplete, or filling in city/state/country when user fills in zip code
 
 * Javascript! :slide:
-  + Write imperitive style code specific to your site
+  + Write imperative style code specific to your site
   + No interaction with a server required
   + Run by the browser
 ** ECMA :notes:

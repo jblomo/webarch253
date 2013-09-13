@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Javascript"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-13T02:31-0700"/>
+<meta name="generated" content="2013-09-13T08:48-0700"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -107,12 +107,37 @@
 <li><a href="#sec-20-1">20.1 onclick</a></li>
 </ul>
 </li>
-<li><a href="#sec-21">21 form validation</a></li>
-<li><a href="#sec-22">22 JSON</a>
+<li><a href="#sec-21">21 Listen to events</a>
 <ul>
-<li><a href="#sec-22-1">22.1 Javascript Object Notation</a></li>
+<li><a href="#sec-21-1">21.1 Callbacks</a></li>
 </ul>
 </li>
+<li><a href="#sec-22">22 jQuery</a>
+<ul>
+<li><a href="#sec-22-1">22.1 Inline</a></li>
+</ul>
+</li>
+<li><a href="#sec-23">23 AJAX</a>
+<ul>
+<li><a href="#sec-23-1">23.1 More Info</a></li>
+</ul>
+</li>
+<li><a href="#sec-24">24 Infinite Scroll</a>
+<ul>
+<li><a href="#sec-24-1">24.1 AJAX</a></li>
+</ul>
+</li>
+<li><a href="#sec-25">25 jQuery AJAX</a>
+<ul>
+<li><a href="#sec-25-1">25.1 Callbacks</a></li>
+</ul>
+</li>
+<li><a href="#sec-26">26 JSON</a>
+<ul>
+<li><a href="#sec-26-1">26.1 Javascript Object Notation</a></li>
+</ul>
+</li>
+<li><a href="#sec-27">27 Summary</a></li>
 </ul>
 </div>
 </div>
@@ -712,17 +737,194 @@ $(<span style="color: #8b2252;">'#to-do-list .item'</span>).css(<span style="col
 </div>
 
 <div id="outline-container-21" class="outline-2">
-<h2 id="sec-21"><span class="section-number-2">21</span> <span class="todo TODO">TODO</span> form validation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-21"><span class="section-number-2">21</span> Listen to events &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-21">
 
 
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">increment</span>() {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">el</span> = document.getElementById(<span style="color: #8b2252;">"ticker"</span>);
+    el.firstChild.nodeValue += <span style="color: #8b2252;">" tick"</span>;
+}
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">el</span> = document.getElementById(<span style="color: #8b2252;">"ticker"</span>);
+el.addEventListener(<span style="color: #8b2252;">"click"</span>, increment);
+</pre>
+
+<p id="ticker">tick</p>
+<script>
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+</script>
+
+</div>
+
+<div id="outline-container-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Callbacks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+
+<ul>
+<li><code>increment</code> function is called when the click event happens
+</li>
+<li>when we specify <code>increment</code> it is the "callback"
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
 
 <div id="outline-container-22" class="outline-2">
-<h2 id="sec-22"><span class="section-number-2">22</span> JSON &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-22"><span class="section-number-2">22</span> jQuery &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-22">
+
+
+
+
+<pre class="src src-javascript">$(<span style="color: #8b2252;">"#ticker"</span>).click(<span style="color: #a020f0;">function</span>() {...});
+</pre>
+
+
+</div>
+
+<div id="outline-container-22-1" class="outline-3">
+<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Inline &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-22-1">
+
+<ul>
+<li>jQuery hides the specific calls needed
+</li>
+<li>functions can be specified inline, you don't need to declare them
+</li>
+<li>Although it often helps readability
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-23">
+
+<ul>
+<li>Asynchronous Javascript And XML*
+</li>
+<li>Allows Javascript to make additional requests
+</li>
+<li>Why?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-23-1" class="outline-3">
+<h3 id="sec-23-1"><span class="section-number-3">23.1</span> More Info &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-23-1">
+
+<ul>
+<li>Gather more information, eg. sophisticated auto complete
+</li>
+<li>Fill in information in place
+</li>
+<li>Infinite scroll
+</li>
+<li>*Actually doesn't use XML much anymore: HTML snippets and JSON
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> Infinite Scroll &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-24">
+
+<ul>
+<li><a href="http://www.pinterest.com/search/?q=programmers">Pinterest</a>
+</li>
+</ul>
+
+<p>  <img src="img/stackoverflow.jpg"  alt="img/stackoverflow.jpg" />
+</p>
+</div>
+
+<div id="outline-container-24-1" class="outline-3">
+<h3 id="sec-24-1"><span class="section-number-3">24.1</span> AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-24-1">
+
+<ul>
+<li>When the scroll event or view events happen, javascript will make an AJAX
+     call to server
+</li>
+<li>Server will respond with HTML inside JSON
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> jQuery AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-25">
+
+
+
+
+<pre class="src src-html">$('#get-homework').click(function(event) {
+  $.ajax('/snippet', {
+    success: function(data) {
+      $('#ajax-snippet').append(data);
+      event.stopPropagation();
+    }
+  })
+});
+</pre>
+
+
+</div>
+
+<div id="outline-container-25-1" class="outline-3">
+<h3 id="sec-25-1"><span class="section-number-3">25.1</span> Callbacks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-25-1">
+
+<ul>
+<li>Again, we're using callbacks
+</li>
+<li>We can't wait around while the server responds: maybe the user is clicking
+     somewhere else!
+</li>
+<li>Instead we specify what to do when the call returns
+</li>
+<li>Also callbacks for <code>error</code>, other conditions
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-26" class="outline-2">
+<h2 id="sec-26"><span class="section-number-2">26</span> JSON &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-26">
 
 <ul>
 <li>Pass data as if it were a Javascript Object
@@ -741,12 +943,31 @@ school: <span style="color: #8b2252;">"Berkeley"</span>, jobs: [<span style="col
 
 </div>
 
-<div id="outline-container-22-1" class="outline-3">
-<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Javascript Object Notation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-22-1">
+<div id="outline-container-26-1" class="outline-3">
+<h3 id="sec-26-1"><span class="section-number-3">26.1</span> Javascript Object Notation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-26-1">
 
 <ul>
 <li>used in place of XML
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-27" class="outline-2">
+<h2 id="sec-27"><span class="section-number-2">27</span> Summary &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-27">
+
+<ul>
+<li>Javascript used to manipulate DOM, CSS styles
+</li>
+<li>Javascript is a full, asynchronous programming language
+</li>
+<li>Used to enhance existing, semantic HTML
 </li>
 </ul>
 
@@ -759,10 +980,9 @@ school: <span style="color: #8b2252;">"Berkeley"</span>, jobs: [<span style="col
 </div>
 </div>
 </div>
-</div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-13T02:31-0700</p>
+<p class="date">Date: 2013-09-13T08:48-0700</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
