@@ -17,7 +17,7 @@
     + img
     + p
     + h1/h2/h3/h4
-    + <!-- comments -->
+    + =<!-- comments -->=
 
 * CSS :slide:
   + More than 1 CSS file
@@ -44,6 +44,11 @@
 #+begin_src html
 cd ~/public_html
 ln -s ../webarch2013/public_html webarch2013
+# makes you repository publicly available
+cd ~/webarch2013 # go back into repository
+git pull jblomo
+git checkout -b hw2-html
+pico public_html/index.html   # make your changes
 #+end_src
    + http://people.ischool.berkeley.edu/~jblomo/webarch2013/
 

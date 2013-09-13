@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Javascript</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Javascript"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-09-13T08:48-0700"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Javascript</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>Javascript</b></a></li>
+<li><a href="#sec-2">2 General Purpose</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Spread of Javascript</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Limited</a>
+<ul>
+<li><a href="#sec-3-1">3.1 This lecture</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Console</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Demo</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 jsFiddle</a></li>
+<li><a href="#sec-6">6 Variables</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Typing</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Strings</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Quote Char</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Lists</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Indexed</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Objects</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Nested</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Functions</a></li>
+<li><a href="#sec-11">11 DOM</a></li>
+<li><a href="#sec-12">12 Inspecting the DOM</a></li>
+<li><a href="#sec-13">13 Selecting Elements</a></li>
+<li><a href="#sec-14">14 Raw vs jQuery</a>
+<ul>
+<li><a href="#sec-14-1">14.1 Format</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15 Modifying the DOM</a>
+<ul>
+<li><a href="#sec-15-1">15.1 Modify</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16 Apply CSS style</a></li>
+<li><a href="#sec-17">17 Synchronous</a>
+<ul>
+<li><a href="#sec-17-1">17.1 Never!</a></li>
+</ul>
+</li>
+<li><a href="#sec-18">18 Asynchronous</a>
+<ul>
+<li><a href="#sec-18-1">18.1 Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19 Callbacks</a>
+<ul>
+<li><a href="#sec-19-1">19.1 Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#sec-20">20 Event -&gt; Function</a>
+<ul>
+<li><a href="#sec-20-1">20.1 onclick</a></li>
+</ul>
+</li>
+<li><a href="#sec-21">21 Listen to events</a>
+<ul>
+<li><a href="#sec-21-1">21.1 Callbacks</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22 jQuery</a>
+<ul>
+<li><a href="#sec-22-1">22.1 Inline</a></li>
+</ul>
+</li>
+<li><a href="#sec-23">23 AJAX</a>
+<ul>
+<li><a href="#sec-23-1">23.1 More Info</a></li>
+</ul>
+</li>
+<li><a href="#sec-24">24 Infinite Scroll</a>
+<ul>
+<li><a href="#sec-24-1">24.1 AJAX</a></li>
+</ul>
+</li>
+<li><a href="#sec-25">25 jQuery AJAX</a>
+<ul>
+<li><a href="#sec-25-1">25.1 Callbacks</a></li>
+</ul>
+</li>
+<li><a href="#sec-26">26 JSON</a>
+<ul>
+<li><a href="#sec-26-1">26.1 Javascript Object Notation</a></li>
+</ul>
+</li>
+<li><a href="#sec-27">27 Summary</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Javascript</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> General Purpose &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>Javascript full programming language
+</li>
+<li>Started in the browser
+</li>
+<li>Now used on servers, command line, devices&hellip;
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Spread of Javascript &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>If it can be written in JS, it will be
+</li>
+<li>Very lightweight language, lots of reach
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Limited &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>Manipulate the DOM
+</li>
+<li>Validate form values
+</li>
+<li>make asynchronous web requests (AJAX)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> This lecture &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>We'll just scratch the surface to get a sense of what's possible
+</li>
+<li>Basics: adding elements and information to the DOM
+</li>
+<li>Checking values
+</li>
+<li>Understand asynchronous calling
+</li>
+<li>Focusing on what makes Javascript unique for the web
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Console &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<p>  <img src="img/firebug.png"  alt="img/firebug.png" />
+</p><ul>
+<li>Firebug or Chrome Tools run Javascript
+</li>
+<li>Easiest way to play with language
+</li>
+<li><code>console.log</code> can print to the log from anywhere
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Open Chrome Tools, setting variable
+</li>
+<li>document.getElementsByTagName('IMG')
+</li>
+<li>assign to variable
+</li>
+<li>for( var i=0; i&lt;imgTags.length; i++) {console.log(imgTags[i].src);}
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> <a href="http://jsfiddle.net">jsFiddle</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<p>  <img src="img/jsfiddle.png"  alt="img/jsfiddle.png" />
+</p><ul>
+<li>Write and run HTML, CSS, Javascript
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Variables &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Declare with <code>var</code> to scope correctly
+</li>
+<li>Weak, dynamic typing
+</li>
+</ul>
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">var</span> <span style="color: #a0522d;">a</span> = 3;
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">b</span> = 5;
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">c</span> = a + b;
+</pre>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Typing &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>What is <code>c</code>?
+</li>
+<li>Don't worry too much
+</li>
+<li>Means you can assign whatever you want to a variable name
+</li>
+<li>Different types can be combined&hellip; Javascript tries to do the right thing,
+     but it can be wrong
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Strings &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">var</span> <span style="color: #a0522d;">a</span> = <span style="color: #8b2252;">'hello '</span>;
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">b</span> = <span style="color: #8b2252;">'world!'</span>;
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">c</span> = a + b;
+</pre>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Quote Char &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+
+   + What is =c=?
+   + Single or double quotes, up to you
+ORG-LIST-END-MARKER
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Lists &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">var</span> <span style="color: #a0522d;">l</span> = [1 ,2, <span style="color: #8b2252;">"jim"</span>];
+l[1];
+</pre>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Indexed &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>0 indexed
+</li>
+<li>Will return 2
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Objects &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>Similar to Maps or dicts
+</li>
+</ul>
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">var</span> <span style="color: #a0522d;">titles</span> = {info253: <span style="color: #8b2252;">'Web Arch'</span>, info256: <span style="color: #8b2252;">'Applied NLP'</span>};
+titles.info253;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">'Web Arch' */</span>
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">schools</span> = {berkeley: {info253: <span style="color: #8b2252;">'Web Arch'</span>}, stanford: {cs101: <span style="color: #8b2252;">'Intro CS'</span>}};
+schools.stanford.cs101;
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">'Intro CS' */</span>
+</pre>
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Nested &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>May be nested
+</li>
+<li>Any datatypes for values
+</li>
+<li>Strings for keys
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Functions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">var</span> <span style="color: #a0522d;">add</span> = <span style="color: #a020f0;">function</span>(<span style="color: #a0522d;">a</span>, <span style="color: #a0522d;">b</span>) {<span style="color: #a020f0;">return</span> a + b;}
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">c</span> = add(2, 7)
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">c is now 9 */</span>
+
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">arithmetic</span> = {add: add, subtract: <span style="color: #a020f0;">function</span>(<span style="color: #a0522d;">a</span>, <span style="color: #a0522d;">b</span>) {<span style="color: #a020f0;">return</span> a - b;}};
+
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">d</span> = arithmetic.subtract(11, 4);
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">e</span> = arithmetic.add(0, 3);
+
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">d is now 7; e is now 3; */</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> DOM &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>Document Object Model
+</li>
+<li><code>document</code> is a Javascript Object
+</li>
+<li>You can modify it and reflect the changes
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Inspecting the DOM &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>You can use <code>childNodes</code> to explore children
+</li>
+<li>Will return a list
+</li>
+<li><code>document.childNodes[2]</code>
+</li>
+</ul>
+
+<p>  <img src="img/dom-explore.png"  alt="img/dom-explore.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Selecting Elements &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<p>  <img src="img/getById.png"  alt="img/getById.png" />
+</p><ul>
+<li><code>getElementById('target')</code>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Raw vs jQuery &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+
+
+
+<pre class="src src-javascript"><span style="color: #b22222;">/* </span><span style="color: #b22222;">raw */</span>
+document.getElementById(<span style="color: #8b2252;">'to-do-list'</span>);
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">or getElementsByTagName, and getElementsByClassName */</span>
+
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">jQuery */</span>
+$(<span style="color: #8b2252;">'#to-do-list'</span>);
+$(<span style="color: #8b2252;">'#to-do-list li.item'</span>);
+</pre>
+
+
+</div>
+
+<div id="outline-container-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Format &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+
+<ul>
+<li>What format does the jQuery selector remind you of?
+</li>
+<li>Automatically selects the right raw Javascript to call
+</li>
+<li>Trade-off: can be slower, unexpected results
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Modifying the DOM &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+<ul>
+<li><code>.innerHTML</code> is the text HTML inside the element
+</li>
+</ul>
+
+
+Things to do
+<ul id="to-do-list">
+<li class="item">Homework assignment</li>
+<li class="item">Grab coffee</li>
+</ul>
+
+</div>
+
+<div id="outline-container-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> Modify &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+
+<ul>
+<li>use non-slide version
+</li>
+<li>var todoList = document.getElementById('to-do-list');
+</li>
+<li>todoList.innerHTML += '&lt;li class="item"&gt;Go out for dinner&lt;/li&gt;';
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Apply CSS style &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+
+
+
+<pre class="src src-javascript">todoList.childNodes[0].style.background = <span style="color: #8b2252;">"pink"</span>;
+
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">jquery */</span>
+$(<span style="color: #8b2252;">'#to-do-list .item'</span>).css(<span style="color: #8b2252;">'background'</span>, <span style="color: #8b2252;">'green'</span>);
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Synchronous &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+
+<ul>
+<li>Linear execution, waiting for each function to finish
+</li>
+<li>"End" of a program when all statements executed
+</li>
+<li>When do you want your Javascript to "finish"?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-17-1" class="outline-3">
+<h3 id="sec-17-1"><span class="section-number-3">17.1</span> Never! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-1">
+
+<ul>
+<li>Javascript on the page is always responding to the user
+</li>
+<li>When updating the page, or requesting information from the server, we don't
+     want the whole app to freeze
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Asynchronous &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-18">
+
+<ul>
+<li>Respond to events independently
+</li>
+<li>Run functions in response to actions
+</li>
+<li>"Callbacks" instead of being "on hold"
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Notes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+
+<ul>
+<li>Events include: page scroll, clicking, submitting forms, hovering, page
+     finished loading
+</li>
+<li>When those events happen, run some function. 
+</li>
+<li>Callbacks an example of this
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Callbacks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-19">
+
+<ul>
+<li>You want to make a request to your Bank
+</li>
+<li>Dial their number&hellip; on hold
+</li>
+<li>Do you sit and wait? or have them call you back?
+</li>
+</ul>
+
+<p>  <img src="caller-on-hold.jpg"  alt="caller-on-hold.jpg" />
+</p>
+</div>
+
+<div id="outline-container-19-1" class="outline-3">
+<h3 id="sec-19-1"><span class="section-number-3">19.1</span> Trade-offs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-19-1">
+
+<ul>
+<li>Wait: don't get confused, context switch
+</li>
+<li>Wait: but a lot of wasted time, no on else can talk to you
+</li>
+<li>Call back: frees you up
+</li>
+<li>Call back: but you have to leave instructions in case they call back and
+     you aren't there
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Event -&gt; Function &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-20">
+
+<ul>
+<li><code>onclick</code> will run code on the click event
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">a</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"#"</span> <span style="color: #a0522d;">onclick</span>=<span style="color: #8b2252;">"alert('hello');"</span>&gt;Hello&lt;/<span style="color: #0000ff;">a</span>&gt;
+</pre>
+
+<a href="#" onclick="alert('hello');">Hello</a>
+
+</div>
+
+<div id="outline-container-20-1" class="outline-3">
+<h3 id="sec-20-1"><span class="section-number-3">20.1</span> onclick &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-20-1">
+
+<ul>
+<li>Handle click event
+</li>
+<li><code>href</code> of "#" means "don't actually go anywhere"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Listen to events &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-21">
+
+
+
+
+<pre class="src src-javascript"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">increment</span>() {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">el</span> = document.getElementById(<span style="color: #8b2252;">"ticker"</span>);
+    el.firstChild.nodeValue += <span style="color: #8b2252;">" tick"</span>;
+}
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">el</span> = document.getElementById(<span style="color: #8b2252;">"ticker"</span>);
+el.addEventListener(<span style="color: #8b2252;">"click"</span>, increment);
+</pre>
+
+<p id="ticker">tick</p>
+<script>
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+</script>
+
+</div>
+
+<div id="outline-container-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Callbacks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+
+<ul>
+<li><code>increment</code> function is called when the click event happens
+</li>
+<li>when we specify <code>increment</code> it is the "callback"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> jQuery &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-22">
+
+
+
+
+<pre class="src src-javascript">$(<span style="color: #8b2252;">"#ticker"</span>).click(<span style="color: #a020f0;">function</span>() {...});
+</pre>
+
+
+</div>
+
+<div id="outline-container-22-1" class="outline-3">
+<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Inline &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-22-1">
+
+<ul>
+<li>jQuery hides the specific calls needed
+</li>
+<li>functions can be specified inline, you don't need to declare them
+</li>
+<li>Although it often helps readability
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-23">
+
+<ul>
+<li>Asynchronous Javascript And XML*
+</li>
+<li>Allows Javascript to make additional requests
+</li>
+<li>Why?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-23-1" class="outline-3">
+<h3 id="sec-23-1"><span class="section-number-3">23.1</span> More Info &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-23-1">
+
+<ul>
+<li>Gather more information, eg. sophisticated auto complete
+</li>
+<li>Fill in information in place
+</li>
+<li>Infinite scroll
+</li>
+<li>*Actually doesn't use XML much anymore: HTML snippets and JSON
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> Infinite Scroll &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-24">
+
+<ul>
+<li><a href="http://www.pinterest.com/search/?q=programmers">Pinterest</a>
+</li>
+</ul>
+
+<p>  <img src="img/stackoverflow.jpg"  alt="img/stackoverflow.jpg" />
+</p>
+</div>
+
+<div id="outline-container-24-1" class="outline-3">
+<h3 id="sec-24-1"><span class="section-number-3">24.1</span> AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-24-1">
+
+<ul>
+<li>When the scroll event or view events happen, javascript will make an AJAX
+     call to server
+</li>
+<li>Server will respond with HTML inside JSON
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> jQuery AJAX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-25">
+
+
+
+
+<pre class="src src-html">$('#get-homework').click(function(event) {
+  $.ajax('/snippet', {
+    success: function(data) {
+      $('#ajax-snippet').append(data);
+      event.stopPropagation();
+    }
+  })
+});
+</pre>
+
+
+</div>
+
+<div id="outline-container-25-1" class="outline-3">
+<h3 id="sec-25-1"><span class="section-number-3">25.1</span> Callbacks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-25-1">
+
+<ul>
+<li>Again, we're using callbacks
+</li>
+<li>We can't wait around while the server responds: maybe the user is clicking
+     somewhere else!
+</li>
+<li>Instead we specify what to do when the call returns
+</li>
+<li>Also callbacks for <code>error</code>, other conditions
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-26" class="outline-2">
+<h2 id="sec-26"><span class="section-number-2">26</span> JSON &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-26">
+
+<ul>
+<li>Pass data as if it were a Javascript Object
+</li>
+<li>Common data format in a variety of languages
+</li>
+</ul>
+
+
+
+
+<pre class="src src-javascript">{firstname: <span style="color: #8b2252;">"Jim"</span>, lastname: <span style="color: #8b2252;">"Blomo"</span>,
+school: <span style="color: #8b2252;">"Berkeley"</span>, jobs: [<span style="color: #8b2252;">"Yelp"</span>, <span style="color: #8b2252;">"A9"</span>]}
+</pre>
+
+
+</div>
+
+<div id="outline-container-26-1" class="outline-3">
+<h3 id="sec-26-1"><span class="section-number-3">26.1</span> Javascript Object Notation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-26-1">
+
+<ul>
+<li>used in place of XML
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-27" class="outline-2">
+<h2 id="sec-27"><span class="section-number-2">27</span> Summary &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-27">
+
+<ul>
+<li>Javascript used to manipulate DOM, CSS styles
+</li>
+<li>Javascript is a full, asynchronous programming language
+</li>
+<li>Used to enhance existing, semantic HTML
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-09-13T08:48-0700</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Madlib!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+		<form id="madlib-input">
+			<p>Please Input your answers below!</p>
+			<!-- inputs... -->
+		</form>
+		
+		<div id="madlib-output">
+		</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<!-- Optionally include other scripts
+        <script src="js/main.js"></script>
+		-->
+
+        <!-- You may add Javascript functions below -->
+        <script>
+			function validate() {
+				if ($("input:first").val() == "correct") {
+					$("#madlib-output").text("input: correct");
+				} else {
+					alert("Error!");
+				}
+				return false;
+			}
+
+			$(document).ready(function() {
+				$("#madlib-input").submit(validate);
+				console.log("ready!");
+			});
+        </script>
+    </body>
+</html>

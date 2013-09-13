@@ -1,0 +1,322 @@
+* Announcements :slide:
+  + Waitlist has been accepted
+    + If you're not in the class, email or private Piazza
+  + HW1 graded
+    + If you haven't seen the grade, email or private Piazza
+  + HW2: make sure you included a public URL
+** Questions :notes:
+   + Examples of semantic vs. display tags?
+   + Why is the =id= attribute special?
+   + How to use =class= attribute in CSS?
+   + What types of CSS styles to elements inherit?
+   + Can multiple CSS declarations affect a single element?
+   + What is the DOM?
+
+* *Forms* :slide:
+
+* Forms are everywhere :slide:center:
+  [[file:img/yelp-forms.png]]
+** Common :notes:
+   + Besides HypterText links, forms are the most common way to communicate back
+     to the server
+   + There's many obvious forms, text areas, but often forms are integrated into
+     the page transparently
+
+* Forms + JavaScript = Interactive :slide:center:
+  [[file:img/autocomplete.png]]
+** Interfaces :notes:
+   + Most advanced interfaces you see on the web are a combination of forms and
+     Javascript
+   + Forms are the base, what you build on. They contain the core mechanism for
+     input and standard way to transfer input to the server
+   + Javascript provides the interaction
+   + Eg. you can type anything into the textbox, but the Javascript can help you
+     suggest what you want filled
+
+* Forms are HTML :slide:
+  + Declarative
+  + Standardized
+  + Semantic 
+  + Styled
+** Don't forget! :notes:
+   + HTML should be communicating the intention of the page semantically and
+     declaratively
+   + We may have different ways to interact with forms, eg click vs touch
+   + Or showing a pop-up selection vs dropdown (mobile)
+   + Use standard form elements
+   + We can use CSS to further style them, and Javascript to add interaction
+
+* =form= tag :slide:
+  + Groups all inputs
+  + Declares how the inputs will be sent to the server
+  + Typically has no default style
+#+begin_src html
+<form method="POST">
+  <h1>More HTML</h1>
+  <input ...>
+</form>
+#+end_src
+** More later :notes:
+   + I can't introduce the HTML for forms without starting with the =form= tag
+   + BUT it will make more sense after we've talked about other elements
+   + All of the next elements typically appear inside the form tag so the
+     browser knows what to do with the data
+   + You don't typically "see" the form tag (though you can style it)
+
+* =input= tag :slide:
+  + Signals we'd like to get data from the user
+  + What type of data?
+  + =type= attribute
+** input :notes:
+   + Most of the exploration of inputs will be variations on the type attribute
+
+* =text= input type :slide:
+#+begin_src html
+<form>
+  <input type="text">
+<form>
+#+end_src
+#+BEGIN_HTML
+<form>
+  <input type="text">
+<form>
+#+END_HTML
+** =input= details :notes:
+   + No closing tag needed: it is the whole input
+   + Contained inside the form element. Rest of the example's we'll skip for
+     simplicity
+   + not specifying how to interact with it, how big it is, etc.
+
+* =submit= type :slide:
+#+begin_src html
+<input type="submit" value="Send Data">
+#+end_src
+#+BEGIN_HTML
+<input type="submit" value="Send Data">
+#+END_HTML
+** meaning :notes:
+   + The submit input type signals the mechanism for sending the form to the
+     server
+   + By *default* most browsers render as a button, but you can style it
+     differently or a browser may choose a different default
+
+* =checkbox= type :slide:
+#+begin_src html
+<input type="checkbox" value="enrolled" checked>
+#+end_src
+#+BEGIN_HTML
+<input type="checkbox" value="enrolled" checked>
+#+END_HTML
+** attribute :notes:
+   + Example of an attribute without a value
+   + =value= for checkboxes (and =radio=) is the value to send to the server if
+     the box is checked
+   + But now we have a UI problem: how do users know what the checkbox means?
+
+* Meaning: Solutions? :slide:animate:
+  + How to convey input meaning?
+  + Just add text next to the box
+  + Add an attribute to the tag
+  + Add text in a =<span>= or =<p>=
+  + Add text in a =<label>= element that "references" the input
+** Issues :notes:
+   + Add text: semantic meaning unclear, how do we know what it refers to? Hard
+     to style
+   + Attribute: hard to style
+   + =span=: unknown why it is there
+   + =label= element used
+   + how to reference another element *specifically*?
+
+* =checkbox= type :slide:
+#+begin_src html
+<input type="checkbox" value="enrolled" id="check-enrolled" checked>
+<label for="check-enrolled">Enrolled?</label>
+#+end_src
+#+BEGIN_HTML
+<input type="checkbox" value="enrolled" id="check-enrolled" checked>
+<label for="check-enrolled">Enrolled?</label>
+#+END_HTML
+** attribute :notes:
+   + Can also put the input inside the label
+
+* =radio= type :slide:
+#+begin_src html
+<label>Bear <input type="radio" name="mascot" value="bear"></label>
+<label>Cardinal <input type="radio" name="mascot" value="cardinal"></label>
+#+end_src
+#+BEGIN_HTML
+<label>Bear <input type="radio" name="mascot" value="bear"></label>
+<label>Cardinal <input type="radio" name="mascot" value="cardinal"></label>
+#+END_HTML
+** Radio :slide:center:
+[[file:img/car-radio.jpg]]
+*** Source :notes:
+    + http://electronics.howstuffworks.com/gadgets/automotive/install-car-electronics.htm
+
+* =select= type :slide:
+#+begin_src html
+<label for="state">State:</label>
+<select name="state" id="state">
+  <option value="CA">CA</option>
+  <option value="OR">OR</option>
+  <option value="NY">NY</option>
+</select>
+#+end_src
+#+BEGIN_HTML
+<label for="state">State:</label>
+<select name="state" id="state">
+  <option value="CA">CA</option>
+  <option value="OR">OR</option>
+  <option value="NY">NY</option>
+</select>
+#+END_HTML
+
+** UI Differences :slide:center:
+[[file:img/select_wrapper.jpg]]
+** Declarative :notes:
+   + Again, we didn't specify how to implement this so browsers are free to
+     experiment
+
+* =hidden= type :slide:
+#+begin_src html
+<input type="hidden" name="page" value="2">
+#+end_src
+  [[file:img/hidden-cat.jpg]]
+** Hidden :notes:
+   + Pagination: we know we're on page 2, we don't need the human to select
+     which page to go to next
+   + Reviewing a business: user knows what business they're reviewing, don't
+     make them select it
+   + image source: http://amolife.com/image/animals/cat-photography-playing-hide-and-seek.html
+
+* HTML5 types :slide:
+  + =color=, =tel=, =email=, =datetime=
+  + Not supported on all browsers
+#+BEGIN_HTML
+<input type="color">
+#+END_HTML
+  + http://www.w3.org/TR/html5/forms.html
+
+* =form= :slide:
+#+begin_src html
+<form method="POST" action="http://echo.wingerz.com/echo">
+  <input type="text" name="first-name" value="Jim">
+  <label>Berkeley <input type="checkbox" name="berkeley"></label>
+  <input type="submit" value="Confirm">
+</form>
+#+end_src
+#+BEGIN_HTML
+<form method="POST" action="http://echo.wingerz.com/echo">
+  <input type="text" name="first-name" value="Jim">
+  <label>Berkeley <input type="checkbox" name="berkeley"></label>
+  <input type="submit" value="Confirm">
+</form>
+#+END_HTML
+** This week :notes:
+   + Next week more focus on what =method= and =action= do
+   + In short: =method= how to encode the data to the server
+   + =action= what URL to send the data to
+   + This week, we'll only use Javascript on static pages to access the data
+   + TODO check online demo
+
+
+* Form Design :slide:
+  + Goal: Make it easy to provide information
+  + Use the appropriate input elements
+  + Use CSS to style elements to better set context
+** Notes :notes:
+   + Clear labeling, expected ordering of information
+   + Keep in mind international uses
+     + Not all users have a Western first/last name
+     + Not all users have a US zip code
+   + Semantic meaning helps improve usability (eg. form autocompletion plugins)
+   + Though you can over ride in some cases
+
+* Yelp Stars :slide:
+  [[file:img/yelp-stars.png]]
+#+BEGIN_HTML
+<ul class="stars-4">
+  <li>
+  	<input id="rating-1" type="radio" name="rating" value="1">
+  	<label for="rating-1">1 (Eek! Methinks not.)</label>
+  </li>
+  <li>
+  	<input id="rating-2" type="radio" name="rating" value="2">
+  	<label for="rating-2">2 (Meh. I've experienced better.)</label>
+  </li>
+  <li>
+  	<input id="rating-3" type="radio" name="rating" value="3">
+  	<label for="rating-3">3 (A-OK.)</label>
+  </li>
+  <li>
+  	<input id="rating-4" type="radio" name="rating" value="4">
+  	<label for="rating-4">4 (Yay! I'm a fan.)</label>
+  </li>
+  <li>
+  	<input id="rating-5" type="radio" name="rating" value="5">
+  	<label for="rating-5">5 (Woohoo! As good as it gets!)</label>
+  </li>
+</ul>
+#+END_HTML
+[[https://www.yelp.com/writeareview/biz/0iSN6PgiXKP4oSVL037ATg?return_url=%2Fbiz%2F0iSN6PgiXKP4oSVL037ATg][Berkeley on Yelp]]
+
+* Purchasing :slide:center:
+  [[file:img/cc-entry.png]]
+** Context :notes:
+   + Setting context by making the credit card form look like a credit card
+
+* Overview :slide:center:
+  [[file:img/web-loop.png]]
+** Loop :notes:
+   + Start with HTML
+   + Interact with forms
+   + Send to server
+   + Server processes it, sends back more HTML
+   + Interact with forms...
+
+* Improvements :slide:two_col:
+  + Give users immediate feedback
+  + Catch simple errors
+  + Provide help in forms
+  [[file:img/invalid-email.png]]
+** Examples :notes:
+   + Has a user not typed in enough information? Too much? Provide instant
+     feedback without hitting server
+   + If a user has incorrectly filled out a form, don't even let them submit
+     yet, call attention to the problem
+   + Autocomplete, or filling in city/state/country when user fills in zip code
+
+* Javascript! :slide:
+  + Write imperative style code specific to your site
+  + No interaction with a server required
+  + Run by the browser
+** ECMA :notes:
+   + European Computer Manufacturers Association
+   + ECMAscript
+
+* Libraries :slide:
+  + Raw Javascript support is inconsistent
+  + Libraries hide differences between browsers, implementations
+  + In class, [[http://jquery.com][jQuery]] is OK to use
+** Not required :notes:
+   + jQuery is not required
+   + For professional work, important to know how details are implemented
+
+* *Break* :slide:
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

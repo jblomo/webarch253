@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Forms</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Forms"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-09-13T10:41-0700"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Forms</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Announcements</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 <b>Forms</b></a></li>
+<li><a href="#sec-3">3 Forms are everywhere</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Common</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Forms + JavaScript = Interactive</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Interfaces</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Forms are HTML</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Don't forget!</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 <code>form</code> tag</a>
+<ul>
+<li><a href="#sec-6-1">6.1 More later</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 <code>input</code> tag</a>
+<ul>
+<li><a href="#sec-7-1">7.1 input</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 <code>text</code> input type</a>
+<ul>
+<li><a href="#sec-8-1">8.1 <code>input</code> details</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 <code>submit</code> type</a>
+<ul>
+<li><a href="#sec-9-1">9.1 meaning</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 <code>checkbox</code> type</a>
+<ul>
+<li><a href="#sec-10-1">10.1 attribute</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 Meaning: Solutions?</a>
+<ul>
+<li><a href="#sec-11-1">11.1 Issues</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12 <code>checkbox</code> type</a>
+<ul>
+<li><a href="#sec-12-1">12.1 attribute</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 <code>radio</code> type</a>
+<ul>
+<li><a href="#sec-13-1">13.1 Radio</a>
+<ul>
+<li><a href="#sec-13-1-1">13.1.1 Source</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-14">14 <code>select</code> type</a>
+<ul>
+<li><a href="#sec-14-1">14.1 UI Differences</a></li>
+<li><a href="#sec-14-2">14.2 Declarative</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15 <code>hidden</code> type</a>
+<ul>
+<li><a href="#sec-15-1">15.1 Hidden</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16 HTML5 types</a></li>
+<li><a href="#sec-17">17 <code>form</code></a>
+<ul>
+<li><a href="#sec-17-1">17.1 This week</a></li>
+</ul>
+</li>
+<li><a href="#sec-18">18 Form Design</a>
+<ul>
+<li><a href="#sec-18-1">18.1 Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19 Yelp Stars</a></li>
+<li><a href="#sec-20">20 Purchasing</a>
+<ul>
+<li><a href="#sec-20-1">20.1 Context</a></li>
+</ul>
+</li>
+<li><a href="#sec-21">21 Overview</a>
+<ul>
+<li><a href="#sec-21-1">21.1 Loop</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22 Improvements</a>
+<ul>
+<li><a href="#sec-22-1">22.1 Examples</a></li>
+</ul>
+</li>
+<li><a href="#sec-23">23 Javascript!</a>
+<ul>
+<li><a href="#sec-23-1">23.1 ECMA</a></li>
+</ul>
+</li>
+<li><a href="#sec-24">24 Libraries</a>
+<ul>
+<li><a href="#sec-24-1">24.1 Not required</a></li>
+</ul>
+</li>
+<li><a href="#sec-25">25 <b>Break</b></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Announcements &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Waitlist has been accepted
+<ul>
+<li>If you're not in the class, email or private Piazza
+</li>
+</ul>
+
+</li>
+<li>HW1 graded
+<ul>
+<li>If you haven't seen the grade, email or private Piazza
+</li>
+</ul>
+
+</li>
+<li>HW2: make sure you included a public URL
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Questions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li>Examples of semantic vs. display tags?
+</li>
+<li>Why is the <code>id</code> attribute special?
+</li>
+<li>How to use <code>class</code> attribute in CSS?
+</li>
+<li>What types of CSS styles to elements inherit?
+</li>
+<li>Can multiple CSS declarations affect a single element?
+</li>
+<li>What is the DOM?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <b>Forms</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Forms are everywhere &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  <img src="img/yelp-forms.png"  alt="img/yelp-forms.png" />
+</p>
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Common &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>Besides HypterText links, forms are the most common way to communicate back
+     to the server
+</li>
+<li>There's many obvious forms, text areas, but often forms are integrated into
+     the page transparently
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Forms + JavaScript = Interactive &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<p>  <img src="img/autocomplete.png"  alt="img/autocomplete.png" />
+</p>
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Interfaces &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Most advanced interfaces you see on the web are a combination of forms and
+     Javascript
+</li>
+<li>Forms are the base, what you build on. They contain the core mechanism for
+     input and standard way to transfer input to the server
+</li>
+<li>Javascript provides the interaction
+</li>
+<li>Eg. you can type anything into the textbox, but the Javascript can help you
+     suggest what you want filled
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Forms are HTML &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>Declarative
+</li>
+<li>Standardized
+</li>
+<li>Semantic 
+</li>
+<li>Styled
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Don't forget! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>HTML should be communicating the intention of the page semantically and
+     declaratively
+</li>
+<li>We may have different ways to interact with forms, eg click vs touch
+</li>
+<li>Or showing a pop-up selection vs dropdown (mobile)
+</li>
+<li>Use standard form elements
+</li>
+<li>We can use CSS to further style them, and Javascript to add interaction
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> <code>form</code> tag &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Groups all inputs
+</li>
+<li>Declares how the inputs will be sent to the server
+</li>
+<li>Typically has no default style
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">form</span> <span style="color: #a0522d;">method</span>=<span style="color: #8b2252;">"POST"</span>&gt;
+  &lt;<span style="color: #0000ff;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">More HTML</span>&lt;/<span style="color: #0000ff;">h1</span>&gt;
+  &lt;<span style="color: #0000ff;">input</span> ...&gt;
+&lt;/<span style="color: #0000ff;">form</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> More later &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>I can't introduce the HTML for forms without starting with the <code>form</code> tag
+</li>
+<li>BUT it will make more sense after we've talked about other elements
+</li>
+<li>All of the next elements typically appear inside the form tag so the
+     browser knows what to do with the data
+</li>
+<li>You don't typically "see" the form tag (though you can style it)
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> <code>input</code> tag &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Signals we'd like to get data from the user
+</li>
+<li>What type of data?
+</li>
+<li><code>type</code> attribute
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> input &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>Most of the exploration of inputs will be variations on the type attribute
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> <code>text</code> input type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">form</span>&gt;
+  &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text"</span>&gt;
+&lt;<span style="color: #0000ff;">form</span>&gt;
+</pre>
+
+<form>
+  <input type="text">
+<form>
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> <code>input</code> details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>No closing tag needed: it is the whole input
+</li>
+<li>Contained inside the form element. Rest of the example's we'll skip for
+     simplicity
+</li>
+<li>not specifying how to interact with it, how big it is, etc.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> <code>submit</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"submit"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"Send Data"</span>&gt;
+</pre>
+
+<input type="submit" value="Send Data">
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> meaning &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>The submit input type signals the mechanism for sending the form to the
+     server
+</li>
+<li>By <b>default</b> most browsers render as a button, but you can style it
+     differently or a browser may choose a different default
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> <code>checkbox</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"checkbox"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"enrolled"</span> checked&gt;
+</pre>
+
+<input type="checkbox" value="enrolled" checked>
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> attribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>Example of an attribute without a value
+</li>
+<li><code>value</code> for checkboxes (and <code>radio</code>) is the value to send to the server if
+     the box is checked
+</li>
+<li>But now we have a UI problem: how do users know what the checkbox means?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Meaning: Solutions? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>How to convey input meaning?
+</li>
+<li>Just add text next to the box
+</li>
+<li>Add an attribute to the tag
+</li>
+<li>Add text in a <code>&lt;span&gt;</code> or <code>&lt;p&gt;</code>
+</li>
+<li>Add text in a <code>&lt;label&gt;</code> element that "references" the input
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Issues &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+
+<ul>
+<li>Add text: semantic meaning unclear, how do we know what it refers to? Hard
+     to style
+</li>
+<li>Attribute: hard to style
+</li>
+<li><code>span</code>: unknown why it is there
+</li>
+<li><code>label</code> element used
+</li>
+<li>how to reference another element <b>specifically</b>?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> <code>checkbox</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"checkbox"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"enrolled"</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"check-enrolled"</span> checked&gt;
+&lt;<span style="color: #0000ff;">label</span> <span style="color: #a0522d;">for</span>=<span style="color: #8b2252;">"check-enrolled"</span>&gt;Enrolled?&lt;/<span style="color: #0000ff;">label</span>&gt;
+</pre>
+
+<input type="checkbox" value="enrolled" id="check-enrolled" checked>
+<label for="check-enrolled">Enrolled?</label>
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> attribute &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>Can also put the input inside the label
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> <code>radio</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">label</span>&gt;Bear &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"radio"</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"mascot"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"bear"</span>&gt;&lt;/<span style="color: #0000ff;">label</span>&gt;
+&lt;<span style="color: #0000ff;">label</span>&gt;Cardinal &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"radio"</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"mascot"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"cardinal"</span>&gt;&lt;/<span style="color: #0000ff;">label</span>&gt;
+</pre>
+
+<label>Bear <input type="radio" name="mascot" value="bear"></label>
+<label>Cardinal <input type="radio" name="mascot" value="cardinal"></label>
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Radio &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+
+<p><img src="img/car-radio.jpg"  alt="img/car-radio.jpg" />
+</p>
+</div>
+
+<div id="outline-container-13-1-1" class="outline-4">
+<h4 id="sec-13-1-1"><span class="section-number-4">13.1.1</span> Source &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-1-1">
+
+<ul>
+<li><a href="http://electronics.howstuffworks.com/gadgets/automotive/install-car-electronics.htm">http://electronics.howstuffworks.com/gadgets/automotive/install-car-electronics.htm</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> <code>select</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">label</span> <span style="color: #a0522d;">for</span>=<span style="color: #8b2252;">"state"</span>&gt;State:&lt;/<span style="color: #0000ff;">label</span>&gt;
+&lt;<span style="color: #0000ff;">select</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"state"</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"state"</span>&gt;
+  &lt;<span style="color: #0000ff;">option</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"CA"</span>&gt;CA&lt;/<span style="color: #0000ff;">option</span>&gt;
+  &lt;<span style="color: #0000ff;">option</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"OR"</span>&gt;OR&lt;/<span style="color: #0000ff;">option</span>&gt;
+  &lt;<span style="color: #0000ff;">option</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"NY"</span>&gt;NY&lt;/<span style="color: #0000ff;">option</span>&gt;
+&lt;/<span style="color: #0000ff;">select</span>&gt;
+</pre>
+
+<label for="state">State:</label>
+<select name="state" id="state">
+  <option value="CA">CA</option>
+  <option value="OR">OR</option>
+  <option value="NY">NY</option>
+</select>
+
+
+</div>
+
+<div id="outline-container-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> UI Differences &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+
+<p><img src="img/select_wrapper.jpg"  alt="img/select_wrapper.jpg" />
+</p></div>
+
+</div>
+
+<div id="outline-container-14-2" class="outline-3">
+<h3 id="sec-14-2"><span class="section-number-3">14.2</span> Declarative &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-2">
+
+<ul>
+<li>Again, we didn't specify how to implement this so browsers are free to
+     experiment
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> <code>hidden</code> type &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"hidden"</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"page"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"2"</span>&gt;
+</pre>
+
+<p>
+  <img src="img/hidden-cat.jpg"  alt="img/hidden-cat.jpg" />
+</p>
+</div>
+
+<div id="outline-container-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> Hidden &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+
+<ul>
+<li>Pagination: we know we're on page 2, we don't need the human to select
+     which page to go to next
+</li>
+<li>Reviewing a business: user knows what business they're reviewing, don't
+     make them select it
+</li>
+<li>image source: <a href="http://amolife.com/image/animals/cat-photography-playing-hide-and-seek.html">http://amolife.com/image/animals/cat-photography-playing-hide-and-seek.html</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> HTML5 types &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+<ul>
+<li><code>color</code>, <code>tel</code>, <code>email</code>, <code>datetime</code>
+</li>
+<li>Not supported on all browsers
+</li>
+</ul>
+
+
+<input type="color">
+<ul>
+<li><a href="http://www.w3.org/TR/html5/forms.html">http://www.w3.org/TR/html5/forms.html</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> <code>form</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">form</span> <span style="color: #a0522d;">method</span>=<span style="color: #8b2252;">"POST"</span> <span style="color: #a0522d;">action</span>=<span style="color: #8b2252;">"http://echo.wingerz.com/echo"</span>&gt;
+  &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"text"</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"first-name"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"Jim"</span>&gt;
+  &lt;<span style="color: #0000ff;">label</span>&gt;Berkeley &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"checkbox"</span> <span style="color: #a0522d;">name</span>=<span style="color: #8b2252;">"berkeley"</span>&gt;&lt;/<span style="color: #0000ff;">label</span>&gt;
+  &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>=<span style="color: #8b2252;">"submit"</span> <span style="color: #a0522d;">value</span>=<span style="color: #8b2252;">"Confirm"</span>&gt;
+&lt;/<span style="color: #0000ff;">form</span>&gt;
+</pre>
+
+<form method="POST" action="http://echo.wingerz.com/echo">
+  <input type="text" name="first-name" value="Jim">
+  <label>Berkeley <input type="checkbox" name="berkeley"></label>
+  <input type="submit" value="Confirm">
+</form>
+
+</div>
+
+<div id="outline-container-17-1" class="outline-3">
+<h3 id="sec-17-1"><span class="section-number-3">17.1</span> This week &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-1">
+
+<ul>
+<li>Next week more focus on what <code>method</code> and <code>action</code> do
+</li>
+<li>In short: <code>method</code> how to encode the data to the server
+</li>
+<li><code>action</code> what URL to send the data to
+</li>
+<li>This week, we'll only use Javascript on static pages to access the data
+</li>
+<li>TODO check online demo
+</li>
+</ul>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Form Design &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-18">
+
+<ul>
+<li>Goal: Make it easy to provide information
+</li>
+<li>Use the appropriate input elements
+</li>
+<li>Use CSS to style elements to better set context
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Notes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+
+<ul>
+<li>Clear labeling, expected ordering of information
+</li>
+<li>Keep in mind international uses
+<ul>
+<li>Not all users have a Western first/last name
+</li>
+<li>Not all users have a US zip code
+</li>
+</ul>
+
+</li>
+<li>Semantic meaning helps improve usability (eg. form autocompletion plugins)
+</li>
+<li>Though you can over ride in some cases
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Yelp Stars &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-19">
+
+<p>  <img src="img/yelp-stars.png"  alt="img/yelp-stars.png" />
+<ul class="stars-4">
+  <li>
+        <input id="rating-1" type="radio" name="rating" value="1">
+        <label for="rating-1">1 (Eek! Methinks not.)</label>
+  </li>
+  <li>
+        <input id="rating-2" type="radio" name="rating" value="2">
+        <label for="rating-2">2 (Meh. I've experienced better.)</label>
+  </li>
+  <li>
+        <input id="rating-3" type="radio" name="rating" value="3">
+        <label for="rating-3">3 (A-OK.)</label>
+  </li>
+  <li>
+        <input id="rating-4" type="radio" name="rating" value="4">
+        <label for="rating-4">4 (Yay! I'm a fan.)</label>
+  </li>
+  <li>
+        <input id="rating-5" type="radio" name="rating" value="5">
+        <label for="rating-5">5 (Woohoo! As good as it gets!)</label>
+  </li>
+</ul>
+<a href="https://www.yelp.com/writeareview/biz/0iSN6PgiXKP4oSVL037ATg?return_url=/biz/0iSN6PgiXKP4oSVL037ATg">Berkeley on Yelp</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Purchasing &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-20">
+
+<p>  <img src="img/cc-entry.png"  alt="img/cc-entry.png" />
+</p>
+</div>
+
+<div id="outline-container-20-1" class="outline-3">
+<h3 id="sec-20-1"><span class="section-number-3">20.1</span> Context &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-20-1">
+
+<ul>
+<li>Setting context by making the credit card form look like a credit card
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Overview &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-21">
+
+<p>  <img src="img/web-loop.png"  alt="img/web-loop.png" />
+</p>
+</div>
+
+<div id="outline-container-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Loop &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+
+<ul>
+<li>Start with HTML
+</li>
+<li>Interact with forms
+</li>
+<li>Send to server
+</li>
+<li>Server processes it, sends back more HTML
+</li>
+<li>Interact with forms&hellip;
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Improvements &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-22">
+
+<ul>
+<li>Give users immediate feedback
+</li>
+<li>Catch simple errors
+</li>
+<li>Provide help in forms
+</li>
+</ul>
+
+<p>  <img src="img/invalid-email.png"  alt="img/invalid-email.png" />
+</p>
+</div>
+
+<div id="outline-container-22-1" class="outline-3">
+<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Examples &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-22-1">
+
+<ul>
+<li>Has a user not typed in enough information? Too much? Provide instant
+     feedback without hitting server
+</li>
+<li>If a user has incorrectly filled out a form, don't even let them submit
+     yet, call attention to the problem
+</li>
+<li>Autocomplete, or filling in city/state/country when user fills in zip code
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> Javascript! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-23">
+
+<ul>
+<li>Write imperative style code specific to your site
+</li>
+<li>No interaction with a server required
+</li>
+<li>Run by the browser
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-23-1" class="outline-3">
+<h3 id="sec-23-1"><span class="section-number-3">23.1</span> ECMA &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-23-1">
+
+<ul>
+<li>European Computer Manufacturers Association
+</li>
+<li>ECMAscript
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> Libraries &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-24">
+
+<ul>
+<li>Raw Javascript support is inconsistent
+</li>
+<li>Libraries hide differences between browsers, implementations
+</li>
+<li>In class, <a href="http://jquery.com">jQuery</a> is OK to use
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-24-1" class="outline-3">
+<h3 id="sec-24-1"><span class="section-number-3">24.1</span> Not required &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-24-1">
+
+<ul>
+<li>jQuery is not required
+</li>
+<li>For professional work, important to know how details are implemented
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> <b>Break</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-25">
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-09-13T10:41-0700</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

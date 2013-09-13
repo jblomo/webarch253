@@ -1,0 +1,294 @@
+* *Javascript* :slide:
+
+* General Purpose :slide:
+  + Javascript full programming language
+  + Started in the browser
+  + Now used on servers, command line, devices...
+** Spread of Javascript :notes:
+   + If it can be written in JS, it will be
+   + Very lightweight language, lots of reach
+
+* Limited :slide:
+  + Manipulate the DOM
+  + Validate form values
+  + make asynchronous web requests (AJAX)
+** This lecture :notes:
+   + We'll just scratch the surface to get a sense of what's possible
+   + Basics: adding elements and information to the DOM
+   + Checking values
+   + Understand asynchronous calling
+   + Focusing on what makes Javascript unique for the web
+
+* Console :slide:two_col:
+  [[file:img/firebug.png]]
+  + Firebug or Chrome Tools run Javascript
+  + Easiest way to play with language
+  + =console.log= can print to the log from anywhere
+** Demo :notes:
+   + Open Chrome Tools, setting variable
+   + document.getElementsByTagName('IMG')
+   + assign to variable
+   + for( var i=0; i<imgTags.length; i++) {console.log(imgTags[i].src);}
+
+* [[http://jsfiddle.net][jsFiddle]] :slide:center:
+  [[file:img/jsfiddle.png]]
+  + Write and run HTML, CSS, Javascript
+
+* Variables :slide:
+  + Declare with =var= to scope correctly
+  + Weak, dynamic typing
+#+begin_src javascript
+var a = 3;
+var b = 5;
+var c = a + b;
+#+end_src
+** Typing :notes:
+   + What is =c=?
+   + Don't worry too much
+   + Means you can assign whatever you want to a variable name
+   + Different types can be combined... Javascript tries to do the right thing,
+     but it can be wrong
+
+* Strings :slide:
+#+begin_src javascript
+var a = 'hello ';
+var b = 'world!';
+var c = a + b;
+#+end_src
+** Quote Char :notes:
+   + What is =c=?
+   + Single or double quotes, up to you
+
+* Lists :slide:
+#+begin_src javascript
+var l = [1 ,2, "jim"];
+l[1];
+#+end_src
+** Indexed :notes:
+   + 0 indexed
+   + Will return 2
+
+* Objects :slide:
+  + Similar to Maps or dicts
+#+begin_src javascript
+var titles = {info253: 'Web Arch', info256: 'Applied NLP'};
+titles.info253;
+/* 'Web Arch' */
+var schools = {berkeley: {info253: 'Web Arch'}, stanford: {cs101: 'Intro CS'}};
+schools.stanford.cs101;
+/* 'Intro CS' */
+#+end_src
+** Nested :notes:
+   + May be nested
+   + Any datatypes for values
+   + Strings for keys
+
+* Functions :slide:
+#+begin_src javascript
+var add = function(a, b) {return a + b;}
+var c = add(2, 7)
+/* c is now 9 */
+ 
+var arithmetic = {add: add, subtract: function(a, b) {return a - b;}};
+ 
+var d = arithmetic.subtract(11, 4);
+var e = arithmetic.add(0, 3);
+ 
+/* d is now 7; e is now 3; */
+#+end_src
+
+* DOM :slide:animate:
+  + Document Object Model
+  + =document= is a Javascript Object
+  + You can modify it and reflect the changes
+
+* Inspecting the DOM :slide:two_col:
+  + You can use =childNodes= to explore children
+  + Will return a list
+  + =document.childNodes[2]=
+  [[file:img/dom-explore.png]]
+
+* Selecting Elements :slide:center:
+  [[file:img/getById.png]]
+ + =getElementById('target')=
+
+* Raw vs jQuery :slide:
+#+begin_src javascript
+/* raw */
+document.getElementById('to-do-list');
+/* or getElementsByTagName, and getElementsByClassName */
+
+/* jQuery */
+$('#to-do-list');
+$('#to-do-list li.item');
+#+end_src
+** Format :notes:
+   + What format does the jQuery selector remind you of?
+   + Automatically selects the right raw Javascript to call
+   + Trade-off: can be slower, unexpected results
+
+* Modifying the DOM :slide:
+  + =.innerHTML= is the text HTML inside the element
+#+BEGIN_HTML
+Things to do
+<ul id="to-do-list">
+<li class="item">Homework assignment</li>
+<li class="item">Grab coffee</li>
+</ul>
+#+END_HTML
+** Modify :notes:
+   + use non-slide version
+   + var todoList = document.getElementById('to-do-list');
+   + todoList.innerHTML += '<li class="item">Go out for dinner</li>';
+
+* Apply CSS style :slide:
+#+begin_src javascript
+todoList.childNodes[0].style.background = "pink";
+
+/* jquery */
+$('#to-do-list .item').css('background', 'green');
+#+end_src
+
+* Synchronous :slide:
+  + Linear execution, waiting for each function to finish
+  + "End" of a program when all statements executed
+  + When do you want your Javascript to "finish"?
+** Never! :notes:
+   + Javascript on the page is always responding to the user
+   + When updating the page, or requesting information from the server, we don't
+     want the whole app to freeze
+
+* Asynchronous :slide:
+  + Respond to events independently
+  + Run functions in response to actions
+  + "Callbacks" instead of being "on hold"
+** Notes :notes:
+   + Events include: page scroll, clicking, submitting forms, hovering, page
+     finished loading
+   + When those events happen, run some function. 
+   + Callbacks an example of this
+
+* Callbacks :slide:two_col:
+  + You want to make a request to your Bank
+  + Dial their number... on hold
+  + Do you sit and wait? or have them call you back?
+  [[file:caller-on-hold.jpg]]
+** Trade-offs :notes:
+   + Wait: don't get confused, context switch
+   + Wait: but a lot of wasted time, no on else can talk to you
+   + Call back: frees you up
+   + Call back: but you have to leave instructions in case they call back and
+     you aren't there
+
+* Event -> Function :slide:
+  + =onclick= will run code on the click event
+#+begin_src html
+<a href="#" onclick="alert('hello');">Hello</a>
+#+end_src
+#+BEGIN_HTML
+<a href="#" onclick="alert('hello');">Hello</a>
+#+END_HTML
+** onclick :notes:
+   + Handle click event
+   + =href= of "#" means "don't actually go anywhere"
+
+* Listen to events :slide:
+#+begin_src javascript
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+#+end_src
+#+BEGIN_HTML
+<p id="ticker">tick</p>
+<script>
+function increment() {
+    var el = document.getElementById("ticker");
+    el.firstChild.nodeValue += " tick";
+}
+var el = document.getElementById("ticker");
+el.addEventListener("click", increment);
+</script>
+#+END_HTML
+** Callbacks :notes:
+   + =increment= function is called when the click event happens
+   + when we specify =increment= it is the "callback"
+
+* jQuery :slide:
+#+begin_src javascript
+$("#ticker").click(function() {...});
+#+end_src
+** Inline :notes:
+   + jQuery hides the specific calls needed
+   + functions can be specified inline, you don't need to declare them
+   + Although it often helps readability
+
+* AJAX :slide:
+  + Asynchronous Javascript And XML*
+  + Allows Javascript to make additional requests
+  + Why?
+** More Info :notes:
+   + Gather more information, eg. sophisticated auto complete
+   + Fill in information in place
+   + Infinite scroll
+   + *Actually doesn't use XML much anymore: HTML snippets and JSON
+
+* Infinite Scroll :slide:
+  + [[http://www.pinterest.com/search/?q=programmers][Pinterest]]
+  [[file:img/stackoverflow.jpg]]
+** AJAX :notes:
+   + When the scroll event or view events happen, javascript will make an AJAX
+     call to server
+   + Server will respond with HTML inside JSON
+
+* jQuery AJAX :slide:
+#+begin_src html
+$('#get-homework').click(function(event) {
+  $.ajax('/snippet', {
+    success: function(data) {
+      $('#ajax-snippet').append(data);
+      event.stopPropagation();
+    }
+  })
+});
+#+end_src
+** Callbacks :notes:
+   + Again, we're using callbacks
+   + We can't wait around while the server responds: maybe the user is clicking
+     somewhere else!
+   + Instead we specify what to do when the call returns
+   + Also callbacks for =error=, other conditions
+
+* JSON :slide:
+  + Pass data as if it were a Javascript Object
+  + Common data format in a variety of languages
+#+begin_src javascript
+{firstname: "Jim", lastname: "Blomo",
+school: "Berkeley", jobs: ["Yelp", "A9"]}
+#+end_src
+** Javascript Object Notation :notes:
+   + used in place of XML
+
+* Summary :slide:
+  + Javascript used to manipulate DOM, CSS styles
+  + Javascript is a full, asynchronous programming language
+  + Used to enhance existing, semantic HTML
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
