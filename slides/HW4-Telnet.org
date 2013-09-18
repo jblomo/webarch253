@@ -1,0 +1,72 @@
+* Talking HTTP :slide:
+  + Communicate with a server by typing
+  + Run our own webserver
+  + Report what we see
+
+* Communicate with a server by typing :slide:
+#+begin_src bash
+telnet google.com 80
+Host: www.google.com
+
+HTTP/1.1 200 OK
+Date: Fri, 14 Sep 2012 05:34:51 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+...
+#+end_src
+
+* Run webserver :slide:
+#+begin_src bash
+cd webarch253
+git checkout master
+git pull
+./server/app.py
+ * Running on http://127.0.0.1:60001/
+#+end_src
+ + http://people.ischool.berkeley.edu/~jblomo/server
+
+* Communicate with our webserver :slide:
+  + Keep =server/app.py= running, open another window
+#+begin_src bash
+telnet 127.0.0.1 60001
+GET / HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 12
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 14 Sep 2012 05:44:08 GMT
+#+end_src
+
+* HW Questions :slide:
+  1. Using =127.0.0.1 <PORT>=
+    1. What is the return code for =GET / HTTP/1.1=?
+    1. What is the return code for =GET /foo HTTP/1.1=?
+      1. What is the next HTTP statement a brwoser would send after this return
+        code?
+    1. What is the return code for =PUT /foo HTTP/1.1=?
+  1. Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server/foo
+    + You can issue =GET= requests using =telnet= by specifying the server name,
+      =people.ischool.berkeley.edu=, using the default HTTP port, =80=.
+  1. What is the return code for  http://people.ischool.berkeley.edu/~<USER>/i253/foobar.html?
+    1. Paste the full telnet transcript for this request
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
