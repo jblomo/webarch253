@@ -3,4 +3,4 @@ venv/
 *.sw[po]
 *.pyc
 #*
-/server/shorten.db
+shorten.db
