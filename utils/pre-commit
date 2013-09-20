@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$(git symbolic-ref HEAD)" == "refs/heads/master" ]
+then
+        echo "Cannot commit to the master branch."
+        echo "Remove the added file, create a homework branch and add the files there."
+        exit 1
+
+fi
