@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="HW4-Telnet"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-20T00:39-0700"/>
+<meta name="generated" content="2013-09-20T01:19-0700"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -42,8 +42,13 @@
 </ul>
 </li>
 <li><a href="#sec-3">3 Run webserver</a></li>
-<li><a href="#sec-4">4 Communicate with our webserver</a></li>
-<li><a href="#sec-5">5 HW Questions</a></li>
+<li><a href="#sec-4">4 Proxy</a>
+<ul>
+<li><a href="#sec-4-1">4.1 people =&gt; app.py</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Communicate with our webserver</a></li>
+<li><a href="#sec-6">6 HW Questions</a></li>
 </ul>
 </div>
 </div>
@@ -127,7 +132,7 @@ git checkout -b hw4-telnet
 <ul>
 <li>HW instructions in <a href="https://piazza.com/class/hkxejwsmf0z2fe?cid=23">Piazza</a>
 </li>
-<li><a href="http://people.ischool.berkeley.edu/~jblomo/server">http://people.ischool.berkeley.edu/~jblomo/server</a>
+<li><a href="http://people.ischool.berkeley.edu/~jblomo/server/home">http://people.ischool.berkeley.edu/~jblomo/server/home</a>
 </li>
 </ul>
 
@@ -137,8 +142,36 @@ git checkout -b hw4-telnet
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Communicate with our webserver &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Proxy &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
 <div class="outline-text-2" id="text-4">
+
+<p>  <img src="img/ischool-proxy.png"  alt="img/ischool-proxy.png" />
+</p>
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> people =&gt; app.py &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Apache is proxying requests from your paths to your individual app.py
+</li>
+<li>If your app.py is not running, will get an error
+</li>
+<li>This is setup by Kevin in helpdesk, let us know if the mapping is not
+     working
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Communicate with our webserver &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
 
 <ul>
 <li>Keep <code>server/app.py</code> running, open another window
@@ -164,9 +197,9 @@ Date: Fri, 14 Sep 2012 05:44:08 GMT
 
 </div>
 
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> HW Questions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> HW Questions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
 
 <ol>
 <li>Using <code>127.0.0.1 $FLASK_PORT</code>
@@ -188,7 +221,7 @@ Date: Fri, 14 Sep 2012 05:44:08 GMT
 </li>
 <li>Explain what happens when your browser loads <a href="http://people.ischool.berkeley.edu/">http://people.ischool.berkeley.edu/</a>~&lt;USER&gt;/server/wiki from sending the request to loading HTML
 </li>
-<li>What is the return code for <a href="http://people.ischool.berkeley.edu/">http://people.ischool.berkeley.edu/</a>~&lt;USER&gt;/server/
+<li>What is the return code for <a href="http://people.ischool.berkeley.edu/">http://people.ischool.berkeley.edu/</a>~&lt;USER&gt;/server/ ?
 </li>
 </ol>
 
@@ -204,7 +237,7 @@ Date: Fri, 14 Sep 2012 05:44:08 GMT
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-20T00:39-0700</p>
+<p class="date">Date: 2013-09-20T01:19-0700</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

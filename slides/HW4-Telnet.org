@@ -34,7 +34,15 @@ git checkout -b hw4-telnet
  * Running on http://127.0.0.1:60001/
 #+end_src
  + HW instructions in [[https://piazza.com/class/hkxejwsmf0z2fe?cid=23][Piazza]]
- + http://people.ischool.berkeley.edu/~jblomo/server
+ + http://people.ischool.berkeley.edu/~jblomo/server/home
+
+* Proxy :slide:center:
+  [[file:img/ischool-proxy.png]]
+** people => app.py :notes:
+   + Apache is proxying requests from your paths to your individual app.py
+   + If your app.py is not running, will get an error
+   + This is setup by Kevin in helpdesk, let us know if the mapping is not
+     working
 
 * Communicate with our webserver :slide:
   + Keep =server/app.py= running, open another window
@@ -58,7 +66,7 @@ Date: Fri, 14 Sep 2012 05:44:08 GMT
         code?
     1. What is the return code for =PUT /wiki HTTP/1.1=?
   1. Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server/wiki from sending the request to loading HTML
-  1. What is the return code for http://people.ischool.berkeley.edu/~<USER>/server/
+  1. What is the return code for http://people.ischool.berkeley.edu/~<USER>/server/ ?
 
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
