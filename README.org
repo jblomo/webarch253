@@ -2,7 +2,7 @@
   + Description :: Understanding the web's core technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser and interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
   + Grading :: Homework (30%), midterm (30%), project (40%). 
   + Instructor :: Jim Blomo <jblomo@ischool>
-  + GSI :: Sonali Sharma <sonalisharma@berkeley> 
+  + GSI :: Sonali Sharma <sonalisharma@berkeley>
 
 * Syllabus :slide:
 
