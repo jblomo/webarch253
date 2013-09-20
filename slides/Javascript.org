@@ -172,7 +172,7 @@ $('#to-do-list .item').css('background', 'green');
   + You want to make a request to your Bank
   + Dial their number... on hold
   + Do you sit and wait? or have them call you back?
-  [[file:caller-on-hold.jpg]]
+  [[file:img/caller-on-hold.jpg]]
 ** Trade-offs :notes:
    + Wait: don't get confused, context switch
    + Wait: but a lot of wasted time, no on else can talk to you
