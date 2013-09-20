@@ -1,6 +1,6 @@
 * *HTTP* and *Servers* :slide:
 
-* Servers Return Representation :slide:
+* Servers Return Representations :slide:
   + Homework will be writing code to return HTML
   + How do we decide which HTML to send?
   + How do we use methods and headers?
@@ -10,44 +10,50 @@
   + How are resources specified?
 ** With hostname and Path :notes:
    + =people.ischool.berkeley.edu=
-   + =/~ashams/i253/index.html=
+   + =/~jackar/webarch2013/index.html=
      + Absolute path?
 
 ** Hostname/Path => Resource :slide:
-   + http://people.ischool.berkeley.edu/~ashams/i253/index.html
-   + How to specify hostname with HTTP?
+   + http://people.ischool.berkeley.edu/~jackar/webarch2013/index.html
+   + How to specify hostname in *HTTP*?
    + How to specify path?
    + What method to use?
 
 * Webserver :slide:
-  + Associate =/~ashams/i253/index.html= with =/home/ashams/public_html/i253/index.html=
-  + Associate  =/~ashams/i253/colors.css= with =/home/ashams/public_html/i253/colors.css=
+  + Associate =/~jackar/webarch2013/index.html= with =/home/jackar/public_html/webarch2013/index.html=
+  + Associate  =/~jackar/webarch2013/colors.css= with =/home/jackar/public_html/webarch2013/colors.css=
   + Associate ...
 ** Gets old :notes:
    + Instead of associating each file...
 
-* Extrapolate :slide:
-  + Associate everything in =/~ashams/= with everything in =/home/ashams/public_html/=
+* Extrapolate :slide:two_col:
+  + Associate everything in =/~jackar/= with everything in =/home/jackar/public_html/=
   + This is a common feature of most webservers
   + =Apache= the most popular
   [[file:img/wpid-overalld.png]]
 ** Webserver usage :notes:
    + Apache is an open source webserver, one of the original
 
-* Missing file? :slide:
+* Missing file? :slide:animate:
   + What should we do if we request a file that is not there?
-  + Return nothing?
   + Return "Oops!"
+  + Return nothing?
+  + Return standard HTML?
 ** Ambiguous :notes:
    + What about different languages?
    + What about pages that you want to title "Oops!"
    + How to tell the difference between an error and no data?
+   + What if you aren't expecting HTML? Wanted JSON?
    + Don't take these for granted. You are the innovators.
 
 * HTTP Response Codes :slide:
   + Numbers are unambiguous, can be read by machines
   + Always return a response code
   + Return text as well for human readability
+** In addition to content! :notes:
+   + In addition to content, we will return a response code
+   + Response code tell us how we're handling the request, how the content
+     should be interpreted 
 
 ** HTTP Response Numbers :slide:
    + 200s :: OK
@@ -57,29 +63,35 @@
 
 * Demo 200 OK :slide:
 #+begin_src bash
-telnet people.ischool.berkeley.edu 80
-GET /~jblomo/ HTTP/1.1
+telnet 128.32.78.16 80
+GET /~jblomo/webarch2013/ HTTP/1.1
 Host: people.ischool.berkeley.edu
 
 
 HTTP/1.1 200 OK
-Date: Fri, 14 Sep 2012 06:06:22 GMT
+Date: Fri, 20 Sep 2013 06:29:22 GMT
 Server: Apache/2.2.22 (Fedora)
-Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
-ETag: "a6ec002-48-4c89822b95c80"
+Last-Modified: Fri, 20 Sep 2013 06:28:44 GMT
+ETag: "b7f00d0-a5-4e6cac83bff00"
 Accept-Ranges: bytes
-Content-Length: 72
+Content-Length: 165
 Content-Type: text/html; charset=UTF-8
 
-<h1>Jim's page</h1>
-Pretty <strong>cool!</strong>
-
-Hello <em>class</em>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jim's Page</title>
+    </head>
+    <body>
+        <p>Hello class! This is a tiny HTML page.</p>
+    </body>
+</html>
 #+end_src
 
 * 300s :: Redirect :slide:
   + 301 :: Permanent Redirect
   + 302 :: Temporary Redirect
+  + =Location= :: Header with URI of target
 ** Difference? :notes:
    + Permanent :: Resource has moved (Another server, etc.) update your
      bookmarks or links
@@ -89,7 +101,7 @@ Hello <em>class</em>
   + 404 :: Resource Not Found
 ** Hooray :notes:
 #+begin_src bash
-telnet people.ischool.berkeley.edu 80
+telnet 128.32.78.16 80
 GET /~jblomo/notfound.html HTTP/1.1
 Host: people.ischool.berkeley.edu
 
@@ -138,6 +150,9 @@ Connection closed by foreign host.
   + Javascript
   + Images
   + ...
+** To load a modern page :notes:
+   + Of then need to make many, dozens of these requests
+   + It takes time to make the network (telnet) connection
 
 * HTTP Versions :slide:
   + 1.0 :: Make a new connection each time
@@ -156,6 +171,39 @@ Connection closed by foreign host.
   + Specifying what you want to do with a resource
   + How it is represented
   + Optimized for web browsing
+
+* Review :slide:
+  + Questions?
+** No? :notes:
+   + Great, I can start calling on people
+
+** Review URI :slide:
+   + What is a URL?
+   + What is an example resource?
+   + What is an example non-HTML representation?
+   + =mailto:jblomo@ischool.berkeley.edu=
+     What is the schema?
+   + =file://WebArch-253/2012-09-14-HTTP.html#sec-4-9=
+     What is the fragment?
+*** Answers :notes:
+   + Uniform Resource Locator
+   + User profile picture
+   + Image (jpeg, png)
+   + mailto (email)
+   + sec-4-9
+
+** Review Paths :slide:
+   + Relative or absolute?
+     + /home/jblomo/public_html/i253/
+     + public_html/i253/
+     + Do these point to the same place?
+   + What does the file =page.html= contain?
+*** Answers :notes:
+    + paths
+      + absolute
+      + relative
+      + maybe, depends on your current directory
+    + Data. We don't know more.
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
