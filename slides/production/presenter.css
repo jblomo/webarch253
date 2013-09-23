@@ -21,7 +21,7 @@ body.presenter-display {
    top: 0;
    vertical-align: top;
    width: 50%;
-   zoom: 60%;
+   zoom: 40%;
 }
 
 #presenter-next-slide-container {
@@ -32,17 +32,19 @@ body.presenter-display {
    top: 1%;
    vertical-align: top;
    width: 40%;
-   zoom: 50%;
+   zoom: 30%;
 }
 
 #presenter-current-slide {
    background: white;
+   color: black;
    height: 100%;
    padding: 12pt;
 }
 
 #presenter-next-slide {
    background: white;
+   color: black;
    height: 100%;
    padding: 12pt;
 }
