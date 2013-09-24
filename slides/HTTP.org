@@ -165,7 +165,7 @@ scheme              authority                    path   |    |    interpretable 
   + Typically files
   + Also generated pages, like a user profile
 ** Again :notes:
-   + Locial set of data
+   + Logical set of data
    + To interact with a concept we need to make it real, or have representation
      of it
 
@@ -202,13 +202,13 @@ scheme              authority                    path   |    |    interpretable 
    + Same thing with APIs: {id: 242421}. ID of what? a tweet? review? how do I
      access it?
    + URIs allow us to consistently refer to resources
-   + Not only that, but a UR *L* specificially instructs the browser on how to
+   + Not only that, but a UR *L* specifically instructs the browser on how to
      get a representation of the resource.
 
 * HyperText Transfer Protocol :slide:
   + A system for interacting with representations of resources
   + Text based protocol, running on a network connection
-  + You can interact with a webserver by hand!
+  + You can interact with a web server by hand!
 ** Details :notes:
    + TCP is the network layer, which we'll study later
    + Basically guarantees that the data we send will either get to the
@@ -247,7 +247,7 @@ Content-Type: text/html; charset=UTF-8
 * Network :slide:center:
   [[file:img/http-stack.gif]]
 ** Reliable :notes:
-   + telnet is somehow transfering our keystrokes to another machine...
+   + telnet is somehow transferring our keystrokes to another machine...
    + Magic! For now. We just assume that what we type gets there, will learn how
      in a later course
 
