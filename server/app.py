@@ -30,13 +30,13 @@ def home():
 
 ###
 # Wiki Resource:
-# GET method will redirect to the resource stored by PUT, but default: Wikipedia.org
+# GET method will redirect to the resource stored by PUT, by default: Wikipedia.org
 # POST/PUT method will update the redirect destination
 ###
 @app.route('/wiki', methods=['GET'])
 def wiki_get():
     """Redirects to wikipedia."""
-    destination = "http://en.wikipedia.org"
+    destination = db.get('wiki', 'http://en.wikipedia.org')
     app.logger.debug("Redirecting to " + destination)
     return flask.redirect(destination)
 
@@ -44,7 +44,7 @@ def wiki_get():
 def wiki_put():
     """Set or update the URL to which this resource redirects to. Uses the
     `url` key to set the redirect destination."""
-    wikipedia = request.form.get('url', "http://en.wikipedia.org")
+    wikipedia = request.form.get('url', 'http://en.wikipedia.org')
     db['wiki'] = wikipedia
     return "Stored wiki => " + wikipedia
 

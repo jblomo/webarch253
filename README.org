@@ -16,13 +16,13 @@
 | Oct 4  | Internet & DNS | | |
 | Oct 11 | GUEST Front-end Performance | | |
 | Oct 18 | ReST & Cookies | | |
-| Oct 25 | Midterm | | |
+| Oct 25 | Midterm | | Project Part 1 |
 | Nov 1  | Data Storage | | |
-| Nov 8  | SEO & Microdata | | |
+| Nov 8  | SEO & Microdata | | Optional Part 2 Proposal |
 | Nov 15 | GUEST Mobile | | |
 | Nov 22 | Data Mining | | |
 | Nov 29 | Thanksgiving | | |
-| Dec 6 | Security & Your Website | | |
+| Dec 6 | Security & Your Website | | Project Technical Report |
 | Dec 13 | Project Presentations | | |
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />

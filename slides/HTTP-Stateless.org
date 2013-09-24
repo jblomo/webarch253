@@ -24,7 +24,6 @@
    + HTTP/1.1 keeps an open connection, but doesn't change the commands,
      headers, content required for the request
    + When making requests for images on a page, still must ask for absolute path
-   + Resource have state: GET request for whattimeisit.com
    + *Cookies will be covered in 2 weeks
 
 * HTML over HTTP :slide:
@@ -41,6 +40,7 @@
 * Paths in HTML & HTTP :slide:
   + HTTP :: Absolute paths
   + HTML :: Absolute or relative paths
+  + Browser :: Translates relative paths with current URL + relative
 ** Translation :notes:
    + Browser translates relative paths in HTML to absolute paths in HTTP request
 
@@ -63,7 +63,7 @@
   + No! Browser will always send authorization information
 ** Where? :notes:
    + Associate with an IP? No, what about users from the same building?
-   + Where should we send authenticaiton information in a request? (for normal
+   + Where should we send authentication information in a request? (for normal
      pages, not login form
    + Headers: metadata about request, eg. who is sending it?
 
@@ -77,6 +77,8 @@
    + When looking at an individual request, we send all required information
    + Just like we build styling on top of semantics (CSS on HTML), build
      stateful application on stateless protocol
+   + Like a telephone call (pre-mobile): you have to introduce yourself each
+     time, but after introducing yourself I can remember details about you
 
 * Fun with HTTP Status Codes :slide:two_col:
   + =418= :: I'm a teapot (for HyperText Coffee Pot Control Protocol)
@@ -87,7 +89,7 @@
 From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP status codes]]
 ** Last week :notes:
    + (Transition)
-   + We talked about repsonse codes last week, here are a couple fun ones
+   + We talked about response codes last week, here are a couple fun ones
 
 * Static vs. Dynamic Webpage :slide:
   + Static web pages are files that don't change
@@ -125,6 +127,7 @@ From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP stat
    + New activity that you want to see. How boring would a static feed be?
    + Maybe someone only recently gave you permissions to view a resource
    + Getting the current weather
+   + Resource have state: GET request for whattimeisit.com
 
 * Craigslist :slide:two_col:
   + Every ad has a page
@@ -188,7 +191,7 @@ From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP stat
 
 * CSS and Javascript? :slide:
   + Still static
-  + Fairly rare that those assests are dynamically generated
+  + Fairly rare that those assets are dynamically generated
   + Exception: some images
 
 ** HTML :slide:

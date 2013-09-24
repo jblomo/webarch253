@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="HTTP-Stateless"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-23T16:21-0700"/>
+<meta name="generated" content="2013-09-23T18:14-0700"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -224,8 +224,6 @@
 </li>
 <li>When making requests for images on a page, still must ask for absolute path
 </li>
-<li>Resource have state: GET request for whattimeisit.com
-</li>
 <li>*Cookies will be covered in 2 weeks
 </li>
 </ul>
@@ -283,6 +281,8 @@
 <dt>HTTP</dt><dd>Absolute paths
 </dd>
 <dt>HTML</dt><dd>Absolute or relative paths
+</dd>
+<dt>Browser</dt><dd>Translates relative paths with current URL + relative
 </dd>
 </dl>
 
@@ -375,7 +375,7 @@
 <ul>
 <li>Associate with an IP? No, what about users from the same building?
 </li>
-<li>Where should we send authenticaiton information in a request? (for normal
+<li>Where should we send authentication information in a request? (for normal
      pages, not login form
 </li>
 <li>Headers: metadata about request, eg. who is sending it?
@@ -417,6 +417,9 @@
 <li>Just like we build styling on top of semantics (CSS on HTML), build
      stateful application on stateless protocol
 </li>
+<li>Like a telephone call (pre-mobile): you have to introduce yourself each
+     time, but after introducing yourself I can remember details about you
+</li>
 </ul>
 
 
@@ -452,7 +455,7 @@ From <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HT
 <ul>
 <li>(Transition)
 </li>
-<li>We talked about repsonse codes last week, here are a couple fun ones
+<li>We talked about response codes last week, here are a couple fun ones
 </li>
 </ul>
 
@@ -583,6 +586,8 @@ From <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HT
 <li>Maybe someone only recently gave you permissions to view a resource
 </li>
 <li>Getting the current weather
+</li>
+<li>Resource have state: GET request for whattimeisit.com
 </li>
 </ul>
 
@@ -801,7 +806,7 @@ From <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HT
 <ul>
 <li>Still static
 </li>
-<li>Fairly rare that those assests are dynamically generated
+<li>Fairly rare that those assets are dynamically generated
 </li>
 <li>Exception: some images
 </li>
@@ -849,7 +854,7 @@ From <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HT
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-23T16:21-0700</p>
+<p class="date">Date: 2013-09-23T18:14-0700</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

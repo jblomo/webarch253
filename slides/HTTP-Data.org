@@ -89,7 +89,7 @@ Date: Fri, 21 Sep 2012 04:17:46 GMT
    + =text/plain= =image/png= =audio/mpeg=
    + Make up your own with =vnd.=, =prs.=
 ** Extensible X- :notes:
-   + Formerly, =x-= was used for exparamental types, but has been removed due to
+   + Formerly, =x-= was used for experimental types, but has been removed due to
      conflicts and difficulty in bringing to production
    + =vnd.= for vendors, =prs.= for personal, =x.= for backward compatibility
    + =application/x-www-form-urlencoded= started without getting registered,
