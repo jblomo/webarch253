@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import shelve
+from subprocess import check_output
 import flask
 from flask import request
 from os import environ
@@ -64,11 +65,13 @@ def i253():
 
     resp = flask.make_response(
             check_output(['convert', '-size', '600x400', 'xc:transparent',
+                '-frame', '10x30',
                 '-font', '/usr/share/fonts/thai-scalable/Waree-BoldOblique.ttf',
                 '-fill', 'black',
                 '-pointsize', '32',
                 '-draw',
-                  "text 10,30 'My %s %s said i253 was %s'" % (relationship, name, adjective),
+                  "text 30,60 'My %s %s said i253 was %s'" % (relationship, name, adjective),
+                '-raise', '30',
                 'png:-']), 200);
     # Comment in to set header below
     # resp.headers['Content-Type'] = '...'
