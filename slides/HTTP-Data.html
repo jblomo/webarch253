@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="HTTP-Data"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-24T22:52-0700"/>
+<meta name="generated" content="2013-09-24T23:24-0700"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -88,6 +88,8 @@
 <li><a href="#sec-10-1">10.1 Encoding</a></li>
 <li><a href="#sec-10-2">10.2 URL Encoding</a></li>
 <li><a href="#sec-10-3">10.3 Tips</a></li>
+<li><a href="#sec-10-4">10.4 HTML Encoding</a></li>
+<li><a href="#sec-10-5">10.5 Tips</a></li>
 </ul>
 </li>
 <li><a href="#sec-11">11 Encoding Schemes</a>
@@ -563,7 +565,7 @@ Stored wiki =&gt; http://disney.com
 <ul>
 <li>AJAX requests generally work with all methods
 </li>
-<li>Can "tunnel" requests by using a hidden field, <sub>method</sub>="DELETE"
+<li>Can "tunnel" requests by using a hidden field, _method="DELETE"
 </li>
 <li>Keep up with standard
 </li>
@@ -586,7 +588,9 @@ Stored wiki =&gt; http://disney.com
 <ul>
 <li>Delimited by =, separated by <code>&amp;</code>
 </li>
-<li>What happens if you want to send a <code>?   + What happens if you want to send a =&amp;</code>?
+<li>What happens if you want to send a <code>?</code>
+</li>
+<li>What happens if you want to send a <code>&amp;</code>?
 </li>
 <li>Just like HTML we need to <b>encode</b> the data
 </li>
@@ -619,11 +623,11 @@ Stored wiki =&gt; http://disney.com
 <div class="outline-text-3" id="text-10-2">
 
 <dl>
-<dt>=</dt><dd>%3D
+<dt>=</dt><dd><code>%3D</code>
 </dd>
-<dt>&amp;</dt><dd>%26
+<dt>&amp;</dt><dd><code>%26</code>
 </dd>
-<dt>space</dt><dd>%20
+<dt>space</dt><dd><code>%20</code>
 </dd>
 </dl>
 
@@ -639,6 +643,41 @@ Stored wiki =&gt; http://disney.com
 <li><a href="http://www.asciitable.com/">ASCII to hex</a>
 </li>
 <li><a href="http://meyerweb.com/eric/tools/dencoder/">URL Decoder/Encoder</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> HTML Encoding &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-4">
+
+<dl>
+<dt>&lt;</dt><dd><code>&amp;lt;</code>
+</dd>
+<dt>&amp;</dt><dd><code>&amp;amp;</code>
+</dd>
+<dt>&gt;</dt><dd><code>&amp;gt;</code>
+</dd>
+<dt>☃</dt><dd><code>&amp;#9731;</code>
+</dd>
+</dl>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> Tips &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-5">
+
+<ul>
+<li>You can encode any character with decimal or hex encoding
+</li>
+<li><a href="http://www.w3.org/International/questions/qa-escapes">http://www.w3.org/International/questions/qa-escapes</a>
 </li>
 </ul>
 
@@ -788,7 +827,7 @@ Stored wiki =&gt; http://disney.com
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-24T22:52-0700</p>
+<p class="date">Date: 2013-09-24T23:24-0700</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

@@ -150,14 +150,14 @@ Stored wiki => http://disney.com
   + So resource accessed by browsers, use =POST= for all modifying interactions
 ** Changing :notes:
    + AJAX requests generally work with all methods
-   + Can "tunnel" requests by using a hidden field, _method="DELETE"
+   + Can "tunnel" requests by using a hidden field, \_method="DELETE"
    + Keep up with standard
    + https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671
    + For APIs, use appropriate methods
 
 * Query Arguments :slide:
   + Delimited by =, separated by =&=
-  + What happens if you want to send a =?
+  + What happens if you want to send a =?=
   + What happens if you want to send a =&=?
   + Just like HTML we need to *encode* the data
 
@@ -167,12 +167,21 @@ Stored wiki => http://disney.com
   + Map special characters to the hexidecimal representation
 
 ** URL Encoding  :slide:
-   + = :: %3D
-   + & :: %26
-   + space :: %20
+   + = :: =%3D=
+   + & :: =%26=
+   + space :: =%20=
 ** Tips :notes:
    + [[http://www.asciitable.com/][ASCII to hex]]
    + [[http://meyerweb.com/eric/tools/dencoder/][URL Decoder/Encoder]]
+
+** HTML Encoding  :slide:
+   + < :: =&lt;=
+   + & :: =&amp;=
+   + > :: =&gt;=
+   + ☃ :: =&#9731;=
+** Tips :notes:
+   + You can encode any character with decimal or hex encoding
+   + http://www.w3.org/International/questions/qa-escapes
 
 * Encoding Schemes  :slide:
 #+begin_src html
