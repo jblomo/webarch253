@@ -18,12 +18,12 @@ git checkout -b hw5-data
 http://people.ischool.berkeley.edu/~jblomo/server/
 
 ** Tasks with Telnet :slide:
-   1. What HTTP command is used to make the server respond with your full name (including spaces), the title
+   1. What HTTP command is used to make the =/home= resource respond with your full name (including spaces), the title
       of the page should be the full title of this class.
    1. Use a PUT request to set the redirect target of http://people.ischool.berkeley.edu/~<USER>/server/wiki 
       1. How do you verify this change?
    1. Use a POST to update the redirect target of http://people.ischool.berkeley.edu/~<USER>/server/wiki to a another new location.
-   1. Update =app.py= to correctly return an image from  http://people.ischool.berkeley.edu/~<USER>/server/image
+   1. Update =app.py= to correctly return an image from  http://people.ischool.berkeley.edu/~<USER>/server/i253
       + Use your browser to test
       + Including the =Content-Type= in your submission
 *** Lab will discuss details :notes:

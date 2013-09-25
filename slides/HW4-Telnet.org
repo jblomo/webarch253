@@ -9,6 +9,7 @@ host google.com
 google.com has address 74.125.239.142
 
 telnet 74.125.239.142 80
+GET / HTTP/1.1
 Host: www.google.com
 
 HTTP/1.1 200 OK

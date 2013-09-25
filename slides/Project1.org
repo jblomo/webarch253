@@ -29,10 +29,15 @@
    1. Attempts to =GET= =server/short/<name>= where <name> has no association must return =404 NOT FOUND=
 
 * Sharing Code :slide:
-  + Create a fork of webarch2013
-  + Either =remote add= the new fork or create a new directory
-  + Add collaborators to new fork -- only one fork needed per team
+  + One member create a fork of webarch2013 -> project-webarch
+  + Add collaborators (incl instructors) to new fork
+  + =git clone= forked repository to ischool server
   + Turn in your homework via personal, project via fork
+** Keep In Mind :notes:
+   + Suggest using same workflow as homework: =checkout -b= for a new feature,
+     issue a pull request, get someone on your team to review, merge into master
+   + You can only run one =server/app.py= at a time -- even from different
+     directories
 
 ** Extra Credit: Adding bitly Features :slide:
    + Automatically choose short path
