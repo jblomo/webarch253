@@ -1,0 +1,201 @@
+* The Web Is Built On The Internet :slide:
+
+* We Use These Phrases :slide:
+  + "Connects to server"
+  + "Sends response to client"
+  + "Closes the connection"
+What do they mean?
+
+* Internet Architecture is Composable :slide:two_col:
+[[file:img/composable_inception.jpg]]
+  + Emphasize flexibility
+  + Allow for growth, incremental adoption
+  + Interchangeable parts
+
+* Two Computers Need to Communicate :slide:
+  + String a wire between them
+  + Send bits across
+  + Wait for response?
+** Imagine :notes:
+   + A time before the Internet and Web
+   + Wire could be connected in anyway
+   + Bit could be sent in anyway
+   + Other computer may respond, may not
+
+* Three Computers Need to Communicate :slide:
+Get more wire
+
+[[file:img/3c-communication.png]]
+** Wires :notes:
+   + Multiple wires between computers?
+     + One sending, one receiving?
+   + Each computer hooked up to every other, no message passing
+   + Mostly workable
+   + Disadvantage: what happens when you want to connect another computer?
+
+* Circuit Switching :slide:two_col:
+  + New computer joins network: wire it up
+  + Switch the electronic circuit
+  [[file:img/telephone-operators.jpg]]
+** Electronic circuits :notes:
+   + Very similar to phone "networks": wire up the two parties
+   + Doesn't scale well, but can be fine for small networks
+   + Computers better when multiple can communicate: conference line
+
+* Network :slide:two_col:
+[[file:img/3c-communication.png]]
+  + Now we have a network
+  + Mostly computer-to-computer
+  + How to we communicate between networks?
+** Problems :notes:
+   + Can't put whole world on same medium
+   + Composability: allow different LAN to work independently
+   + Need some way to address computers that is independent from local network
+
+* ARPANET :: Network :slide:two_col:
+  + Circuit Switching -> Packet Switching
+  + Relied on Interface Message Processors (IMPs)
+  + Government, no commercial traffic
+[[file:img/Leonard-Kleinrock-and-IMP1.png]]
+** Details :notes:
+   + First pass: academic inter-network
+   + Instead of connecting on same medium, use packets that were routed to a
+     destination with IMPs
+   + Installation planned at 9 months
+   + Speed 50 kbit/second (home cable is 245x faster)
+     + loading yelp.com would take ~19 seconds
+     + but wouldn't have fit into memory
+   + IMPs were early routers, but more complexity: added reliable routing
+
+* Packet Switching :slide:two_col:
+  + Send small packets of information
+  + Addressed to a receiver
+  + Can share medium
+  [[file:img/pony-express.jpg]]
+** Postal :notes:
+   + More similar to post mail than circuit switched telephones:
+   + Address a small packet/letter to a person/address
+   + All mail handled by the same middle layer
+
+* Trade-offs :slide:
+  + Big, expensive IMPs required
+  + Connection to LAN up to owners
+  + Couldn't handle multiple connections
+** Communication :notes:
+   + Can't rely on the sophistication of the carrier network
+   + Can't all be carrying around IMPs
+   + But we'd still like to send packets of data over some link
+   + IMPs only expected networks to talk to each other, not applications on
+     specific hosts
+   + So next iteration designed to solve these problems
+
+* Internet Protocol :slide:
+  + Moves much responsibility to host software
+  + Keeps packet switching and routing
+  + Adds concept of ports
+** End-to-end :notes:
+   + End-to-end principle: application-specific functionality must reside on
+     end-hosts, because they know exactly what is required
+   + Many of the limitations of ARPANET were not able to be composed with new
+     solution because all of the logic was in the big iron
+   + Packet switching was a great idea.
+
+* Internet Protocol :slide:
+  + Where is the destination? (host addressing)
+  + How do I get there? (routing)
+  + Stateless!
+** IP :notes:
+   + Simplify: tease apart central concepts to implement composability
+   + Best effort delivery: send it off and hope for the best
+   + Don't even guarantee we got the same data!
+   + Very simple, but flexible enough to build on top of
+   + But one of the first things stipulated about the Web was we either
+     expect the data to show up, or see an error. How does that happen?
+
+* Packets travel over networks :slide:two_col:
+  + Packets sent to Yelp from ischool
+  + Destination is specified with a number (IP address)
+  + Routing is done by forwarding to the next best network
+[[file:img/ip-communication.png]]
+** Routing Details :notes:
+   + We want to send data to Yelp. But where is Yelp?
+   + Happens to be in SF, but what if it moves?
+   + Networks hand off to the next network it thinks is "closer" to Yelp
+   + That network hands it off... etc.
+   + Until we get to Yelp
+   + Lots of problems can happen:
+     + No route to host
+     + It can go different ways
+
+** =traceroute= :slide:
+#+begin_src bash
+harbinger:~$ traceroute yelp.com
+traceroute to yelp.com (199.255.189.160), 30 hops max, 60 byte packets
+ 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  0.960 ms  1.151 ms  1.056 ms
+ 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  0.930 ms  1.068 ms  1.194 ms
+ 3  xe-5-1-0.inr-001-sut.Berkeley.EDU (128.32.0.66)  17.730 ms  17.766 ms  17.687 ms
+ 4  dc-sfo-agg-1--ucb-10ge.cenic.net (137.164.50.16)  1.554 ms  1.596 ms  1.552 ms
+ 5  svl-agg2--sfo-agg1-10g.cenic.net (137.164.22.27)  3.430 ms  3.392 ms  3.291 ms
+ 6  dc-oak-core1--svl-core1-ge-1.cenic.net (137.164.46.213)  4.361 ms  3.971 ms  3.992 ms
+ 7  dc-paix-px1--oak-core1-ge.cenic.net (137.164.47.18)  5.479 ms  5.370 ms  5.189 ms
+ 8  abovenet--paix-px1-ge2.cenic.net (198.32.251.78)  5.613 ms  5.519 ms  5.567 ms
+ 9  xe-3-0-0.cr1.sjc2.us.above.net (64.125.31.66)  7.367 ms  7.501 ms  7.345 ms
+10  xe-0-0-0.cr2.sjc2.us.above.net (64.125.30.126)  6.403 ms  6.287 ms  6.261 ms
+11  xe-0-1-0.mpr4.sfo7.us.above.net (64.125.26.61)  7.303 ms  7.264 ms  7.240 ms
+12  209.66.115.62.t01325-02.above.net (209.66.115.62)  7.326 ms  7.279 ms  7.318 ms
+13  www.sfo1.yelp.com (199.255.189.160)  7.356 ms  7.293 ms  7.407 ms
+#+end_src
+
+* IP Address :slide:
+  + Numbers, often represented as "dotted decimal" (199.255.189.160)
+  + But can also be represented as just a number (3355426208)
+  + IPs assigned by Internet Assigned Numbers Authority
+** IPv4 notation :notes:
+   + "IP" short for "IP Address"
+   + "dotted quads"
+   + IP version 4 : 32 bit, IPv6 : 128 bit
+   + IANA typically assigns ranges, then delegated out
+   + ischool gets an IP from a range assigned to Berkeley, which has a range
+     assigned to UC system (example)
+
+* Routing :slide:
+  + Border Gateway Protocol tracks routes to IPs
+  + ISPs manually configure peers to share information
+  + Routers use BGP to forward packets
+** More information :notes:
+   + Routing and peering big topics, please follow up with a networking class if
+     you're interested
+   + Take-away: networks can communicate with each other even if not directly
+     connected: packets are forwarded along
+
+* Ethernet :slide:two_col:
+  + All computers on the same physical medium
+  + "Frames" addressed to a receiver
+  + Interruptions happen with re-tries
+  [[file:img/http-stack.gif]]
+** Trade-offs :notes:
+   + Don't have to wire new computers up with separate cables
+   + Still have to wire computers on the same physical line
+   + All computer recieve all messages -- just choose to ignore the ones not for
+     it
+   + Implications about security, bandwidth
+   + Ethernet just one type of LAN, now dominate
+
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
+

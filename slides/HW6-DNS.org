@@ -1,0 +1,32 @@
+* HW6: Use DNS tools :slide:
+  + Use =host= and =traceroute= commands
+  + Manually do DNS lookups
+  + Understand routes
+
+* Questions :slide:
+  1. What series of IPs would a recursive DNS server use to find the address of
+     =m.yelp.com=?
+  1. What are the IP addresses of =m.yelp.com=?
+  1. Do IP packets leave the Berkeley network when traveling to
+     =amplab.cs.berkeley.edu=? Include the command and output.
+
+* HW :slide:
+  + Text file with answers
+  + Don't forget projects!
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
