@@ -117,6 +117,8 @@ harbinger.ischool.berkeley.edu.	3600 IN	A	128.32.78.16
    + How do you know if the data you receive is the same as was sent? Checksum
    + How does the sender know if a packet was delivered? Ack
    + How do we know the ordering of the data? Packet sequence numbering
+   + TCP also adds "ports": ability to connect to a particular application on
+     the destination host
 
 ** Checksum :slide:
    + Take the bits in a message

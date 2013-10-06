@@ -92,13 +92,14 @@ Get more wire
 * Internet Protocol :slide:
   + Moves much responsibility to host software
   + Keeps packet switching and routing
-  + Adds concept of ports
+  + Adds concept of ports*
 ** End-to-end :notes:
    + End-to-end principle: application-specific functionality must reside on
      end-hosts, because they know exactly what is required
    + Many of the limitations of ARPANET were not able to be composed with new
      solution because all of the logic was in the big iron
    + Packet switching was a great idea.
+   + Ports added in TCP/UDP layer
 
 * Internet Protocol :slide:
   + Where is the destination? (host addressing)
