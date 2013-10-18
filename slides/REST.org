@@ -162,19 +162,31 @@ Representational State Transfer
     + You don't need to memorize the prefix of businesses, then type in an ID
     + Contains the full URL link
 
+** Example :slide:
+#+begin_src json
+{"business": "http://yelp.com/biz/27",
+ "user": "http://yelp.com/user/5"
+ "review_text": "..."}
+#+end_src
+*** Trade-offs :notes:
+    + Can easily follow links without known a priori structure
+    + Only need "entry" URL to start using API/website
+
 ** Counter Example :slide:
 #+begin_src json
-{business_id: 27,
- user_id: 5}
+{"business_id": 27,
+ "user_id": 5
+ "review_text": "..."}
 #+end_src
 #+begin_src python
 url.open("http://yelp.com/biz/" + business_id)
 #+end_src
 *** Trade-offs :notes:
+    + Less data transfered
     + Got back just a simple ID... what do we do with it?
     + Some APIs require you to read the documentation, then hard code the path
       and stick the ID you got in the response in
-    + Note HATEOAS: Instead should recieve the whole URL in this response
+    + Note HATEOAS: Instead should receive the whole URL in this response
 
 ** Uses Headers for Metadata :slide:
    + =Content-Type= XML or JSON

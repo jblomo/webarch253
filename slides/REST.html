@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>REST</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="REST"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-18T11:03-0700"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">REST</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 REST</a></li>
+<li><a href="#sec-2">2 Good news, everyone!</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Definitions</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 History</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Relation to HTTP</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Constraints</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Describes the Web</a></li>
+<li><a href="#sec-4-2">4.2 Client-Server</a></li>
+<li><a href="#sec-4-3">4.3 Flexibility</a></li>
+<li><a href="#sec-4-4">4.4 Stateless</a>
+<ul>
+<li><a href="#sec-4-4-1">4.4.1 Grammar</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-5">4.5 Cacheable</a>
+<ul>
+<li><a href="#sec-4-5-1">4.5.1 Consistency is hard anyway</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-6">4.6 Layered</a>
+<ul>
+<li><a href="#sec-4-6-1">4.6.1 Man in the Middle</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-7">4.7 Uniform Interface</a>
+<ul>
+<li><a href="#sec-4-7-1">4.7.1 Clients</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-8">4.8 Code on Demand</a>
+<ul>
+<li><a href="#sec-4-8-1">4.8.1 Sandbox</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 REST is not HTTP</a>
+<ul>
+<li><a href="#sec-5-1">5.1 New Protocols?</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Web is RESTful</a></li>
+<li><a href="#sec-7">7 How to Spot RESTfulness</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Uses HTTP</a></li>
+<li><a href="#sec-7-2">7.2 Uses HTTP commands</a></li>
+<li><a href="#sec-7-3">7.3 Uses HTTP return codes</a></li>
+<li><a href="#sec-7-4">7.4 URLs point to resources</a>
+<ul>
+<li><a href="#sec-7-4-1">7.4.1 <code>/api/user</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-7-5">7.5 Representation links</a>
+<ul>
+<li><a href="#sec-7-5-1">7.5.1 HATEOAS</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-6">7.6 Example</a>
+<ul>
+<li><a href="#sec-7-6-1">7.6.1 Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-7">7.7 Counter Example</a>
+<ul>
+<li><a href="#sec-7-7-1">7.7.1 Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-8">7.8 Uses Headers for Metadata</a>
+<ul>
+<li><a href="#sec-7-8-1">7.8.1 SOAP</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 A place for the RESTless</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> REST &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Representational State Transfer
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Good news, everyone! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>You already know REST
+</li>
+<li>Representations
+</li>
+<li>State
+</li>
+<li>Transfer
+</li>
+</ul>
+
+<p><img src="img/good_news_everyone.png"  alt="img/good_news_everyone.png" />
+</p>
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Definitions &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<dl>
+<dt>Representations</dt><dd>concrete version (bytes) of a resource
+</dd>
+<dt>State</dt><dd>The status of a representation (bank account)
+</dd>
+<dt>Transfer</dt><dd>HTTP
+</dd>
+</dl>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> History &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>Roy Fielding wrote HTTP specs
+</li>
+<li>Defined REST in his 2000 PhD dissertation
+</li>
+<li>Defined core set of constraints and why they were important
+</li>
+</ul>
+
+<p><img src="img/roy_fielding_sq.jpg"  alt="img/roy_fielding_sq.jpg" />
+</p>
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Relation to HTTP &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>REST was designed as the principles of HTTP
+</li>
+<li>HTTP came out of and embodies these principles
+</li>
+<li>But HTTP is not REST!
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Constraints &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<dl>
+<dt>Client-server</dt><dd>Two separate systems talk to each other through a well
+    defined interface
+</dd>
+<dt>Stateless</dt><dd>No context is stored between requests
+</dd>
+<dt>Cacheable</dt><dd>Clients or intermediaries can cache results, and requests and
+    results can specify caching information
+</dd>
+<dt>Layered</dt><dd>Requests can go through intermediaries (proxies)
+</dd>
+<dt>Uniform Interface</dt><dd>The protocol between client and server follows the
+    same rules regardless of the specific application
+</dd>
+<dt>???</dt><dd>Code Transfer (Optional):: Servers may send code to clients to execute
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Describes the Web &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Browsers, webservers
+</li>
+<li>HTTP is stateless
+</li>
+<li>We have caching layers, CDNs (in another lecture)
+</li>
+<li>Proxies, both front end backend (another lecture)
+</li>
+<li>HTTP is uniform if you're getting a page from your portfolio or a CSS file
+     from NYT
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Client-Server &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>Browsers don't care what webserver is providing representations, or what
+     database is holding data
+</li>
+<li>Servers don't care which clients are connecting
+</li>
+</ul>
+
+
+
+<ul>
+<li>Overhead of transferring data
+</li>
+<li>Fewer, simpler failure modes
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Flexibility &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+
+<ul>
+<li>Theme of many of these constraints
+</li>
+<li>We are trading off flexibility for performance
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Stateless &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-4">
+
+<ul>
+<li>Simplifies server design and storage
+</li>
+<li>Simplifies request grammar
+</li>
+<li>Improves scalability, error recovery
+</li>
+</ul>
+
+
+
+<ul>
+<li>Overhead of transferring client state
+</li>
+<li>Not convenient for interactivity at protocol level
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> Grammar &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-4-1">
+
+<ul>
+<li>Must cover all possible states, eg. in a directory that is deleted
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> Cacheable &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-5">
+
+<ul>
+<li>Browsers can store CSS and JavaScript
+</li>
+<li>Businesses can cache responses, even from external sites
+</li>
+<li>Servers can specify how long things should be cached for
+</li>
+</ul>
+
+
+
+<ul>
+<li>Cache invalidation is hard
+</li>
+<li>Can't rely on updated resources updating "everywhere"
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-5-1" class="outline-4">
+<h4 id="sec-4-5-1"><span class="section-number-4">4.5.1</span> Consistency is hard anyway &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-5-1">
+
+<ul>
+<li>Cache invalidation is hard, but alternative is basically not feasible
+</li>
+<li>Can't update mobile phones in "real time" when they are disconnected
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> Layered &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-6">
+
+<ul>
+<li>Apache webserver is an intermediary to <code>app.py</code>, but the browser doesn't know!
+</li>
+<li>Allows "one" hostname to be served by hundreds of '<code>app.py</code>' servers
+</li>
+<li>Can also separate caching, or authentication and authorization
+</li>
+</ul>
+
+
+
+<ul>
+<li>Can't rely on server specific details - our request could be passed along
+    to anyone
+</li>
+<li>Server identification more difficult - "Man in the Middle" attacks
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-6-1" class="outline-4">
+<h4 id="sec-4-6-1"><span class="section-number-4">4.6.1</span> Man in the Middle &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-6-1">
+
+<ul>
+<li>Where an adversary intercepts your requests and returns back potentially
+      altered results
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> Uniform Interface &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-7">
+
+<ul>
+<li>Client and server know how to interact regardless of application hosted
+</li>
+<li>Yelp uses same interface as Twitter
+</li>
+<li>Wider variety of clients that can handle multiple applications
+</li>
+</ul>
+
+
+
+<ul>
+<li>For really unique applications, must jam into old paradigms
+</li>
+<li>Difficult to optimize for performance of single application
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-7-1" class="outline-4">
+<h4 id="sec-4-7-1"><span class="section-number-4">4.7.1</span> Clients &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-7-1">
+
+<ul>
+<li>Imagine using a different application for Yelp and Twitter: one has no
+      back button, other can't select text, etc&hellip;
+<ul>
+<li>Actually don't have to imagine too hard, just use your phone
+</li>
+</ul>
+
+</li>
+<li>Difficult to think about what a "resource" is for search
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-8" class="outline-3">
+<h3 id="sec-4-8"><span class="section-number-3">4.8</span> Code on Demand &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-4-8">
+
+<ul>
+<li>Server sends code to execute on client
+</li>
+<li>JavaScript, Java, Flash, VisualBasic
+</li>
+<li>Can allow interaction without rebuilding representation
+</li>
+</ul>
+
+
+
+<ul>
+<li>Difficult to ensure code safety and isolation
+</li>
+<li>Sandboxing limits performance and flexibility
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-8-1" class="outline-4">
+<h4 id="sec-4-8-1"><span class="section-number-4">4.8.1</span> Sandbox &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-8-1">
+
+<ul>
+<li>An area for a program to run that won't let it do real damage
+</li>
+<li>Prevent a virus from reading your personal finances
+</li>
+<li>But this means can't allow the program to helpfully read data
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> REST is not HTTP &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>Other protocols are "RESTful"
+</li>
+<li>Waka is Roy Fielding's next protocol
+</li>
+<li>Must embrace REST constraints
+</li>
+</ul>
+
+<p><img src="img/MagrittePipe.jpg"  alt="img/MagrittePipe.jpg" />
+</p>
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> New Protocols? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>If you want to make it RESTful, try following Fielding advice
+</li>
+<li>Worked pretty well for the Web
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Web is RESTful &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Web is build on these ideas
+</li>
+<li>Better leverage attained by embracing REST
+</li>
+<li>Flexibility, scalability, visibility, simplicity
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> How to Spot RESTfulness &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Should think through constraints, but here are some heuristics
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Uses HTTP &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>HTTP can be a Uniform Interface
+</li>
+<li>vs. FTP not RESTful
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Uses HTTP commands &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+
+<ul>
+<li><code>GET</code> <code>POST</code> <code>PUT</code> &hellip;
+</li>
+<li>vs. Uses POST for everything
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Uses HTTP return codes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-3">
+
+<ul>
+<li><code>404</code> <code>200</code>
+</li>
+<li>vs. always responses with <code>200</code> but has an error message
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> URLs point to resources &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-4">
+
+<ul>
+<li><code>/api/users/jblomo</code> <code>/api/classes/i253</code>
+</li>
+<li>vs. URLs point to commands <code>/api/command</code> <code>/api/user</code> <code>/api/getClasses/</code>
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1"><span class="section-number-4">7.4.1</span> <code>/api/user</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-4-1">
+
+<ul>
+<li>Where <code>/api/user</code> then only takes <code>POST</code> commands with a <code>user=jblomo</code>
+      argument
+</li>
+<li>Fielding called this "Identification of resources"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> Representation links &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-5">
+
+<ul>
+<li>A representation links to new possible actions
+</li>
+<li>Client only needs to have representation
+</li>
+<li>Hypermedia as the engine of application state (HATEOAS)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-5-1" class="outline-4">
+<h4 id="sec-7-5-1"><span class="section-number-4">7.5.1</span> HATEOAS &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-5-1">
+
+<ul>
+<li>HTTP contains links to the next action: the business you want to view,
+      or forms with actions for the review you want to submit
+</li>
+<li>You don't need to memorize the prefix of businesses, then type in an ID
+</li>
+<li>Contains the full URL link
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-6">
+
+
+
+
+<pre class="src src-json">{<span style="color: #8b2252;">"business"</span>: <span style="color: #8b2252;">"http://yelp.com/biz/27"</span>,
+ <span style="color: #8b2252;">"user"</span>: <span style="color: #8b2252;">"http://yelp.com/user/5"</span>
+ <span style="color: #8b2252;">"review_text"</span>: <span style="color: #8b2252;">"..."</span>}
+</pre>
+
+
+</div>
+
+<div id="outline-container-7-6-1" class="outline-4">
+<h4 id="sec-7-6-1"><span class="section-number-4">7.6.1</span> Trade-offs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-6-1">
+
+<ul>
+<li>Can easily follow links without known a priori structure
+</li>
+<li>Only need "entry" URL to start using API/website
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-7" class="outline-3">
+<h3 id="sec-7-7"><span class="section-number-3">7.7</span> Counter Example &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-7">
+
+
+
+
+<pre class="src src-json">{<span style="color: #8b2252;">"business_id"</span>: 27,
+ <span style="color: #8b2252;">"user_id"</span>: 5
+ <span style="color: #8b2252;">"review_text"</span>: <span style="color: #8b2252;">"..."</span>}
+</pre>
+
+
+<pre class="src src-python">url.open(<span style="color: #8b2252;">"http://yelp.com/biz/"</span> + business_id)
+</pre>
+
+
+</div>
+
+<div id="outline-container-7-7-1" class="outline-4">
+<h4 id="sec-7-7-1"><span class="section-number-4">7.7.1</span> Trade-offs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-7-1">
+
+<ul>
+<li>Less data transfered
+</li>
+<li>Got back just a simple ID&hellip; what do we do with it?
+</li>
+<li>Some APIs require you to read the documentation, then hard code the path
+      and stick the ID you got in the response in
+</li>
+<li>Note HATEOAS: Instead should receive the whole URL in this response
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-8" class="outline-3">
+<h3 id="sec-7-8"><span class="section-number-3">7.8</span> Uses Headers for Metadata &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-8">
+
+<ul>
+<li><code>Content-Type</code> XML or JSON
+</li>
+<li>vs. response has extra metadata in XML
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-8-1" class="outline-4">
+<h4 id="sec-7-8-1"><span class="section-number-4">7.8.1</span> SOAP &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-8-1">
+
+<ul>
+<li>For example <a href="http://en.wikipedia.org/wiki/SOAP">SOAP</a> has a
+      <code>&lt;soap:Header&gt;</code> section
+</li>
+<li>Self-descriptive: client can figure out how to parse from the message
+      content, not some external source
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> A place for the RESTless &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>Communicating over many protocols
+</li>
+<li>Performance critical
+</li>
+<li>Prototypes
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-18T11:03-0700</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
