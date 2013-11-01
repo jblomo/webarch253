@@ -1,0 +1,42 @@
+* HW7 - Databases :slide:
+  + Use MySQL
+  + Deliverable: file with queries and answer
+  + =SELECT=
+  + =INSERT=
+  + =UPDATE=
+
+* Queries :slide:
+  + =SELECT=
+    + How many links were added afer 2013-10-14?
+    + How many links that were added before 2013-10-14 have fewer than 40 hits?
+  + =INSERT=
+    + Insert your own URL with a date before 2013-10-14 with greater than 40
+      hits.
+    + Is it possible that someone querying the database at the same time could
+      see your insert partially complete (eg. only see some fields filled in)?
+      What database property is this related to?
+  + =UPDATE=
+    + Increment the =hit_count= for only your new row. What is the new count?
+
+* MySQL Documentation :slide:
+  + Lots of options
+  + OK to ask for help, but ask in general terms
+  + "How can I combine constraints?"
+  + Not "How can I search before X and fewer Y?"
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
