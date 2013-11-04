@@ -192,6 +192,11 @@
   + Have some fun
   + [[http://www.googleventures.com/humans.txt][Google Ventures]]
 
+* Some Tips :slide:center:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/fnSJBpB_OKQ" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
 #+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />

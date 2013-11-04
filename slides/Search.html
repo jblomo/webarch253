@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Search</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Search"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-11-03T23:33-0800"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Search</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>Search</b></a></li>
+<li><a href="#sec-2">2 Decentralization</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Hyperlinks</a>
+<ul>
+<li><a href="#sec-3-1">3.1 What's New?</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Yahoo!</a>
+<ul>
+<li><a href="#sec-4-1">4.1 History</a></li>
+<li><a href="#sec-4-2">4.2 Yahoo Search</a></li>
+<li><a href="#sec-4-3">4.3 Took time</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Search as Core Copetency</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Jump Back</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Essential Features</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Crawling</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Seed Pages</a></li>
+<li><a href="#sec-7-2">7.2 Starting point</a></li>
+<li><a href="#sec-7-3">7.3 Download</a>
+<ul>
+<li><a href="#sec-7-3-1">7.3.1 <code>curl</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-7-4">7.4 Analyze Links</a>
+<ul>
+<li><a href="#sec-7-4-1">7.4.1 New pages</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-5">7.5 Download Frontier</a>
+<ul>
+<li><a href="#sec-7-5-1">7.5.1 Continue</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-6">7.6 Completion</a>
+<ul>
+<li><a href="#sec-7-6-1">7.6.1 Done?</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-7">7.7 Complications</a>
+<ul>
+<li><a href="#sec-7-7-1">7.7.1 Tracking</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Policies</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Practicalities</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Spider trap</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Traps</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Indexing</a>
+<ul>
+<li><a href="#sec-10-1">10.1 Naïve</a></li>
+<li><a href="#sec-10-2">10.2 Inverse Index</a></li>
+<li><a href="#sec-10-3">10.3 Inverse Index</a>
+<ul>
+<li><a href="#sec-10-3-1">10.3.1 Inverse</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-4">10.4 Challenges</a>
+<ul>
+<li><a href="#sec-10-4-1">10.4.1 Details</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 Search</a></li>
+<li><a href="#sec-12">12 PageRank</a>
+<ul>
+<li><a href="#sec-12-1">12.1 Current Use</a></li>
+<li><a href="#sec-12-2">12.2 PageRank</a>
+<ul>
+<li><a href="#sec-12-2-1">12.2.1 Incoming Links</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 Scale Mattered</a>
+<ul>
+<li><a href="#sec-13-1">13.1 Brewer</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14 Scale Continues to Matter</a>
+<ul>
+<li><a href="#sec-14-1">14.1 Details</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Search</b> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Decentralization &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>Democratic
+</li>
+<li>Resilient
+</li>
+<li>Innovative
+</li>
+<li>But where is everything?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Trade-offs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>Put anything online without telling anyone&hellip;
+</li>
+<li>But how does anyone discover it?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Hyperlinks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>Link from one document to another
+</li>
+<li>But where to start?
+</li>
+</ul>
+
+<p><img src="img/moznew.gif"  alt="img/moznew.gif" />
+</p><ul>
+<li><a href="http://home.mcom.com/home/whatsnew/whats_new_0294.html">What's New</a>
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> What's New? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>Internet invisioned as moving through hyperlinks
+</li>
+<li>A single web page that listed all the new websites
+</li>
+<li>"Chess enthusiasts will be interested in the Internet Chess Library"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Yahoo! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>"Jerry's guide to the world wide web"
+</li>
+<li>Collection of hierarchical links
+</li>
+<li>Added search, though not as core competency
+</li>
+</ul>
+
+<p>  <img src="img/early-yahoo.jpg"  alt="img/early-yahoo.jpg" />
+</p>
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> History &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>Started as Tim Breners-Lee imagined, just a series of hyperlinks
+</li>
+<li>But quickly clear that search was helpful
+</li>
+<li>But not clear it was a differentiator
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Yahoo Search &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>2000 - Used Google for search
+</li>
+<li>2002 - Inktomi purchased
+</li>
+<li>2003 - Overture (AltaVista) purchased
+</li>
+<li>2004 - Dropped Google, used in-house engine
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Took time &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+
+<ul>
+<li>Yahoo, many other didn't see Search as core to product
+</li>
+<li>Search as a business was non-obvious, how to make money differentiate?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Search as Core Copetency &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>1993 - JumpStation
+</li>
+<li>1995 - AltaVista, Excite
+</li>
+<li>1996 - Inktomi (HotBot)
+</li>
+<li>1998 - Google, MSN Search (Bing)
+</li>
+<li>2008 - DuckDuckGo
+</li>
+<li>2010 - Blekko
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Jump Back &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>JumpStation university project, but did not get funding
+</li>
+<li>Couple years later, many sprung up, many out of universities
+</li>
+<li>A lot of activity between 1998-2008, but mostly false starts and
+     acquisitions, dot-com bust
+</li>
+<li>DuckDuckGo: "Better search and no tracking"
+</li>
+<li>Blekko: "Spam free search"
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Essential Features &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<dl>
+<dt>Crawling</dt><dd>Automated loading and processing of web pages
+</dd>
+<dt>Indexing</dt><dd>Bulk association of words with web pages
+</dd>
+<dt>Searching</dt><dd>"Run-time" association of query with web pages
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>Web crawler, bot, spider: program that downloads web pages, follows links, downloads
+     web.pages, follows links&hellip;
+</li>
+<li>Indexing: URL -&gt; words =&gt; indexer =&gt; word -&gt; URLs
+</li>
+<li>Searching: query -&gt; most relevant pages
+</li>
+<li>Vocab: I may say pages or documents
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Crawling &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Conceptually easy: start with "seed" pages, download all their links
+<ul>
+<li>Download all those links
+<ul>
+<li>Download all those links
+<ul>
+<li>&hellip;
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Seed Pages &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<p><img src="img/webcrawl1.png"  alt="img/webcrawl1.png" />
+</p></div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Starting point &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+
+<ul>
+<li>CERN, mozilla home pages
+</li>
+<li>trusted
+</li>
+<li>have lots of links
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Download &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-3">
+
+<p><img src="img/webcrawl2.png"  alt="img/webcrawl2.png" />
+</p>
+</div>
+
+<div id="outline-container-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1"><span class="section-number-4">7.3.1</span> <code>curl</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-3-1">
+
+<ul>
+<li>using a program, download HTML of all seed links
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Analyze Links &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-4">
+
+<p><img src="img/webcrawl3.png"  alt="img/webcrawl3.png" />
+</p>
+</div>
+
+<div id="outline-container-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1"><span class="section-number-4">7.4.1</span> New pages &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-4-1">
+
+<ul>
+<li>These are called the "crawling frontier"
+</li>
+<li>Pages you know about, but haven't downloaded yet
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> Download Frontier &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-5">
+
+<p><img src="img/webcrawl4.png"  alt="img/webcrawl4.png" />
+</p>
+</div>
+
+<div id="outline-container-7-5-1" class="outline-4">
+<h4 id="sec-7-5-1"><span class="section-number-4">7.5.1</span> Continue &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-5-1">
+
+<ul>
+<li>Download, analyze, download
+</li>
+<li>Simple, right?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> Completion &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-6">
+
+<p><img src="img/webcrawl5.png"  alt="img/webcrawl5.png" />
+</p>
+</div>
+
+<div id="outline-container-7-6-1" class="outline-4">
+<h4 id="sec-7-6-1"><span class="section-number-4">7.6.1</span> Done? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-6-1">
+
+<ul>
+<li>But when are you done?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-7" class="outline-3">
+<h3 id="sec-7-7"><span class="section-number-3">7.7</span> Complications &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-7">
+
+<p><img src="img/webcrawl6.png"  alt="img/webcrawl6.png" />
+</p>
+</div>
+
+<div id="outline-container-7-7-1" class="outline-4">
+<h4 id="sec-7-7-1"><span class="section-number-4">7.7.1</span> Tracking &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-7-7-1">
+
+<ul>
+<li>What happens when pages start linking to each other?
+</li>
+<li>Start downloading again?
+</li>
+<li>How do you prioritize pages you haven't seen yet?
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Policies &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<dl>
+<dt>Selection</dt><dd>Which pages to download?
+</dd>
+<dt>Re-visit</dt><dd>When to refresh pages that may have changed?
+</dd>
+<dt>Parallelization</dt><dd>How to run multiple crawlers?
+</dd>
+<dt>Politeness</dt><dd>Don't take down a site with your multiple crawlers
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Practicalities &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>You can't download the internet on your laptop
+</li>
+<li>But how many computers do you need
+</li>
+<li>How to coordinate
+</li>
+<li>How much bandwidth?
+</li>
+<li>Storing state of all these pages?
+</li>
+<li>Storing content?
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Spider trap &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<p><img src="img/trap.jpg"  alt="img/trap.jpg" />
+</p><ul>
+<li>What do you get when you mix crawlers with dynamic pages?
+</li>
+<li>Servers that create an infinitely large site
+</li>
+<li><a href="http://foo.com/bar/foo/bar/foo/bar/foo/bar/">http://foo.com/bar/foo/bar/foo/bar/foo/bar/</a>&hellip;..
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Traps &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>Spam pages, or just mischievous people can try to keep spiders around
+</li>
+<li>Generate links on a page
+</li>
+<li>Create a page for any URL
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Indexing &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<ul>
+<li>Query for "Web Architecture 253"
+</li>
+<li>Search strategy: check page A, check page B, check page C&hellip;
+</li>
+<li>Will not scale to check all web pages for this phrase
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Naïve &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>Just check every page for phrase
+</li>
+<li>Instead, must do something more clever that scales with # of words
+</li>
+<li>Which is greater: number of words people search for, number of internet
+     pages?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> Inverse Index &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-2">
+
+<ul>
+<li>A: "ISchool teach Web tech."
+</li>
+<li>B: "Web Architecture 253 is this semester."
+</li>
+<li>C: "Internet Architecture is next semester."
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> Inverse Index &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-10-3">
+
+<ul>
+<li>A: "ISchool teaches Web."
+</li>
+<li>B: "He teaches Web Architecture 253."
+</li>
+<li>C: "Internet Architecture is next."
+</li>
+</ul>
+
+
+
+<ul>
+<li>ISchool: A
+</li>
+<li>teaches: A B
+</li>
+<li>Web: A B
+</li>
+<li>He: B
+</li>
+<li>Architecture: B C
+</li>
+<li>253: B
+</li>
+<li>Internet: C
+</li>
+<li>is: C
+</li>
+<li>next: C
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-3-1" class="outline-4">
+<h4 id="sec-10-3-1"><span class="section-number-4">10.3.1</span> Inverse &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-10-3-1">
+
+<ul>
+<li>Takes pages =&gt; words, makes words =&gt; pages
+</li>
+<li>Now when search we can look up Web (A,B), Architecture (B,C), 253 (B)
+</li>
+<li>Return B
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> Challenges &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-4">
+
+<ul>
+<li>Tokenizing
+</li>
+<li>Scale
+</li>
+<li>Locality
+</li>
+<li>Context
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-4-1" class="outline-4">
+<h4 id="sec-10-4-1"><span class="section-number-4">10.4.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-10-4-1">
+
+<ul>
+<li>How to break apart Japanese to words?
+</li>
+<li>How to have an index that can't fit on one computer?
+<ul>
+<li>Partition by words? Documents?
+</li>
+</ul>
+
+</li>
+<li>How to find phrases; words close together on page?
+</li>
+<li>Is the word in a title? Body?
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Search &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>Index can be used to finding matching pages
+</li>
+<li>But how to find most relevant?
+</li>
+<li>Words in title? <code>meta</code> keywords tag?
+</li>
+<li>Links to other sites?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> PageRank &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>Google's first innovation
+</li>
+<li>Trustworthiness of a page varies with <b>inbound links</b>
+</li>
+<li>Example of a "static" or "indexing time" feature
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Current Use &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>PageRank type algorithms used to score influence on twitter, or groups of
+     friends on Facebook
+</li>
+<li>Ironically not used as much by Google any longer because of abuse
+</li>
+<li>"Features" are qualities of a document that indicate its relevance
+</li>
+<li>Static feature is independent of query
+</li>
+<li>Dynamic or "query time" features depend on query
+</li>
+<li>Static features ideal since you don't have to recalculate for new queries
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> PageRank &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
+
+<p><img src="img/webcrawl6.png"  alt="img/webcrawl6.png" />
+</p>
+
+<p>
+<img src="img/webcrawl-pagerank.png"  alt="img/webcrawl-pagerank.png" />
+</p>
+</div>
+
+<div id="outline-container-12-2-1" class="outline-4">
+<h4 id="sec-12-2-1"><span class="section-number-4">12.2.1</span> Incoming Links &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-12-2-1">
+
+<ul>
+<li>If we scale size with imporance the links coming into some sites make them
+     more important or trustworthy
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Scale Mattered &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<p><img src="img/Eric-Brewer-small.jpg"  alt="img/Eric-Brewer-small.jpg" />
+</p><ul>
+<li>Eric Brewer, UC Berkeley Professor
+</li>
+<li>Started Inktomi, search engine that pioneered operating at scale
+</li>
+<li>In order to search websites effectively, must build an effective website
+</li>
+<li>Developed CAP theorem
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Brewer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>We'll cover CAP theorem later in class
+</li>
+<li>Rigorous understanding of how to build websites
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Scale Continues to Matter &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li>Instrumental in scaling Google's systems
+</li>
+<li>Many technologies for scaling follow his examples
+</li>
+<li>"Compilers don’t warn Jeff Dean. Jeff Dean warns compilers."
+    <a href="http://www.quora.com/Jeff-Dean/What-are-all-the-Jeff-Dean-facts">-Jeff Dean Facts</a>
+</li>
+</ul>
+
+<p><img src="img/jeffdean.jpg"  alt="img/jeffdean.jpg" />
+</p>
+</div>
+
+<div id="outline-container-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+
+<ul>
+<li>"Reading" is watching one of his early videos on Google
+</li>
+<li>Scale can determine the ability and effectiveness of processing large
+     amounts of data
+</li>
+<li>Processing big data can lead to killer features
+</li>
+<li>Like Chuck Norris facts, page has some geeky humor about Jeff Dean
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-11-03T23:33-0800</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

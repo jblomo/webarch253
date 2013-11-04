@@ -1,0 +1,67 @@
+* Project: URL shortener :slide:
+  + Demo: [[http://bitly.com][bitly]]
+  + This project is simpler
+
+* Project Overview :slide:
+  + Teams of up to *4*
+  + You may switch teams, but not recommended
+  + Part 2: Get creative! Implement product ideas
+
+* Dates :slide:
+  + Oct 31st: Part 1 due
+  + Nov 14th: Optional Part 2 Proposal
+  + Dec 12th: Technical report due
+  + Dec 13th: Class presentation
+
+** Part 2 Details :slide:
+   + # of people ~= # of features
+   + Features should be comprehensive
+   + Features should be web related
+   + Evaluation on end-user criteria (including delight)
+** Heuristics :notes:
+   + Roughly same number of features as number of people
+   + But do not simply just split up the work
+   + Because your features need to be cross compatible
+   + If you make the site mobile compatible, then all pages should be
+   + Don't spend 2 weeks in photoshop making an awesome background
+   + If you do a data mining compoenent, it needs to be related to web
+     activity, or inform the web interface (maybe recommendations?)
+   + Evaluated: do your forms work, is the page semantic to enable
+     accessability, is the interface pleasent to use, is it useful?
+
+** Some Ideas :slide:
+   + Automatically choose short path
+   + Use the same short path for existing URLs
+   + User sign-in
+   + Mobile interface
+   + REST interface
+   + Recommendation system
+** Additions :notes:
+   + OK to generate some data for ML related features
+
+* Proposal :slide:
+  + What features will you complete?
+  + Roughly how they will work
+  + What you anticipate main challenge to be
+  + Include all team member names
+** Details :notes:
+   + Work: mostly from an end-user perspective
+   + Challenges: so I understand where the team is. Ideally you're exploring
+     an area in which you have less experience
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
