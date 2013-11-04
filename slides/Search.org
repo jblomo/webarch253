@@ -1,0 +1,245 @@
+* *Search* :slide:
+
+* Decentralization :slide:
+  + Democratic
+  + Resilient
+  + Innovative
+  + But where is everything?
+** Trade-offs :notes:
+   + Put anything online without telling anyone...
+   + But how does anyone discover it?
+
+* Hyperlinks :slide:
+  + Link from one document to another
+  + But where to start?
+[[file:img/moznew.gif]]
+   + [[http://home.mcom.com/home/whatsnew/whats_new_0294.html][What's New]]
+** What's New? :notes:
+   + Internet invisioned as moving through hyperlinks
+   + A single web page that listed all the new websites
+   + "Chess enthusiasts will be interested in the Internet Chess Library"
+
+* Yahoo! :slide:two_col:
+  + "Jerry's guide to the world wide web"
+  + Collection of hierarchical links
+  + Added search, though not as core competency
+  [[file:img/early-yahoo.jpg]]
+** History :notes:
+   + Started as Tim Breners-Lee imagined, just a series of hyperlinks
+   + But quickly clear that search was helpful
+   + But not clear it was a differentiator
+
+** Yahoo Search :slide:
+   + 2000 - Used Google for search
+   + 2002 - Inktomi purchased
+   + 2003 - Overture (AltaVista) purchased
+   + 2004 - Dropped Google, used in-house engine
+** Took time :notes:
+   + Yahoo, many other didn't see Search as core to product
+   + Search as a business was non-obvious, how to make money differentiate?
+
+* Search as Core Copetency :slide:
+  + 1993 - JumpStation
+  + 1995 - AltaVista, Excite
+  + 1996 - Inktomi (HotBot)
+  + 1998 - Google, MSN Search (Bing)
+  + 2008 - DuckDuckGo
+  + 2010 - Blekko
+** Jump Back :notes:
+   + JumpStation university project, but did not get funding
+   + Couple years later, many sprung up, many out of universities
+   + A lot of activity between 1998-2008, but mostly false starts and
+     acquisitions, dot-com bust
+   + DuckDuckGo: "Better search and no tracking"
+   + Blekko: "Spam free search"
+
+* Essential Features :slide:
+  + Crawling :: Automated loading and processing of web pages
+  + Indexing :: Bulk association of words with web pages
+  + Searching :: "Run-time" association of query with web pages
+** Details :notes:
+   + Web crawler, bot, spider: program that downloads web pages, follows links, downloads
+     web.pages, follows links...
+   + Indexing: URL -> words => indexer => word -> URLs
+   + Searching: query -> most relevant pages
+   + Vocab: I may say pages or documents
+
+* Crawling :slide:
+  + Conceptually easy: start with "seed" pages, download all their links
+    + Download all those links
+      + Download all those links
+        + ...
+
+** Seed Pages :slide:
+[[file:img/webcrawl1.png]]
+** Starting point :notes:
+   + CERN, mozilla home pages
+   + trusted
+   + have lots of links
+
+** Download :slide:
+[[file:img/webcrawl2.png]]
+*** =curl= :notes:
+   + using a program, download HTML of all seed links
+
+** Analyze Links :slide:
+[[file:img/webcrawl3.png]]
+*** New pages :notes:
+   + These are called the "crawling frontier"
+   + Pages you know about, but haven't downloaded yet
+
+** Download Frontier :slide:
+[[file:img/webcrawl4.png]]
+*** Continue :notes:
+    + Download, analyze, download
+    + Simple, right?
+
+** Completion :slide:
+[[file:img/webcrawl5.png]]
+*** Done? :notes:
+    + But when are you done?
+
+** Complications :slide:
+[[file:img/webcrawl6.png]]
+*** Tracking :notes:
+    + What happens when pages start linking to each other?
+    + Start downloading again?
+    + How do you prioritize pages you haven't seen yet?
+
+* Policies :slide:
+  + Selection :: Which pages to download?
+  + Re-visit :: When to refresh pages that may have changed?
+  + Parallelization :: How to run multiple crawlers?
+  + Politeness :: Don't take down a site with your multiple crawlers
+** Practicalities :notes:
+   + You can't download the internet on your laptop
+   + But how many computers do you need
+   + How to coordinate
+   + How much bandwidth?
+   + Storing state of all these pages?
+   + Storing content?
+
+* Spider trap :slide:
+[[file:img/trap.jpg]]
+  + What do you get when you mix crawlers with dynamic pages?
+  + Servers that create an infinitely large site
+  + http://foo.com/bar/foo/bar/foo/bar/foo/bar/.....
+** Traps :notes:
+   + Spam pages, or just mischievous people can try to keep spiders around
+   + Generate links on a page
+   + Create a page for any URL
+
+* Indexing :slide:
+  + Query for "Web Architecture 253"
+  + Search strategy: check page A, check page B, check page C...
+  + Will not scale to check all web pages for this phrase
+** Naïve :notes:
+   + Just check every page for phrase
+   + Instead, must do something more clever that scales with # of words
+   + Which is greater: number of words people search for, number of internet
+     pages?
+
+** Inverse Index :slide:
+   + A: "ISchool teach Web tech."
+   + B: "Web Architecture 253 is this semester."
+   + C: "Internet Architecture is next semester."
+
+** Inverse Index :slide:two_col:
+   + A: "ISchool teaches Web."
+   + B: "He teaches Web Architecture 253."
+   + C: "Internet Architecture is next."
+
+
+   + ISchool: A
+   + teaches: A B
+   + Web: A B
+   + He: B
+   + Architecture: B C
+   + 253: B
+   + Internet: C
+   + is: C
+   + next: C
+*** Inverse :notes:
+   + Takes pages => words, makes words => pages
+   + Now when search we can look up Web (A,B), Architecture (B,C), 253 (B)
+   + Return B
+
+** Challenges :slide:
+   + Tokenizing
+   + Scale
+   + Locality
+   + Context
+*** Details :notes:
+    + How to break apart Japanese to words?
+    + How to have an index that can't fit on one computer?
+      + Partition by words? Documents?
+    + How to find phrases; words close together on page?
+    + Is the word in a title? Body?
+
+* Search :slide:
+  + Index can be used to finding matching pages
+  + But how to find most relevant?
+  + Words in title? =meta= keywords tag?
+  + Links to other sites?
+
+* PageRank :slide:
+  + Google's first innovation
+  + Trustworthiness of a page varies with *inbound links*
+  + Example of a "static" or "indexing time" feature
+** Current Use :notes:
+   + PageRank type algorithms used to score influence on twitter, or groups of
+     friends on Facebook
+   + Ironically not used as much by Google any longer because of abuse
+   + "Features" are qualities of a document that indicate its relevance
+   + Static feature is independent of query
+   + Dynamic or "query time" features depend on query
+   + Static features ideal since you don't have to recalculate for new queries
+
+** PageRank :slide:two_col:
+[[file:img/webcrawl6.png]]
+
+
+[[file:img/webcrawl-pagerank.png]]
+*** Incoming Links :notes:
+   + If we scale size with imporance the links coming into some sites make them
+     more important or trustworthy
+
+* Scale Mattered :slide:two_col:
+[[file:img/Eric-Brewer-small.jpg]]
+  + Eric Brewer, UC Berkeley Professor
+  + Started Inktomi, search engine that pioneered operating at scale
+  + In order to search websites effectively, must build an effective website
+  + Developed CAP theorem
+** Brewer :notes:
+   + We'll cover CAP theorem later in class
+   + Rigorous understanding of how to build websites
+
+* Scale Continues to Matter :slide:two_col:
+  + Instrumental in scaling Google's systems
+  + Many technologies for scaling follow his examples
+  + "Compilers don’t warn Jeff Dean. Jeff Dean warns compilers."
+    [[http://www.quora.com/Jeff-Dean/What-are-all-the-Jeff-Dean-facts][-Jeff Dean Facts]]
+[[file:img/jeffdean.jpg]]
+** Details :notes:
+   + "Reading" is watching one of his early videos on Google
+   + Scale can determine the ability and effectiveness of processing large
+     amounts of data
+   + Processing big data can lead to killer features
+   + Like Chuck Norris facts, page has some geeky humor about Jeff Dean
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
