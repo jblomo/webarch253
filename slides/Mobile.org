@@ -1,0 +1,234 @@
+* *Mobile* :slide:
+
+* Internet Users :slide:
+#+BEGIN_HTML
+<iframe frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="http://www.google.com/publicdata/embed?ds=d5bncppjof8f9_&amp;ctype=l&amp;strail=false&amp;bcs=d&amp;nselm=h&amp;met_y=it_net_user&amp;scale_y=lin&amp;ind_y=false&amp;rdim=region&amp;idim=region:ECA:LAC:MNA:SAS:NAC:SSA:EAP&amp;ifdim=region&amp;hl=en_US&amp;dl=en&amp;ind=false&amp;q=global+internet+users"></iframe>
+#+END_HTML
+  + China, India, Indonesia, Turkey fastest growing countries
+  + Numbers growth driven by emerging markets
+
+* Mobile subscriptions :slide:
+#+BEGIN_HTML
+<iframe frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="http://www.google.com/publicdata/embed?ds=d5bncppjof8f9_&amp;ctype=l&amp;strail=false&amp;bcs=d&amp;nselm=h&amp;met_y=it_cel_sets&amp;scale_y=lin&amp;ind_y=false&amp;rdim=region&amp;idim=region:ECA:LAC:MNA:SAS:NAC:SSA:EAP&amp;idim=country:CHN&amp;ifdim=region&amp;tstart=973584000000&amp;tend=1320652800000&amp;hl=en_US&amp;dl=en&amp;ind=false&amp;q=global+internet+users"></iframe>
+#+END_HTML
+ + Similar story: emerging markets driving mobile adoption
+
+** Mobile subscripts per capita :slide:
+#+BEGIN_HTML
+<iframe frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="http://www.google.com/publicdata/embed?ds=d5bncppjof8f9_&amp;ctype=l&amp;strail=false&amp;bcs=d&amp;nselm=h&amp;met_y=it_cel_sets_p2&amp;scale_y=lin&amp;ind_y=false&amp;rdim=region&amp;idim=region:ECA:LAC:MNA:SAS:NAC:SSA:EAP&amp;idim=country:CHN&amp;ifdim=region&amp;tstart=973584000000&amp;tend=1320652800000&amp;hl=en_US&amp;dl=en&amp;ind=false&amp;q=global+internet+users"></iframe>
+#+END_HTML
+ + China near the bottom!
+ + So much potential growth in the areas that are already surpassing US in raw
+   numbers
+*** Crazy Part :notes:
+    + We're seeing overwhelming numbers, and it only tip of the iceburg
+    + 1B Smartphone users
+    + 5B "Feature" phone users
+
+* Internet changing lives :slide:
+  + Find businesses with Yelp
+  + Contact friends on Facebook
+  + Share pictures with Instagram
+  + Read with Kindle
+  + Watch with Netflix Streaming
+  + Pay with Square
+  + Inspiration with Pinterest
+
+* Mobile Catalyst :slide:
+  + Bridges divide between real life and digital
+  + Captures and delivers content to /you/
+  + Starting to capture context
+** Delivery :notes:
+   + Mobile can be where you are
+   + Often is where you are
+   + Delivered to /you/, not your house, not your work
+
+** Context :slide:
+   + Location
+   + Time (now)
+   + Movement
+   + Mode
+*** Details :notes:
+    + Mobile can capture where you are
+    + Yelp users search for dinner at dinner time; desktop search for dinner any
+      time
+    + Waze traffic aggregation
+    + Checking work email, calendar, tickets?
+
+* $$ :slide:
+[[file:img/yp.png]]
+  + Advertising dollars still lagging
+** Lag :notes:
+   + $14 Billion in revenue, mostly from Yellowpages and Newspapers
+   + Where's that money going?
+   + Not just mobile ad, but Internet advertising in general
+
+* Not just new users :slide:
+[[file:img/india-mobile.png]]
+  + Mobile internet soon outpacing desktop
+  + Happening faster in emerging markets for a variety of reasons
+** Reasons :notes:
+   + phones are cheaper, easier to keep on your person
+   + essential for communicating
+
+* How to Capitalize :slide:
+  + "Shoot ahead of the duck"
+  + Be bold
+  + Experiment
+** Mobile :notes:
+   + Trend is obviously toward mobile, but not majority yet: shoot there
+   + Keep a fresh outlook, and go 100% toward what you believe
+   + Bigger companies need to "invest": be sure where a technology will end up
+     before the do something about it.
+   + Small companies can try things out, ditch what doesn't work (risky!)
+
+* Bold :slide:center:
+#+BEGIN_HTML
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="386" id="utv2825" name="utv_n_548037"><param name="flashvars" value="loc=%2F&amp;autoplay=false&amp;vid=3848950" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.ustream.tv/flash/video/3848950" /><embed flashvars="loc=%2F&amp;autoplay=false&amp;vid=3848950" width="480" height="386" allowfullscreen="true" allowscriptaccess="always" id="utv2825" name="utv_n_548037" src="http://www.ustream.tv/flash/video/3848950" type="application/x-shockwave-flash" /></object>
+#+END_HTML
+** Example :notes:
+   + 2:30 Privacy
+   + You may not agree with this statement, but you need to be doing stuff
+     bigger companies are uncomfortable with
+   + Web Architecture helps you here: no one has to approve your idea (you can
+     fail without a net or ceiling)
+   + Another example is iPod: evaluate what buttons you need, get rid of the
+     rest, use technology to support your idea
+
+* Mobile Software Stack :slide:
+[[file:img/mobile-stack.png]]
+** Review :notes:
+   + OS sites on top of hardware
+   + Libraries are used by any higher level for common functionality
+   + Services similar to libraries, but they "run" on their own, can contact
+     external services
+   + UI Widgets are things like buttons, drop downs
+   + Apps written to use libraries and services
+   + Browsers special apps that essentially can download and run other (web)
+     apps
+
+* "Native" Applications :slide:two_col:
+  + Written directly with libraries and services
+  + Platform specific language: Java, Objective-C
+  + Fewer constrains, but less compatibility
+[[file:img/path.png]]
+** Trade-offs :notes:
+   + Directly control UI, make use of phone's specific services
+   + OTOH, must directly control UI, make use of the specific services for each
+     phone you want to support
+
+** Native Features :slide:
+   + Rotation
+   + Compass
+   + Gyroscope
+   + Services (contacts)
+
+* Web Applications :slide:two_col:
+[[file:img/yelp-mobile.png]]
+  + Written for the browser
+  + Platform agnostic
+  + Leverages existing technology stacks, but creates opaque dependencies
+** Most :notes:
+   + Still have to test across devices
+   + Constraints are changing, technology like "canvas" allows arbitrary
+     drawings
+   + Performance trade-off: must rely on browser's ability to render
+     efficiently, can't update it for your app.
+
+* Mobile Web is the same :slide:
+  + Web Browsers
+  + HTTP
+  + HTML
+  + Javascript
+** Still the web :notes:
+   + The mobile web is still the web
+   + Uses all the same technologies, in the same ways
+   + Mobile browser still a browser, with DOM, JS, etc.
+
+* Mobile Web is different :slide:
+  + Browsers developed in world of standards
+  + Context available
+  + Interfaces different
+** Differences :notes:
+   + Much less variance between CSS, javascript support
+   + Means you can push HTML5 to its limits
+   + Geolocation
+   + Screen size, multitouch, finger "presses"
+
+* Closing the Gap :slide:two_col:
+  + Native apps in HTML5
+  + PhoneGap
+[[file:img/phonegap.png]]
+** Details :notes:
+  + Write HTML5, Javascript, framework will render it for you
+  + Use javascript to call platform specific abilities
+
+* Mobile First :slide:
+  + Philosophy: develop your product for mobile
+  + Take advantage of mobile features 
+  + Contrast: desktop experience, pare down for mobile
+** Write the app for a phone :notes:
+   + If you're a new project/company, mobile is your edge
+   + So focus on your edge, build mobile first
+   + Alternative is to make your desktop app, then simplify it for mobile
+
+** Example :slide:
+[[file:img/mobileapp_website2.jpg]]
+Credit: http://www.lukew.com/ff/entry.asp?870
+
+** Benefits :slide:
+   + Focus
+   + Simplicity
+   + Beauty
+*** Details :notes:
+    + For a desktop app, easy to start copying other desktop apps:
+      + login screen
+      + cross promotion
+      + wizards
+    + Instead mobile forces you to focus on the most essential elements... and
+      that's all that will fit on the screen!
+    + Makes you show how to use it: there's no hover effects for you mouse, just
+      your fat fingers
+    + Many products are differentiated based on their user experience. Mobile
+      has a tendency to draw that beauty out, or make it painfully obvious when
+      it is not
+
+** Example :slide:
+[[file:img/mobileapp_website.jpg]]
+Credit: http://www.lukew.com/ff/entry.asp?870
+
+** Drawbacks :slide:
+   + Need /some/ story around desktop
+   + New platform to learn
+   + Limits experience
+** Details :notes:
+   + Now you have to test all desktop browsers, too?
+   + Not many folks experienced with mobile development
+   + Are you editing photos? Writing code? Maybe you just can't do that on a
+     small screen (though I'd still try designing for a tablet)
+
+** Advice :slide:
+   + Make it so easy to use, people start using it by accident
+[[file:img/pinterest.png]]
+*** Pinterest :notes:
+   + Land on the home page, just start scrolling
+   + You're using the product! (discovering content)
+   + Next step is easy, click one button (repin)
+   + Twitter another good example
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

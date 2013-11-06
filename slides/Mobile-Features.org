@@ -1,0 +1,247 @@
+* Developing Mobile Apps :slide:
+
+* Specifics :slide:
+  + =media= selected CSS
+  + =meta= tags for mobile
+  + Responsive Layouts
+  + Javascript APIs
+  + Local Data
+
+* Review :slide:
+  + What do you use to show the same content in different ways?
+** Style Sheets! :notes:
+   + CSS
+
+* Right CSS :slide:
+  + Display differently for different devices
+  + Traditionally, devices were general: print, screen, presentation
+#+begin_src html
+<link rel="stylesheet" media="print"
+      href="printer.css">
+<link rel="stylesheet" media="screen,presentation"
+      href="general.css">
+#+end_src
+** Browsers select CSS :notes:
+   + If the browser is not printing a page, doesn't apply =printer.css=
+   + other devices: braille, handheld, tty, tv
+   + printers, screen (desktop web), presentation (full screen)
+   + comma separates devices
+
+** Media Queries :slide:
+   + Additionally require precise attributes
+   + Combine attributes with logical operators
+#+begin_src html
+<link rel="stylesheet"
+  media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
+<link rel="stylesheet"
+  media="only screen and (min-width: 641px) and (max-width: 800px)" href="ipad.css">
+#+end_src
+** Attributes :notes:
+   + width, height, orientation, aspect-ratio, color, resolution
+   + =only= keyword a backward compatable addition: browsers that don't
+     understand it will not apply because there is no 'only' device
+   + =@media= can be used inline in CSS (example later)
+
+** Now What?  :slide:
+   + Reduce white space
+   + Single column layouts
+   + =display: none= banner ads
+   + Avoid =opactiy= tweaks
+   + Smaller background image
+*** Mobile differences :notes:
+    + Now that you can specify a special mobile sheet, what's in it?
+    + Screen real estate valuable, reduce extra space
+    + slim down loayout, can't see sidebar anyway (we'll talk about doing this
+      automatically later; responsive design)
+    + large images or banner ads have to go
+    + =opacity= and other visual tricks are performance hits
+    + Download less data, eg. big pictures
+
+* Viewport :slide:animate:two_col:
+  + What happens when you load a traditional web page on your phone?
+  + Zoom!
+  + Now you are looking at a sub-section of the page: your viewport
+[[file:img/mobile_visualviewport.jpg]]
+** Zoom! :notes:
+   + Reading will have full details on viewport
+   + Browsers can't /say/ they only support 400px, because everything on the
+     screen would look crazy for normal web pages
+   + So instead they report 850px (eg), then zoom in
+   + But if we design the layout to be for 400px, then we need to tell the
+     browser to actually display page with 400px width
+
+** =meta= viewport :slide:
+   + Controlling viewport can feel more like a native app
+   + User is not zooming in or out
+#+begin_src html
+<meta name=viewport
+  content="width=device-width, initial-scale=1.0,
+           minimum-scale=0.5 maximum-scale=1.0">
+#+end_src
+*** Controlling viewport :notes:
+    + =user-scalable=yes= allow or prevent scaling
+    + instead of saying "400px" we say =device-width= to adapt to different
+      devices
+
+* Responsive Web Design :slide:
+  + Combines these techniques
+  + Sane defaults for all devices
+  + Examples in newer frameworks ([[http://twitter.github.com/bootstrap/][Bootstrap]], [[http://www.html5boilerplate.com][HTML5 Boilerplate]])
+#+begin_src html
+@media (min-width: 1200px) {
+  .row {
+    margin-left: -30px;
+    *zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  ...}
+@media (max-width: 480px) {
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  .page-header h1 small {
+    display: block;
+    line-height: 20px;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    border: 1px solid #ccc;
+  }
+  ...}
+
+.row-fluid {
+  width: 100%;
+  *zoom: 1;
+}
+#+end_src
+** Details :notes:
+  + =@media= queries to select styles
+  + "Fluid" grids based on relative values, eg. % or em
+
+* Javascript APIs :slide:
+  + Touch Events :: Handle (multiple) finger movements
+  + Geolocation :: Report your location
+  + Battery :: Report device battery use
+  + getUserMedia :: Access to camera, video ([[http://shinydemos.com/getusermedia/][demos]])
+** Deep Dive :notes:
+   + There are many more HTML5 related APIs, eg. Fullscreen
+   + The first two are well supported so we'll discuss
+   + Second two are cutting edge
+   + But if you're interested, fire up phone and follow the link after class
+
+* Javascript events :slide:
+  + =onload=, =onchange= for general events
+  + =onclick=, =onmousedown=, =onmouseup= for mouse events
+  + New API needed for multitouch
+** One Mouse :notes:
+   + Since there's only one mouse, needed a new vocabulary to talk about touch
+     events
+   + Kind of unfortunate since there is overlap between potential mouse actions
+     and touch (eg. drag and drop)
+
+** Touch Events :slide:
+   + =touchstart=, =touchmove=, =touchend=
+   + =touches=, =targetTouches=, =changedTouches=
+   + =identifier=, =target=, coordinates, finger shape
+*** Details :notes:
+   + Point is: we're getting more data about *all* fingers, instead of one
+     mouse.
+   + Just like how Javascript composed well with CSS to enable complex
+     transitions, these simple touch events can be used for everything from
+     swiping to pinch-to-zoom
+
+
+   + touchstart :: a finger is placed on a DOM element.
+   + touchmove :: a finger is dragged along a DOM element.
+   + touchend :: a finger is removed from a DOM element.
+   + Each touch event includes three lists of touches ::
+   + 
+   + touches :: a list of all fingers currently on the screen.
+   + targetTouches :: a list of fingers on the current DOM element.
+   + changedTouches :: a list of fingers involved in the current event. For example, in a touchend event, this will be the finger that was removed.
+   + These lists consist of objects that contain touch information ::
+   + identifier :: a number that uniquely identifies the current finger in the touch session.
+   + target :: the DOM element that was the target of the action.
+   + client/page/screen coordinates :: where on the screen the action happened.
+   + radius coordinates and rotationAngle :: describe the ellipse that approximates finger shape.
+  source: http://www.html5rocks.com/en/mobile/touch/
+
+** Demo :slide:
+   + [[http://paulirish.com/demo/multi][Drawing]]
+
+* Location :slide:two_col:
+  + GPS
+  + IP ([[http://www.maxmind.com/en/locate_my_ip][Demo]])
+  + WiFi
+[[file:img/wifi-map.png]]
+** Ways to find location :notes:
+   + GPS, most obvious now, but recent
+   + We discussed how IPs were routed: through different networks
+   + If you have a good idea of where network is, you can start guessing on
+     where individual IPs are
+   + WiFi uses list of known network names or MACs (network card identifiers) to
+     guess where you are if you're connected to one.
+
+** =navigation.geolocation= :slide:
+   + Javascript API
+   + =navigator.geolocation.getCurrentPosition(callback)=
+#+BEGIN_HTML
+<p id="geolocation">Click to get coordinates</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("geolocation");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position) {
+    var position_desc = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = position_desc;
+  console.log(position_desc);
+}
+</script>
+#+END_HTML
+
+** Code :slide:
+#+begin_src html
+<p id="geolocation">Click to get coordinates</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("geolocation");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position) {
+  x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+#+end_src
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Mobile-Features</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Mobile-Features"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-11-05T22:50-0800"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Mobile-Features</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Developing Mobile Apps</a></li>
+<li><a href="#sec-2">2 Specifics</a></li>
+<li><a href="#sec-3">3 Review</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Style Sheets!</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Right CSS</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Browsers select CSS</a></li>
+<li><a href="#sec-4-2">4.2 Media Queries</a></li>
+<li><a href="#sec-4-3">4.3 Attributes</a></li>
+<li><a href="#sec-4-4">4.4 Now What?</a>
+<ul>
+<li><a href="#sec-4-4-1">4.4.1 Mobile differences</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Viewport</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Zoom!</a></li>
+<li><a href="#sec-5-2">5.2 <code>meta</code> viewport</a>
+<ul>
+<li><a href="#sec-5-2-1">5.2.1 Controlling viewport</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Responsive Web Design</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Javascript APIs</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Deep Dive</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Javascript events</a>
+<ul>
+<li><a href="#sec-8-1">8.1 One Mouse</a></li>
+<li><a href="#sec-8-2">8.2 Touch Events</a>
+<ul>
+<li><a href="#sec-8-2-1">8.2.1 Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-3">8.3 Demo</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Location</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Ways to find location</a></li>
+<li><a href="#sec-9-2">9.2 <code>navigation.geolocation</code></a></li>
+<li><a href="#sec-9-3">9.3 Code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Developing Mobile Apps &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Specifics &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li><code>media</code> selected CSS
+</li>
+<li><code>meta</code> tags for mobile
+</li>
+<li>Responsive Layouts
+</li>
+<li>Javascript APIs
+</li>
+<li>Local Data
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Review &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>What do you use to show the same content in different ways?
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Style Sheets! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li>CSS
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Right CSS &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>Display differently for different devices
+</li>
+<li>Traditionally, devices were general: print, screen, presentation
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">media</span>=<span style="color: #8b2252;">"print"</span>
+      <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"printer.css"</span>&gt;
+&lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">media</span>=<span style="color: #8b2252;">"screen,presentation"</span>
+      <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"general.css"</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Browsers select CSS &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>If the browser is not printing a page, doesn't apply <code>printer.css</code>
+</li>
+<li>other devices: braille, handheld, tty, tv
+</li>
+<li>printers, screen (desktop web), presentation (full screen)
+</li>
+<li>comma separates devices
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Media Queries &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>Additionally require precise attributes
+</li>
+<li>Combine attributes with logical operators
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span>
+  <span style="color: #a0522d;">media</span>=<span style="color: #8b2252;">"handheld, only screen and (max-device-width: 320px)"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"phone.css"</span>&gt;
+&lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span>
+  <span style="color: #a0522d;">media</span>=<span style="color: #8b2252;">"only screen and (min-width: 641px) and (max-width: 800px)"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"ipad.css"</span>&gt;
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Attributes &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+
+<ul>
+<li>width, height, orientation, aspect-ratio, color, resolution
+</li>
+<li><code>only</code> keyword a backward compatable addition: browsers that don't
+     understand it will not apply because there is no 'only' device
+</li>
+<li><code>@media</code> can be used inline in CSS (example later)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Now What? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-4">
+
+<ul>
+<li>Reduce white space
+</li>
+<li>Single column layouts
+</li>
+<li><code>display: none</code> banner ads
+</li>
+<li>Avoid <code>opactiy</code> tweaks
+</li>
+<li>Smaller background image
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> Mobile differences &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-4-1">
+
+<ul>
+<li>Now that you can specify a special mobile sheet, what's in it?
+</li>
+<li>Screen real estate valuable, reduce extra space
+</li>
+<li>slim down loayout, can't see sidebar anyway (we'll talk about doing this
+      automatically later; responsive design)
+</li>
+<li>large images or banner ads have to go
+</li>
+<li><code>opacity</code> and other visual tricks are performance hits
+</li>
+<li>Download less data, eg. big pictures
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Viewport &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="animate">animate</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>What happens when you load a traditional web page on your phone?
+</li>
+<li>Zoom!
+</li>
+<li>Now you are looking at a sub-section of the page: your viewport
+</li>
+</ul>
+
+<p><img src="img/mobile_visualviewport.jpg"  alt="img/mobile_visualviewport.jpg" />
+</p>
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Zoom! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>Reading will have full details on viewport
+</li>
+<li>Browsers can't <i>say</i> they only support 400px, because everything on the
+     screen would look crazy for normal web pages
+</li>
+<li>So instead they report 850px (eg), then zoom in
+</li>
+<li>But if we design the layout to be for 400px, then we need to tell the
+     browser to actually display page with 400px width
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> <code>meta</code> viewport &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+
+<ul>
+<li>Controlling viewport can feel more like a native app
+</li>
+<li>User is not zooming in or out
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">meta</span> name=viewport
+  <span style="color: #a0522d;">content</span>=<span style="color: #8b2252;">"width=device-width, initial-scale=1.0,</span>
+<span style="color: #8b2252;">           minimum-scale=0.5 maximum-scale=1.0"</span>&gt;
+</pre>
+
+
+</div>
+
+<div id="outline-container-5-2-1" class="outline-4">
+<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> Controlling viewport &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-5-2-1">
+
+<ul>
+<li><code>user-scalable=yes</code> allow or prevent scaling
+</li>
+<li>instead of saying "400px" we say <code>device-width</code> to adapt to different
+      devices
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Responsive Web Design &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Combines these techniques
+</li>
+<li>Sane defaults for all devices
+</li>
+<li>Examples in newer frameworks (<a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="http://www.html5boilerplate.com">HTML5 Boilerplate</a>)
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">@media (min-width: 1200px) {
+  .row {
+    margin-left: -30px;
+    *zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    display: table;
+    line-height: 0;
+    content: <span style="color: #8b2252;">""</span>;
+  }
+  ...}
+@media (max-width: 480px) {
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  .page-header h1 small {
+    display: block;
+    line-height: 20px;
+  }
+  input[type=<span style="color: #8b2252;">"checkbox"</span>],
+  input[type=<span style="color: #8b2252;">"radio"</span>] {
+    border: 1px solid #ccc;
+  }
+  ...}
+
+.row-fluid {
+  width: 100%;
+  *zoom: 1;
+}
+</pre>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li><code>@media</code> queries to select styles
+</li>
+<li>"Fluid" grids based on relative values, eg. % or em
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Javascript APIs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<dl>
+<dt>Touch Events</dt><dd>Handle (multiple) finger movements
+</dd>
+<dt>Geolocation</dt><dd>Report your location
+</dd>
+<dt>Battery</dt><dd>Report device battery use
+</dd>
+<dt>getUserMedia</dt><dd>Access to camera, video (<a href="http://shinydemos.com/getusermedia/">demos</a>)
+</dd>
+</dl>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Deep Dive &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>There are many more HTML5 related APIs, eg. Fullscreen
+</li>
+<li>The first two are well supported so we'll discuss
+</li>
+<li>Second two are cutting edge
+</li>
+<li>But if you're interested, fire up phone and follow the link after class
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Javascript events &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li><code>onload</code>, <code>onchange</code> for general events
+</li>
+<li><code>onclick</code>, <code>onmousedown</code>, <code>onmouseup</code> for mouse events
+</li>
+<li>New API needed for multitouch
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> One Mouse &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>Since there's only one mouse, needed a new vocabulary to talk about touch
+     events
+</li>
+<li>Kind of unfortunate since there is overlap between potential mouse actions
+     and touch (eg. drag and drop)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Touch Events &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-2">
+
+<ul>
+<li><code>touchstart</code>, <code>touchmove</code>, <code>touchend</code>
+</li>
+<li><code>touches</code>, <code>targetTouches</code>, <code>changedTouches</code>
+</li>
+<li><code>identifier</code>, <code>target</code>, coordinates, finger shape
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-2-1" class="outline-4">
+<h4 id="sec-8-2-1"><span class="section-number-4">8.2.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-8-2-1">
+
+<ul>
+<li>Point is: we're getting more data about <b>all</b> fingers, instead of one
+     mouse.
+</li>
+<li>Just like how Javascript composed well with CSS to enable complex
+     transitions, these simple touch events can be used for everything from
+     swiping to pinch-to-zoom
+</li>
+</ul>
+
+
+
+<dl>
+<dt>touchstart</dt><dd>a finger is placed on a DOM element.
+</dd>
+<dt>touchmove</dt><dd>a finger is dragged along a DOM element.
+</dd>
+<dt>touchend</dt><dd>a finger is removed from a DOM element.
+</dd>
+<dt>Each touch event includes three lists of touches</dt><dd>
+</dd>
+<dt>???</dt><dd>
+</dd>
+<dt>touches</dt><dd>a list of all fingers currently on the screen.
+</dd>
+<dt>targetTouches</dt><dd>a list of fingers on the current DOM element.
+</dd>
+<dt>changedTouches</dt><dd>a list of fingers involved in the current event. For example, in a touchend event, this will be the finger that was removed.
+</dd>
+<dt>These lists consist of objects that contain touch information</dt><dd>
+</dd>
+<dt>identifier</dt><dd>a number that uniquely identifies the current finger in the touch session.
+</dd>
+<dt>target</dt><dd>the DOM element that was the target of the action.
+</dd>
+<dt>client/page/screen coordinates</dt><dd>where on the screen the action happened.
+</dd>
+<dt>radius coordinates and rotationAngle</dt><dd>describe the ellipse that approximates finger shape.
+</dd>
+</dl>
+
+<p>  source: <a href="http://www.html5rocks.com/en/mobile/touch/">http://www.html5rocks.com/en/mobile/touch/</a>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-3">
+
+<ul>
+<li><a href="http://paulirish.com/demo/multi">Drawing</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Location &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>GPS
+</li>
+<li>IP (<a href="http://www.maxmind.com/en/locate_my_ip">Demo</a>)
+</li>
+<li>WiFi
+</li>
+</ul>
+
+<p><img src="img/wifi-map.png"  alt="img/wifi-map.png" />
+</p>
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Ways to find location &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>GPS, most obvious now, but recent
+</li>
+<li>We discussed how IPs were routed: through different networks
+</li>
+<li>If you have a good idea of where network is, you can start guessing on
+     where individual IPs are
+</li>
+<li>WiFi uses list of known network names or MACs (network card identifiers) to
+     guess where you are if you're connected to one.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> <code>navigation.geolocation</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-2">
+
+<ul>
+<li>Javascript API
+</li>
+<li><code>navigator.geolocation.getCurrentPosition(callback)</code>
+</li>
+</ul>
+
+
+<p id="geolocation">Click to get coordinates</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("geolocation");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position) {
+    var position_desc = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = position_desc;
+  console.log(position_desc);
+}
+</script>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Code &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-3">
+
+
+
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">p</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"geolocation"</span>&gt;Click to get coordinates&lt;/<span style="color: #0000ff;">p</span>&gt;
+&lt;<span style="color: #0000ff;">button</span> <span style="color: #a0522d;">onclick</span>=<span style="color: #8b2252;">"getLocation()"</span>&gt;Try It&lt;/<span style="color: #0000ff;">button</span>&gt;
+&lt;<span style="color: #0000ff;">script</span>&gt;
+var x=document.getElementById(<span style="color: #8b2252;">"geolocation"</span>);
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+  else {
+      <span style="color: #a0522d;">x.innerHTML</span>=<span style="color: #8b2252;">"Geolocation is not supported by this browser."</span>;}
+  }
+function showPosition(position) {
+  <span style="color: #a0522d;">x.innerHTML</span>=<span style="color: #8b2252;">"Latitude: "</span> + position.coords.latitude + <span style="color: #8b2252;">"&lt;br&gt;Longitude: "</span> + position.coords.longitude;  
+}
+&lt;/<span style="color: #0000ff;">script</span>&gt;
+</pre>
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-11-05T22:50-0800</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
