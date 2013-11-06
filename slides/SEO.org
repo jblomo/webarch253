@@ -177,7 +177,7 @@
 
 ** =nofollow= :slide:
   + =robots.txt= works at the site level
-  + At the link tag level, use =rel="nofollow"=
+  + At the link tag level, use *rel="nofollow"*
   + Crawlers may follow them, but won't count them as "endorsement"
   + Useful for user generated content
 *** Don't trust the user :notes:
