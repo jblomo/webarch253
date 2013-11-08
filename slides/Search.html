@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Search"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-03T23:33-0800"/>
+<meta name="generated" content="2013-11-07T23:53-0800"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -128,14 +128,27 @@
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-13">13 Scale Mattered</a>
+<li><a href="#sec-13">13 Random Walk</a>
 <ul>
-<li><a href="#sec-13-1">13.1 Brewer</a></li>
+<li><a href="#sec-13-1">13.1 Idea</a></li>
 </ul>
 </li>
-<li><a href="#sec-14">14 Scale Continues to Matter</a>
+<li><a href="#sec-14">14 Calculation</a></li>
+<li><a href="#sec-15">15 Adjacency</a></li>
+<li><a href="#sec-16">16 Array Multiplication</a>
 <ul>
-<li><a href="#sec-14-1">14.1 Details</a></li>
+<li><a href="#sec-16-1">16.1 Linear</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17 Calculation</a></li>
+<li><a href="#sec-18">18 Scale Mattered</a>
+<ul>
+<li><a href="#sec-18-1">18.1 Brewer</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19 Scale Continues to Matter</a>
+<ul>
+<li><a href="#sec-19-1">19.1 Details</a></li>
 </ul>
 </li>
 </ul>
@@ -885,8 +898,139 @@
 </div>
 
 <div id="outline-container-13" class="outline-2">
-<h2 id="sec-13"><span class="section-number-2">13</span> Scale Mattered &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<h2 id="sec-13"><span class="section-number-2">13</span> Random Walk &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
 <div class="outline-text-2" id="text-13">
+
+<p>  <img src="img/graph.gif"  alt="img/graph.gif" />
+</p>
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Idea &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>Start on a random node
+</li>
+<li>Randomly choose a link to follow
+</li>
+<li>Randomly decide when you're done
+</li>
+<li>What node are you likely to end up on?
+</li>
+<li>Turns out it is related to how many and what type inbound edges/links a
+     node has: makes it easier to arrive
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Calculation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li>Start on a random node
+</li>
+</ul>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">A</td><td class="right">0.25</td></tr>
+<tr><td class="left">B</td><td class="right">0.25</td></tr>
+<tr><td class="left">C</td><td class="right">0.25</td></tr>
+<tr><td class="left">D</td><td class="right">0.25</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Adjacency &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+
+<ul>
+<li>Randomly choose a link to follow
+</li>
+</ul>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left"></td><td class="right">A</td><td class="right">B</td><td class="right">C</td><td class="right">D</td></tr>
+<tr><td class="left">A</td><td class="right">0</td><td class="right">0</td><td class="right">.3</td><td class="right">.5</td></tr>
+<tr><td class="left">B</td><td class="right">.5</td><td class="right">0</td><td class="right">.3</td><td class="right">.5</td></tr>
+<tr><td class="left">C</td><td class="right">0</td><td class="right">.5</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">D</td><td class="right">.5</td><td class="right">.5</td><td class="right">.3</td><td class="right">0</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Array Multiplication &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+
+
+
+<pre class="src src-matlab">v = page likelihood
+A = Adjacency matrix
+
+A<span style="color: #228b22;">*</span>v = page likelihood after 1 click
+A<span style="color: #228b22;">*</span>A<span style="color: #228b22;">*</span>v = page likelihood after 2 click
+A<span style="color: #228b22;">*</span>A<span style="color: #228b22;">*</span>A<span style="color: #228b22;">*</span>v = page likelihood after 2 click
+</pre>
+
+
+</div>
+
+<div id="outline-container-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Linear &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+
+<ul>
+<li>This is why linear algebra matters
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Calculation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-17">
+
+<p>  <img src="img/pagerank-calc.gif"  alt="img/pagerank-calc.gif" />
+</p>
+<p>
+<a href="http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture3/lecture3.html">http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture3/lecture3.html</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Scale Mattered &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-18">
 
 <p><img src="img/Eric-Brewer-small.jpg"  alt="img/Eric-Brewer-small.jpg" />
 </p><ul>
@@ -903,9 +1047,9 @@
 
 </div>
 
-<div id="outline-container-13-1" class="outline-3">
-<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Brewer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-13-1">
+<div id="outline-container-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Brewer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
 
 <ul>
 <li>We'll cover CAP theorem later in class
@@ -920,9 +1064,9 @@
 
 </div>
 
-<div id="outline-container-14" class="outline-2">
-<h2 id="sec-14"><span class="section-number-2">14</span> Scale Continues to Matter &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Scale Continues to Matter &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-19">
 
 <ul>
 <li>Instrumental in scaling Google's systems
@@ -938,9 +1082,9 @@
 </p>
 </div>
 
-<div id="outline-container-14-1" class="outline-3">
-<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-14-1">
+<div id="outline-container-19-1" class="outline-3">
+<h3 id="sec-19-1"><span class="section-number-3">19.1</span> Details &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-19-1">
 
 <ul>
 <li>"Reading" is watching one of his early videos on Google
@@ -966,9 +1110,9 @@
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-11-03T23:33-0800</p>
+<p class="date">Date: 2013-11-07T23:53-0800</p>
 <p class="author">Author: Jim Blomo</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

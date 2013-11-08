@@ -122,6 +122,13 @@
    + Important part: Annotation to improve machine understanding, to help human
      understanding
 
+* Microdata Usage :slide:
+  + Wrap concept in tag with =itemscope= attribute
+  + Type concept with =itemtype= attribute
+  + Wrap properties of concept in tags with =itemprop= attribute
+** Types :notes:
+   + See Schema.org for item types
+
 ** Microformat :slide:
   + Convention of using class attribute to annotate
 #+begin_src html
@@ -170,14 +177,14 @@
    + Client and Server are decoupled, so server can't control the client
    + Crawlers that ignore =robots.txt= detected and return HTTP error codes
    + Does not make pages private!
-   + [[https://www.google.com/webhp?sourceid=chrome-instant&ie=UTF-8#hl=en&sclient=psy-ab&q=-inurl:(htm%7Chtml%7Cphp)+intitle%3A%22index+of%22&oq=-inurl:(htm%7Chtml%7Cphp)+intitle%3A%22index+of%22&gs_l=serp.3...18337.18337.3.18677.1.1.0.0.0.0.203.203.2-1.1.0.les%3B..0.0...1c.1.PsaOvb738FY&pbx=1&bav=on.2,or.r_gc.r_pw.r_qf.&fp=8a1b4cfcda0bef2d&bpcl=37189454&biw=980&bih=794][Clever Searches]]
+   + [[https://www.google.com/?q=login%20password%20filetype:xls][Clever Searches]]
 *** No Privacy :notes:
    + Bots can ignore it
    + People can look at it, wonder why you're hiding it
 
 ** =nofollow= :slide:
   + =robots.txt= works at the site level
-  + At the link tag level, use *rel="nofollow"*
+  + At the link tag level, use attribute rel="nofollow"
   + Crawlers may follow them, but won't count them as "endorsement"
   + Useful for user generated content
 *** Don't trust the user :notes:

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="SEO"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-04T00:03-0800"/>
+<meta name="generated" content="2013-11-08T00:16-0800"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -88,29 +88,34 @@
 <li><a href="#sec-11-1">11.1 What works for you?</a></li>
 <li><a href="#sec-11-2">11.2 Microdata</a></li>
 <li><a href="#sec-11-3">11.3 <code>itemprop</code></a></li>
-<li><a href="#sec-11-4">11.4 Microformat</a></li>
-<li><a href="#sec-11-5">11.5 Open Graph</a></li>
-<li><a href="#sec-11-6">11.6 <code>og:</code></a></li>
 </ul>
 </li>
-<li><a href="#sec-12">12 Preventing Crawling</a>
+<li><a href="#sec-12">12 Microdata Usage</a>
 <ul>
-<li><a href="#sec-12-1">12.1 Go Away</a></li>
-<li><a href="#sec-12-2">12.2 <code>robots.txt</code></a></li>
-<li><a href="#sec-12-3">12.3 <code>User-Agent</code></a></li>
-<li><a href="#sec-12-4">12.4 Purely Advisory!</a>
-<ul>
-<li><a href="#sec-12-4-1">12.4.1 No Privacy</a></li>
+<li><a href="#sec-12-1">12.1 Types</a></li>
+<li><a href="#sec-12-2">12.2 Microformat</a></li>
+<li><a href="#sec-12-3">12.3 Open Graph</a></li>
+<li><a href="#sec-12-4">12.4 <code>og:</code></a></li>
 </ul>
 </li>
-<li><a href="#sec-12-5">12.5 <code>nofollow</code></a>
+<li><a href="#sec-13">13 Preventing Crawling</a>
 <ul>
-<li><a href="#sec-12-5-1">12.5.1 Don't trust the user</a></li>
+<li><a href="#sec-13-1">13.1 Go Away</a></li>
+<li><a href="#sec-13-2">13.2 <code>robots.txt</code></a></li>
+<li><a href="#sec-13-3">13.3 <code>User-Agent</code></a></li>
+<li><a href="#sec-13-4">13.4 Purely Advisory!</a>
+<ul>
+<li><a href="#sec-13-4-1">13.4.1 No Privacy</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-5">13.5 <code>nofollow</code></a>
+<ul>
+<li><a href="#sec-13-5-1">13.5.1 Don't trust the user</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-13">13 <code>humans.txt</code></a></li>
-<li><a href="#sec-14">14 Some Tips</a></li>
+<li><a href="#sec-14">14 <code>humans.txt</code></a></li>
+<li><a href="#sec-15">15 Some Tips</a></li>
 </ul>
 </div>
 </div>
@@ -567,12 +572,43 @@
 
 
 </div>
+</div>
 
 </div>
 
-<div id="outline-container-11-4" class="outline-3">
-<h3 id="sec-11-4"><span class="section-number-3">11.4</span> Microformat &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-11-4">
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Microdata Usage &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>Wrap concept in tag with <code>itemscope</code> attribute
+</li>
+<li>Type concept with <code>itemtype</code> attribute
+</li>
+<li>Wrap properties of concept in tags with <code>itemprop</code> attribute
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Types &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>See Schema.org for item types
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Microformat &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
 
 <ul>
 <li>Convention of using class attribute to annotate
@@ -599,9 +635,9 @@
 
 </div>
 
-<div id="outline-container-11-5" class="outline-3">
-<h3 id="sec-11-5"><span class="section-number-3">11.5</span> <a href="http://ogp.me/">Open Graph</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-11-5">
+<div id="outline-container-12-3" class="outline-3">
+<h3 id="sec-12-3"><span class="section-number-3">12.3</span> <a href="http://ogp.me/">Open Graph</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-3">
 
 <ul>
 <li>Allow web page to contain graph information
@@ -618,9 +654,9 @@
 
 </div>
 
-<div id="outline-container-11-6" class="outline-3">
-<h3 id="sec-11-6"><span class="section-number-3">11.6</span> <code>og:</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-11-6">
+<div id="outline-container-12-4" class="outline-3">
+<h3 id="sec-12-4"><span class="section-number-3">12.4</span> <code>og:</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-4">
 
 <ul>
 <li>Similar semantic information: location, name, title
@@ -633,9 +669,9 @@
 
 </div>
 
-<div id="outline-container-12" class="outline-2">
-<h2 id="sec-12"><span class="section-number-2">12</span> Preventing Crawling &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Preventing Crawling &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
 
 <ul>
 <li>What if you <b>don't</b> want to be indexed?
@@ -649,9 +685,9 @@
 
 </div>
 
-<div id="outline-container-12-1" class="outline-3">
-<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Go Away &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-12-1">
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Go Away &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
 
 <ul>
 <li>Spent all this time talking about trying to get noticed, what if you don't
@@ -670,9 +706,9 @@
 
 </div>
 
-<div id="outline-container-12-2" class="outline-3">
-<h3 id="sec-12-2"><span class="section-number-3">12.2</span> <code>robots.txt</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-12-2">
+<div id="outline-container-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> <code>robots.txt</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-2">
 
 <ul>
 <li>Requests to bots on crawling
@@ -687,9 +723,9 @@
 
 </div>
 
-<div id="outline-container-12-3" class="outline-3">
-<h3 id="sec-12-3"><span class="section-number-3">12.3</span> <code>User-Agent</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
-<div class="outline-text-3" id="text-12-3">
+<div id="outline-container-13-3" class="outline-3">
+<h3 id="sec-13-3"><span class="section-number-3">13.3</span> <code>User-Agent</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-3">
 
 <ul>
 <li>Specify rules for different user agents
@@ -708,9 +744,9 @@
 
 </div>
 
-<div id="outline-container-12-4" class="outline-3">
-<h3 id="sec-12-4"><span class="section-number-3">12.4</span> Purely Advisory! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-12-4">
+<div id="outline-container-13-4" class="outline-3">
+<h3 id="sec-13-4"><span class="section-number-3">13.4</span> Purely Advisory! &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-4">
 
 <ul>
 <li>Not enforced
@@ -721,16 +757,16 @@
 </li>
 <li>Does not make pages private!
 </li>
-<li><a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ie=UTF-8#hl=en&amp;sclient=psy-ab&amp;q=-inurl:(htm|html|php)+intitle:"index+of"&amp;oq=-inurl:(htm|html|php)+intitle:"index+of"&amp;gs_l=serp.3...18337.18337.3.18677.1.1.0.0.0.0.203.203.2-1.1.0.les;..0.0...1c.1.PsaOvb738FY&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=8a1b4cfcda0bef2d&amp;bpcl=37189454&amp;biw=980&amp;bih=794">Clever Searches</a>
+<li><a href="https://www.google.com/?q=login password filetype:xls">Clever Searches</a>
 </li>
 </ul>
 
 
 </div>
 
-<div id="outline-container-12-4-1" class="outline-4">
-<h4 id="sec-12-4-1"><span class="section-number-4">12.4.1</span> No Privacy &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
-<div class="outline-text-4" id="text-12-4-1">
+<div id="outline-container-13-4-1" class="outline-4">
+<h4 id="sec-13-4-1"><span class="section-number-4">13.4.1</span> No Privacy &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-4-1">
 
 <ul>
 <li>Bots can ignore it
@@ -745,14 +781,14 @@
 
 </div>
 
-<div id="outline-container-12-5" class="outline-3">
-<h3 id="sec-12-5"><span class="section-number-3">12.5</span> <code>nofollow</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-12-5">
+<div id="outline-container-13-5" class="outline-3">
+<h3 id="sec-13-5"><span class="section-number-3">13.5</span> <code>nofollow</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-5">
 
 <ul>
 <li><code>robots.txt</code> works at the site level
 </li>
-<li>At the link tag level, use *rel="nofollow"*
+<li>At the link tag level, use attribute rel="nofollow"
 </li>
 <li>Crawlers may follow them, but won't count them as "endorsement"
 </li>
@@ -763,9 +799,9 @@
 
 </div>
 
-<div id="outline-container-12-5-1" class="outline-4">
-<h4 id="sec-12-5-1"><span class="section-number-4">12.5.1</span> Don't trust the user &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
-<div class="outline-text-4" id="text-12-5-1">
+<div id="outline-container-13-5-1" class="outline-4">
+<h4 id="sec-13-5-1"><span class="section-number-4">13.5.1</span> Don't trust the user &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-5-1">
 
 <ul>
 <li>Some users are spammy
@@ -785,9 +821,9 @@
 
 </div>
 
-<div id="outline-container-13" class="outline-2">
-<h2 id="sec-13"><span class="section-number-2">13</span> <code>humans.txt</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> <code>humans.txt</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
 
 <ul>
 <li>"We are people, not machines."
@@ -805,9 +841,9 @@
 
 </div>
 
-<div id="outline-container-14" class="outline-2">
-<h2 id="sec-14"><span class="section-number-2">14</span> Some Tips &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Some Tips &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span>&nbsp;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-15">
 
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/fnSJBpB_OKQ" frameborder="0" allowfullscreen></iframe>
@@ -820,9 +856,9 @@
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-11-04T00:03-0800</p>
+<p class="date">Date: 2013-11-08T00:16-0800</p>
 <p class="author">Author: Jim Blomo</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

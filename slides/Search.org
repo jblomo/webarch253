@@ -204,6 +204,50 @@
    + If we scale size with imporance the links coming into some sites make them
      more important or trustworthy
 
+* Random Walk :slide:center:
+  [[file:img/graph.gif]]
+** Idea :notes:
+   + Start on a random node
+   + Randomly choose a link to follow
+   + Randomly decide when you're done
+   + What node are you likely to end up on?
+   + Turns out it is related to how many and what type inbound edges/links a
+     node has: makes it easier to arrive
+
+* Calculation :slide:
+  + Start on a random node
+
+  | A | 0.25 |
+  | B | 0.25 |
+  | C | 0.25 |
+  | D | 0.25 |
+
+* Adjacency :slide:
+  + Randomly choose a link to follow
+
+  |   | A  | B  | C  | D  | 
+  | A | 0  | 0  | .3 | .5 | 
+  | B | .5 | 0  | .3 | .5 | 
+  | C | 0  | .5 | 0  | 0  | 
+  | D | .5 | .5 | .3 | 0  | 
+
+* Array Multiplication :slide:
+#+begin_src matlab
+v = page likelihood
+A = Adjacency matrix
+
+A*v = page likelihood after 1 click
+A*A*v = page likelihood after 2 click
+A*A*A*v = page likelihood after 2 click
+#+end_src
+** Linear :notes:
+   + This is why linear algebra matters
+
+* Calculation :slide:center:
+  [[file:img/pagerank-calc.gif]]
+
+http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture3/lecture3.html
+
 * Scale Mattered :slide:two_col:
 [[file:img/Eric-Brewer-small.jpg]]
   + Eric Brewer, UC Berkeley Professor
