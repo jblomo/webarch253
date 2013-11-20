@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HW11-mrjob</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="HW11-mrjob"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-11-19T22:37-0800"/>
+<meta name="author" content="Jim Blomo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">HW11-mrjob</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Homework</a></li>
+<li><a href="#sec-2">2 Data</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Format</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 mrjob</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Relation to HW</a></li>
+<li><a href="#sec-3-2">3.2 Output</a></li>
+<li><a href="#sec-3-3">3.3 Running</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Pages with &gt; 400 visits</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Demo</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Transform Data</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Demo</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Users &gt; 20 visits</a></li>
+<li><a href="#sec-7">7 Most Common Title Words</a></li>
+<li><a href="#sec-8">8 Extra Credit</a></li>
+<li><a href="#sec-9">9 Submit via <code>git</code></a>
+<ul>
+<li><a href="#sec-9-1">9.1 <code>git</code> Usage</a></li>
+<li><a href="#sec-9-2">9.2 Initially</a></li>
+<li><a href="#sec-9-3">9.3 Back to Project</a></li>
+<li><a href="#sec-9-4">9.4 Finish Homework</a></li>
+<li><a href="#sec-9-5">9.5 Finish Project</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Review</a></li>
+<li><a href="#sec-11">11 Moved Due Date</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Homework &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Analyze site traffic
+</li>
+<li>Transform web logs
+</li>
+<li>Analyze user behavior
+</li>
+<li>Analyze site stats
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li><a href="http://archive.ics.uci.edu/ml/machine-learning-databases/anonymous/">Anonymous web data from www.microsoft.com</a>
+</li>
+<li>Contains information in CSV format
+</li>
+<li>use mrjob MapReduce Framework to find answers
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Format &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>Part of the task is to undertsand the data format given the website
+</li>
+<li>This is actually more information than you're typically given at a job
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> <a href="http://packages.python.org/mrjob/">mrjob</a> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+
+<pre class="src src-html">from mrjob.job import MRJob
+
+class MRWordCounter(MRJob):
+    def mapper(self, key, line):
+        for word in line.split():
+            yield word, 1
+
+    def reducer(self, word, occurrences):
+        yield word, sum(occurrences)
+
+if __name__ == '__main__':
+    MRWordCounter.run()
+</pre>
+
+<p>
+    From <a href="http://packages.python.org/mrjob/writing-and-running.html">http://packages.python.org/mrjob/writing-and-running.html</a>
+</p>
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Relation to HW &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li><code>mapper</code> takes keys and values
+</li>
+<li><code>reducer</code> takes the keys output by the mapper, and all relevant values
+</li>
+<li><code>split</code> takes a string and splits on spaces, giving words
+</li>
+<li><code>yield</code> essentially returns &lt;key,value&gt; pairs, but can be called more than
+     once
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Output &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+
+
+<pre class="src src-bash">python mrjob/top_pages.py &lt; mrjob/anonymous-msweb.data
+no configs found; falling back on auto-configuration
+creating tmp directory /tmp/top_pages.jim.20121116.052647.278066
+...
+reading from STDIN
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-mapper
+Counters from step 1:
+  (no counters found)
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-mapper-sorted
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-reducer
+Counters from step 1:
+  (no counters found)
+Moving /tmp/top_pages.jim.20121116.052647.278066/step-0-reducer -&gt; /tmp/top_pages.jim.20121116.052647.278066/output/part-00000
+Streaming final output from /tmp/top_pages.jim.20121116.052647.278066/output
+<span style="color: #8b2252;">"1000"</span>  912
+<span style="color: #8b2252;">"1001"</span>  4451
+<span style="color: #8b2252;">"1002"</span>  749
+<span style="color: #8b2252;">"1003"</span>  2968
+<span style="color: #8b2252;">"1004"</span>  8463
+<span style="color: #8b2252;">"1007"</span>  865
+...
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Running &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ul>
+<li>Run with python
+</li>
+<li>Output some debugging information while it is calculating
+</li>
+<li>Finally, output results
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Pages with &gt; 400 visits &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>Find pages (aka Vroots) with more than 400 visits
+</li>
+<li>Start off with a template
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li><code>csv_readline</code> takes in a CSV line, return a list of values
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Transform Data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>MapReduce needs all information on one line
+</li>
+<li>This data format has user information on different line than visit
+</li>
+<li>Write single threaded program (not mrjob) to transform it
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Demo &nbsp;&nbsp;&nbsp;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>fill in blanks
+</li>
+<li>What does the <code>&gt;</code> character do? (redirects output)
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Users &gt; 20 visits &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>Now that we have the new data file
+</li>
+<li>Find users with &gt; 20 visits
+</li>
+<li>Must create this program from scratch
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Most Common Title Words &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>Vroots (pages) have titles
+</li>
+<li>What are the <b>10</b> most common title words?
+</li>
+<li>Must create this program from scratch
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Extra Credit &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>What <b>titles</b> were most browsed?
+</li>
+<li>Which URLs co-occured most frequently?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Submit via <code>git</code> &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>Update programs
+</li>
+<li>Write new programs
+</li>
+<li>Save output of running mrjobs into <code>mrjob/program_name.out</code>
+</li>
+<li><code>git add</code> programs, output
+</li>
+<li><code>git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER</code>
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> <code>git</code> Usage &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>You now have two assignments: Project 2, Homework
+</li>
+<li><code>git</code> lets you keep these in separate branches
+</li>
+<li>Keep your work in seperate branches
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Initially &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-2">
+
+<ul>
+<li>Hyopthetically, you've started on your projects
+</li>
+</ul>
+
+
+
+
+<pre class="src src-bash">cd webarch253
+git add # any changed files
+git commit -m <span style="color: #8b2252;">"Project: description of your Project progress so far"</span>
+git checkout master
+git checkout -b hw-mrjob
+# work on your homework
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Back to Project &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-3">
+
+<ul>
+<li>Now we'd like to go back working on our project
+</li>
+</ul>
+
+
+
+
+<pre class="src src-html">git add # any changed files
+git commit -m "HW: description of your Homework progress so far"
+git checkout project2
+# work on your project
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-4" class="outline-3">
+<h3 id="sec-9-4"><span class="section-number-3">9.4</span> Finish Homework &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-4">
+
+
+
+
+<pre class="src src-html">git add # any changed files
+git commit -m "Project: description of your Project progress so far"
+git checkout hw-mrjob
+# finishing touches... 
+git add # any changed files
+git commit -m "HW: Finished"
+git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-5" class="outline-3">
+<h3 id="sec-9-5"><span class="section-number-3">9.5</span> Finish Project &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-5">
+
+
+
+
+<pre class="src src-html">git checkout project2
+# finishing touches... 
+git add # any changed files
+git commit -m "Project: Finished"
+git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Review &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<ul>
+<li>Fill in <code>top_pages.py</code>
+</li>
+<li>Fill in <code>combine_user_visits.py</code>
+</li>
+<li>Write <code>top_users.py</code>
+</li>
+<li>Write <code>top_title_words.py</code>
+</li>
+<li>Run programs to create outputs: <code>top_pages.out</code> <code>user-visits_msweb.data</code>
+    <code>top_users.out</code> <code>top_title_words.out</code>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Moved Due Date &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>Nov 29
+</li>
+<li>But start now!
+</li>
+<li>This is probably the most coding intensive assignment
+</li>
+<li>Aim to get at least <code>top_pages.py</code> done by Thanksgiving
+</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-11-19T22:37-0800</p>
+<p class="author">Author: Jim Blomo</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
