@@ -12,13 +12,15 @@
   + Recommenders
   + Classifiers
   + Regressions
-** Details :notes:
+  + Outliers
+** Some examples :notes:
    + Question: how are models used in the real world?
    + Amazon or Netflix style recommendations based on prior history
-   + Spam/Ham for email
+   + Spam/Ham for email, also clustering and discovering classifications
    + Guessing the price of a house (Zillow or Redfin)
+   + find anomalous transactions, eg. finding fraud for credit cards
 
-** Just the tip :slide:two_col:
+** Simple to Sophisticated :slide:two_col:
 [[file:img/iceberg11.jpg]]
    + Thousands of ways to calculate a model
    + Combinatorially more ways to combine them
@@ -28,8 +30,10 @@
    + Newest methods combine multiple models (boosting & bagging)
    + If you want to learn more, we'll cover some of this in Data Mining
    + We're just going to go over the most well known model for each type
+   + In general, this is the right way to approach it: start very simple, get
+     sophisticated in order to correct for specific problems in your domain
 
-* Recommenders :slide:animate
+* Recommenders :slide:animate:
   + Popularity
   + Collaborative Filter
 ** Simple :notes:

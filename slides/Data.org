@@ -1,23 +1,3 @@
-* Viewport review :slide:
-[[file:img/quirksmode.png]]
-  + nav bar: =width: 100%;=
-  + logo: =left: 233px;=
-  + Not expecting a window size < 400px
-  + Looks bad with that size
-
-** Zoom :slide:
-[[file:img/mobile_visualviewport.jpg]]
-   + Instead of setting window size to 400px, lie
-   + window size = 850px
-   + Zoom in with viewport
-
-** Mobile :slide:
-[[file:img/thin-github.png]]
-   + But now I /have/ designed for mobile
-   + But when I load page, everything's squished
-   + Because I designed it for 400px
-   + So instead, force viewport to 400px also
-
 * *Data* :slide:
 
 * The Web is Used by Humans :slide:two_col:
@@ -74,7 +54,7 @@
 ** Web logs :slide:
    + Data :: Records of visits to a web page
    + Information :: Summary of user behavior
-   + Knowledge :: Understanding short coming in a product
+   + Knowledge :: Understanding shortcoming in a product
 ** Storage :notes:
    + Data is just 1s 0s on a digital machine
    + At a slightly higher level, data is still just characters in a file
@@ -86,7 +66,7 @@
 * Web Frontier :slide:
   + Web particularly well suited to analysis
   + Easiest to instrument
-  + Already require high technology
+  + Already requires high technology
 ** Alternatives :notes:
    + Medicine, global warming, education may be more "worthy"
    + Because you must interact with central server, each interaction can be
@@ -156,12 +136,16 @@
   + Reconcile inconsistencies:
     + Webserver has the wrong time
     + Determine type of page
+    + Changed logging method
 ** Consistency :notes:
    + Make sure all activity happening in correct time zone
    + If a server had the wrong internal time, add error to logs
+   + Bug in timezone handling
    + Hypothertically interested in learning the *type* of resource downloaded
      + 'gif|png|jpg' => image
      + 'pdf|doc|xls' => document
+   + used to encode encrypted user\_id, now decrypted
+   + even different teams might log user\_id in different ways
 
 * Explore :slide:two_col:
   + Don't under estimate scrolling through data
@@ -189,18 +173,21 @@
 [[file:img/yelp_reviews-linear.png]]
    + How well does this fit the data?
 *** Equation :notes:
+    + How to express mathmatically?
     + y = mx + b
 
 ** Exponential :slide:
 [[file:img/yelp_reviews-exponential.png]]
    + Fit better? How far do we go?
 *** Equation :notes:
+    + How to express mathmatically?
    + y = mx^2 + b
 
 ** Coin Flip :slide:
 [[file:img/binomial.jpg]]
    + Coin flips modeled as binomial distribution
 ** Source :notes:
+   + How to express mathmatically?
    http://wattsupwiththat.com/2010/04/10/response-to-dr-meiers-answer-9-the-coin-flip-in-the-context-of-climate-modeling/
 
 ** Classification Model :slide:

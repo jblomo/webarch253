@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="HW11-mrjob"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-19T22:37-0800"/>
+<meta name="generated" content="2013-11-21T23:57-0800"/>
 <meta name="author" content="Jim Blomo"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -61,15 +61,7 @@
 <li><a href="#sec-6">6 Users &gt; 20 visits</a></li>
 <li><a href="#sec-7">7 Most Common Title Words</a></li>
 <li><a href="#sec-8">8 Extra Credit</a></li>
-<li><a href="#sec-9">9 Submit via <code>git</code></a>
-<ul>
-<li><a href="#sec-9-1">9.1 <code>git</code> Usage</a></li>
-<li><a href="#sec-9-2">9.2 Initially</a></li>
-<li><a href="#sec-9-3">9.3 Back to Project</a></li>
-<li><a href="#sec-9-4">9.4 Finish Homework</a></li>
-<li><a href="#sec-9-5">9.5 Finish Project</a></li>
-</ul>
-</li>
+<li><a href="#sec-9">9 Submit via <code>git</code></a></li>
 <li><a href="#sec-10">10 Review</a></li>
 <li><a href="#sec-11">11 Moved Due Date</a></li>
 </ul>
@@ -151,7 +143,7 @@ if __name__ == '__main__':
 </pre>
 
 <p>
-    From <a href="http://packages.python.org/mrjob/writing-and-running.html">http://packages.python.org/mrjob/writing-and-running.html</a>
+    More documentation: <a href="http://pythonhosted.org/mrjob/">http://pythonhosted.org/mrjob/</a>
 </p>
 </div>
 
@@ -356,117 +348,9 @@ Streaming final output from /tmp/top_pages.jim.20121116.052647.278066/output
 </li>
 <li><code>git add</code> programs, output
 </li>
-<li><code>git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER</code>
-</li>
 </ul>
 
 
-
-</div>
-
-<div id="outline-container-9-1" class="outline-3">
-<h3 id="sec-9-1"><span class="section-number-3">9.1</span> <code>git</code> Usage &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-9-1">
-
-<ul>
-<li>You now have two assignments: Project 2, Homework
-</li>
-<li><code>git</code> lets you keep these in separate branches
-</li>
-<li>Keep your work in seperate branches
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-9-2" class="outline-3">
-<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Initially &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-9-2">
-
-<ul>
-<li>Hyopthetically, you've started on your projects
-</li>
-</ul>
-
-
-
-
-<pre class="src src-bash">cd webarch253
-git add # any changed files
-git commit -m <span style="color: #8b2252;">"Project: description of your Project progress so far"</span>
-git checkout master
-git checkout -b hw-mrjob
-# work on your homework
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-9-3" class="outline-3">
-<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Back to Project &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-9-3">
-
-<ul>
-<li>Now we'd like to go back working on our project
-</li>
-</ul>
-
-
-
-
-<pre class="src src-html">git add # any changed files
-git commit -m "HW: description of your Homework progress so far"
-git checkout project2
-# work on your project
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-9-4" class="outline-3">
-<h3 id="sec-9-4"><span class="section-number-3">9.4</span> Finish Homework &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-9-4">
-
-
-
-
-<pre class="src src-html">git add # any changed files
-git commit -m "Project: description of your Project progress so far"
-git checkout hw-mrjob
-# finishing touches... 
-git add # any changed files
-git commit -m "HW: Finished"
-git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-9-5" class="outline-3">
-<h3 id="sec-9-5"><span class="section-number-3">9.5</span> Finish Project &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h3>
-<div class="outline-text-3" id="text-9-5">
-
-
-
-
-<pre class="src src-html">git checkout project2
-# finishing touches... 
-git add # any changed files
-git commit -m "Project: Finished"
-git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
-</pre>
-
-
-</div>
 </div>
 
 </div>
@@ -499,7 +383,7 @@ git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
 <div class="outline-text-2" id="text-11">
 
 <ul>
-<li>Nov 29
+<li>Dec 5
 </li>
 <li>But start now!
 </li>
@@ -520,7 +404,7 @@ git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-11-19T22:37-0800</p>
+<p class="date">Date: 2013-11-21T23:57-0800</p>
 <p class="author">Author: Jim Blomo</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

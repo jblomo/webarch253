@@ -27,7 +27,7 @@ class MRWordCounter(MRJob):
 if __name__ == '__main__':
     MRWordCounter.run()
 #+end_src
-    From http://packages.python.org/mrjob/writing-and-running.html
+    More documentation: http://pythonhosted.org/mrjob/
 ** Relation to HW :notes:
    + =mapper= takes keys and values
    + =reducer= takes the keys output by the mapper, and all relevant values
@@ -97,52 +97,6 @@ Streaming final output from /tmp/top_pages.jim.20121116.052647.278066/output
   + Write new programs
   + Save output of running mrjobs into =mrjob/program_name.out=
   + =git add= programs, output
-  + =git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER=
-
-** =git= Usage :slide:
-   + You now have two assignments: Project 2, Homework
-   + =git= lets you keep these in separate branches
-   + Keep your work in seperate branches
-
-** Initially :slide:
-   + Hyopthetically, you've started on your projects
-#+begin_src bash
-cd webarch253
-git add # any changed files
-git commit -m "Project: description of your Project progress so far"
-git checkout master
-git checkout -b hw-mrjob
-# work on your homework
-#+end_src
-
-** Back to Project :slide:
-   + Now we'd like to go back working on our project
-#+begin_src html
-git add # any changed files
-git commit -m "HW: description of your Homework progress so far"
-git checkout project2
-# work on your project
-#+end_src
-
-** Finish Homework :slide:
-#+begin_src html
-git add # any changed files
-git commit -m "Project: description of your Project progress so far"
-git checkout hw-mrjob
-# finishing touches... 
-git add # any changed files
-git commit -m "HW: Finished"
-git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
-#+end_src
-
-** Finish Project :slide:
-#+begin_src html
-git checkout project2
-# finishing touches... 
-git add # any changed files
-git commit -m "Project: Finished"
-git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
-#+end_src
 
 * Review :slide:
   + Fill in =top_pages.py=
@@ -153,7 +107,7 @@ git format-patch --stdout origin/master  | sendmail jblomo vimalkini $USER
     =top_users.out= =top_title_words.out=
 
 * Moved Due Date :slide:
-  + Nov 29
+  + Dec 5
   + But start now!
   + This is probably the most coding intensive assignment
   + Aim to get at least =top_pages.py= done by Thanksgiving
