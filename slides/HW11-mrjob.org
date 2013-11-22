@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
 ** Output :slide:
 #+begin_src bash
-python mrjob/top_pages.py < mrjob/anonymous-msweb.data
+python data/top_pages.py < data/anonymous-msweb.data
 no configs found; falling back on auto-configuration
 creating tmp directory /tmp/top_pages.jim.20121116.052647.278066
 ...
@@ -95,7 +95,7 @@ Streaming final output from /tmp/top_pages.jim.20121116.052647.278066/output
 * Submit via =git= :slide:
   + Update programs
   + Write new programs
-  + Save output of running mrjobs into =mrjob/program_name.out=
+  + Save output of running mrjobs into =data/program_name.out=
   + =git add= programs, output
 
 * Review :slide:
