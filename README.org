@@ -22,7 +22,7 @@
 | Nov 15 | [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] (both parts); [[http://www.html5rocks.com/en/mobile/touch/][Multi-touch Web Development]]; [[http://twitter.github.com/bootstrap/][Bootstrap]] (examine how columns change with screen size) [[http://www.w3.org/TR/mwabp/][Mobile Best Practices]] (skim); | GUEST [[https://github.com/ArnaudBrousseau/mobile-web-lecture-berkeley][Mobile]] | HW10 - Midterm Redux |
 | Nov 22 | [[http://www.dataists.com/2010/09/a-taxonomy-of-data-science/][A Taxonomy of Data Science]]; [[http://www.youtube.com/watch?v=SS27F-hYWfU][Apache Hadoop: Petabytes and Terawatts]] ([[http://prezi.com/u0ukvqzpyh5p/apache-hadoop-petabytes-and-terawatts/][slides]]); [[http://packages.python.org/mrjob/][mrjob]] (for homework) | [[file:slides/Data.html][Data Mining]] & [[file:slides/Analysis.html][Analysis]] | [[file:slides/HW11-mrjob.html][HW11 - mrjob]] |
 | Nov 29 | Thanksgiving | | |
-| Dec 6 | Security & Your Website | | Project Technical Report |
+| Dec 6 | [[http://www.unixwiz.net/techtips/sql-injection.html][SQL Injection]]; [[http://www.acunetix.com/websitesecurity/xss/][XSS example]] | [[file:slides/Security-Privacy.pdf][Security]] & [[file:slides/Your-Website.html][Your Website]] | [[file:slides/Project2-Deliverables.html][Project Part 2]] Due 12th |
 | Dec 13 | Project Presentations | | |
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />

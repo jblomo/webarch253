@@ -1,0 +1,58 @@
+* Project 2 Deliverables :slide:
+  + Midnight of the 12th
+  + Technical Report ([[https://piazza.com/class/hkxejwsmf0z2fe?cid=112][Piazza]])
+  + Code
+  + Slides
+  + GitHub Pull Request
+** How to :notes:
+   + Pull request should have everything.
+   + PDF or Tech report
+   + PDF/PPT of slides
+   + Presentation may be mostly demo, that's fine. Don't do many slides
+
+* Technical Report :slide:
+  + Intro
+  + ~1 page / feature
+  + Problem, example, technology, challeneges, alternatives, future
+** Heuristic :notes:
+  + I should have a good start re-implementing your features
+
+* Code :slide:
+  + Ideally will be runnable on ISchool
+  + Advanced work, please use =virtualenv= with =requirements.txt=
+  + If its not implemented, no credit
+  + User facing quality is evaluated
+** Quality :notes:
+   + Not just "pretty" but functional and using the ideas we talked about in
+     class
+   + Semantic markup, CSS for style, REST where appropriate
+   + Corner cases, validation, security
+
+* Presentation :slide:
+  + Very fast! 10 minutes max
+  + Try out the projector before/after class, spare
+  + Live demos strongly encouraged, backup
+** Depends :notes:
+   + Will depends on how many submissions I get
+   + Will go in alphabetical order of last name
+   + Make people interested in your technical report: "Whoa, how did you do
+     that?"
+
+* Questions? :slide:
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

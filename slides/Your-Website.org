@@ -1,0 +1,328 @@
+* *Your Website* :slide:
+
+* General vs. Practical :slide:
+   + "the language in which you'll spend most of your working life hasn't been
+     invented yet, so we can't teach it to you.  Instead we have to give you the
+     skills you need to learn new languages as they appear"
+   + Brian Harvey, [[http://www.eecs.berkeley.edu/~bh/sicp.html][Why SCIP matters]]
+** Important Parts :notes:
+   + Important: Ideas behind REST: statelessness, layered approach that does one
+     thing well, flexibility over immediate performance, uniform interface
+   + Not as important: Javascript libraries
+
+* But :slide:
+  + Who is doing interviews?
+  + Who is starting their own company?
+  + Who wants to build their portfolio?
+** Real World :notes:
+   + I realize many of you may be needing to apply this stuff very soon
+   + So here's the lecture where I try to tell you what I would do when building
+     a website
+
+* Ideas :slide:
+  + Understand exponential growth
+  + Get the timing right
+  + Execute, execute, execute
+** Idea required but not sufficient :notes:
+   + Wide variation of thoughts on ideas
+   + One of the biggest road blocks for wanna be entrepreneurs, but most derided
+   + I think the *vision* is important, its what drives the company, keeps
+     people working
+   + The plan for the idea less so
+   + The concrete product most important
+   + Let's talk about these elements
+
+* Toys :slide:
+  + "the next big thing always starts out being dismissed as a “toy.”"
+  + Chris Dixon, [[http://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy/][Blog]]
+[[file:img/cdixon.jpg]]
+** Why? :notes:
+   + A few reasons for this
+
+** Exponential Growth :slide:two_col:
+   + New markets are tiny, not of interest to big players
+   + Small, growing markets can be easier to enter
+   + Exponential growth markets can overwhelm big players by the time they break
+   + In fact, many times big companies will *give* you business
+[[file:img/android-iphone-ship.png]]
+** Example: Mobile :notes:
+   + Big companies have a lot on their plate already
+   + Aren't going to mess with small stuff when profits are rolling in
+   + By the time profits stop, another player has already disrupted market and
+     established itself
+   + As we discussed, happening with mobile now
+   + Growth over 3 years. What companies do you know that have changed their
+     business model in 3 years
+   + Google might be one of them (Android)
+   + More info: [[http://www.claytonchristensen.com/][Clayton Christensen]]
+
+* Execute :slide:
+  + Users are hiring you to do a job: what is it?
+  + "Institutions will try to preserve the problem to which they are the solution." -- [[http://www.shirky.com/][Clay Shirky]]
+  + Make your product so easy to use, people do it by accident.
+** Do the job :notes:
+   + Understand your users, make it easy to do what they want
+   + Don't get trapped in continuing to provide a "solution" for a problem
+   + Good business model, but only for a while:
+   + Dell did a great job selling cheap computers, then more expensive computers
+   + But now Amazon is saying: "you don't even need to own computers!" (Cloud)
+   + Focus on that one thing that is important and do it very, very well
+
+* Specifics ([[http://www.joelonsoftware.com/articles/fog0000000043.html][The Joel Test]]) :slide:
+  + Do you use source control?
+  + Can you make a build in one step?
+  + Do you make daily builds?
+  + Do you have a bug database?
+  + Do you fix bugs before writing new code?
+  + Do you have an up-to-date schedule?
+  + Do you have a spec?
+  + Do programmers have quiet working conditions?
+  + Do you use the best tools money can buy?
+  + Do you have testers?
+  + Do new candidates write code during their interview?
+  + Do you do hallway usability testing?
+** Joel on Software :notes:
+   + Joel Spolksy wrote this in 2000! Still a great guide!
+   + This is what I'd suggest to quickly get moving on the right foot
+   + If you're managing a team, make sure these are happening
+
+** Source Control :slide:
+   + Use =git=
+*** Surprised? :notes:
+   + Github will solve a few problems on this list, just use it, even if you're
+     developing alone
+
+** One step build :slide:two_col:
+  + For websites, this means "deploy"
+  + Can you deploy your current code to production in one command?
+  + Use [[http://www.heroku.com/][Heroku]]
+[[file:img/heroku.jpg]]
+*** Heroku :notes:
+   + Heroku is a Platform as a Service
+   + Runs web applications, manages scaling
+   + Provides things like a database
+   + Google App Engine another example
+
+** Daily Builds :slide:
+  + For websites, this means "stage"
+  + Can you test your current code before it goes to production at least once a
+    day?
+  + Use [[http://www.heroku.com/][Heroku]]
+*** Staging :notes:
+    + Stage means an area where you can test all the new features in an
+      environment as close to production as possible
+    + Another advantage of using a whole platform: already comes with best
+      practices
+
+** Bug Database :slide:
+  + Easy to loose track of problems
+  + Also good way to prioritize issues
+  + Use [[http://github.com][Github]] Issues
+*** Managing Up :notes:
+   + Good defense
+
+** Write a Spec :slide:
+  + Alternatively, write the press release
+  + Don't write a novel
+  + Disagreements can be solved with code, but after talking
+*** Bad rap :notes:
+   + Developers don't like writing them much
+   + But it helps nail down issues
+   + Yelp uses CEP process
+   + If you get to the "agree to disagree" point, data or code can solve
+     differences
+
+** Testers :slide:
+   + Use *unit tests* (eg. =unittest2= in Python)
+   + Use [[http://seleniumhq.org/][Selenium]] (Automates Browsers)
+   + Very easy to skip, will bite you within 6 months
+** Differences :notes:
+   + Joel suggests having and paying testers
+   + I don't think this is best use of resources for small companies
+   + Economics change when developers can effectively write tests
+   + *Must* allocate time to this
+   + Add tests when you fix bugs
+   + Helps if developers use product daily
+
+** Tools :slide:two_col:
+  + Right tool for the job
+  + Text Editor: Use =vim= or =emacs=
+  + =virtualenv= (Python); =RVM= (Ruby)
+  + Learn the command line
+
+  [[file:img/lightsaber.jpg]]
+*** Woodworker :notes:
+    + (slightly off topic from Joel's list)
+    + Woodworkers don't hammer stuff in with their shoe
+    + Make their own tools as first part of job
+    + When a custom problem comes up, make a custom tool
+    + These slides, written with mappings in =vim=
+    + Text Editor
+      + Syntax Highlighting
+      + Macros
+      + Interact with other tools
+      + Find across files
+
+* How to Use Recommendations :slide:two_col:
+  + Start with them as default
+  + If you understand why something is better for your case, use it
+  + Understand trade-offs
+[[file:img/grain-of-salt.jpg]]
+** Trade-offs :notes:
+   + One of the themes of this course
+   + Trying to provide you with a starting point
+
+* Server Frameworks :slide:
+  + =Django= (Pythong) or =Rails= (Ruby)
+  + Understand Model-View-Controller, asset building
+  + Experienced: Flask
+** Asset building :notes:
+   + Structuring your code is important, and these frameworks will enforce it for
+     you until you understand when and why you need to break the rules
+   + They'll include solutions for Session Cookies, user logins, RESTful
+     resources
+   + Asset building is a must for production websites: remember lectures on
+     website speed (compressing JS, CSS)
+   + Hard, useless to build that stuff on your own without experience
+   + Remember, URLs are resources!
+
+* HTML Framework :slide:
+  + Bootstrap
+  + Use an integration module, eg.
+    [[https://github.com/seyhunak/twitter-bootstrap-rails][twitter-bootstrap-rails]]
+** Integration :notes:
+   + packages will help you use the HTML framework with the server side
+     framework (eg. templates)
+
+* JS Framework :slide:
+  + jQuery
+  + D3 for visualizations
+  + (Adventurous: AngularJS)
+** AngularJS :notes:
+   + jQuery will help with normal interactive usage
+   + d3 for visualization
+   + Angular: framework for bi-directional reflection of changes: from UI to
+     model and back.
+
+* Database :slide:
+  + *Postgres* with Heroku
+  + MySQL if already set up
+  + Don't mess around with NoSQL till you understand why your product needs it
+** Even then :notes:
+   + Postgres will serve your NoSQL needs most of the time anyway
+
+* Registration :slide:
+  + [[http://www.google.com/apps/index1.html][Google Apps]]
+  + Register site with Google, get Gmail, Docs, etc
+  + Now charging, pretty cheap
+** IT :notes:
+   + You'll want email along with your site, so just use Gmail
+   + *just* started charging $50/user/year :(
+
+* Logging :slide:two_col:
+  + Sever: Log every ID that's on a page
+  + Frontend: [[http://www.google.com/analytics/][Google Analytics]]
+  + Knowledge starts with logs
+[[file:img/Logging.jpg]]
+** Other services :notes:
+   + [[http://newrelic.com/][New Relic]] or [[http://www.splunk.com/][Splunk]]
+     can be helpful when you want to make use of your logs.
+   + May want to try those services early to answer simple questions, so you can
+     be sure you're looging the right stuff
+
+* *Work* :slide:
+** Topic Change :notes:
+   + Jumping topics a bit, what if you'd like to work at a web company instead
+     of build one?
+
+* Hiring :slide:two_col:
+  + Learn about the company
+  + Ask questions to learn about their problems
+  + Provide solutions
+[[file:img/briefcase.jpg]]
+** Experience :notes:
+   + Use experience to answer questions
+   + Make sure you continue asking questions in the interview
+   + Ramit Sethi calls this the [[http://www.iwillteachyoutoberich.com/the-briefcase-technique/][Briefcase Technique]]
+   + Know what's on your resume (Why is it applicable? Why is it interesting?)
+   + Think of the "interview" as a conversation, what would you say if you met
+     in a coffee shop?
+
+* Resume :slide:
+  + Use quantitative data
+  + Describe the difference you made in a company/project, not what you did
+  + Include your side projects!
+** Unique :notes:
+   + What makes you a unique candidate?
+   + Your side projects set you apart. All students here have made a mobile
+     page. How is yours different?
+
+* STAR :slide:
+  + Situation :: What was the environment?
+  + Task :: What was the specific problem you needed to solve?
+  + Action :: What specific actions did you take?
+  + Result :: What was the outcome for both the project and the uses?
+** Interview technique :notes:
+   + Make sure to answer the question, but this gives you a good framework for
+     communicating clearly
+   + Provide just enough information to answer the question completely, but
+     don't get lost in the details
+   + Wait for interviewer to dive into the topics she's interested in
+   + Be specific! (But not too detailed)
+
+* Negotiation :slide:
+  + Always try to have > 2 offers on the table
+  + Once a company decides, they've already sunk a lot of cost into you
+  + "That would make me comfortable"
+** Timing :notes:
+   + Pace interviews so you can make the decision together
+
+* Managing upward :slide:
+  + Ideal email: "I've done the analysis below and recommend we do X.  Sound good?"
+  + If no one is in charge, you're in charge
+  + Say "yes" but prioritize
+** Busy :notes:
+   + Your boss is busy, you do the work, make sure you're on the right track
+   + You shouldn't take on everything, but also shouldn't just start rejecting
+     things.
+   + Be a positive person: yes, we can do that after X, Z
+
+* Networking :slide:
+  + Ask questions
+  + Learn from others
+  + Help others
+  + Don't skip stuff because you're lazy or scared
+[[file:img/shy-connector.png]]
+  + [[http://www.slideshare.net/sachac/the-shy-connector][Shy Connector]]
+** Skipping Stuff :notes:
+   + There are many good reasons not to go to an event, but being lazy is not
+     one of them
+   + Best opportunities are when you do stuff that pushes your boundaries
+
+* Just Do It :slide:
+  + Practice
+  + Start with any idea
+  + Make a website you're proud to show friends
+  + Improve it
+** Doing is best for learning :notes:
+   + Employers look for engagement in these areas
+   + Almost any are you want to focus in, your website can be your medium
+
+* *Thank You!* :slide:
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
