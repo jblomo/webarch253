@@ -1,112 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>README</title>
+<!-- 2014-08-26 Tue 23:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="README"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-12-06T01:55-0800"/>
 <meta name="author" content="Jim Blomo"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
-<link rel="stylesheet" type="text/css" href="slides/production/common.css" />
-<link rel="stylesheet" type="text/css" href="slides/production/screen.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="slides/production/projection.css" media="projection" />
-<link rel="stylesheet" type="text/css" href="slides/production/presenter.css" media="presenter" />
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
 
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">README</h1>
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Web Architecture 253</a></li>
-<li><a href="#sec-2">2 Syllabus</a></li>
+<li><a href="#sec-1">1. Web Architecture 253</a></li>
+<li><a href="#sec-2">2. Syllabus</a></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Web Architecture 253 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Web Architecture 253&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-1">
-
-<dl>
-<dt>Description</dt><dd>Understanding the web's core technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser and interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
+<dl class="org-dl">
+<dt> Description </dt><dd>Understanding the web's core technologies from user-facing (HTML, CSS) to underlying (TCP/IP).  At the end of the course students will have an overview of what happens between typing an address in a browser and interacting with the web page.  We'll leverage industry accepted technologies to implement a simple web app.
 </dd>
-<dt>Grading</dt><dd>Homework (30%), midterm (30%), project (40%). 
+<dt> Grading </dt><dd>Homework (30%), midterm (30%), project (40%). 
 </dd>
-<dt>Instructor</dt><dd>Jim Blomo &lt;jblomo@ischool&gt;
+<dt> Instructor </dt><dd>Jim Blomo &lt;jblomo@ischool&gt;
 </dd>
-<dt>GSI</dt><dd>Sonali Sharma &lt;sonalisharma@berkeley&gt;
+<dt> GSI </dt><dd>Molly Robison &lt;mrobison@ischool&gt;
 </dd>
 </dl>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Syllabus &nbsp;&nbsp;&nbsp;<span class="tag"><span class="slide">slide</span></span></h2>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Syllabus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
 <div class="outline-text-2" id="text-2">
-
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">Date</th><th scope="col" class="left">Readings</th><th scope="col" class="left">Slides</th><th scope="col" class="left">Homework / Project</th></tr>
+<tr>
+<th scope="col" class="left">Date</th>
+<th scope="col" class="left">Readings</th>
+<th scope="col" class="left">Slides</th>
+<th scope="col" class="left">Homework / Project</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">Aug 30</td><td class="left"><a href="http://www.w3.org/DesignIssues/TimBook-old/History.html">A Brief History of the Web</a> &amp; <a href="http://www.scientificamerican.com/article.cfm?id=long-live-the-web&amp;print=true">Long Live the Web</a> Optional: <a href="http://try.github.io">Try Git</a></td><td class="left"><a href="slides/Intro.html">Intro</a> &amp; <a href="slides/Browsers.html">Browsers</a></td><td class="left"><a href="slides/HW1.html">Git &amp; HW1 - browsers</a></td></tr>
-<tr><td class="left">Sep 6</td><td class="left"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list">HTML5 Elements</a> &amp; <a href="http://www.w3.org/TR/CSS2/selector.html">CSS Selectors</a> ; <a href="http://www.maxdesign.com.au/articles/css-inheritance/">CSS inheritance</a> ; Optional: <a href="http://www.montulli.org/theoriginofthe<blink>tag">Blink Tag</a></td><td class="left"><a href="slides/HTML.html">HTML</a> &amp; <a href="slides/CSS.html">CSS</a></td><td class="left"><a href="slides/HW2.html">HW2 - Personal Page</a></td></tr>
-<tr><td class="left">Sep 13</td><td class="left">Optional: <a href="http://eloquentjavascript.net/contents.html">Elequent Javascript</a>, <a href="http://api.jquery.com/submit/">jQuery Validate Example</a>, <a href="http://www.w3.org/TR/html5/forms.html">W3C Forms Specification</a></td><td class="left"><a href="slides/Forms.html">Forms</a> &amp; <a href="slides/Javascript.html">Javascript</a></td><td class="left"><a href="slides/HW3.html">HW3 - Madlib Form</a></td></tr>
-<tr><td class="left">Sep 20</td><td class="left"><a href="http://www.w3.org/Provider/Style/URI">Cool URIs don't change</a>, <a href="http://www.w3.org/TR/webarch/">Architecture of the World Wide Web</a> Sections 1 &amp; 2 , (Skim) <a href="http://www.cs.tut.fi/~jkorpela/http.html">HTTP headers reference</a> (Optional) <a href="http://flask.pocoo.org/docs/">Flask</a></td><td class="left"><a href="slides/HTTP.html">URI &amp; HTTP</a> &amp; <a href="slides/Server.html">HTTP Server</a></td><td class="left"><a href="slides/HW4-Telnet.html">HW4 - Telnet</a></td></tr>
-<tr><td class="left">Sep 27</td><td class="left"><a href="http://www.w3.org/2001/tag/doc/state.html">State</a> Sections 1-5; <a href="http://learnpythonthehardway.org/book/ex39.html">Learn Python the Hard Way</a> Exercise 39, Dictionaries; <a href="http://flask.pocoo.org/docs/quickstart/">Flask Quickstart</a> Rendering Templates, The Request Object</td><td class="left">GUEST: <a href="slides/HTTP-Stateless.html">Dynamic Webpages</a> &amp; <a href="slides/HTTP-Data.html">HTTP Data</a></td><td class="left"><a href="slides/HW5-Data.html">HW5 - HTTP Data</a>; <a href="slides/Project1.html">Project Part 1</a></td></tr>
-<tr><td class="left">Oct 4</td><td class="left"><a href="http://www.garykessler.net/library/tcpip.html">TCP/IP Overview</a> (Read for Overview); <a href="http://amar-linux.blogspot.com/2012/05/how-dns-works.html">How DNS Works</a>; <a href="http://dyn.com/dns-why-its-important-how-it-works/">DNS Steps</a></td><td class="left"><a href="slides/Internet.html">Internet</a> &amp; <a href="slides/TCP-DNS.html">TCP and DNS</a></td><td class="left"><a href="slides/HW6-DNS.html">HW6 - DNS</a></td></tr>
-<tr><td class="left">Oct 11</td><td class="left"><a href="http://developer.yahoo.com/performance/rules.html">Best Practices for Speeding Up Your Web Site</a> &amp; (Optional) <a href="http://www.stevesouders.com/blog/">Steve Souder's Blog</a></td><td class="left">GUEST <a href="http://www.piazza.com/class_profile/get_resource/hkxejwsmf0z2fe/hmo01l9aykt1id">Front-end Performance (PDF)</a></td><td class="left">HW7 - GZIP</td></tr>
-<tr><td class="left">Oct 18</td><td class="left"><a href="http://en.wikipedia.org/wiki/HTTP_cookie">Cookie</a>; <a href="http://www.eioba.com/a/1htn/how-i-explained-rest-to-my-wife">REST explained</a>; RESTful APIs <a href="http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http">Part 1</a> (especially note on how to model a transaction) and <a href="http://blog.steveklabnik.com/posts/2011-08-07-some-people-understand-rest-and-http">Part 2</a> (careful, uses an older version of Github API); <a href="http://https://weblogs.java.net/blog/mkarg/archive/2010/02/14/what-hateoas-actually-means">HATEOAS</a>; <a href="http://conferences.idealliance.org/extreme/html/2002/Prescod01/EML2002Prescod01.html">Roots of the REST/SOAP Debate</a> (Optional)</td><td class="left"><a href="slides/Cookies.html">Cookies</a> &amp; <a href="slides/REST.html">ReST</a></td><td class="left"><a href="slides/Midterm-Review.html">Midterm Review</a></td></tr>
-<tr><td class="left">Oct 25</td><td class="left">Midterm</td><td class="left"></td><td class="left">Project Part 1 Due Oct 31</td></tr>
-<tr><td class="left">Nov 1</td><td class="left"><a href="http://qr.ae/8jOUH">Why is it hard to scale a database, in layman’s terms?</a>; <a href="http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf">NoSQL History</a> ; <a href="http://dev.mysql.com/doc/refman/5.5/en/select.html">MySQL SELECT</a> (for HW reference)</td><td class="left"><a href="slides/StorageSystems.pdf">Storage Systems</a></td><td class="left"><a href="slides/HW8-DB.html">HW8 - DB</a></td></tr>
-<tr><td class="left">Nov 8</td><td class="left"><a href="http://www.uwtv.org/video/player.aspx?mediaid=16204855">Google: A Behind-the-Scenes Look</a>; <a href="http://www.nytimes.com/2011/02/13/business/13search.html?pagewanted=all">The Dirty Little Secrets of Search</a>; <a href="http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf">SEO Starter Guide</a> (skim); <a href="http://dev.w3.org/html5/md/">HTML5 Specification</a> (HW reference) ; <a href="http://infolab.stanford.edu/pub/papers/google.pdf">PageRank</a> (Original paper, optional)</td><td class="left"><a href="slides/Search.html">Search</a> &amp; <a href="slides/SEO.html">SEO</a></td><td class="left"><a href="slides/HW9-Microdata.html">HW9 Microdata</a> ; Optional <a href="slides/Project2.html">Part 2 Proposal</a></td></tr>
-<tr><td class="left">Nov 15</td><td class="left"><a href="http://www.quirksmode.org/mobile/viewports.html">Tale of Two Viewports</a> (both parts); <a href="http://www.html5rocks.com/en/mobile/touch/">Multi-touch Web Development</a>; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> (examine how columns change with screen size) <a href="http://www.w3.org/TR/mwabp/">Mobile Best Practices</a> (skim);</td><td class="left">GUEST <a href="https://github.com/ArnaudBrousseau/mobile-web-lecture-berkeley">Mobile</a></td><td class="left">HW10 - Midterm Redux</td></tr>
-<tr><td class="left">Nov 22</td><td class="left"><a href="http://www.dataists.com/2010/09/a-taxonomy-of-data-science/">A Taxonomy of Data Science</a>; <a href="http://www.youtube.com/watch?v=SS27F-hYWfU">Apache Hadoop: Petabytes and Terawatts</a> (<a href="http://prezi.com/u0ukvqzpyh5p/apache-hadoop-petabytes-and-terawatts/">slides</a>); <a href="http://packages.python.org/mrjob/">mrjob</a> (for homework)</td><td class="left"><a href="slides/Data.html">Data Mining</a> &amp; <a href="slides/Analysis.html">Analysis</a></td><td class="left"><a href="slides/HW11-mrjob.html">HW11 - mrjob</a></td></tr>
-<tr><td class="left">Nov 29</td><td class="left">Thanksgiving</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">Dec 6</td><td class="left"><a href="http://www.unixwiz.net/techtips/sql-injection.html">SQL Injection</a>; <a href="http://www.acunetix.com/websitesecurity/xss/">XSS example</a></td><td class="left"><a href="slides/Security-Privacy.pdf">Security</a> &amp; <a href="slides/Your-Website.html">Your Website</a></td><td class="left"><a href="slides/Project2-Deliverables.html">Project Part 2</a> Due 12th</td></tr>
-<tr><td class="left">Dec 13</td><td class="left">Project Presentations</td><td class="left"></td><td class="left"></td></tr>
+<tr>
+<td class="left">Aug 29</td>
+<td class="left"><a href="http://www.w3.org/DesignIssues/TimBook-old/History.html">A Brief History of the Web</a> &amp; <a href="http://www.scientificamerican.com/article.cfm?id=long-live-the-web&print=true">Long Live the Web</a> Optional: <a href="http://try.github.io">Try Git</a></td>
+<td class="left"><a href="slides/Intro.html">Intro</a> &amp; <a href="slides/Browsers.html">Browsers</a></td>
+<td class="left"><a href="slides/HW1.html">Git &amp; HW1 - browsers</a></td>
+</tr>
+
+<tr>
+<td class="left">Sep 5</td>
+<td class="left"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list">HTML5 Elements</a> &amp; <a href="http://www.w3.org/TR/CSS2/selector.html">CSS Selectors</a> ; <a href="http://www.maxdesign.com.au/articles/css-inheritance/">CSS inheritance</a> ; Optional: <a href="http://www.montulli.org/theoriginofthe<blink>tag">Blink Tag</a></td>
+<td class="left"><a href="slides/HTML.html">HTML</a> &amp; <a href="slides/CSS.html">CSS</a></td>
+<td class="left"><a href="slides/HW2.html">HW2 - Personal Page</a></td>
+</tr>
+
+<tr>
+<td class="left">Sep 12</td>
+<td class="left">&#xa0;</td>
+<td class="left">HTML Forms &amp; Javascript</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sep 19</td>
+<td class="left">&#xa0;</td>
+<td class="left">URIs and HTTP Servers</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sep 26</td>
+<td class="left">&#xa0;</td>
+<td class="left">HTTP Data</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oct 3</td>
+<td class="left">&#xa0;</td>
+<td class="left">Internet, TCP, &amp; DNS</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oct 10</td>
+<td class="left">&#xa0;</td>
+<td class="left">Frontend Performance</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oct 17</td>
+<td class="left">&#xa0;</td>
+<td class="left">Cookies &amp; Rest</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oct 24</td>
+<td class="left">Midterm</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oct 31</td>
+<td class="left">&#xa0;</td>
+<td class="left">Storage Systems</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Nov 7</td>
+<td class="left">&#xa0;</td>
+<td class="left">Search &amp; SEO</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Nov 14</td>
+<td class="left">&#xa0;</td>
+<td class="left">Mobile</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Nov 21</td>
+<td class="left">&#xa0;</td>
+<td class="left">Data Mining</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Nov 28</td>
+<td class="left">Thanksgiving</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Dec 5</td>
+<td class="left">&#xa0;</td>
+<td class="left">Security &amp; Your Website</td>
+<td class="left">Project Code Due</td>
+</tr>
+
+<tr>
+<td class="left">Dec 12</td>
+<td class="left">Project Presentations</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Dec 19</td>
+<td class="left">-</td>
+<td class="left">&#xa0;</td>
+<td class="left">Project Reports Due</td>
+</tr>
 </tbody>
 </table>
 
-
-
-
-
 <script type="text/javascript" src="slides/production/org-html-slideshow.js"></script>
 <a href="https://github.com/jblomo/webarch253"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-
 </div>
 </div>
 </div>
-
-<div id="postamble">
-<p class="date">Date: 2013-12-06T01:55-0800</p>
+<div id="postamble" class="status">
 <p class="author">Author: Jim Blomo</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<p class="date">Created: 2014-08-26 Tue 23:59</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
 </div>
 </body>
 </html>

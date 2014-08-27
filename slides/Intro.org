@@ -1,5 +1,5 @@
 * Web Architecture 253 :slide:
-  + Jim Blomo & Sonali Sharma
+  + Jim Blomo & Molly Robison
 
 * Course Goals :slide:
   + Address Bar -> Web Page
@@ -19,7 +19,7 @@
 * But Don't Worry :slide:
   + This isn't a programming class
   + Grades are based on understanding of the concepts, not the craziest app
-  + Sonali & I are here to help
+  + Molly & I are here to help
 
 * This is a Graduate class :slide:
   + Perform well without supervision
@@ -71,13 +71,9 @@
   + Yelp
   + Lecturer
 
-* Hi, I'm Sonali Sharma :slide:two_col:
-  + 2nd year MIMS student
-  + Computer Science Undergrad
-  + Data enthusiast
-  + Dreams about having a REALLY cool self made personal webpage
-  + Traveller
-  [[file:img/sonali.jpg]]
+* Hi, I'm Molly Robinson :slide:two_col:
+  + TODO
+  [[file:img/molly.jpg]]
 
 
 * The Web is Important :slide:
