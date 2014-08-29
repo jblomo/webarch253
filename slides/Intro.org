@@ -92,7 +92,9 @@
   + Lecturer
 
 * Hi, I'm Molly Robinson :slide:two_col:
-  + TODO
+  + University of Michigan undergrad
+  + UX and prototyping at Auction.com
+  + Knitting!
   [[file:img/Molly-small.jpg]]
 
 

@@ -32,9 +32,9 @@
 $ git config --global user.name Jim Blomo
 $ git config --global user.email jblomo@ischool.berkeley.edu
 $ git config --global push.default current
-$ git clone git://github.com/jblomo/webarch253.git webarch2013
+$ git clone git://github.com/jblomo/webarch253.git webarch2014
 #+end_src
-  + On the server, in the webarch2013 directory run 
+  + On the server, in the webarch2014 directory run 
 #+begin_src bash
 $ git remote rename origin jblomo
 #+end_src
