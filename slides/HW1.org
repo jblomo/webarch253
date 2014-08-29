@@ -169,7 +169,7 @@ $ git push origin master
      2. What are your favorite features from at least 2 browsers?
    + Reading:
      + [[http://www.w3.org/DesignIssues/TimBook-old/History.html][A Brief History of the Web]]
-     + [[http://www.theguardian.com/technology/2014/aug/24/internet-lost-its-way-tim-berners-lee-world-wide-web][How the web lost its way]]
+     + [[file:slides/Long_Live_the_Web.pdf][Long Live the Web]]
 
 
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
