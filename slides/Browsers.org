@@ -79,83 +79,10 @@
   + Some Apps now written entirely in Javascript
 
 * Market Share :slide:
-#+BEGIN_HTML
-<table style="border-collapse:collapse; width:100%;">
-<tbody><tr style="background:#DDD">
-<th colspan="5">Non-mobile web browser statistics on Wikimedia</th>
-</tr>
-<tr style="font-size:88%; height:4px;">
-<td style="padding:0 4px;"></td>
-<td style="padding:0 4px; text-align:right;"></td>
-<td style="width:250px;"></td>
-<td style="padding:0 4px; width:5em; text-align:right;"></td>
-<td style="padding:0 4px; text-align:right;"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Google_Chrome" title="Google Chrome">Chrome</a></td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#37C837; width:92.04%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">46.02%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Internet_Explorer" title="Internet Explorer">Internet Explorer</a></td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#0066FF; width:40.94%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">20.47%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Firefox" title="Firefox">Firefox</a></td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#FF9900; width:35.42%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">17.71%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em">Others</td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#CCCCCC; width:14.50%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">7.25%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a></td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#FF0000; width:10.90%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">5.45%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em;min-width:8em"><a href="/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a></td>
-<td style="width:100px;border-left:solid 1px silver;border-right:solid 1px silver;">
-<div style="background:#FF1493; width:6.20%; overflow:hidden">&nbsp; </div>
-</td>
-<td colspan="2" style="padding-left:0.4em;padding-right:0.4em" align="right">3.10%</td>
-</tr>
-<tr>
-<td colspan="5" style="height:2px"></td>
-</tr>
-<tr>
-<td colspan="5" style="padding:5px">Non-mobile web browser usage for Wikimedia visitors as of June 2013<sup class="plainlinks noprint asof-tag update" style="display:none;"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Usage_share_of_web_browsers&amp;action=edit">[update]</a></sup>.<sup id="cite_ref-wikimedia-stats_11-0" class="reference"><a href="#cite_note-wikimedia-stats-11"><span>[</span>11<span>]</span></a></sup></td>
-</tr>
-</tbody></table>
-#+END_HTML
+  [[file:img/desktopbrowserapril.jpg]]
+** Numbers :notes:
+   + Significant sampling bias
+   + Eg. wikimedia sees 46% Chrome, 11% IE
 
 * Utilities :slide:
   + /Firefly/ for Firefox, /Developer Tools/ for Chrome
@@ -183,12 +110,12 @@
   + reading
 
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/common.css" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
-#+STYLE: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
-#+STYLE: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
 
 #+BEGIN_HTML
 <script type="text/javascript" src="production/org-html-slideshow.js"></script>
