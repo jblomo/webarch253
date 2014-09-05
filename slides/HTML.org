@@ -28,15 +28,14 @@ This college is
 
 ** What about headers? :slide:
    + We can add "stars" to the beginning of sections
-
-#+begin_src markdown
-* Main Header
-Important stuff in this
-paragraph...
-
-** This is a "level 2" header
-Info supporting main section,
-specific to this subsection...
+#+begin_src text
+ * Main Header
+ Important stuff in this
+ paragraph...
+ 
+ ** This is a "level 2" header
+ Info supporting main section,
+ specific to this subsection...
 #+end_src
 
 ** Bold? Italics? :slide:
@@ -177,11 +176,14 @@ specific to this subsection...
    + ended up being very heavyweight for human use
    + and we don't want much extensibility with HTML anyway
 
-* Convoluted History :slide:
+* Convoluted History :slide:two_col:
   + HTML :: hippies
   + XHTML :: reformed hippies
   + XHTML2.0 :: fresh start
   + HTML5 :: Eh, too hard. Let's be hipsters instead!
+
+
+[[file:img/hippie.jpg]]
 ** Explanation :notes:
    + HTML :: hippies, anything goes! blink tag, font tag, very mixed browser
      support

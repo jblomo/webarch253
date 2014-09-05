@@ -203,7 +203,10 @@ table {
 * =style= attribute :slide:
   + change the style of individual elements inline in HTML
 #+begin_src html
-<h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>
+<h1 style="color: saddleBrown;
+           background-color: lightYellow;
+           font-family: script;">
+ Individual</h1>
 #+end_src
 #+BEGIN_HTML
 <h1 style="color: saddleBrown; background-color: lightYellow; font-family: script;">Individual</h1>

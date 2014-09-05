@@ -25,6 +25,7 @@ img {
 }
 
 .two_col .outline-text>p,
+.two_col .outline-text>.figure,
 .two_col .outline-text>table,
 .two_col .outline-text>ul,
 .two_col .outline-text>ol,
