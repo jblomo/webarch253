@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HTTP</title>
+<!-- 2014-09-18 Thu 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">HTTP</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>URIs</b> and <b>HTTP</b></a>
+<ul>
+<li><a href="#sec-1-1">1.1. Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. URI</a></li>
+<li><a href="#sec-3">3. URI - URL - URN</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Use in Industry</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Resource</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Components</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Scheme</a></li>
+<li><a href="#sec-5-2">5.2. What are examples of Protocols?</a></li>
+<li><a href="#sec-5-3">5.3. Hierarchical</a></li>
+<li><a href="#sec-5-4">5.4. Domain / Hostname</a>
+<ul>
+<li><a href="#sec-5-4-1">5.4.1. Preview</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-5">5.5. Path</a>
+<ul>
+<li><a href="#sec-5-5-1">5.5.1. Paths and Directories</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-6">5.6. Query (Optional)</a></li>
+<li><a href="#sec-5-7">5.7. Port</a>
+<ul>
+<li><a href="#sec-5-7-1">5.7.1. Ports covered later</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-8">5.8. Fragment</a></li>
+<li><a href="#sec-5-9">5.9. Whole Enchilada</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Files</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Defining file types</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Directories (Folders)</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Graphical View Directories</a></li>
+<li><a href="#sec-7-2">7.2. Command Line Interface Directories</a></li>
+<li><a href="#sec-7-3">7.3. Delimiters</a></li>
+<li><a href="#sec-7-4">7.4. Path types</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Don't do this at home</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Password</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Resource</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Again</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. URI, Resource, Representation</a>
+<ul>
+<li><a href="#sec-10-1">10.1. discussion</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Representations</a>
+<ul>
+<li><a href="#sec-11-1">11.1. Requesting Representations</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. One Resource per Logical Dataset</a>
+<ul>
+<li><a href="#sec-12-1">12.1. URLs</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Review</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Let's review</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. HyperText Transfer Protocol</a>
+<ul>
+<li><a href="#sec-14-1">14.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. Demo</a>
+<ul>
+<li><a href="#sec-15-1">15.1. HW</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. Network</a>
+<ul>
+<li><a href="#sec-16-1">16.1. Reliable</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17. Interaction</a>
+<ul>
+<li><a href="#sec-17-1">17.1. Question</a></li>
+</ul>
+</li>
+<li><a href="#sec-18">18. Request Methods</a>
+<ul>
+<li><a href="#sec-18-1">18.1. Use IRL</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19. Review</a>
+<ul>
+<li><a href="#sec-19-1">19.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-20">20. HTTP version</a>
+<ul>
+<li><a href="#sec-20-1">20.1. Flask</a></li>
+</ul>
+</li>
+<li><a href="#sec-21">21. Headers</a>
+<ul>
+<li><a href="#sec-21-1">21.1. Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22. To the Server!</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>URIs</b> and <b>HTTP</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Questions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>What is the first part of a CSS rule?
+</li>
+<li>How are the selectors and DOM related?
+</li>
+<li>How are the DOM and Javascript related?
+</li>
+<li>What does href in the anchor tag mean?
+</li>
+<li>How are animations accomplished with Javascript?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> URI&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Uniform Resource Identifier
+</li>
+<li><a href="http://www.yelp.com/biz/jupiter-berkeley#query:jupiters">http://www.yelp.com/biz/jupiter-berkeley#query:jupiters</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> URI - URL - URN&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<dl class="org-dl">
+<dt> URI </dt><dd>Identifies some resource (eg. person or file)
+</dd>
+<dt> URL </dt><dd>Specifies the Location of an identifier
+</dd>
+<dt> URN </dt><dd>Specifies the Name of an identifier
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Use in Industry&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>URL used day-to-day
+</li>
+<li>URL technically a type of URI
+</li>
+<li>URL provides both an identifier and a way to locate it (eg. protocol and
+</li>
+</ul>
+<p>
+server)
+</p>
+<ul class="org-ul">
+<li>URN almost never used in the web, though seeing some pickup on mobile (eg.
+</li>
+</ul>
+<p>
+tel:)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Resource&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Any concept you can name or identify
+</li>
+<li>So far, typically files
+</li>
+<li>Also generated pages, like a user profile
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>"Resource" something we'll cover more in depth, but for the common case it
+is a file
+</li>
+<li>Technically any concept you can "name" or "identify" is a resource
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Components&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><a href="http://www.yelp.com/biz/jupiter-berkeley#query:jupiters">http://www.yelp.com/biz/jupiter-berkeley#query:jupiters</a>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Scheme&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><b>http</b>://www.yelp.com/biz/jupiter-berkeley#query:jupiters
+</li>
+<li>specifies how the rest of the URI is laid out
+</li>
+<li>Typically protocols
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> What are examples of Protocols?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>http(s)
+</li>
+<li>git
+</li>
+<li>mailto
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Hierarchical&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<ul><li>http:<b>//www.yelp.com/biz/jupiter-berkeley#query:jupiters</b></li></ul>
+<ul class="org-ul">
+<li>"Directions" to the resource through hosts and folders
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Domain / Hostname&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-4">
+<ul><li>http://<b>www.yelp.com</b>/biz/jupiter-berkeley#query:jupiters</li></ul>
+<ul class="org-ul">
+<li>"Site" or machine name
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Preview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>Later we'll talk about how the browser connection to the machine
+</li>
+<li>Does the hostname include "http"? Why not?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Path&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-5">
+<ul><li>http://www.yelp.com<b>/biz/jupiter-berkeley#query:jupiters</b></li></ul>
+<ul class="org-ul">
+<li>Similar to directories, but not necessarily linked!
+</li>
+<li>Groups common resources together
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-5-1" class="outline-4">
+<h4 id="sec-5-5-1"><span class="section-number-4">5.5.1</span> Paths and Directories&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-5-5-1">
+<ul class="org-ul">
+<li>On the command line we've used directories
+</li>
+<li>For ISchool HW, we've seen that paths reflect the underlying directories
+</li>
+<li>But it doesn't have to be the case, as we'll see in the next lecture
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Query (Optional)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-6">
+<ul><li>https://www.google.com/<b>?q=ischool&ref=class</b></li></ul>
+<ul class="org-ul">
+<li>Starts with <code>?</code>
+</li>
+<li>key=value pairs, delimited by &amp;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-7" class="outline-3">
+<h3 id="sec-5-7"><span class="section-number-3">5.7</span> Port&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-7">
+<ul><li>https://www.ischool.berkeley.edu<b>:443</b>/index.php</li></ul>
+<ul class="org-ul">
+<li>Specifies a port number to connect to
+</li>
+<li>Ports are like doorways to a server
+</li>
+<li>Common ports: 80 for HTTP, 443 for HTTPS
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-7-1" class="outline-4">
+<h4 id="sec-5-7-1"><span class="section-number-4">5.7.1</span> Ports covered later&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-5-7-1">
+<ul class="org-ul">
+<li>We'll cover ports in more detail later in the class
+</li>
+<li>Used to accept incoming connections
+</li>
+<li>Different servers can run on different ports
+</li>
+<li>Gave away Yelp interview question
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-8" class="outline-3">
+<h3 id="sec-5-8"><span class="section-number-3">5.8</span> Fragment&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-8">
+<ul><li>http://en.wikipedia.org/wiki/URI_scheme<b>#Examples</b></li></ul>
+<ul class="org-ul">
+<li><a href="http://en.wikipedia.org/wiki/URI_scheme">http://en.wikipedia.org/wiki/URI_scheme</a> <b>#Examples</b>
+</li>
+<li>Specify a sub-resource, eg. a section on a page
+</li>
+<li>Browser will jump to element <code>id</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-9" class="outline-3">
+<h3 id="sec-5-9"><span class="section-number-3">5.9</span> Whole Enchilada&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-9">
+<div class="org-src-container">
+
+<pre class="src src-text">  foo://username:password@example.com:8042/over/there/index.dtb?type=animal&amp;name=narwhal#nose
+  \_/   \_______________/ \_________/ \__/            \___/ \_/ \______________________/ \__/
+   |           |               |       |                |    |            |                |
+   |       userinfo         hostname  port              |    |          query          fragment
+   |    \________________________________/\_____________|____|/ \__/        \__/
+   |                    |                          |    |    |    |          |
+scheme              authority                    path   |    |    interpretable as keys
+ name   \_______________________________________________|____|/       \____/     \_____/
+   |                         |                          |    |          |           |
+   |                 hierarchical part                  |    |    interpretable as values
+   |                                                    |    |
+   |            path               interpretable as filename |
+   |   ___________|____________                              |
+  / \ /                        \                             |
+  urn:example:animal:ferret:nose               interpretable as extension
+
+ scheme
+  name  userinfo  hostname       query
+  _|__   ___|__   ____|____   _____|_____
+ /    \ /      \ /         \ /           \
+ mailto:username@example.com?subject=Topic
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Chunks of data
+</li>
+<li>Typically <code>filename.ext</code>, but not required
+</li>
+<li>An extension only hints at file contents, but does not determine it
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Defining file types&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>We've been dealing with .html files so far, what are other types of files?
+</li>
+<li>What determines a filetype?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Directories (Folders)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Group together files 
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Graphical View Directories&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+
+<div class="figure">
+<p><img src="img/linux-root.png"  alt="linux-root.png"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Command Line Interface Directories&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+
+<div class="figure">
+<p><img src="img/dir-cli.png"  alt="dir-cli.png"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Delimiters&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>They are specified with a character
+</li>
+<li><code>/</code> on Unix &amp; Apple, <code>\</code> on Windows
+</li>
+<li>A starting <code>/</code> specifies an "absolute" path
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Path types&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-4">
+<dl class="org-dl">
+<dt> Absolute </dt><dd>Specified from the "root" directory.  Doesn't matter which
+directory you're currently in.
+</dd>
+<dt> Relative </dt><dd>Directory name is contained in your current directory
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Don't do this at home&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>People on the Internet are mean
+</li>
+<li><code>rm -rf /</code>
+</li>
+<li>Most computers have protections against this
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Password&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">Cthon98</span>&gt; hey, if you type in your pw, it will show as stars
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; ********* see!
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; hunter2
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; doesnt look like stars to me
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; &lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; *******
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; thats what I see
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; oh, really?
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; Absolutely
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; you can go hunter2 my hunter2-ing hunter2
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; haha, does that look funny to you?
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; lol, yes. See, when YOU type hunter2, it shows to us as *******
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; thats neat, I didnt know IRC did that
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; yep, no matter how many times you type hunter2, it will show to us as *******
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; awesome!
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; wait, how do you know my pw?
+&lt;<span style="color: #0000ff;">Cthon98</span>&gt; er, I just copy pasted YOUR ******'s and it appears to YOU as hunter2 cause its your pw
+&lt;<span style="color: #0000ff;">AzureDiamond</span>&gt; oh, ok.
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Resource&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Any concept you can name or identify
+</li>
+<li>Typically files
+</li>
+<li>Also generated pages, like a user profile
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Again&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Logical set of data
+</li>
+<li>To interact with a concept we need to make it real, or have representation
+of it
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> URI, Resource, Representation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+<div class="figure">
+<p><img src="img/uri-res-rep.png"  alt="uri-res-rep.png"/></p>
+</div>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> discussion&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>next slide details
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Representations&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Exact data that is transfered to client
+</li>
+<li>Resources are abstract, Representations concrete
+</li>
+<li>Example: User resource delivered as HTML or JSON
+</li>
+<li>Example: Class emails delivered as HTML or Excel
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Requesting Representations&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>We'll go over how browsers can request the different representations
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> One Resource per Logical Dataset&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Example: Class emails delivered as HTML or Excel
+</li>
+<li>Sometimes you'll see this as different URLs
+</li>
+<li>Technically incorrect (like the <code>font</code> tag)
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> URLs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li><a href="http://bearfacts.berkeley.edu/studentlist.xls">http://bearfacts.berkeley.edu/studentlist.xls</a>
+</li>
+<li><a href="http://bearfacts.berkeley.edu/studentlist.csv">http://bearfacts.berkeley.edu/studentlist.csv</a>
+</li>
+<li><a href="http://bearfacts.berkeley.edu/studentlist.html">http://bearfacts.berkeley.edu/studentlist.html</a>
+</li>
+<li>Bad! all the same resource, should have the same universal resource identifier!
+</li>
+<li>OK: we know what a resource is. We know what it's representations could be,
+how do we get those resources and interact with them?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>URIs identify a resource
+</li>
+<li>Resources have a representation
+</li>
+<li>Representations can be fetched with HTTP
+</li>
+<li>Why are URLs so important for HyperText?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Let's review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>going over some questions
+</li>
+<li>We need some way to "link" to another resource! Can't just say "The
+teacher's slides" which teacher are you talking about? When two people say
+that in difference classes, are they referring to the same thing?
+</li>
+<li>Same thing with APIs: {id: 242421}. ID of what? a tweet? review? how do I
+access it?
+</li>
+<li>URIs allow us to consistently refer to resources
+</li>
+<li>Not only that, but a UR <b>L</b> specifically instructs the browser on how to
+get a representation of the resource.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> HyperText Transfer Protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>A system for interacting with representations of resources
+</li>
+<li>Text based protocol, running on a network connection
+</li>
+<li>You can interact with a web server by hand!
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>TCP is the network layer, which we'll study later
+</li>
+<li>Basically guarantees that the data we send will either get to the
+computer or we'll get an error
+</li>
+<li>Text means you can write out the protocol with your keyboard
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Demo&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<div class="org-src-container">
+
+<pre class="src src-bash">telnet 128.32.78.16 80
+GET /~jblomo/webarch2014/ HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 20 Sep 2013 06:29:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 20 Sep 2013 06:28:44 GMT
+ETag: "b7f00d0-a5-4e6cac83bff00"
+Accept-Ranges: bytes
+Content-Length: 165
+Content-Type: text/html; charset=UTF-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Jim's Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;p&gt;Hello class! This is a tiny HTML page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> HW&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li>HW sneak peek
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-16">
+
+<div class="figure">
+<p><img src="img/http-stack.gif"  alt="http-stack.gif"/></p>
+</div>
+</div>
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Reliable&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>telnet is somehow transferring our keystrokes to another machine&#x2026;
+</li>
+<li>Magic! For now. We just assume that what we type gets there, will learn how
+in a later course
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Interaction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li><code>GET</code> used in the example to retrieve a representation 
+</li>
+<li>Use a specific, understood set of semantic keywords
+</li>
+<li>Types of interactions called <b>methods</b>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-17-1" class="outline-3">
+<h3 id="sec-17-1"><span class="section-number-3">17.1</span> Question&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-1">
+<ul class="org-ul">
+<li>What resource was it getting?
+</li>
+<li>What does this remind you of? (HTML)
+</li>
+<li>Use one <b>method</b> per <b>request</b>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Request Methods&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-18">
+<dl class="org-dl">
+<dt> GET </dt><dd>Retrieve representation without modifying resource
+</dd>
+<dt> PUT </dt><dd>Send a representation to a specific resource
+</dd>
+<dt> HEAD </dt><dd>Retrieve the metadata without modifying resource
+</dd>
+<dt> DELETE </dt><dd>Remove a resource
+</dd>
+<dt> POST </dt><dd>Send a representation for a new or resource or sub-resource
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Use IRL&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+<dl class="org-dl">
+<dt> GET </dt><dd>used almost everywhere
+</dd>
+<dt> PUT </dt><dd>used increasingly by APIs, still limited browser support. Typically
+will save the representation (eg. in a database)
+</dd>
+<dt> HEAD </dt><dd>sometimes used for efficiency
+</dd>
+<dt> DELETE </dt><dd>used increasingly by APIs, still limited browser support
+</dd>
+<dt> POST </dt><dd>used anytime you want to send data
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>What did we use in the demo?
+</li>
+<li>What should we use to create a new user?
+</li>
+<li>What should we use to update a specific a user's info?
+</li>
+<li>What should we use to discover if a user is registered, but not fetch all
+their data?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-19-1" class="outline-3">
+<h3 id="sec-19-1"><span class="section-number-3">19.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-19-1">
+<ul class="org-ul">
+<li>GET
+</li>
+<li>POST
+</li>
+<li>PUT
+</li>
+<li>HEAD
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> HTTP version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>1.1 used for interacting with customers
+</li>
+<li>1.0 used in data center for some architectures
+</li>
+<li>End users don't choose
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-20-1" class="outline-3">
+<h3 id="sec-20-1"><span class="section-number-3">20.1</span> Flask&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-20-1">
+<ul class="org-ul">
+<li>Refer back to Demo
+</li>
+<li>Flask will use 1.0: it will end the connection on each request
+</li>
+<li>We will go into the differences in another lecture
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Headers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>Provide Metadata about the request
+</li>
+<li><code>Host</code> inform the server which service to request resource from
+</li>
+<li>Multiple "hosts" can be served from one web server
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+<ul class="org-ul">
+<li>refer to demo
+</li>
+<li><code>ischool.berkeley.edu</code> and <code>people.ischool.berkeley.edu</code> could be served
+off same physical server
+</li>
+<li><code>Host</code> header tells the server which we want
+</li>
+<li>Metadata&#x2026; remind you of anything? (HTML)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> To the Server!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>We'll pick up on the server side to get more details
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-18 Thu 23:06</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

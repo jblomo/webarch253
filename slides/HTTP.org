@@ -1,0 +1,346 @@
+* *URIs* and *HTTP* :slide:
+** Questions :notes:
+   + What is the first part of a CSS rule?
+   + How are the selectors and DOM related?
+   + How are the DOM and Javascript related?
+   + What does href in the anchor tag mean?
+   + How are animations accomplished with Javascript?
+
+* URI :slide:
+  + Uniform Resource Identifier
+  + http://www.yelp.com/biz/jupiter-berkeley#query:jupiters
+
+* URI - URL - URN :slide:
+  + URI :: Identifies some resource (eg. person or file)
+  + URL :: Specifies the Location of an identifier
+  + URN :: Specifies the Name of an identifier
+** Use in Industry :notes:
+   + URL used day-to-day
+   + URL technically a type of URI
+   + URL provides both an identifier and a way to locate it (eg. protocol and
+   server)
+   + URN almost never used in the web, though seeing some pickup on mobile (eg.
+   tel:)
+
+* Resource :slide:
+  + Any concept you can name or identify
+  + So far, typically files
+  + Also generated pages, like a user profile
+** Notes :notes:
+   + "Resource" something we'll cover more in depth, but for the common case it
+     is a file
+   + Technically any concept you can "name" or "identify" is a resource
+
+* Components :slide:
+  + http://www.yelp.com/biz/jupiter-berkeley#query:jupiters
+
+** Scheme :slide:
+  + *http*://www.yelp.com/biz/jupiter-berkeley#query:jupiters
+  + specifies how the rest of the URI is laid out
+  + Typically protocols
+** What are examples of Protocols? :notes:
+   + http(s)
+   + git
+   + mailto
+
+** Hierarchical :slide:
+#+BEGIN_HTML
+   <ul><li>http:<b>//www.yelp.com/biz/jupiter-berkeley#query:jupiters</b></li></ul>
+#+END_HTML
+   + "Directions" to the resource through hosts and folders
+
+** Domain / Hostname :slide:
+#+BEGIN_HTML
+   <ul><li>http://<b>www.yelp.com</b>/biz/jupiter-berkeley#query:jupiters</li></ul>
+#+END_HTML
+   + "Site" or machine name
+*** Preview :notes:
+    + Later we'll talk about how the browser connection to the machine
+    + Does the hostname include "http"? Why not?
+
+** Path :slide:
+#+BEGIN_HTML
+   <ul><li>http://www.yelp.com<b>/biz/jupiter-berkeley#query:jupiters</b></li></ul>
+#+END_HTML
+   + Similar to directories, but not necessarily linked!
+   + Groups common resources together
+*** Paths and Directories :notes:
+    + On the command line we've used directories
+    + For ISchool HW, we've seen that paths reflect the underlying directories
+    + But it doesn't have to be the case, as we'll see in the next lecture
+
+** Query (Optional) :slide:
+#+BEGIN_HTML
+   <ul><li>https://www.google.com/<b>?q=ischool&ref=class</b></li></ul>
+#+END_HTML
+   + Starts with =?=
+   + key=value pairs, delimited by &
+
+** Port :slide:
+#+BEGIN_HTML
+   <ul><li>https://www.ischool.berkeley.edu<b>:443</b>/index.php</li></ul>
+#+END_HTML
+   + Specifies a port number to connect to
+   + Ports are like doorways to a server
+   + Common ports: 80 for HTTP, 443 for HTTPS
+*** Ports covered later :notes:
+    + We'll cover ports in more detail later in the class
+    + Used to accept incoming connections
+    + Different servers can run on different ports
+    + Gave away Yelp interview question
+
+** Fragment :slide:
+#+BEGIN_HTML
+   <ul><li>http://en.wikipedia.org/wiki/URI_scheme<b>#Examples</b></li></ul>
+#+END_HTML
+   + http://en.wikipedia.org/wiki/URI_scheme *#Examples*
+   + Specify a sub-resource, eg. a section on a page
+   + Browser will jump to element =id=
+
+** Whole Enchilada :slide:
+#+begin_src text
+  foo://username:password@example.com:8042/over/there/index.dtb?type=animal&name=narwhal#nose
+  \_/   \_______________/ \_________/ \__/            \___/ \_/ \______________________/ \__/
+   |           |               |       |                |    |            |                |
+   |       userinfo         hostname  port              |    |          query          fragment
+   |    \________________________________/\_____________|____|/ \__/        \__/
+   |                    |                          |    |    |    |          |
+scheme              authority                    path   |    |    interpretable as keys
+ name   \_______________________________________________|____|/       \____/     \_____/
+   |                         |                          |    |          |           |
+   |                 hierarchical part                  |    |    interpretable as values
+   |                                                    |    |
+   |            path               interpretable as filename |
+   |   ___________|____________                              |
+  / \ /                        \                             |
+  urn:example:animal:ferret:nose               interpretable as extension
+
+ scheme
+  name  userinfo  hostname       query
+  _|__   ___|__   ____|____   _____|_____
+ /    \ /      \ /         \ /           \
+ mailto:username@example.com?subject=Topic
+#+end_src
+
+* Files :slide:
+  + Chunks of data
+  + Typically =filename.ext=, but not required
+  + An extension only hints at file contents, but does not determine it
+** Defining file types :notes:
+   + We've been dealing with .html files so far, what are other types of files?
+   + What determines a filetype?
+
+* Directories (Folders) :slide:
+  + Group together files 
+
+** Graphical View Directories :slide:
+[[file:img/linux-root.png]]
+
+** Command Line Interface Directories :slide:
+[[file:img/dir-cli.png]]
+
+** Delimiters :slide:
+   + They are specified with a character
+   + =/= on Unix & Apple, =\= on Windows
+   + A starting =/= specifies an "absolute" path
+** Path types :notes:
+   + Absolute :: Specified from the "root" directory.  Doesn't matter which
+     directory you're currently in.
+   + Relative :: Directory name is contained in your current directory
+
+* Don't do this at home :slide:
+  + People on the Internet are mean
+  + =rm -rf /=
+  + Most computers have protections against this
+
+** Password :slide:
+#+begin_src html
+<Cthon98> hey, if you type in your pw, it will show as stars
+<Cthon98> ********* see!
+<AzureDiamond> hunter2
+<AzureDiamond> doesnt look like stars to me
+<Cthon98> <AzureDiamond> *******
+<Cthon98> thats what I see
+<AzureDiamond> oh, really?
+<Cthon98> Absolutely
+<AzureDiamond> you can go hunter2 my hunter2-ing hunter2
+<AzureDiamond> haha, does that look funny to you?
+<Cthon98> lol, yes. See, when YOU type hunter2, it shows to us as *******
+<AzureDiamond> thats neat, I didnt know IRC did that
+<Cthon98> yep, no matter how many times you type hunter2, it will show to us as *******
+<AzureDiamond> awesome!
+<AzureDiamond> wait, how do you know my pw?
+<Cthon98> er, I just copy pasted YOUR ******'s and it appears to YOU as hunter2 cause its your pw
+<AzureDiamond> oh, ok.
+#+end_src
+
+* Resource :slide:
+  + Any concept you can name or identify
+  + Typically files
+  + Also generated pages, like a user profile
+** Again :notes:
+   + Logical set of data
+   + To interact with a concept we need to make it real, or have representation
+     of it
+
+* URI, Resource, Representation :slide:
+  [[file:img/uri-res-rep.png]]
+** discussion :notes:
+   + next slide details
+
+* Representations :slide:
+  + Exact data that is transfered to client
+  + Resources are abstract, Representations concrete
+  + Example: User resource delivered as HTML or JSON
+  + Example: Class emails delivered as HTML or Excel
+** Requesting Representations :notes:
+   + We'll go over how browsers can request the different representations
+
+* One Resource per Logical Dataset :slide:
+  + Example: Class emails delivered as HTML or Excel
+  + Sometimes you'll see this as different URLs
+  + Technically incorrect (like the =font= tag)
+** URLs :notes:
+   + http://bearfacts.berkeley.edu/studentlist.xls
+   + http://bearfacts.berkeley.edu/studentlist.csv
+   + http://bearfacts.berkeley.edu/studentlist.html
+   + Bad! all the same resource, should have the same universal resource identifier!
+   + OK: we know what a resource is. We know what it's representations could be,
+     how do we get those resources and interact with them?
+
+* Review :slide:
+  + URIs identify a resource
+  + Resources have a representation
+  + Representations can be fetched with HTTP
+  + Why are URLs so important for HyperText?
+** Let's review :notes:
+   + going over some questions
+   + We need some way to "link" to another resource! Can't just say "The
+     teacher's slides" which teacher are you talking about? When two people say
+     that in difference classes, are they referring to the same thing?
+   + Same thing with APIs: {id: 242421}. ID of what? a tweet? review? how do I
+     access it?
+   + URIs allow us to consistently refer to resources
+   + Not only that, but a UR *L* specifically instructs the browser on how to
+     get a representation of the resource.
+
+* HyperText Transfer Protocol :slide:
+  + A system for interacting with representations of resources
+  + Text based protocol, running on a network connection
+  + You can interact with a web server by hand!
+** Details :notes:
+   + TCP is the network layer, which we'll study later
+   + Basically guarantees that the data we send will either get to the
+     computer or we'll get an error
+   + Text means you can write out the protocol with your keyboard
+
+* Demo :slide:
+#+begin_src bash
+telnet 128.32.78.16 80
+GET /~jblomo/webarch2014/ HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 20 Sep 2013 06:29:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 20 Sep 2013 06:28:44 GMT
+ETag: "b7f00d0-a5-4e6cac83bff00"
+Accept-Ranges: bytes
+Content-Length: 165
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jim's Page</title>
+    </head>
+    <body>
+        <p>Hello class! This is a tiny HTML page.</p>
+    </body>
+</html>
+#+end_src
+** HW :notes:
+   + HW sneak peek
+
+* Network :slide:center:
+  [[file:img/http-stack.gif]]
+** Reliable :notes:
+   + telnet is somehow transferring our keystrokes to another machine...
+   + Magic! For now. We just assume that what we type gets there, will learn how
+     in a later course
+
+* Interaction :slide:
+  + =GET= used in the example to retrieve a representation 
+  + Use a specific, understood set of semantic keywords
+  + Types of interactions called *methods*
+** Question :notes:
+   + What resource was it getting?
+   + What does this remind you of? (HTML)
+   + Use one *method* per *request*
+
+* Request Methods :slide:
+  + GET :: Retrieve representation without modifying resource
+  + PUT :: Send a representation to a specific resource
+  + HEAD :: Retrieve the metadata without modifying resource
+  + DELETE :: Remove a resource
+  + POST :: Send a representation for a new or resource or sub-resource
+** Use IRL :notes:
+   + GET :: used almost everywhere
+   + PUT :: used increasingly by APIs, still limited browser support. Typically
+     will save the representation (eg. in a database)
+   + HEAD :: sometimes used for efficiency
+   + DELETE :: used increasingly by APIs, still limited browser support
+   + POST :: used anytime you want to send data
+
+* Review :slide:
+  + What did we use in the demo?
+  + What should we use to create a new user?
+  + What should we use to update a specific a user's info?
+  + What should we use to discover if a user is registered, but not fetch all
+    their data?
+** Answers :notes:
+   + GET
+   + POST
+   + PUT
+   + HEAD
+
+* HTTP version :slide:
+  + 1.1 used for interacting with customers
+  + 1.0 used in data center for some architectures
+  + End users don't choose
+** Flask :notes:
+   + Refer back to Demo
+   + Flask will use 1.0: it will end the connection on each request
+   + We will go into the differences in another lecture
+
+* Headers :slide:
+  + Provide Metadata about the request
+  + =Host= inform the server which service to request resource from
+  + Multiple "hosts" can be served from one web server
+** Example :notes:
+   + refer to demo
+   + =ischool.berkeley.edu= and =people.ischool.berkeley.edu= could be served
+     off same physical server
+   + =Host= header tells the server which we want
+   + Metadata... remind you of anything? (HTML)
+
+* To the Server! :slide:
+  + We'll pick up on the server side to get more details
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

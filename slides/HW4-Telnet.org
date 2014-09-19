@@ -1,0 +1,92 @@
+* Talking HTTP :slide:
+  + Communicate with a server by typing
+  + Run our own webserver
+  + Report what we see
+
+* Communicate with a server by typing :slide:
+#+begin_src bash
+host yelp.com
+yelp.com has address 198.51.132.160
+...
+
+telnet 198.51.132.160 80
+GET / HTTP/1.1
+Host: www.yelp.com
+
+HTTP/1.1 200 OK
+Date: Fri, 19 Sep 2014 06:16:32 GMT
+Server: Apache
+Content-Length: 121594
+...
+
+<!DOCTYPE HTML>
+#+end_src
+** Secret :notes:
+   + =telnet= will do this host lookup for us
+   + BUT we still must speak proper HTTP: ie specifying the =Host= header
+   + As if you were to see someone at an office. Drive to the office, but once
+     you show up, have to tell front desk who you're there to see
+   + Lot's of people in a building, lots of hosts on an IP
+   + To get out of Telnet: ^], ^D
+
+* Run webserver :slide:
+#+begin_src bash
+cd webarch2014
+git checkout master
+git pull jblomo master
+git checkout -b hw4-telnet
+
+./server/app.py
+ * Running on http://127.0.0.1:60001/
+#+end_src
+ + http://people.ischool.berkeley.edu/~jblomo/server/home
+
+* Proxy :slide:center:
+  [[file:img/ischool-proxy.png]]
+** people => app.py :notes:
+   + Apache is proxying requests from your paths to your individual app.py
+   + If your app.py is not running, will get an error
+   + This is setup by Kevin in helpdesk, let us know if the mapping is not
+     working
+
+* Communicate with our webserver :slide:
+  + Keep =server/app.py= running, open another window
+#+begin_src bash
+telnet 127.0.0.1 $FLASK_PORT
+GET /home HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 228
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 14 Sep 2014 05:44:08 GMT
+#+end_src
+
+* HW Questions :slide:
+  1. Using =127.0.0.1 $FLASK_PORT=
+    1. What is the return code for =GET /home HTTP/1.1=?
+    1. What is the return code for =GET /wiki HTTP/1.1=?
+      1. What is the next HTTP statement a browser would send after this return
+        code? (provide the statement as you would type it into telnet)
+    1. What is the return code for =PUT /wiki HTTP/1.1=?
+  1. Explain what happens when your browser loads http://people.ischool.berkeley.edu/~<USER>/server/wiki from sending the request to loading HTML
+  1. What is the return code for http://people.ischool.berkeley.edu/~<USER>/server/ ?
+
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

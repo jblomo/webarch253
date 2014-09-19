@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Server</title>
+<!-- 2014-09-18 Thu 23:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Server</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>HTTP</b> and <b>Servers</b></a></li>
+<li><a href="#sec-2">2. Servers Return Representations</a></li>
+<li><a href="#sec-3">3. What resource to return?</a>
+<ul>
+<li><a href="#sec-3-1">3.1. With hostname and Path</a></li>
+<li><a href="#sec-3-2">3.2. Hostname/Path =&gt; Resource</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Webserver</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Gets old</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Extrapolate</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Webserver usage</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Missing file?</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Ambiguous</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. HTTP Response Codes</a>
+<ul>
+<li><a href="#sec-7-1">7.1. In addition to content!</a></li>
+<li><a href="#sec-7-2">7.2. HTTP Response Numbers</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Demo 200 OK</a></li>
+<li><a href="#sec-9">9. 300s :: Redirect</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Difference?</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. 400s :: Client errors</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Hooray</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. 500s :: Server Errors</a>
+<ul>
+<li><a href="#sec-11-1">11.1. See this?</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Fun</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Games, etc.</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Response Headers</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Reading</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. How Many Resources?</a>
+<ul>
+<li><a href="#sec-14-1">14.1. To load a modern page</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. HTTP Versions</a>
+<ul>
+<li><a href="#sec-15-1">15.1. HTTP Connection Handling</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. HTTP Versions</a>
+<ul>
+<li><a href="#sec-16-1">16.1. HTTP Connection Handling</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17. Why have different protocols?</a></li>
+<li><a href="#sec-18">18. Review</a>
+<ul>
+<li><a href="#sec-18-1">18.1. No?</a></li>
+<li><a href="#sec-18-2">18.2. Review URI</a>
+<ul>
+<li><a href="#sec-18-2-1">18.2.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-18-3">18.3. Review Paths</a>
+<ul>
+<li><a href="#sec-18-3-1">18.3.1. Answers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>HTTP</b> and <b>Servers</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Servers Return Representations&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Homework will be writing code to return HTML
+</li>
+<li>How do we decide which HTML to send?
+</li>
+<li>How do we use methods and headers?
+</li>
+<li>How do we represent errors?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> What resource to return?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>How are resources specified?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> With hostname and Path&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><code>people.ischool.berkeley.edu</code>
+</li>
+<li><code>/~rena/webarch2014/index.html</code>
+<ul class="org-ul">
+<li>Absolute path?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Hostname/Path =&gt; Resource&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li><a href="http://people.ischool.berkeley.edu/~rena/webarch2014/index.html">http://people.ischool.berkeley.edu/~rena/webarch2014/index.html</a>
+</li>
+<li>How to specify hostname in <b>HTTP</b>?
+</li>
+<li>How to specify path?
+</li>
+<li>What method to use?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Webserver&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Associate <code>/~rena/webarch2014/index.html</code> with <code>/home/rena/public_html/webarch2014/index.html</code>
+</li>
+<li>Associate  <code>/~rena/webarch2014/colors.css</code> with <code>/home/rena/public_html/webarch2014/colors.css</code>
+</li>
+<li>Associate &#x2026;
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Gets old&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Instead of associating each file&#x2026;
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Extrapolate&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Associate everything in <code>/~rena/</code> with everything in <code>/home/rena/public_html/</code>
+</li>
+<li>This is a common feature of most webservers
+</li>
+<li><code>Apache</code> the most popular
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/wpid-overalld.png"  alt="wpid-overalld.png"/></p>
+</div>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Webserver usage&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Apache is an open source webserver, one of the original
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Missing file?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>What should we do if we request a file that is not there?
+</li>
+<li>Return "Oops!"
+</li>
+<li>Return nothing?
+</li>
+<li>Return standard HTML?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Ambiguous&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>What about different languages?
+</li>
+<li>What about pages that you want to title "Oops!"
+</li>
+<li>How to tell the difference between an error and no data?
+</li>
+<li>What if you aren't expecting HTML? Wanted JSON?
+</li>
+<li>Don't take these for granted. You are the innovators.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> HTTP Response Codes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Numbers are unambiguous, can be read by machines
+</li>
+<li>Always return a response code
+</li>
+<li>Return text as well for human readability
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> In addition to content!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>In addition to content, we will return a response code
+</li>
+<li>Response code tell us how we're handling the request, how the content
+should be interpreted 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> HTTP Response Numbers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+<dl class="org-dl">
+<dt> 200s </dt><dd>OK
+</dd>
+<dt> 300s </dt><dd>Redirect
+</dd>
+<dt> 400s </dt><dd>Client errors
+</dd>
+<dt> 500s </dt><dd>Server errors
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Demo 200 OK&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+
+<pre class="src src-bash">telnet 128.32.78.16 80
+GET /~jblomo/webarch2014/ HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 20 Sep 2014 06:29:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 20 Sep 2014 06:28:44 GMT
+ETag: "b7f00d0-a5-4e6cac83bff00"
+Accept-Ranges: bytes
+Content-Length: 165
+Content-Type: text/html; charset=UTF-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Jim's Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;p&gt;Hello class! This is a tiny HTML page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> 300s :: Redirect&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<dl class="org-dl">
+<dt> 301 </dt><dd>Permanent Redirect
+</dd>
+<dt> 302 </dt><dd>Temporary Redirect
+</dd>
+<dt> <code>Location</code> </dt><dd>Header with URI of target
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Difference?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<dl class="org-dl">
+<dt> Permanent </dt><dd>Resource has moved (Another server, etc.) update your
+bookmarks or links
+</dd>
+<dt> Temporary </dt><dd>Site is down, play elevator music
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> 400s :: Client errors&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<dl class="org-dl">
+<dt> 404 </dt><dd>Resource Not Found
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Hooray&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<div class="org-src-container">
+
+<pre class="src src-bash">telnet 128.32.78.16 80
+GET /~jblomo/notfound.html HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 404 Not Found
+Date: Fri, 14 Sep 2012 06:07:58 GMT
+Server: Apache/2.2.22 (Fedora)
+Content-Length: 312
+Content-Type: text/html; charset=iso-8859-1
+
+&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL /~jblomo/notfound.html was not found on this server.&lt;/p&gt;
+&lt;hr&gt;
+&lt;address&gt;Apache/2.2.22 (Fedora) Server at people.ischool.berkeley.edu Port 80&lt;/address&gt;
+&lt;/body&gt;&lt;/html&gt;
+Connection closed by foreign host.
+</pre>
+</div>
+<ul class="org-ul">
+<li>We solved our problem: making a request for a file that's not there
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> 500s :: Server Errors&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<dl class="org-dl">
+<dt> 500 </dt><dd>Internal Server Error (Hard drive on fire)
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> See this?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>You might have a code problem
+</li>
+<li>Check your logs
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Fun&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>When things go wrong, chance to play
+</li>
+<li><a href="http://heyzap.com/404">HeyZap</a>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Games, etc.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>HeyZap built this during a hackathon
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Response Headers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Gave metadata about request
+</li>
+<li>Return metadata about response
+</li>
+<li>Size, Representation, Language
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Reading&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li><a href="http://www.cs.tut.fi/~jkorpela/http.html">Headers</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> How Many Resources?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>HTML
+</li>
+<li>CSS
+</li>
+<li>Javascript
+</li>
+<li>Images
+</li>
+<li>&#x2026;
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> To load a modern page&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>Of then need to make many, dozens of these requests
+</li>
+<li>It takes time to make the network (telnet) connection
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> HTTP Versions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<dl class="org-dl">
+<dt> 1.0 </dt><dd>Make a new connection each time
+</dd>
+<dt> 1.1 </dt><dd>Optionally use same connection
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> HTTP Connection Handling&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+
+<div class="figure">
+<p><img src="img/http-phttp-pipelining.png"  alt="http-phttp-pipelining.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> HTTP Versions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+<dl class="org-dl">
+<dt> 1.0 </dt><dd>Serve one resource at a time
+</dd>
+<dt> 1.1 </dt><dd>Accept requests while sending resources
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> HTTP Connection Handling&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+
+<div class="figure">
+<p><img src="img/http-phttp-pipelining.png"  alt="http-phttp-pipelining.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Why have different protocols?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>HTTP is about resource manipulation
+</li>
+<li>Specifying what you want to do with a resource
+</li>
+<li>How it is represented
+</li>
+<li>Optimized for web browsing
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>Questions?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> No?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+<ul class="org-ul">
+<li>Great, I can start calling on people
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-18-2" class="outline-3">
+<h3 id="sec-18-2"><span class="section-number-3">18.2</span> Review URI&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-18-2">
+<ul class="org-ul">
+<li>What is a URL?
+</li>
+<li>What is an example resource?
+</li>
+<li>What is an example non-HTML representation?
+</li>
+<li><code>mailto:jblomo@ischool.berkeley.edu</code>
+What is the schema?
+</li>
+<li><code>file://WebArch-253/2012-09-14-HTTP.html#sec-4-9</code>
+What is the fragment?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-18-2-1" class="outline-4">
+<h4 id="sec-18-2-1"><span class="section-number-4">18.2.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-18-2-1">
+<ul class="org-ul">
+<li>Uniform Resource Locator
+</li>
+<li>User profile picture
+</li>
+<li>Image (jpeg, png)
+</li>
+<li>mailto (email)
+</li>
+<li>sec-4-9
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3" class="outline-3">
+<h3 id="sec-18-3"><span class="section-number-3">18.3</span> Review Paths&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-18-3">
+<ul class="org-ul">
+<li>Relative or absolute?
+<ul class="org-ul">
+<li><i>home/jblomo/public_html/i253</i>
+</li>
+<li>public_html/i253/
+</li>
+<li>Do these point to the same place?
+</li>
+</ul>
+</li>
+<li>What does the file <code>page.html</code> contain?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-18-3-1" class="outline-4">
+<h4 id="sec-18-3-1"><span class="section-number-4">18.3.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-18-3-1">
+<ul class="org-ul">
+<li>paths
+<ul class="org-ul">
+<li>absolute
+</li>
+<li>relative
+</li>
+<li>maybe, depends on your current directory
+</li>
+</ul>
+</li>
+<li>Data. We don't know more.
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-18 Thu 23:13</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>
