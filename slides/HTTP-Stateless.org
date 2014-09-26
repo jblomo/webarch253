@@ -2,6 +2,7 @@
 
 * Announcements :slide:
   + Online class next week
+  + madlibs: Grades this coming week
 
 * Review :slide:
   [[file:img/overview.png]]
@@ -13,14 +14,18 @@
   + The client interprets the reply (eg. HTML), renders it, runs Javascript
   + Repeat
 ** Next :notes:
-   + URLs start with a? schema
-   + How to know what machine to connect to? host/server name
    + Could connect to any web server in a data center, racks of machines
    + TCP/IP covered next week: it is a way to transfer raw data
    + What does an HTTP command start with? method (eg. GET POST etc)
    + What's the header we used in HW? Host
 
-* Demo :slide:
+* URL :slide:
+http://people.ischool.berkeley.edu/~jblomo/webarch2014/index.html
+** Questions :notes:
+   + URLs start with a? schema
+   + How to know what machine to connect to? host/server name
+
+* HTTP :slide:
 #+begin_src bash
 telnet 128.32.78.16 80
 GET /~jblomo/webarch2014/index.html HTTP/1.1
@@ -46,10 +51,19 @@ Content-Type: text/html; charset=UTF-8
     </body>
 </html>
 #+end_src
+** Questions :notes:
+   + Sends back HTML
+   + How does the browser organize the HTML? What kind of datastructure?  DOM/tree
+   + Know how to write the DOM tree
+   + At a high level, how would we use Javascript to change the color of the
+     paragraph text?
+   + Where does the Javascript run to do this? 
+   + At a high level, how would we implement infinite scroll on this page?
+   + What protocol would be used to fetch more content?
 
 * Protocols and State :slide:
   + State :: associated information
-  + Stateful :: Commands depend on history of actions
+  + Stateful :: Interpretation depends on history of actions
   + Stateless :: Commands cannot access history
 ** State :notes:
    + State is information associated with some item that determines how you can
@@ -75,7 +89,7 @@ Content-Type: text/html; charset=UTF-8
    + who specifically you are talking to. Calling a bank could talk to any
      individual. Very similar
 
-* SSH is Stateful :slide:
+* SSH/Terminal is Stateful :slide:
   + Relative directories depend on previous =cd= commands
   + Interactive sessions
   + Don't have to resend login information each command
@@ -235,7 +249,7 @@ From [[http://en.wikipedia.org/wiki/List_of_HTTP_status_codes][List of HTTP stat
 * Requirements :slide:
   + The data will be frequently modified by the user
   + Must serve pages as cheaply as possible
-  + Must be able to send pages to another server
+  + Must be able to copy pages to another server
   + Designers must iterate on site design
   + Like Wikipedia, must create links to new pages in old
 ** Advantage :notes:

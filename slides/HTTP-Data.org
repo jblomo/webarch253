@@ -236,6 +236,23 @@ Stored wiki => http://disney.com
    + What do I change to add an extra parameter to this PUT request?
      + =Content-Length= and append =&key=value=
 
+* Forms & HTTP :slide:
+#+begin_src html
+<form method="GET">
+  <input type="text" name="school"/>
+  <input type="checkbox" name="classes" value="i253"/>
+  <input type="checkbox" name="classes" value="cs61a"/>
+  <input type="submit"/>
+</form>
+#+end_src
+
+#+begin_src text
+?school=Berkeley&classes=i253&classes=cs61a
+#+end_src
+** Interpretation :notes:
+   + Most frameworks change multiple names to a list of values
+   + Changing method to POST will send data via post request
+   + When do you want to do this?
 
 * Review =Content-Type= :slide:
   + Request header used to describe data being sent
