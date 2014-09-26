@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Project1</title>
+<!-- 2014-09-25 Thu 23:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Project1</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Project: URL shortener</a></li>
+<li><a href="#sec-2">2. Project Overview</a></li>
+<li><a href="#sec-3">3. Dates</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Part 1 Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Sharing Code</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Keep In Mind</a></li>
+<li><a href="#sec-4-2">4.2. Extra Credit: Adding bitly Features</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. <code>app.py</code></a>
+<ul>
+<li><a href="#sec-5-1">5.1. DB</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Project: URL shortener&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Demo: <a href="http://bitly.com">bitly</a>
+</li>
+<li>This project is simpler
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Project Overview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Teams of up to <b>4</b>
+</li>
+<li>Part 1: Implement select feature set
+</li>
+<li>Part 2: Get creative! Implement product ideas
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Dates&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Oct 30th: Part 1 due
+</li>
+<li>Nov 13th: Optional Part 2 Proposal
+</li>
+<li>Dec 4th: Project Code Due
+</li>
+<li>Dec 12th: Class presentation
+</li>
+<li>Dec 19th: Technical report due
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Part 1 Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ol class="org-ol">
+<li>Update <code>templates/home.html</code> to create a form with 2 text fields: the short path, and the long url.
+<ol class="org-ol">
+<li>Use the <code>label</code> tag to label the text fields.
+</li>
+<li>Improve the HTML with at least 4 non-form tag types.
+</li>
+<li>HTML must <a href="http://validator.w3.org/">validate</a>.
+</li>
+<li>Improve the CSS with at least 4 new selectors.
+</li>
+<li>Improve the CSS with at least 4 new properties.
+</li>
+<li>CSS must <a href="http://jigsaw.w3.org/css-validator/">validate</a>.
+</li>
+<li>Use Javascript to ensure the short path is only letters before the
+submit button can be clicked.
+</li>
+</ol>
+</li>
+<li>The form must <code>POST</code> a request to <code>server/shorts</code> to create a new association between the short name and the long url.
+</li>
+<li><code>server/shorts</code> must return HTML with information about the new association.
+</li>
+<li>Future attempts to <code>GET</code> <code>server/short/&lt;name&gt;</code> must redirect to the long url.
+</li>
+<li>Attempts to <code>GET</code> <code>server/short/&lt;name&gt;</code> where &lt;name&gt; has no association must return <code>404 NOT FOUND</code>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Sharing Code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>One member create a fork of webarch2014 -&gt; project-webarch
+</li>
+<li>Add collaborators (incl instructors) to new fork
+</li>
+<li><code>git clone</code> forked repository to ischool server
+</li>
+<li>Turn in your homework via personal, project via fork
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Keep In Mind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Suggest using same workflow as homework: <code>checkout -b</code> for a new feature,
+issue a pull request, get someone on your team to review, merge into master
+</li>
+<li>You can only run one <code>server/app.py</code> at a time &#x2013; even from different
+directories
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Extra Credit: Adding bitly Features&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Automatically choose short path
+</li>
+<li>Use the same short path for existing URLs
+</li>
+<li>Only applies to Part 1
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> <code>app.py</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Comments and docstrings
+</li>
+<li><code>@app.route</code> associates a path to a representation
+</li>
+<li><code>request.args.get</code> dictionary to access <code>GET</code> query arguments
+</li>
+<li><code>render_template</code> will render the file in <code>templates/</code>
+</li>
+<li><code>make_response</code> is generating an image
+</li>
+<li><code>/wiki</code> is a semi-working redirector to use in HW
+</li>
+<li><code>request.form.get</code> is a dictionary to access <code>POST</code> data
+</li>
+<li><code>db</code> is a dictionary that acts like a database
+</li>
+<li><code>app.logger.debug</code> will print out variables when requests are made
+</li>
+<li><code>flask.redirect</code> will send the correct headers and response code. Just give
+it a URL
+</li>
+<li>compiling errors: restart <code>app.py</code>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> DB&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>DB will be personalized to you. Collaborators will not be able to edit your
+DB by default.
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-25 Thu 23:56</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

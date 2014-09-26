@@ -1,0 +1,80 @@
+* Project: URL shortener :slide:
+  + Demo: [[http://bitly.com][bitly]]
+  + This project is simpler
+
+* Project Overview :slide:
+  + Teams of up to *4*
+  + Part 1: Implement select feature set
+  + Part 2: Get creative! Implement product ideas
+
+* Dates :slide:
+  + Oct 30th: Part 1 due
+  + Nov 13th: Optional Part 2 Proposal
+  + Dec 4th: Project Code Due
+  + Dec 12th: Class presentation
+  + Dec 19th: Technical report due
+
+** Part 1 Details :slide:
+   1. Update =templates/home.html= to create a form with 2 text fields: the short path, and the long url.
+      1. Use the =label= tag to label the text fields.
+      1. Improve the HTML with at least 4 non-form tag types.
+      1. HTML must [[http://validator.w3.org/][validate]].
+      1. Improve the CSS with at least 4 new selectors.
+      1. Improve the CSS with at least 4 new properties.
+      1. CSS must [[http://jigsaw.w3.org/css-validator/][validate]].
+      1. Use Javascript to ensure the short path is only letters before the
+         submit button can be clicked.
+   1. The form must =POST= a request to =server/shorts= to create a new association between the short name and the long url.
+   1. =server/shorts= must return HTML with information about the new association.
+   1. Future attempts to =GET= =server/short/<name>= must redirect to the long url.
+   1. Attempts to =GET= =server/short/<name>= where <name> has no association must return =404 NOT FOUND=
+
+* Sharing Code :slide:
+  + One member create a fork of webarch2014 -> project-webarch
+  + Add collaborators (incl instructors) to new fork
+  + =git clone= forked repository to ischool server
+  + Turn in your homework via personal, project via fork
+** Keep In Mind :notes:
+   + Suggest using same workflow as homework: =checkout -b= for a new feature,
+     issue a pull request, get someone on your team to review, merge into master
+   + You can only run one =server/app.py= at a time -- even from different
+     directories
+
+** Extra Credit: Adding bitly Features :slide:
+   + Automatically choose short path
+   + Use the same short path for existing URLs
+   + Only applies to Part 1
+
+* =app.py= :slide:
+  + Comments and docstrings
+  + =@app.route= associates a path to a representation
+  + =request.args.get= dictionary to access =GET= query arguments
+  + =render_template= will render the file in =templates/=
+  + =make_response= is generating an image
+  + =/wiki= is a semi-working redirector to use in HW
+  + =request.form.get= is a dictionary to access =POST= data
+  + =db= is a dictionary that acts like a database
+  + =app.logger.debug= will print out variables when requests are made
+  + =flask.redirect= will send the correct headers and response code. Just give
+    it a URL
+  + compiling errors: restart =app.py=
+** DB :notes:
+   + DB will be personalized to you. Collaborators will not be able to edit your
+     DB by default.
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HTTP-Data</title>
+<!-- 2014-09-25 Thu 23:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">HTTP-Data</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Sending Data with HTTP</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Arguments</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Query Arguments</a></li>
+<li><a href="#sec-3">3. Key-Value pairs in Programming</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Dictionary variable</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. GET Review</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. GET Request</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Parts of Response</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. <code>Content-Type</code> Header</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Names</a></li>
+<li><a href="#sec-6-2">6.2. Format</a></li>
+<li><a href="#sec-6-3">6.3. Type / Subtype</a></li>
+<li><a href="#sec-6-4">6.4. Extensible</a></li>
+<li><a href="#sec-6-5">6.5. Extensible X-</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Pranks with <code>Content-Type</code></a>
+<ul>
+<li><a href="#sec-7-1">7.1. Details</a></li>
+<li><a href="#sec-7-2">7.2. Flip Images</a></li>
+<li><a href="#sec-7-3">7.3. Free WiFi revenge</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. POST &amp; PUT Data</a>
+<ul>
+<li><a href="#sec-8-1">8.1. POST &amp; PUT Data</a></li>
+<li><a href="#sec-8-2">8.2. Elements</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. POST in practice</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Changing</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Query Arguments</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Encoding</a></li>
+<li><a href="#sec-10-2">10.2. URL Encoding</a></li>
+<li><a href="#sec-10-3">10.3. Tips</a></li>
+<li><a href="#sec-10-4">10.4. HTML Encoding</a></li>
+<li><a href="#sec-10-5">10.5. Tips</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Encoding Schemes</a>
+<ul>
+<li><a href="#sec-11-1">11.1. HTTP Encoding =&gt; HTML Encoding</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. POST &amp; PUT Data</a>
+<ul>
+<li><a href="#sec-12-1">12.1. More</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Review <code>Content-Type</code></a>
+<ul>
+<li><a href="#sec-13-1">13.1. Homework</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Sending Data with HTTP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<dl class="org-dl">
+<dt> GET </dt><dd>Query arguments in URL
+</dd>
+<dt> POST </dt><dd>Data in request body
+</dd>
+<dt> PUT </dt><dd>Data in request body
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Arguments&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Generally, the set of inputs to a function
+</li>
+<li>Also called parameters
+</li>
+<li>Functions take data in, return data out
+</li>
+<li>HTTP calls can be conceptualized as functions (though just one metaphor)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Query Arguments&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>?name=Jim&amp;title=i253
+</li>
+<li>Typically used in GET requests
+</li>
+<li>Key-Value pairs delimited by =, separated by &amp;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Key-Value pairs in Programming&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Hash, Dictionary, HashMap, map
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">dictionary[key] = value
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Dictionary variable&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>one variable with many values inside
+</li>
+<li>Dictionary: word to meaning
+</li>
+<li>Map: Mathematical term for turning one set of values into another
+</li>
+<li>Hash: CS method of storing a dictionary
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> GET Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>What does GET do?
+</li>
+<li>Should GET modify a resource?
+</li>
+<li>How is data passed to GET?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Request a representation of a resource
+</li>
+<li>No
+</li>
+<li>Query Arguments / Parameters
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> GET Request&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-http">GET /home?name=World&amp;title=Hello HTTP/1.1
+Host: localhost
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 231
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 21 Sep 2012 04:17:46 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+    &lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;title&gt;Hello&lt;/title&gt;
+	&lt;link rel="stylesheet" href="static/css/default.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;div class="container"&gt;
+	    Hello World
+	&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Parts of Response&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Headers
+<ul class="org-ul">
+<li>Key-Value pairs, separated by <code>:</code>
+</li>
+</ul>
+</li>
+<li>Then data
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> <code>Content-Type</code> Header&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Describes what format the data is in
+</li>
+<li>MIME: Multipurpose Internet Mail Extensions
+</li>
+<li>Internet Media Type, Content-Type
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Names&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Usually referred to as MIME type, though acronym has Mail in it
+</li>
+<li>Used throughout systems, from Internet to OS (what application to open)
+</li>
+<li>So it can be referred to by other names
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Format&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-2">
+<dl class="org-dl">
+<dt> MIME </dt><dd><i>type</i> / <i>subtype</i> ; parameters
+</dd>
+<dt> type </dt><dd>the general category of data
+</dd>
+<dt> subtype </dt><dd>formats, encodings
+</dd>
+<dt> parameters </dt><dd>extra information that applies to that subtype
+</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Type / Subtype&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-3">
+<dl class="org-dl">
+<dt> type </dt><dd>text, image, audio, video
+</dd>
+<dt> subtype </dt><dd>plain, png, mpeg, ogg
+</dd>
+<dt> parameters </dt><dd>charset, version number, &#x2026;
+</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Extensible&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>Common MIME types are registered
+</li>
+<li><code>text/plain</code> <code>image/png</code> <code>audio/mpeg</code>
+</li>
+<li>Make up your own with <code>vnd.</code>, <code>prs.</code>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> Extensible X-&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>Formerly, <code>x-</code> was used for experimental types, but has been removed due to
+conflicts and difficulty in bringing to production
+</li>
+<li><code>vnd.</code> for vendors, <code>prs.</code> for personal, <code>x.</code> for backward compatibility
+</li>
+<li><code>application/x-www-form-urlencoded</code> started without getting registered,
+continued on
+</li>
+<li><code>X-</code> a common theme. You'll see it in Headers as well, but is now not good
+practice
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Pranks with <code>Content-Type</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="img/wet.jpg"  alt="wet.jpg"/></p>
+</div>
+<ul class="org-ul">
+<li>Install a proxy
+</li>
+<li>Detect images
+</li>
+<li>Make them wet
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>A proxy acts as a go-between for clients (eg. in an office) and servers
+</li>
+<li>Proxy can modify a request or response
+</li>
+<li>Image manipulation libraries can alter images
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Flip Images&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+
+<div class="figure">
+<p><img src="img/flip_image screenshot.png"  alt="flip_image screenshot.png"/></p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Free WiFi revenge&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Noticed someone using wifi
+</li>
+<li>Installed proxy to flip all the images
+</li>
+<li><a href="http://www.ex-parrot.com/pete/upside-down-ternet.html">http://www.ex-parrot.com/pete/upside-down-ternet.html</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> POST &amp; PUT Data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Requests have metadata (Headers)
+</li>
+<li>Requests can have data, too
+</li>
+<li>Data is formated similarly to query arguments
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> POST &amp; PUT Data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+
+<pre class="src src-http">PUT /wiki HTTP/1.1
+Host: localhost
+Content-Length: 21
+Content-Type: application/x-www-form-urlencoded
+
+url=http://disney.com
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 32
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 21 Sep 2012 04:24:43 GMT
+
+Stored wiki =&gt; http://disney.com
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Elements&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>Still using Host header
+</li>
+<li>Content-Length: number of bytes in the data section
+</li>
+<li>Content-Type: How the content is formated
+</li>
+<li><code>application/x-www-form-urlencoded</code> means encoded like GET query arguments
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> POST in practice&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Most browsers only support <code>GET</code>, <code>POST</code>
+</li>
+<li>HTML5 (currently) only supports <code>GET</code>, <code>POST</code>
+</li>
+<li>So resource accessed by browsers, use <code>POST</code> for all modifying interactions
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Changing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>AJAX requests generally work with all methods
+</li>
+<li>Can "tunnel" requests by using a hidden field, \<sub>method</sub>="DELETE"
+</li>
+<li>Keep up with standard
+</li>
+<li><a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671">https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671</a>
+</li>
+<li>For APIs, use appropriate methods
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Query Arguments&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Delimited by =, separated by <code>&amp;</code>
+</li>
+<li>What happens if you want to send a <code>?</code>
+</li>
+<li>What happens if you want to send a <code>&amp;</code>?
+</li>
+<li>Just like HTML we need to <b>encode</b> the data
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Encoding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>Map one representation of data to another
+</li>
+<li>Map normal text to a format accepted by HTTP query params
+</li>
+<li>Map special characters to the hexidecimal representation
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> URL Encoding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-2">
+<dl class="org-dl">
+<dt> = </dt><dd><code>%3D</code>
+</dd>
+<dt> &amp; </dt><dd><code>%26</code>
+</dd>
+<dt> space </dt><dd><code>%20</code>
+</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-sec-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> Tips&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li><a href="http://www.asciitable.com/">ASCII to hex</a>
+</li>
+<li><a href="http://meyerweb.com/eric/tools/dencoder/">URL Decoder/Encoder</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> HTML Encoding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-10-4">
+<dl class="org-dl">
+<dt> &lt; </dt><dd><code>&amp;lt;</code>
+</dd>
+<dt> &amp; </dt><dd><code>&amp;amp;</code>
+</dd>
+<dt> &gt; </dt><dd><code>&amp;gt;</code>
+</dd>
+<dt> ☃ </dt><dd><code>&amp;#9731;</code>
+</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-sec-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> Tips&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>You can encode any character with decimal or hex encoding
+</li>
+<li><a href="http://www.w3.org/International/questions/qa-escapes">http://www.w3.org/International/questions/qa-escapes</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Encoding Schemes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<div class="org-src-container">
+
+<pre class="src src-html">GET /home?name=Jim%20%26%20Jenny<span style="color: #a0522d;">&amp;title</span>=Awesome HTTP/1.1
+Host: localhost
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-html">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 243
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 21 Sep 2012 04:36:18 GMT
+
+&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #0000ff;">html</span> <span style="color: #a0522d;">lang</span>=<span style="color: #8b2252;">"en-us"</span>&gt;
+    &lt;<span style="color: #0000ff;">head</span>&gt;
+        &lt;<span style="color: #0000ff;">meta</span> <span style="color: #a0522d;">charset</span>=<span style="color: #8b2252;">"utf-8"</span>&gt;
+        &lt;<span style="color: #0000ff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Awesome</span>&lt;/<span style="color: #0000ff;">title</span>&gt;
+        &lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"static/css/default.css"</span>&gt;
+    &lt;/<span style="color: #0000ff;">head</span>&gt;
+    &lt;<span style="color: #0000ff;">body</span>&gt;
+        &lt;<span style="color: #0000ff;">div</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"container"</span>&gt;
+            Hello Jim <span style="color: #a0522d;">&amp;amp;</span> Jenny
+        &lt;/<span style="color: #0000ff;">div</span>&gt;
+    &lt;/<span style="color: #0000ff;">body</span>&gt;
+&lt;/<span style="color: #0000ff;">html</span>&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> HTTP Encoding =&gt; HTML Encoding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Note how ampersand has two representations depending on encoding scheme!
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> POST &amp; PUT Data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<div class="org-src-container">
+
+<pre class="src src-http">POST /wiki HTTP/1.1
+Host: localhost
+Content-Length: 21
+Content-Type: application/x-www-form-urlencoded
+
+url=http://disney.com
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 32
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 21 Sep 2012 04:24:43 GMT
+
+Stored wiki =&gt; http://disney.com
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> More&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>What do I change to add an extra parameter to this PUT request?
+<ul class="org-ul">
+<li><code>Content-Length</code> and append <code>&amp;key=value</code>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Review <code>Content-Type</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Request header used to describe data being sent
+</li>
+<li>Response header used to describe data in return
+</li>
+<li>Required in many situations for understanding
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Homework&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>In the homework, remember to set the <code>Content-Type</code>
+</li>
+</ul>
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-25 Thu 23:53</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

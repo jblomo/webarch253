@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HTTP-Stateless</title>
+<!-- 2014-09-25 Thu 23:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">HTTP-Stateless</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. HTTP, part duex</a></li>
+<li><a href="#sec-2">2. Announcements</a></li>
+<li><a href="#sec-3">3. Review</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Next</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Demo</a></li>
+<li><a href="#sec-5">5. Protocols and State</a>
+<ul>
+<li><a href="#sec-5-1">5.1. State</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Telephone Protocol</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Metaphor</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. SSH is Stateful</a></li>
+<li><a href="#sec-8">8. HTTP is Stateless</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. HTML over HTTP</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Paths in HTML &amp; HTTP</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Translation</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Stateless Trade-offs</a>
+<ul>
+<li><a href="#sec-11-1">11.1. Managing State</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Authentication</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Where?</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Application State</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Databases</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. Fun with HTTP Status Codes</a>
+<ul>
+<li><a href="#sec-14-1">14.1. Last week</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. Static vs. Dynamic Webpage</a>
+<ul>
+<li><a href="#sec-15-1">15.1. Dynamic</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. Trade-offs</a>
+<ul>
+<li><a href="#sec-16-1">16.1. Reasons</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17. How fast?</a></li>
+<li><a href="#sec-18">18. Why should resources change?</a>
+<ul>
+<li><a href="#sec-18-1">18.1. Get examples</a></li>
+</ul>
+</li>
+<li><a href="#sec-19">19. Craigslist</a>
+<ul>
+<li><a href="#sec-19-1">19.1. How to implement</a></li>
+</ul>
+</li>
+<li><a href="#sec-20">20. Static Serving</a>
+<ul>
+<li><a href="#sec-20-1">20.1. Trade-offs?</a></li>
+</ul>
+</li>
+<li><a href="#sec-21">21. Dynamic Serving</a>
+<ul>
+<li><a href="#sec-21-1">21.1. Trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#sec-22">22. Requirements</a>
+<ul>
+<li><a href="#sec-22-1">22.1. Advantage</a></li>
+</ul>
+</li>
+<li><a href="#sec-23">23. What does Yelp do?</a>
+<ul>
+<li><a href="#sec-23-1">23.1. Caching</a></li>
+</ul>
+</li>
+<li><a href="#sec-24">24. CSS and Javascript?</a>
+<ul>
+<li><a href="#sec-24-1">24.1. HTML</a></li>
+<li><a href="#sec-24-2">24.2. Systems</a></li>
+<li><a href="#sec-24-3">24.3. Philosoraptor</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> HTTP, part duex&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Announcements&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Online class next week
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="img/overview.png"  alt="overview.png"/></p>
+</div>
+<ul class="org-ul">
+<li>Client (eg. browser) makes a request for a URL
+</li>
+<li>Connects to a web server (eg. ischool, or <code>app.py</code>) using TCP/IP
+</li>
+<li>Sends HTTP commands and headers
+</li>
+<li>The server associates the path with a resource
+</li>
+<li>Then sends a representation back to the client as a reply
+</li>
+<li>The client interprets the reply (eg. HTML), renders it, runs Javascript
+</li>
+<li>Repeat
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Next&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>URLs start with a? schema
+</li>
+<li>How to know what machine to connect to? host/server name
+</li>
+<li>Could connect to any web server in a data center, racks of machines
+</li>
+<li>TCP/IP covered next week: it is a way to transfer raw data
+</li>
+<li>What does an HTTP command start with? method (eg. GET POST etc)
+</li>
+<li>What's the header we used in HW? Host
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Demo&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-bash">telnet 128.32.78.16 80
+GET /~jblomo/webarch2014/index.html HTTP/1.1
+Host: people.ischool.berkeley.edu
+
+
+HTTP/1.1 200 OK
+Date: Fri, 20 Sep 2013 06:29:22 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 20 Sep 2013 06:28:44 GMT
+ETag: "b7f00d0-a5-4e6cac83bff00"
+Accept-Ranges: bytes
+Content-Length: 165
+Content-Type: text/html; charset=UTF-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Jim's Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;p&gt;Hello class! This is a tiny HTML page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Protocols and State&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt> State </dt><dd>associated information
+</dd>
+<dt> Stateful </dt><dd>Commands depend on history of actions
+</dd>
+<dt> Stateless </dt><dd>Commands cannot access history
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> State&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>State is information associated with some item that determines how you can
+interact with it
+</li>
+<li>Light switch has state: which position is it in
+</li>
+<li>Coin flips do not have state: doesn't matter what previous flips were
+</li>
+<li>We'll be talking about state at many levels: if a resource has state, if a
+protocol has state, building stateless protocols on stateful protocols
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Telephone Protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Bank: must identify yourself for each request
+</li>
+<li>Family: can instantly recognize you, resume conversation where it left off
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Metaphor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Calling a bank is generally stateless. Each time you call, must identify
+yourself.
+</li>
+<li>Often, even when you transfer to another dept for another question, but
+identify again
+</li>
+<li>If you get disconnected, can you just call right back and expect to
+continue?
+</li>
+<li>vs. family: can continue a conversation. Generally stateful
+</li>
+<li>What is one of the main reasons for the difference? Why is one stateful,
+</li>
+</ul>
+<p>
+another not?
+</p>
+<ul class="org-ul">
+<li>who specifically you are talking to. Calling a bank could talk to any
+individual. Very similar
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> SSH is Stateful&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Relative directories depend on previous <code>cd</code> commands
+</li>
+<li>Interactive sessions
+</li>
+<li>Don't have to resend login information each command
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> HTTP is Stateless&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Must specify full context each request
+<ul class="org-ul">
+<li>Absolute path
+</li>
+<li>Hostname
+</li>
+<li>Cookies*
+</li>
+</ul>
+</li>
+<li>Current request doesn't depend on history
+</li>
+<li>Even on open connections, actual commands are stateless
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>HTTP/1.1 keeps an open connection, but doesn't change the commands,
+headers, content required for the request
+</li>
+<li>When making requests for images on a page, still must ask for absolute path
+</li>
+<li>*Cookies will be covered in 2 weeks
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> HTML over HTTP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">img</span> <span style="color: #a0522d;">src</span>=<span style="color: #8b2252;">"img/raptor-genie.jpg"</span>&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Relative or absolute?
+</li>
+<li>How does the browser request this image?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li><code>src</code> has a relative path
+</li>
+<li>Browser appends relative path to current URL, then makes HTTP request
+</li>
+<li>HTTP request is for the absolute path
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Paths in HTML &amp; HTTP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<dl class="org-dl">
+<dt> HTTP </dt><dd>Absolute paths
+</dd>
+<dt> HTML </dt><dd>Absolute or relative paths
+</dd>
+<dt> Browser </dt><dd>Translates relative paths with current URL + relative
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Translation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>Browser translates relative paths in HTML to absolute paths in HTTP request
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Stateless Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>State requires space and coordination
+</li>
+<li>State inherent in many applications
+<ul class="org-ul">
+<li>So it must be handled by client
+</li>
+<li>Most common: authentication
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Managing State&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Future lecture will focus on managing state in DBs
+</li>
+<li>In general, you need multiple disks to dependably store state
+</li>
+<li>Stateless means you don't have to coordinate
+<ul class="org-ul">
+<li>Easily scale without coordination
+</li>
+</ul>
+</li>
+<li>Authentication: must send credentials each time, but browser mostly handles
+it
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Authentication&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>What user is making the request?
+</li>
+<li>Should the server "remember" who is making the request?
+</li>
+<li>No! Browser will always send authorization information
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Where?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Associate with an IP? No, what about users from the same building?
+</li>
+<li>Where should we send authentication information in a request? (for normal
+pages, not login form
+</li>
+<li>Headers: metadata about request, eg. who is sending it?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Application State&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Just because the <b>protocol</b> is <b>stateless</b>
+</li>
+<li>doesn't mean the <b>application</b> can't be <b>stateful</b>
+</li>
+<li>Information about user stored, explicitly transmitted
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Databases&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Databases are typically used to store info, we will cover them later in
+class
+</li>
+<li>When looking at an individual request, we send all required information
+</li>
+<li>Just like we build styling on top of semantics (CSS on HTML), build
+stateful application on stateless protocol
+</li>
+<li>Like a telephone call (pre-mobile): you have to introduce yourself each
+time, but after introducing yourself I can remember details about you
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Fun with HTTP Status Codes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<dl class="org-dl">
+<dt> <code>418</code> </dt><dd>I'm a teapot (for HyperText Coffee Pot Control Protocol)
+</dd>
+<dt> <code>420</code> </dt><dd>Enhance Your Calm (Similar to <code>429 Too Many Requests</code>)
+</dd>
+</dl>
+
+
+<div class="figure">
+<p><img src="img/coffee-pot.jpg"  alt="coffee-pot.jpg"/></p>
+</div>
+
+<p>
+From <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HTTP status codes</a>
+</p>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Last week&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>(Transition)
+</li>
+<li>We talked about response codes last week, here are a couple fun ones
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Static vs. Dynamic Webpage&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>Static web pages are files that don't change
+</li>
+<li>Dynamic web pages get generated by the server
+</li>
+<li>Dynamic is an overloaded term
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> Dynamic&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li>Unfortunately, a few things can mean "dynamic"
+</li>
+<li>web pages (what we're talking about, generated by server)
+</li>
+<li>DHTML: basically javascript (an attempt at a buzzword. We're not talking
+about that right now)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>Static pages can be read off disk quickly
+</li>
+<li>Static pages can be served out of RAM even faster
+</li>
+<li>Dynamic pages can change
+</li>
+<li>Dynamic pages may use less space
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Reasons&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>No computation needed
+</li>
+<li>RAM can "cache" frequently needed pages
+</li>
+<li>But static pages can't change (by definition)
+</li>
+<li>And static pages have to be stored with their full HTML
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> How fast?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+<p>
+<img src="img/test-nginx-1worker.png"  alt="test-nginx-1worker.png"/>
+<img src="img/dynamic-throughput.png"  alt="dynamic-throughput.png"/>
+</p>
+<ul class="org-ul">
+<li>compare "Hello World"s both static &amp; Dynamic
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Why should resources change?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>Your "own" profile page
+</li>
+<li>Updates (new reviews, activity feed)
+</li>
+<li>Permissions
+</li>
+<li>External data source
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-18-1" class="outline-3">
+<h3 id="sec-18-1"><span class="section-number-3">18.1</span> Get examples&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-18-1">
+<ul class="org-ul">
+<li>Customized home page: recommendations, etc.
+</li>
+<li>New activity that you want to see. How boring would a static feed be?
+</li>
+<li>Maybe someone only recently gave you permissions to view a resource
+</li>
+<li>Getting the current weather
+</li>
+<li>Resource have state: GET request for whattimeisit.com
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Craigslist&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>Every ad has a page
+</li>
+<li>Users can create and remove ads
+</li>
+<li>Ad pages have text, pictures, etc.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/craig-newmark.jpg"  alt="craig-newmark.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-19-1" class="outline-3">
+<h3 id="sec-19-1"><span class="section-number-3">19.1</span> How to implement&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-19-1">
+<ul class="org-ul">
+<li>Case study: different ways to implement Craigslist
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Static Serving&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>Every ad uploaded generates an HTML file
+</li>
+<li>When a user requests <a href="http://craigslist.org/ad-0001.html">http://craigslist.org/ad-0001.html</a> serve the file
+</li>
+<li>CSS &amp; Javascript also static files
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-20-1" class="outline-3">
+<h3 id="sec-20-1"><span class="section-number-3">20.1</span> Trade-offs?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-20-1">
+<ul class="org-ul">
+<li>Very fast serving
+</li>
+<li>Simple to write, understand
+</li>
+<li>No database dependencies
+</li>
+<li>Easier to backup? Just copy files
+</li>
+<li>Less flexible: How do you change the template?
+</li>
+<li>Less normalized: how can you data-mine your ads?
+</li>
+<li>More space: repeat the Head HTML over and over
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Dynamic Serving&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>Every ad uploaded, text kept in a database
+</li>
+<li>When a user requests <a href="http://craigslist.org/ad-0001.html">http://craigslist.org/ad-0001.html</a> generate an HTML
+response
+</li>
+<li>Response template is like madlibs: fill in the blanks
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-21-1" class="outline-3">
+<h3 id="sec-21-1"><span class="section-number-3">21.1</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-21-1">
+<ul class="org-ul">
+<li>Slower to serve: have to calculate response
+</li>
+<li>More complex to write: must interact with other libraries
+</li>
+<li>Database dependency: DB must be up to serve traffic
+</li>
+<li>Backup different systems: data, templates, code. How to backup DB?
+</li>
+<li>More flexible: instantly change the template
+</li>
+<li>Data separated from presentation: can mine, transform, annotate, modify
+data
+</li>
+<li>Less space: Just the data and the template once
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Requirements&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>The data will be frequently modified by the user
+</li>
+<li>Must serve pages as cheaply as possible
+</li>
+<li>Must be able to send pages to another server
+</li>
+<li>Designers must iterate on site design
+</li>
+<li>Like Wikipedia, must create links to new pages in old
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-22-1" class="outline-3">
+<h3 id="sec-22-1"><span class="section-number-3">22.1</span> Advantage&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-22-1">
+<ul class="org-ul">
+<li>Dynamic
+</li>
+<li>Static
+</li>
+<li>Static
+</li>
+<li>Dynamic
+</li>
+<li>Dynamic
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> What does Yelp do?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>Both!
+</li>
+<li>Data stored in a database
+</li>
+<li>When users request page, generate it
+</li>
+<li>But also cache it!
+</li>
+<li>So the next time, it can be served like a file*
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-23-1" class="outline-3">
+<h3 id="sec-23-1"><span class="section-number-3">23.1</span> Caching&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-23-1">
+<ul class="org-ul">
+<li>We'll discuss caching in another lecture
+</li>
+<li>Caches are not exactly HTML files on disk
+</li>
+<li>Usually stored in RAM
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> CSS and Javascript?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>Still static
+</li>
+<li>Fairly rare that those assets are dynamically generated
+</li>
+<li>Exception: some images
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-24-1" class="outline-3">
+<h3 id="sec-24-1"><span class="section-number-3">24.1</span> HTML&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-24-1">
+
+<div class="figure">
+<p><img src="img/most-interesting-html.jpg"  alt="most-interesting-html.jpg"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-24-2" class="outline-3">
+<h3 id="sec-24-2"><span class="section-number-3">24.2</span> Systems&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-24-2">
+
+<div class="figure">
+<p><img src="img/most-interesting-systems.jpg"  alt="most-interesting-systems.jpg"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-24-3" class="outline-3">
+<h3 id="sec-24-3"><span class="section-number-3">24.3</span> Philosoraptor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-24-3">
+
+<div class="figure">
+<p><img src="img/raptor-genie.jpg"  alt="raptor-genie.jpg"/></p>
+</div>
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-25 Thu 23:53</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

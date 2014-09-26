@@ -1,0 +1,52 @@
+* Homework & Project :slide:
+  + Homework :: Use telnet to send data with =GET=, =POST=, =PUT=. Set correct
+    =Content-Type= for an image
+** Yes, Project & HW :notes:
+   + Homeworks will continue while you work on projects
+   + Homeworks will emphasis week's lesson
+   + Projects will bring them together
+
+* Homework :slide:
+#+begin_src bash
+cd webarch2013
+git checkout master
+git pull jblomo master
+git push origin master
+git checkout -b hw5-data
+./server/app.py
+#+end_src
+http://people.ischool.berkeley.edu/~jblomo/server/
+
+** Tasks with Telnet :slide:
+   1. What HTTP command is used to make the =/home= resource respond with your full name (including spaces), the title
+      of the page should be the full title of this class.
+   1. Use a PUT request to set the redirect target of http://people.ischool.berkeley.edu/~<USER>/server/wiki 
+      1. How do you verify this change?
+   1. Use a POST to update the redirect target of http://people.ischool.berkeley.edu/~<USER>/server/wiki to a another new location.
+   1. Update =app.py= to correctly return an image from  http://people.ischool.berkeley.edu/~<USER>/server/i253
+      + Use your browser to test
+      + Including the =Content-Type= in your submission
+*** Lab will discuss details :notes:
+    + We'll go over =app.py=
+
+** Extra Credit :slide:
+   + Modify =app.py= to return either an image or text based on the request's
+     =Accept= header
+
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

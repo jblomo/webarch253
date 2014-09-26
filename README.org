@@ -12,8 +12,8 @@
 | Sep 5  | [[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list][HTML5 Elements]] & [[http://www.w3.org/TR/CSS2/selector.html][CSS Selectors]] ; [[http://www.maxdesign.com.au/articles/css-inheritance/][CSS inheritance]] ; Optional: [[http://www.montulli.org/theoriginofthe%3Cblink%3Etag][Blink Tag]]| [[file:slides/HTML.html][HTML]] & [[file:slides/CSS.html][CSS]] | [[file:slides/HW2.org][HW2 - Personal Page]] |
 | Sep 12 | Optional: [[http://eloquentjavascript.net/][Elequent Javascript]], [[http://api.jquery.com/submit/][jQuery Validate Example]], [[http://www.w3.org/TR/html5/forms.html][W3C Forms Specification]] | [[file:slides/Forms.html][Forms]] & [[file:slides/Javascript.html][Javascript]] | [[file:slides/HW3.html][HW3 - Madlib Form]] |
 | Sep 19 | [[http://www.w3.org/TR/webarch/][Architecture of the World Wide Web]] Sections 1 & 2, [[http://www.w3.org/Provider/Style/URI][Cool URIs don't change]], (Skim) [[http://www.cs.tut.fi/~jkorpela/http.html][HTTP headers reference]], (Optional) [[http://flask.pocoo.org/docs/][Flask]] | [[file:slides/HTTP.html][URI & HTTP]] & [[file:slides/Server.html][HTTP Server]] | [[file:slides/HW4-Telnet.html][HW4 - Telnet]] |
-| Sep 26 | | HTTP Data | |
-| Oct 3  | | Internet, TCP, & DNS| |
+| Sep 26 | [[http://www.w3.org/2001/tag/doc/state.html][State]] Sections 1-5; [[http://learnpythonthehardway.org/book/ex39.html][Learn Python the Hard Way]] Exercise 39, Dictionaries; [[http://flask.pocoo.org/docs/quickstart/][Flask Quickstart]] Rendering Templates, The Request Object | [[file:slides/HTTP-Stateless.html][Dynamic Webpages]] & [[file:slides/HTTP-Data.html][HTTP Data]] | [[file:slides/HW5-Data.html][HW5 - HTTP Data]]; [[file:slides/Project1.html][Project Part 1]] |
+| Oct 3  | | ONLINE: Internet, TCP, & DNS| |
 | Oct 10 | | Frontend Performance | |
 | Oct 17 | | Cookies & Rest | |
 | Oct 24 | Midterm | | |
