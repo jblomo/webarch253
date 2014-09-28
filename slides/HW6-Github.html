@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HW6-Github</title>
+<!-- 2014-09-28 Sun 11:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">HW6-Github</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. RESTful in Action</a></li>
+<li><a href="#sec-2">2. <code>curl</code></a>
+<ul>
+<li><a href="#sec-2-1">2.1. We'll just use command line</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Show Headers</a></li>
+<li><a href="#sec-4">4. Github API</a></li>
+<li><a href="#sec-5">5. Homework</a></li>
+<li><a href="#sec-6">6. Show Work:slide:</a></li>
+<li><a href="#sec-7">7. Don't forget your Project</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> RESTful in Action&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Use Github's API
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <code>curl</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Command-line URL
+</li>
+<li>Shortcut for manually making Telnet requests
+</li>
+<li>turned into a library
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> We'll just use command line&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Show Headers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-bash">curl -i http://people.ischool.berkeley.edu/~jblomo/webarch2014
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.1 200 OK
+Date: Fri, 28 Sep 2012 06:25:13 GMT
+Server: Apache/2.2.22 (Fedora)
+Last-Modified: Fri, 31 Aug 2012 23:27:30 GMT
+ETag: "a6ec002-48-4c89822b95c80"
+Accept-Ranges: bytes
+Content-Length: 72
+Content-Type: text/html; charset=UTF-8
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #0000ff;">html</span>&gt;
+    &lt;<span style="color: #0000ff;">head</span>&gt;
+        &lt;<span style="color: #0000ff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Jim's Page</span>&lt;/<span style="color: #0000ff;">title</span>&gt;
+    &lt;/<span style="color: #0000ff;">head</span>&gt;
+    &lt;<span style="color: #0000ff;">body</span>&gt;
+        &lt;<span style="color: #0000ff;">p</span>&gt;Hello class! This is a tiny HTML page.&lt;/<span style="color: #0000ff;">p</span>&gt;
+    &lt;/<span style="color: #0000ff;">body</span>&gt;
+&lt;/<span style="color: #0000ff;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> <a href="http://developer.github.com/v3/">Github API</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-bash">curl -i "https://api.github.com/repos/mojombo/jekyll/issues?state=closed"
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.1 200 OK
+Server: GitHub.com
+Date: Sun, 28 Sep 2014 18:11:51 GMT
+Content-Type: application/json; charset=utf-8
+Status: 200 OK
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1411931511
+Cache-Control: public, max-age=60, s-maxage=60
+ETag: "5de9e2d63ba6af70bf396b488e5c1985"
+Vary: Accept
+X-GitHub-Media-Type: github.v3
+Link: &lt;https://api.github.com/repositories/984742/issues?state=closed&amp;page=2&gt;; rel="next", &lt;https://api.github.com/repositories/984742/issues?state=closed&amp;page=26&gt;; rel="last"
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: deny
+Content-Security-Policy: default-src 'none'
+Content-Length: 78438
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+Access-Control-Allow-Origin: *
+X-GitHub-Request-Id: 1882760D:76F9:18115615:54284F67
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+X-Served-By: 132026e9262a0093e437f99db5f1e499
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-json">[
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/946",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/946/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/946/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/946/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/946",
+    "id": 43523317,
+    "number": 946,
+    "title": "Revert 'Remove exclusive file lock in runner wrapper'",
+    "user": {
+      "login": "wlstyy",
+      "id": 3721314,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3721314?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wlstyy",
+      "html_url": "https://github.com/wlstyy",
+      "followers_url": "https://api.github.com/users/wlstyy/followers",
+      "following_url": "https://api.github.com/users/wlstyy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wlstyy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wlstyy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wlstyy/subscriptions",
+      "organizations_url": "https://api.github.com/users/wlstyy/orgs",
+      "repos_url": "https://api.github.com/users/wlstyy/repos",
+      "events_url": "https://api.github.com/users/wlstyy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wlstyy/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-09-22T17:44:33Z",
+    "updated_at": "2014-09-22T17:55:06Z",
+    "closed_at": "2014-09-22T17:55:06Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/946",
+      "html_url": "https://github.com/Yelp/mrjob/pull/946",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/946.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/946.patch"
+    },
+    "body": "Revert 'Remove exclusive file lock in runner wrapper'."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/944",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/944/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/944/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/944/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/944",
+    "id": 42097356,
+    "number": 944,
+    "title": "Towards Python 2/3 compatibility",
+    "user": {
+      "login": "edschofield",
+      "id": 78314,
+      "avatar_url": "https://avatars.githubusercontent.com/u/78314?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/edschofield",
+      "html_url": "https://github.com/edschofield",
+      "followers_url": "https://api.github.com/users/edschofield/followers",
+      "following_url": "https://api.github.com/users/edschofield/following{/other_user}",
+      "gists_url": "https://api.github.com/users/edschofield/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/edschofield/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/edschofield/subscriptions",
+      "organizations_url": "https://api.github.com/users/edschofield/orgs",
+      "repos_url": "https://api.github.com/users/edschofield/repos",
+      "events_url": "https://api.github.com/users/edschofield/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/edschofield/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-09-05T22:25:26Z",
+    "updated_at": "2014-09-06T06:19:44Z",
+    "closed_at": "2014-09-05T22:49:14Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/944",
+      "html_url": "https://github.com/Yelp/mrjob/pull/944",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/944.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/944.patch"
+    },
+    "body": "Here is an initial set of patches for a Py2/3 compatible codebase. Python 3 is not yet supported, but these initial patches should be easy to review and take us in the right direction."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/943",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/943/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/943/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/943/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/943",
+    "id": 40956377,
+    "number": 943,
+    "title": "use the xtrace flag to get more debugging output during bootstrap/runner",
+    "user": {
+      "login": "jblomo",
+      "id": 45173,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45173?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jblomo",
+      "html_url": "https://github.com/jblomo",
+      "followers_url": "https://api.github.com/users/jblomo/followers",
+      "following_url": "https://api.github.com/users/jblomo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jblomo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jblomo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jblomo/subscriptions",
+      "organizations_url": "https://api.github.com/users/jblomo/orgs",
+      "repos_url": "https://api.github.com/users/jblomo/repos",
+      "events_url": "https://api.github.com/users/jblomo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jblomo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-08-22T22:27:38Z",
+    "updated_at": "2014-09-16T00:19:25Z",
+    "closed_at": "2014-09-16T00:19:25Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/943",
+      "html_url": "https://github.com/Yelp/mrjob/pull/943",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/943.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/943.patch"
+    },
+    "body": "When running bootstrap commands, failures can be very mysterious. What command was actually run?  What environment variables were properly interpolated?  By adding the xtrace flag, the script will send to stderr the commands that are actually run.  This should allow the user to debug the error.\r\n\r\nThis can be set by the user, but setting it as a default makes sense because the helpfulness of the output should outweigh the few extra statements logged."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/939",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/939/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/939/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/939/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/939",
+    "id": 40282704,
+    "number": 939,
+    "title": "mrjob is only allowing m1.small instances",
+    "user": {
+      "login": "mmroden",
+      "id": 116251,
+      "avatar_url": "https://avatars.githubusercontent.com/u/116251?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mmroden",
+      "html_url": "https://github.com/mmroden",
+      "followers_url": "https://api.github.com/users/mmroden/followers",
+      "following_url": "https://api.github.com/users/mmroden/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mmroden/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mmroden/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mmroden/subscriptions",
+      "organizations_url": "https://api.github.com/users/mmroden/orgs",
+      "repos_url": "https://api.github.com/users/mmroden/repos",
+      "events_url": "https://api.github.com/users/mmroden/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mmroden/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-08-14T18:19:28Z",
+    "updated_at": "2014-08-14T18:26:35Z",
+    "closed_at": "2014-08-14T18:26:35Z",
+    "body": "No matter what I put in my ~/.mrjob.conf file for the ec2_instance_type entry, I get this warning:\r\n\r\n    INFO:mrjob.conf:using configs in /Users/mroden/.mrjob.conf \r\n    Got unexpected opts from /Users/mroden/.mrjob.conf: ec2_instace_type\r\n    WARNING:mrjob.conf:Got unexpected opts from /Users/mroden/.mrjob.conf: ec2_instace_type\r\n\r\nAnd the cluster always uses m1.smalls.  I even get this warning when I explicitly use m1.small instances.  It's pretty essential that I be able to use larger instances."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/936",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/936/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/936/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/936/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/936",
+    "id": 39450792,
+    "number": 936,
+    "title": "Test runner cleanup",
+    "user": {
+      "login": "ymilki",
+      "id": 6542657,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6542657?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ymilki",
+      "html_url": "https://github.com/ymilki",
+      "followers_url": "https://api.github.com/users/ymilki/followers",
+      "following_url": "https://api.github.com/users/ymilki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ymilki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ymilki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ymilki/subscriptions",
+      "organizations_url": "https://api.github.com/users/ymilki/orgs",
+      "repos_url": "https://api.github.com/users/ymilki/repos",
+      "events_url": "https://api.github.com/users/ymilki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ymilki/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-08-04T19:08:26Z",
+    "updated_at": "2014-08-21T04:53:14Z",
+    "closed_at": "2014-08-21T04:53:14Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/936",
+      "html_url": "https://github.com/Yelp/mrjob/pull/936",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/936.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/936.patch"
+    },
+    "body": "Cleanup runner temp directories in tests."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/935",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/935/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/935/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/935/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/935",
+    "id": 39446594,
+    "number": 935,
+    "title": "Remove exclusive file lock in runner wrapper",
+    "user": {
+      "login": "ymilki",
+      "id": 6542657,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6542657?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ymilki",
+      "html_url": "https://github.com/ymilki",
+      "followers_url": "https://api.github.com/users/ymilki/followers",
+      "following_url": "https://api.github.com/users/ymilki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ymilki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ymilki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ymilki/subscriptions",
+      "organizations_url": "https://api.github.com/users/ymilki/orgs",
+      "repos_url": "https://api.github.com/users/ymilki/repos",
+      "events_url": "https://api.github.com/users/ymilki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ymilki/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-08-04T18:21:53Z",
+    "updated_at": "2014-08-12T18:30:21Z",
+    "closed_at": "2014-08-12T18:30:21Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/935",
+      "html_url": "https://github.com/Yelp/mrjob/pull/935",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/935.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/935.patch"
+    },
+    "body": "Cleanup the manually created file lock on script completion."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/934",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/934/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/934/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/934/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/934",
+    "id": 39334475,
+    "number": 934,
+    "title": "Use self.addCleanup to schedule tmpdir cleanups",
+    "user": {
+      "login": "ymilki",
+      "id": 6542657,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6542657?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ymilki",
+      "html_url": "https://github.com/ymilki",
+      "followers_url": "https://api.github.com/users/ymilki/followers",
+      "following_url": "https://api.github.com/users/ymilki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ymilki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ymilki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ymilki/subscriptions",
+      "organizations_url": "https://api.github.com/users/ymilki/orgs",
+      "repos_url": "https://api.github.com/users/ymilki/repos",
+      "events_url": "https://api.github.com/users/ymilki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ymilki/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2014-08-01T22:56:07Z",
+    "updated_at": "2014-08-21T04:52:58Z",
+    "closed_at": "2014-08-21T04:52:58Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/934",
+      "html_url": "https://github.com/Yelp/mrjob/pull/934",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/934.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/934.patch"
+    },
+    "body": "After prepare_runner_for_ssh was called, the tmpdirs created were\r\nunreliably cleaned up. Use self.addCleanup to schedule the cleanup so\r\nthat users of the function don't need to cleanup manually."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/933",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/933/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/933/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/933/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/933",
+    "id": 39243559,
+    "number": 933,
+    "title": "Fix #932: handle spaces in hadoop job -list output",
+    "user": {
+      "login": "alexkonradi",
+      "id": 2974888,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2974888?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alexkonradi",
+      "html_url": "https://github.com/alexkonradi",
+      "followers_url": "https://api.github.com/users/alexkonradi/followers",
+      "following_url": "https://api.github.com/users/alexkonradi/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alexkonradi/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alexkonradi/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alexkonradi/subscriptions",
+      "organizations_url": "https://api.github.com/users/alexkonradi/orgs",
+      "repos_url": "https://api.github.com/users/alexkonradi/repos",
+      "events_url": "https://api.github.com/users/alexkonradi/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alexkonradi/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-07-31T22:14:15Z",
+    "updated_at": "2014-08-08T20:24:25Z",
+    "closed_at": "2014-08-08T20:24:25Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/933",
+      "html_url": "https://github.com/Yelp/mrjob/pull/933",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/933.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/933.patch"
+    },
+    "body": "As mentioned in #932, spaces in the output of `hadoop job -list` cause listings for running jobs to be ignored by the following `grep`. This fixes the bug by allowing spaces at the beginning of job listing lines."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/932",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/932/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/932/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/932/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/932",
+    "id": 39243101,
+    "number": 932,
+    "title": "terminate_idle_job_flow kills EMR clusters while jobs are still active",
+    "user": {
+      "login": "alexkonradi",
+      "id": 2974888,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2974888?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alexkonradi",
+      "html_url": "https://github.com/alexkonradi",
+      "followers_url": "https://api.github.com/users/alexkonradi/followers",
+      "following_url": "https://api.github.com/users/alexkonradi/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alexkonradi/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alexkonradi/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alexkonradi/subscriptions",
+      "organizations_url": "https://api.github.com/users/alexkonradi/orgs",
+      "repos_url": "https://api.github.com/users/alexkonradi/repos",
+      "events_url": "https://api.github.com/users/alexkonradi/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alexkonradi/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-07-31T22:08:19Z",
+    "updated_at": "2014-08-11T21:29:25Z",
+    "closed_at": "2014-08-08T20:24:25Z",
+    "body": "The terminate_idle_job_flow.sh script calls `hadoop job -list` to determine whether any jobs are currently running. It then pipes this through `grep -q '^job_'`. As of Hadoop 2.4.0 (and possibly earlier), the output of `hadoop job -list` is something like\r\n```\r\n$&gt; nice hadoop job -list\r\nDEPRECATED: Use of this script to execute mapred command is deprecated.\r\nInstead use the mapred command for it.\r\n\r\n14/07/31 21:46:52 INFO client.RMProxy: Connecting to ResourceManager at /10.217.206.96:9022\r\nTotal jobs:1\r\n                  JobId\t     State\t     StartTime\t    UserName\t       Queue\t  Priority\t UsedContainers\tRsvdContainers\t UsedMem\t RsvdMem\t NeededMem\t   AM info\r\n job_1406842430075_0001\t   RUNNING\t 1406842535836\t      hadoop\t     default\t    NORMAL\t              2\t              0\t   2816M\t      0M\t     2816M\thttp://10.217.206.96:9046/proxy/application_1406842430075_0001/\r\n```\r\nThe line for the listed job starts with a space, which prevents grep from picking it up, which can cause the script to terminate the cluster while jobs are still running."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/931",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/931/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/931/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/931/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/931",
+    "id": 39067636,
+    "number": 931,
+    "title": "Update README.rst",
+    "user": {
+      "login": "kienpham2000",
+      "id": 22681,
+      "avatar_url": "https://avatars.githubusercontent.com/u/22681?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kienpham2000",
+      "html_url": "https://github.com/kienpham2000",
+      "followers_url": "https://api.github.com/users/kienpham2000/followers",
+      "following_url": "https://api.github.com/users/kienpham2000/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kienpham2000/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kienpham2000/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kienpham2000/subscriptions",
+      "organizations_url": "https://api.github.com/users/kienpham2000/orgs",
+      "repos_url": "https://api.github.com/users/kienpham2000/repos",
+      "events_url": "https://api.github.com/users/kienpham2000/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kienpham2000/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-07-30T07:38:44Z",
+    "updated_at": "2014-07-30T07:39:38Z",
+    "closed_at": "2014-07-30T07:39:38Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/931",
+      "html_url": "https://github.com/Yelp/mrjob/pull/931",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/931.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/931.patch"
+    },
+    "body": "fix the cool logo displaying at GH"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/930",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/930/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/930/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/930/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/930",
+    "id": 39050085,
+    "number": 930,
+    "title": "Set visible_to_all_users to True by default.",
+    "user": {
+      "login": "anusha-r",
+      "id": 41947,
+      "avatar_url": "https://avatars.githubusercontent.com/u/41947?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anusha-r",
+      "html_url": "https://github.com/anusha-r",
+      "followers_url": "https://api.github.com/users/anusha-r/followers",
+      "following_url": "https://api.github.com/users/anusha-r/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anusha-r/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anusha-r/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anusha-r/subscriptions",
+      "organizations_url": "https://api.github.com/users/anusha-r/orgs",
+      "repos_url": "https://api.github.com/users/anusha-r/repos",
+      "events_url": "https://api.github.com/users/anusha-r/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anusha-r/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-07-30T00:30:53Z",
+    "updated_at": "2014-07-30T15:17:34Z",
+    "closed_at": "2014-07-30T15:17:34Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/930",
+      "html_url": "https://github.com/Yelp/mrjob/pull/930",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/930.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/930.patch"
+    },
+    "body": "See Issue 922: https://github.com/Yelp/mrjob/issues/922"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/929",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/929/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/929/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/929/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/929",
+    "id": 39044310,
+    "number": 929,
+    "title": "A bug fix to pull request #916",
+    "user": {
+      "login": "smallredbean",
+      "id": 3681205,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3681205?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/smallredbean",
+      "html_url": "https://github.com/smallredbean",
+      "followers_url": "https://api.github.com/users/smallredbean/followers",
+      "following_url": "https://api.github.com/users/smallredbean/following{/other_user}",
+      "gists_url": "https://api.github.com/users/smallredbean/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/smallredbean/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/smallredbean/subscriptions",
+      "organizations_url": "https://api.github.com/users/smallredbean/orgs",
+      "repos_url": "https://api.github.com/users/smallredbean/repos",
+      "events_url": "https://api.github.com/users/smallredbean/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/smallredbean/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-07-29T22:48:24Z",
+    "updated_at": "2014-07-29T23:04:28Z",
+    "closed_at": "2014-07-29T23:04:28Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/929",
+      "html_url": "https://github.com/Yelp/mrjob/pull/929",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/929.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/929.patch"
+    },
+    "body": "Default to None so that it can be configured in mrjob.conf"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/922",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/922/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/922/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/922/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/922",
+    "id": 36703233,
+    "number": 922,
+    "title": "Consider changing default value for 'visible_to_all_users'",
+    "user": {
+      "login": "anusha-r",
+      "id": 41947,
+      "avatar_url": "https://avatars.githubusercontent.com/u/41947?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anusha-r",
+      "html_url": "https://github.com/anusha-r",
+      "followers_url": "https://api.github.com/users/anusha-r/followers",
+      "following_url": "https://api.github.com/users/anusha-r/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anusha-r/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anusha-r/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anusha-r/subscriptions",
+      "organizations_url": "https://api.github.com/users/anusha-r/orgs",
+      "repos_url": "https://api.github.com/users/anusha-r/repos",
+      "events_url": "https://api.github.com/users/anusha-r/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anusha-r/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-06-27T20:57:56Z",
+    "updated_at": "2014-07-30T17:42:53Z",
+    "closed_at": "2014-07-30T17:42:53Z",
+    "body": "We have started experimenting with IAM roles with MRJobs and notice that since the 'visible_to_all_users' flag is false by default, some of our job flows have remained hidden from the idle job flow killer.\r\nI think it makes sense to have a default of 'true' (or all jobflows are visible to all) and rename the option to 'invisible_to_all_users' or something similar to make that intent a more explicit action.\r\nIf anyone has any thoughts on why this is worse than current, please let me know!"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/921",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/921/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/921/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/921/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/921",
+    "id": 36614018,
+    "number": 921,
+    "title": "Fixed indentation of example in README",
+    "user": {
+      "login": "zonca",
+      "id": 383090,
+      "avatar_url": "https://avatars.githubusercontent.com/u/383090?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/zonca",
+      "html_url": "https://github.com/zonca",
+      "followers_url": "https://api.github.com/users/zonca/followers",
+      "following_url": "https://api.github.com/users/zonca/following{/other_user}",
+      "gists_url": "https://api.github.com/users/zonca/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/zonca/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/zonca/subscriptions",
+      "organizations_url": "https://api.github.com/users/zonca/orgs",
+      "repos_url": "https://api.github.com/users/zonca/repos",
+      "events_url": "https://api.github.com/users/zonca/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/zonca/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-06-26T20:55:03Z",
+    "updated_at": "2014-06-27T21:01:06Z",
+    "closed_at": "2014-06-27T21:00:58Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/921",
+      "html_url": "https://github.com/Yelp/mrjob/pull/921",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/921.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/921.patch"
+    },
+    "body": ""
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/917",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/917/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/917/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/917/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/917",
+    "id": 36232179,
+    "number": 917,
+    "title": "Update the title and fix the image link",
+    "user": {
+      "login": "tomelm",
+      "id": 153050,
+      "avatar_url": "https://avatars.githubusercontent.com/u/153050?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tomelm",
+      "html_url": "https://github.com/tomelm",
+      "followers_url": "https://api.github.com/users/tomelm/followers",
+      "following_url": "https://api.github.com/users/tomelm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tomelm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tomelm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tomelm/subscriptions",
+      "organizations_url": "https://api.github.com/users/tomelm/orgs",
+      "repos_url": "https://api.github.com/users/tomelm/repos",
+      "events_url": "https://api.github.com/users/tomelm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tomelm/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-06-21T21:20:59Z",
+    "updated_at": "2014-08-08T20:19:10Z",
+    "closed_at": "2014-08-08T20:19:10Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/917",
+      "html_url": "https://github.com/Yelp/mrjob/pull/917",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/917.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/917.patch"
+    },
+    "body": "We want the description to be a little more descriptive so that it's more obvious to people what mrjob does. I also fixed the logo image in the readme."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/916",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/916/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/916/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/916/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/916",
+    "id": 36130736,
+    "number": 916,
+    "title": "Export job name to env var in order to distinguish tasks sharing the same emr job flow",
+    "user": {
+      "login": "smallredbean",
+      "id": 3681205,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3681205?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/smallredbean",
+      "html_url": "https://github.com/smallredbean",
+      "followers_url": "https://api.github.com/users/smallredbean/followers",
+      "following_url": "https://api.github.com/users/smallredbean/following{/other_user}",
+      "gists_url": "https://api.github.com/users/smallredbean/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/smallredbean/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/smallredbean/subscriptions",
+      "organizations_url": "https://api.github.com/users/smallredbean/orgs",
+      "repos_url": "https://api.github.com/users/smallredbean/repos",
+      "events_url": "https://api.github.com/users/smallredbean/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/smallredbean/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-06-20T00:14:01Z",
+    "updated_at": "2014-07-23T07:21:55Z",
+    "closed_at": "2014-07-23T00:50:35Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/916",
+      "html_url": "https://github.com/Yelp/mrjob/pull/916",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/916.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/916.patch"
+    },
+    "body": "This fix tackles issue #915 https://github.com/Yelp/mrjob/issues/915"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/909",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/909/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/909/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/909/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/909",
+    "id": 33243399,
+    "number": 909,
+    "title": "Add a couple comments to the Sphinx extension",
+    "user": {
+      "login": "irskep",
+      "id": 40085,
+      "avatar_url": "https://avatars.githubusercontent.com/u/40085?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/irskep",
+      "html_url": "https://github.com/irskep",
+      "followers_url": "https://api.github.com/users/irskep/followers",
+      "following_url": "https://api.github.com/users/irskep/following{/other_user}",
+      "gists_url": "https://api.github.com/users/irskep/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/irskep/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/irskep/subscriptions",
+      "organizations_url": "https://api.github.com/users/irskep/orgs",
+      "repos_url": "https://api.github.com/users/irskep/repos",
+      "events_url": "https://api.github.com/users/irskep/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/irskep/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-05-10T17:29:19Z",
+    "updated_at": "2014-05-10T17:29:41Z",
+    "closed_at": "2014-05-10T17:29:41Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/909",
+      "html_url": "https://github.com/Yelp/mrjob/pull/909",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/909.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/909.patch"
+    },
+    "body": "I was referring to this file to try to imagine a better API for Sphinx extensions, and this was the only thing whose purpose wasn't immediately apparent.\r\n\r\nAlso fixed a comment typo."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/908",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/908/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/908/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/908/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/908",
+    "id": 33203560,
+    "number": 908,
+    "title": "Update create_job_flow.py",
+    "user": {
+      "login": "soda29",
+      "id": 2402059,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2402059?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/soda29",
+      "html_url": "https://github.com/soda29",
+      "followers_url": "https://api.github.com/users/soda29/followers",
+      "following_url": "https://api.github.com/users/soda29/following{/other_user}",
+      "gists_url": "https://api.github.com/users/soda29/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/soda29/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/soda29/subscriptions",
+      "organizations_url": "https://api.github.com/users/soda29/orgs",
+      "repos_url": "https://api.github.com/users/soda29/repos",
+      "events_url": "https://api.github.com/users/soda29/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/soda29/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 4,
+    "created_at": "2014-05-09T19:58:29Z",
+    "updated_at": "2014-09-05T18:14:13Z",
+    "closed_at": "2014-09-05T18:14:13Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/908",
+      "html_url": "https://github.com/Yelp/mrjob/pull/908",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/908.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/908.patch"
+    },
+    "body": "This way we can import main() to create a jobflow directly from the code and obtain the jobflow_id."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/906",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/906/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/906/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/906/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/906",
+    "id": 32776231,
+    "number": 906,
+    "title": "Unable to bootstrap my emr/hadoop nodes",
+    "user": {
+      "login": "seekshreyas",
+      "id": 847781,
+      "avatar_url": "https://avatars.githubusercontent.com/u/847781?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/seekshreyas",
+      "html_url": "https://github.com/seekshreyas",
+      "followers_url": "https://api.github.com/users/seekshreyas/followers",
+      "following_url": "https://api.github.com/users/seekshreyas/following{/other_user}",
+      "gists_url": "https://api.github.com/users/seekshreyas/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/seekshreyas/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/seekshreyas/subscriptions",
+      "organizations_url": "https://api.github.com/users/seekshreyas/orgs",
+      "repos_url": "https://api.github.com/users/seekshreyas/repos",
+      "events_url": "https://api.github.com/users/seekshreyas/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/seekshreyas/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-05-04T20:35:52Z",
+    "updated_at": "2014-05-05T19:39:55Z",
+    "closed_at": "2014-05-05T19:39:55Z",
+    "body": "Hi I am unable to bootstrap emr cluster/hadoop nodes : \r\n\r\nI have tried almost all the possible solutions as described in the documentation:\r\n\r\n- `--setup` flag\r\n- `mrjob.conf` file:\r\n   - giving bootstrap commands as `emr:` and `hadoop:` bootstrap commands\r\n\r\n[My StackOverflow Question](http://stackoverflow.com/questions/23440564/bootstrapping-libraries-on-emr-using-python-mrjob/23448539#23448539)\r\n\r\nAny help would be greatly appreciated"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/903",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/903/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/903/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/903/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/903",
+    "id": 32367517,
+    "number": 903,
+    "title": "EMR job flow startdatetime &amp; creationdatetime now contain milliseconds causes an error reusing job flows",
+    "user": {
+      "login": "boosh",
+      "id": 362148,
+      "avatar_url": "https://avatars.githubusercontent.com/u/362148?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/boosh",
+      "html_url": "https://github.com/boosh",
+      "followers_url": "https://api.github.com/users/boosh/followers",
+      "following_url": "https://api.github.com/users/boosh/following{/other_user}",
+      "gists_url": "https://api.github.com/users/boosh/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/boosh/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/boosh/subscriptions",
+      "organizations_url": "https://api.github.com/users/boosh/orgs",
+      "repos_url": "https://api.github.com/users/boosh/repos",
+      "events_url": "https://api.github.com/users/boosh/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/boosh/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-28T15:07:33Z",
+    "updated_at": "2014-04-28T15:16:09Z",
+    "closed_at": "2014-04-28T15:16:09Z",
+    "body": "It seems the formats of datetimes returned for EMRs has changed to now include milliseconds (at least in eu-west-1). That has broken the following in `pool.py`:\r\n\r\n```python\r\n    if creationdatetime:\r\n        if startdatetime:\r\n            start = datetime.strptime(startdatetime, boto.utils.ISO8601)\r\n        else:\r\n            start = datetime.strptime(job_flow.creationdatetime,\r\n                                      boto.utils.ISO8601)\r\n```\r\nIt can be fixed by applying the following regex to startdatetime and job_flow.creationdatetime:\r\n\r\n```python\r\nre.sub('\\.\\d{3}Z$', 'Z', startdatetime)\r\n```"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/902",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/902/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/902/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/902/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/902",
+    "id": 32365457,
+    "number": 902,
+    "title": "Added required -p flag to mkdir for CDH5",
+    "user": {
+      "login": "alanctgardner",
+      "id": 3100188,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3100188?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alanctgardner",
+      "html_url": "https://github.com/alanctgardner",
+      "followers_url": "https://api.github.com/users/alanctgardner/followers",
+      "following_url": "https://api.github.com/users/alanctgardner/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alanctgardner/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alanctgardner/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alanctgardner/subscriptions",
+      "organizations_url": "https://api.github.com/users/alanctgardner/orgs",
+      "repos_url": "https://api.github.com/users/alanctgardner/repos",
+      "events_url": "https://api.github.com/users/alanctgardner/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alanctgardner/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-28T14:45:21Z",
+    "updated_at": "2014-04-28T14:59:11Z",
+    "closed_at": "2014-04-28T14:59:11Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/902",
+      "html_url": "https://github.com/Yelp/mrjob/pull/902",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/902.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/902.patch"
+    },
+    "body": "In 0.23 HDFS made the -p flag mandatory to silently make parent directories. MrJob was failing on CDH5 because mkdir was no longer working. -p has been in the hdfs client for a long time, so adding it shouldn't break old versions.\r\n\r\nJIRA for the change here: https://issues.apache.org/jira/browse/HADOOP-8551"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/901",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/901/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/901/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/901/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/901",
+    "id": 32194050,
+    "number": 901,
+    "title": "Ensure logging from tools writes out properly",
+    "user": {
+      "login": "bchess",
+      "id": 211132,
+      "avatar_url": "https://avatars.githubusercontent.com/u/211132?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bchess",
+      "html_url": "https://github.com/bchess",
+      "followers_url": "https://api.github.com/users/bchess/followers",
+      "following_url": "https://api.github.com/users/bchess/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bchess/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bchess/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bchess/subscriptions",
+      "organizations_url": "https://api.github.com/users/bchess/orgs",
+      "repos_url": "https://api.github.com/users/bchess/repos",
+      "events_url": "https://api.github.com/users/bchess/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bchess/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2014-04-24T23:05:09Z",
+    "updated_at": "2014-04-24T23:11:31Z",
+    "closed_at": "2014-04-24T23:11:21Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/901",
+      "html_url": "https://github.com/Yelp/mrjob/pull/901",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/901.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/901.patch"
+    },
+    "body": "The tools weren't actually writing output to stderr because set_up_logging never accounted for `__main__`. Let's fix it!"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/897",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/897/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/897/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/897/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/897",
+    "id": 31204389,
+    "number": 897,
+    "title": "Fix PyPy test failures",
+    "user": {
+      "login": "msabramo",
+      "id": 305268,
+      "avatar_url": "https://avatars.githubusercontent.com/u/305268?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/msabramo",
+      "html_url": "https://github.com/msabramo",
+      "followers_url": "https://api.github.com/users/msabramo/followers",
+      "following_url": "https://api.github.com/users/msabramo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/msabramo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/msabramo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/msabramo/subscriptions",
+      "organizations_url": "https://api.github.com/users/msabramo/orgs",
+      "repos_url": "https://api.github.com/users/msabramo/repos",
+      "events_url": "https://api.github.com/users/msabramo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/msabramo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2014-04-09T23:41:47Z",
+    "updated_at": "2014-04-10T16:15:24Z",
+    "closed_at": "2014-04-10T16:15:24Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/897",
+      "html_url": "https://github.com/Yelp/mrjob/pull/897",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/897.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/897.patch"
+    },
+    "body": "This fixes a number of test failures that are unique to PyPy.\r\n\r\nNote that I had to do some stuff with `safeeval` \r\n\r\nmrjob isn't relying on `safeeval` to protect from untrusted user input, is it? Because techniques like this are defeatable by malicious users -- see http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html\r\n\r\nI got it down to 2 test failures:\r\n\r\n```\r\n=========================================================================== short test summary info ============================================================================\r\nFAIL tests/test_emr.py::TestCatFallback::test_ssh_cat\r\nFAIL tests/test_parse.py::FindPythonTracebackTestCase::test_find_python_traceback\r\nSKIP [1] /Users/marca/dev/git-repos/mrjob/.tox/pypy/site-packages/_pytest/unittest.py:113: -v option doesn't work with pypy\r\n\r\nResults (156.11s):\r\n   863 passed\r\n   2 failed\r\n      - /Users/marca/dev/git-repos/mrjob/tests/test_emr.py:2918: AssertionError: Lists differ: ['meow'] != ['meow\\n']\r\n      - /Users/marca/dev/git-repos/mrjob/tests/test_parse.py:108: AssertionError: 5 != 3\r\n   1 skipped\r\nERROR: InvocationError: '/Users/marca/dev/git-repos/mrjob/.tox/pypy/bin/py.test'\r\n___________________________________________________________________________________ summary ____________________________________________________________________________________\r\nERROR:   pypy: commands failed\r\n```"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/896",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/896/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/896/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/896/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/896",
+    "id": 31121763,
+    "number": 896,
+    "title": "Fix test failures",
+    "user": {
+      "login": "msabramo",
+      "id": 305268,
+      "avatar_url": "https://avatars.githubusercontent.com/u/305268?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/msabramo",
+      "html_url": "https://github.com/msabramo",
+      "followers_url": "https://api.github.com/users/msabramo/followers",
+      "following_url": "https://api.github.com/users/msabramo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/msabramo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/msabramo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/msabramo/subscriptions",
+      "organizations_url": "https://api.github.com/users/msabramo/orgs",
+      "repos_url": "https://api.github.com/users/msabramo/repos",
+      "events_url": "https://api.github.com/users/msabramo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/msabramo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 6,
+    "created_at": "2014-04-09T00:45:24Z",
+    "updated_at": "2014-04-10T16:09:25Z",
+    "closed_at": "2014-04-10T16:09:25Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/896",
+      "html_url": "https://github.com/Yelp/mrjob/pull/896",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/896.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/896.patch"
+    },
+    "body": "Fix a few test failures caused by assumptions about non-deterministic things like in what order keys in a dict will be serialized to JSON\r\n\r\n```\r\n======================================================================\r\nFAIL: test_uses_json_format (test_protocol.JSONProtocolTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/test_protocol.py\", line 113, in test_uses_json_format\r\n    self.assertEqual(ENCODED, JSONProtocol().write(KEY, VALUE))\r\nAssertionError: '[\"a\", 1]\\t{\"foo\": {\"bar\": 3}, \"baz\": null}' != '[\"a\", 1]\\t{\"baz\": null, \"foo\": {\"bar\": 3}}'\r\n\r\n======================================================================\r\nFAIL: test_uses_json_format (test_protocol.JSONValueProtocolTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/test_protocol.py\", line 159, in test_uses_json_format\r\n    self.assertEqual(ENCODED, JSONValueProtocol().write(None, VALUE))\r\nAssertionError: '{\"foo\": {\"bar\": 3}, \"baz\": null, \"quz\": [\"a\", 1]}' != '{\"quz\": [\"a\", 1], \"baz\": null, \"foo\": {\"bar\": 3}}'\r\n\r\n======================================================================\r\nFAIL: test_jobconf_simulated_by_runner (test_inline.SimRunnerJobConfTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/test_inline.py\", line 270, in test_jobconf_simulated_by_runner\r\n    expected_cache_files)\r\nAssertionError: '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmpdl8oxE/upload#upload,/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py' != ('/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py', '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmpdl8oxE/upload#upload')\r\n\r\n======================================================================\r\nFAIL: test_jobconf_simulated_by_runner (test_local.LocalMRJobRunnerJobConfTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/test_inline.py\", line 270, in test_jobconf_simulated_by_runner\r\n    expected_cache_files)\r\nAssertionError: '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmpb7eYYs/upload#upload,/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py' != ('/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py', '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmpb7eYYs/upload#upload')\r\n\r\n======================================================================\r\nFAIL: test_jobconf_simulated_by_runner (tests.test_inline.SimRunnerJobConfTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/test_inline.py\", line 270, in test_jobconf_simulated_by_runner\r\n    expected_cache_files)\r\nAssertionError: '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmp8EckDo/upload#upload,/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py' != ('/Users/marca/dev/git-repos/mrjob/tests/mr_test_jobconf.py#mr_test_jobconf.py', '/var/folders/gw/w0clrs515zx9x_55zgtpv4mm0000gp/T/tmp8EckDo/upload#upload')\r\n\r\n======================================================================\r\nFAIL: test_its_not_very_quiet (tools.emr.test_terminate_idle_job_flows.JobFlowInspectionTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/tools/emr/test_terminate_idle_job_flows.py\", line 616, in test_its_not_very_quiet\r\n    self.assertEqual(stdout.getvalue(), output)\r\nAssertionError: 'Terminated job flow j-POOLED (Pooled Job Flow); was idle for 0:50:00, 0:05:00 to end of hour\\nTerminated job flow j-PENDING_BUT_IDLE (Pending But Idle Job Flow); was pending for 2:50:00, 0:05:00 to end of hour\\nTerminated job flow j-DEBUG_ONLY (Debug Only Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_FAILED (Idle And Failed Job Flow); was idle for 3:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_EXPIRED (Idle And Expired Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-HADOOP_DEBUGGING (Hadoop Debugging Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-DONE_AND_IDLE (Done And Idle Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-EMPTY (Empty Job Flow); was idle for 10:00:00, 1:00:00 to end of hour\\n' != 'Terminated job flow j-POOLED (Pooled Job Flow); was idle for 0:50:00, 0:05:00 to end of hour\\nTerminated job flow j-PENDING_BUT_IDLE (Pending But Idle Job Flow); was pending for 2:50:00, 0:05:00 to end of hour\\nTerminated job flow j-DEBUG_ONLY (Debug Only Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-DONE_AND_IDLE (Done And Idle Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_EXPIRED (Idle And Expired Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_FAILED (Idle And Failed Job Flow); was idle for 3:00:00, 1:00:00 to end of hour\\nTerminated job flow j-HADOOP_DEBUGGING (Hadoop Debugging Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-EMPTY (Empty Job Flow); was idle for 10:00:00, 1:00:00 to end of hour\\n'\r\n```\r\n\r\nI do have one remaining failure that I haven't fixed yet and I'm not sure I know how to:\r\n\r\n```\r\n======================================================================\r\nFAIL: test_its_not_very_quiet (tools.emr.test_terminate_idle_job_flows.JobFlowInspectionTestCase)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/marca/dev/git-repos/mrjob/tests/tools/emr/test_terminate_idle_job_flows.py\", line 616, in test_its_not_very_quiet\r\n    self.assertEqual(stdout.getvalue(), output)\r\nAssertionError: 'Terminated job flow j-POOLED (Pooled Job Flow); was idle for 0:50:00, 0:05:00 to end of hour\\nTerminated job flow j-PENDING_BUT_IDLE (Pending But Idle Job Flow); was pending for 2:50:00, 0:05:00 to end of hour\\nTerminated job flow j-DEBUG_ONLY (Debug Only Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_EXPIRED (Idle And Expired Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-DONE_AND_IDLE (Done And Idle Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_FAILED (Idle And Failed Job Flow); was idle for 3:00:00, 1:00:00 to end of hour\\nTerminated job flow j-HADOOP_DEBUGGING (Hadoop Debugging Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-EMPTY (Empty Job Flow); was idle for 10:00:00, 1:00:00 to end of hour\\n' != 'Terminated job flow j-POOLED (Pooled Job Flow); was idle for 0:50:00, 0:05:00 to end of hour\\nTerminated job flow j-PENDING_BUT_IDLE (Pending But Idle Job Flow); was pending for 2:50:00, 0:05:00 to end of hour\\nTerminated job flow j-DEBUG_ONLY (Debug Only Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-DONE_AND_IDLE (Done And Idle Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_EXPIRED (Idle And Expired Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-IDLE_AND_FAILED (Idle And Failed Job Flow); was idle for 3:00:00, 1:00:00 to end of hour\\nTerminated job flow j-HADOOP_DEBUGGING (Hadoop Debugging Job Flow); was idle for 2:00:00, 1:00:00 to end of hour\\nTerminated job flow j-EMPTY (Empty Job Flow); was idle for 10:00:00, 1:00:00 to end of hour\\n'\r\n\r\n----------------------------------------------------------------------\r\nRan 866 tests in 78.518s\r\n\r\nFAILED (failures=1)\r\n```"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/895",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/895/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/895/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/895/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/895",
+    "id": 31119475,
+    "number": 895,
+    "title": "Add support for tox",
+    "user": {
+      "login": "msabramo",
+      "id": 305268,
+      "avatar_url": "https://avatars.githubusercontent.com/u/305268?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/msabramo",
+      "html_url": "https://github.com/msabramo",
+      "followers_url": "https://api.github.com/users/msabramo/followers",
+      "following_url": "https://api.github.com/users/msabramo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/msabramo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/msabramo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/msabramo/subscriptions",
+      "organizations_url": "https://api.github.com/users/msabramo/orgs",
+      "repos_url": "https://api.github.com/users/msabramo/repos",
+      "events_url": "https://api.github.com/users/msabramo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/msabramo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 4,
+    "created_at": "2014-04-08T23:50:48Z",
+    "updated_at": "2014-04-10T16:09:26Z",
+    "closed_at": "2014-04-10T16:09:26Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/895",
+      "html_url": "https://github.com/Yelp/mrjob/pull/895",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/895.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/895.patch"
+    },
+    "body": "This adds support for [tox](http://tox.testrun.org/)"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/893",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/893/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/893/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/893/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/893",
+    "id": 30639838,
+    "number": 893,
+    "title": "Fix slightly erroneous docstring for S3 filesystem",
+    "user": {
+      "login": "spenczar",
+      "id": 880413,
+      "avatar_url": "https://avatars.githubusercontent.com/u/880413?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/spenczar",
+      "html_url": "https://github.com/spenczar",
+      "followers_url": "https://api.github.com/users/spenczar/followers",
+      "following_url": "https://api.github.com/users/spenczar/following{/other_user}",
+      "gists_url": "https://api.github.com/users/spenczar/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/spenczar/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/spenczar/subscriptions",
+      "organizations_url": "https://api.github.com/users/spenczar/orgs",
+      "repos_url": "https://api.github.com/users/spenczar/repos",
+      "events_url": "https://api.github.com/users/spenczar/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/spenczar/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-01T21:32:43Z",
+    "updated_at": "2014-04-10T16:16:09Z",
+    "closed_at": "2014-04-10T16:16:09Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/893",
+      "html_url": "https://github.com/Yelp/mrjob/pull/893",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/893.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/893.patch"
+    },
+    "body": "This tripped me up. The endpoint isn't the same thing as the region name."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/892",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/892/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/892/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/892/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/892",
+    "id": 30592697,
+    "number": 892,
+    "title": "`SORT_VALUES = True` not working with hadoop 1.0.3/EMR AMI 2.4.2",
+    "user": {
+      "login": "boosh",
+      "id": 362148,
+      "avatar_url": "https://avatars.githubusercontent.com/u/362148?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/boosh",
+      "html_url": "https://github.com/boosh",
+      "followers_url": "https://api.github.com/users/boosh/followers",
+      "following_url": "https://api.github.com/users/boosh/following{/other_user}",
+      "gists_url": "https://api.github.com/users/boosh/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/boosh/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/boosh/subscriptions",
+      "organizations_url": "https://api.github.com/users/boosh/orgs",
+      "repos_url": "https://api.github.com/users/boosh/repos",
+      "events_url": "https://api.github.com/users/boosh/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/boosh/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-01T12:04:45Z",
+    "updated_at": "2014-04-02T10:05:02Z",
+    "closed_at": "2014-04-01T12:20:06Z",
+    "body": "When `SORT_VALUES` is enabled in a job, mrjob fails to build the command line arguments to invoke hadoop correctly. It doesn't make a distinction between 'genericOptions' and 'commandOptions', but genericOptions (e.g. ones beginning '-D') must be supplied before commandOptions.\r\n\r\nAs a result, MRJob incorrectly builds a command line such as the following, which fails:\r\n```\r\n-files s3://my-bucket/mrjob/tmp/&lt;truncated&gt;/sessioniser.py \\\r\n-files /home/hadoop/lib/avro-1.7.6.jar,/home/hadoop/lib/avro-mapred-1.7.6-hadoop1.jar -libjars /home/hadoop/lib/avro-1.7.6.jar,/home/hadoop/lib/avro-mapred-1.7.6-hadoop1.jar \\\r\n-inputformat org.apache.avro.mapred.AvroAsTextInputFormat \\\r\n-D mapred.text.key.partitioner.options=-k1,1 \\\r\n-D stream.num.map.output.key.fields=2 -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner \\\r\n-mapper \"python sessioniser.py --step-num=0 --mapper\" \\\r\n-reducer \"python sessioniser.py --step-num=0 --reducer\" \\\r\n-input s3://my-bucket/&lt;truncated&gt;/part-m-00000.avro \\\r\n-output s3://my-bucket/output/&lt;truncated&gt;/step1/\r\n```\r\n\r\nThe correct ordering of the above is to make the '-D' options be the first ones, i.e. the following works:\r\n```\r\n-D mapred.text.key.partitioner.options=-k1,1 \\\r\n-D stream.num.map.output.key.fields=2 \\\r\n-files s3://my-bucket/mrjob/tmp/&lt;truncated&gt;/sessioniser.py \\\r\n-files /home/hadoop/lib/avro-1.7.6.jar,/home/hadoop/lib/avro-mapred-1.7.6-hadoop1.jar -libjars /home/hadoop/lib/avro-1.7.6.jar,/home/hadoop/lib/avro-mapred-1.7.6-hadoop1.jar \\\r\n-inputformat org.apache.avro.mapred.AvroAsTextInputFormat \\\r\n-partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner \\\r\n-mapper \"python sessioniser.py --step-num=0 --mapper\" \\\r\n-reducer \"python sessioniser.py --step-num=0 --reducer\" \\\r\n-input s3://my-bucket/&lt;truncated&gt;/part-m-00000.avro \\\r\n-output s3://my-bucket/output/&lt;truncated&gt;/step1/\r\n```"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/891",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/891/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/891/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/891/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/891",
+    "id": 30461660,
+    "number": 891,
+    "title": "Wrong Hadoop Streaming JAR on Hadoop 2.3",
+    "user": {
+      "login": "hanyangrabbit",
+      "id": 1797545,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1797545?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/hanyangrabbit",
+      "html_url": "https://github.com/hanyangrabbit",
+      "followers_url": "https://api.github.com/users/hanyangrabbit/followers",
+      "following_url": "https://api.github.com/users/hanyangrabbit/following{/other_user}",
+      "gists_url": "https://api.github.com/users/hanyangrabbit/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/hanyangrabbit/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/hanyangrabbit/subscriptions",
+      "organizations_url": "https://api.github.com/users/hanyangrabbit/orgs",
+      "repos_url": "https://api.github.com/users/hanyangrabbit/repos",
+      "events_url": "https://api.github.com/users/hanyangrabbit/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/hanyangrabbit/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 4,
+    "created_at": "2014-03-30T08:50:06Z",
+    "updated_at": "2014-04-15T01:36:04Z",
+    "closed_at": "2014-04-15T01:36:04Z",
+    "body": "When trying to run a job, it prints:\r\n```\r\nHADOOP: Exception in thread \"main\" java.lang.ClassNotFoundException: -files\r\nHADOOP: \tat java.net.URLClassLoader$1.run(URLClassLoader.java:366)\r\nHADOOP: \tat java.net.URLClassLoader$1.run(URLClassLoader.java:355)\r\nHADOOP: \tat java.security.AccessController.doPrivileged(Native Method)\r\nHADOOP: \tat java.net.URLClassLoader.findClass(URLClassLoader.java:354)\r\nHADOOP: \tat java.lang.ClassLoader.loadClass(ClassLoader.java:425)\r\nHADOOP: \tat java.lang.ClassLoader.loadClass(ClassLoader.java:358)\r\nHADOOP: \tat java.lang.Class.forName0(Native Method)\r\nHADOOP: \tat java.lang.Class.forName(Class.java:270)\r\nHADOOP: \tat org.apache.hadoop.util.RunJar.main(RunJar.java:205)\r\n```\r\nLooks like mrjob finds ```$HADOOP_HOME/share/hadoop/tools/sources/hadoop-streaming-2.3.0-test-sources.jar```. It should be ```$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.3.0.jar```."
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/886",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/886/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/886/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/issues/886/events",
+    "html_url": "https://github.com/Yelp/mrjob/issues/886",
+    "id": 29134656,
+    "number": 886,
+    "title": "Redundant script execution criterea",
+    "user": {
+      "login": "itissid",
+      "id": 491067,
+      "avatar_url": "https://avatars.githubusercontent.com/u/491067?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/itissid",
+      "html_url": "https://github.com/itissid",
+      "followers_url": "https://api.github.com/users/itissid/followers",
+      "following_url": "https://api.github.com/users/itissid/following{/other_user}",
+      "gists_url": "https://api.github.com/users/itissid/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/itissid/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/itissid/subscriptions",
+      "organizations_url": "https://api.github.com/users/itissid/orgs",
+      "repos_url": "https://api.github.com/users/itissid/repos",
+      "events_url": "https://api.github.com/users/itissid/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/itissid/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2014-03-10T21:30:49Z",
+    "updated_at": "2014-03-11T00:01:02Z",
+    "closed_at": "2014-03-10T21:55:02Z",
+    "body": "The documentation here: http://pythonhosted.org/mrjob/guides/quickstart.html#what-s-happening\r\nSuggests we do a:\r\nif __name__ == '__main__':\r\n    MRWordCounter.run()  # where MRWordCounter is your job class\r\nin every module that declares the class.\r\n\r\nBut generally the practice is that one creates a bin script to be packaged with distribute that does not define the MRWordCounter class  but imports it separately.\r\nThis still requires the module containing the MRWordCounter class to have those two lines redundantly. This is annoying. Can it be fixed?\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/Yelp/mrjob/issues/885",
+    "labels_url": "https://api.github.com/repos/Yelp/mrjob/issues/885/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Yelp/mrjob/issues/885/comments",
+    "events_url": "https://api.github.com/repos/Yelp/mrjob/100 78438  100 78438    0     0  98320      0 --:--:-- --:--:-- --:--:-- 98293
+issues/885/events",
+    "html_url": "https://github.com/Yelp/mrjob/pull/885",
+    "id": 29124106,
+    "number": 885,
+    "title": "Writeable filesystem",
+    "user": {
+      "login": "icio",
+      "id": 408401,
+      "avatar_url": "https://avatars.githubusercontent.com/u/408401?v=2",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/icio",
+      "html_url": "https://github.com/icio",
+      "followers_url": "https://api.github.com/users/icio/followers",
+      "following_url": "https://api.github.com/users/icio/following{/other_user}",
+      "gists_url": "https://api.github.com/users/icio/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/icio/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/icio/subscriptions",
+      "organizations_url": "https://api.github.com/users/icio/orgs",
+      "repos_url": "https://api.github.com/users/icio/repos",
+      "events_url": "https://api.github.com/users/icio/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/icio/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-03-10T19:18:01Z",
+    "updated_at": "2014-03-10T19:18:49Z",
+    "closed_at": "2014-03-10T19:18:49Z",
+    "pull_request": {
+      "url": "https://api.github.com/repos/Yelp/mrjob/pulls/885",
+      "html_url": "https://github.com/Yelp/mrjob/pull/885",
+      "diff_url": "https://github.com/Yelp/mrjob/pull/885.diff",
+      "patch_url": "https://github.com/Yelp/mrjob/pull/885.patch"
+    },
+    "body": "Defines `{Composite,Local,S3,Hadoop}Filesystem.write`."
+  }
+]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Homework&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Use the <a href="http://developer.github.com/v3/users/">Users</a> resource to
+discover how many public repositories (<code>public_repos</code>) I have (<code>jblomo</code>).
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/">Repositories</a> resource
+to discover which repositories (<code>full_name</code>) I am only a member of.
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/">Repositories</a> resource
+to find the <code>login</code> s of the contributors to the <code>mrjob</code> repository owned
+by <code>Yelp</code>
+</li>
+<li>Use the <a href="http://developer.github.com/v3/repos/commits/">Commits</a> resource
+to find what the <code>message</code> was of the first commit to the <code>webarch253</code>
+repository owned by <code>jblomo</code>.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Show Work:slide:</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Text file in Pull Request
+</li>
+<li>Include answer and curl request used
+</li>
+<li>Long responses can be elided
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Don't forget your Project&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>October 30th (1/5 of your time is gone)
+</li>
+<li>There are 4 main parts:
+<ul class="org-ul">
+<li>HTML to submit the form
+</li>
+<li>Handle <code>POST</code> to <code>server/create</code> to store redirect and return result
+</li>
+<li>Handle <code>GET</code> to short URL and redirect
+</li>
+<li>Handle <code>GET</code> to unknown URL and 404
+</li>
+</ul>
+</li>
+</ul>
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-28 Sun 11:24</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

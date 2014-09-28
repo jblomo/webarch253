@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Cookies</title>
+<!-- 2014-09-28 Sun 11:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Cookies</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. HTTP Cookies</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Review</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. HTTP is Stateless</a></li>
+<li><a href="#sec-3">3. When is State Useful?</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Think</a></li>
+<li><a href="#sec-3-2">3.2. Identification</a></li>
+<li><a href="#sec-3-3">3.3. No!</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. HTTP Headers are Meta-information</a></li>
+<li><a href="#sec-5">5. Cookies</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Breakdown</a></li>
+<li><a href="#sec-5-2">5.2. Cookie's Life</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Cookie Attributes</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Security note</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. 2034?</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Demo</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Authentication</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Security</a></li>
+<li><a href="#sec-8-2">8.2. Secure Authentication</a>
+<ul>
+<li><a href="#sec-8-2-1">8.2.1. What is a visitor-id?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Types of Cookies</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Secure</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Cookie Review</a></li>
+<li><a href="#sec-11">11. The Auths</a>
+<ul>
+<li><a href="#sec-11-1">11.1. Real World</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Multi-step Wizards</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Example</a></li>
+<li><a href="#sec-12-2">12.2. Example</a>
+<ul>
+<li><a href="#sec-12-2-1">12.2.1. Where are the choices?</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-3">12.3. Example</a>
+<ul>
+<li><a href="#sec-12-3-1">12.3.1. Final Step</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-13">13. HTTP is Stateless</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Good Things</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. Cookies</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> HTTP Cookies&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>What is State?
+</li>
+<li>Does a light switch have state?
+</li>
+<li>Does a dice roll have state?
+</li>
+<li>Do "commands"/turns within a phone conversation have state?
+</li>
+<li>If a page is generated with a template, is it considered dynamic or
+static?
+</li>
+<li>Are CSS and JS typically static or dynamic?
+</li>
+<li>Webservers map URLs to what?
+</li>
+<li>What is the server part of the url <a href="http://ischool.berkeley.edu/index.php">http://ischool.berkeley.edu/index.php</a>?
+</li>
+<li>What are the advantages of separating semantics from presentation?
+</li>
+<li>Who controls HTML and HTTP specifications?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> HTTP is Stateless&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><b>Pros</b>
+</li>
+<li>Simple protocol
+</li>
+<li>Easily distributable
+</li>
+<li>No space requirements on server
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Cons</b>
+</li>
+<li>Can't use relative paths
+</li>
+<li>Must resend information (eg. Host)
+</li>
+<li>Client must track state
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> When is State Useful?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Knowing which user
+</li>
+<li>Logged In / Logged Out
+</li>
+<li>Shopping Cart
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Think&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Examples from class?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Identification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Using HTTP commands, can we tell if we've seen this client before?
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-http">GET /?name=World&amp;title=Hello HTTP/1.1
+Host: localhost
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 231
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 21 Sep 2012 04:17:46 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+    &lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;title&gt;Hello&lt;/title&gt;
+	&lt;link rel="stylesheet" href="static/css/default.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;div class="container"&gt;
+	    Hello World
+	&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> No!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>There's nothing in here that indicates an identity
+</li>
+<li>Even if this user previously used a form to login
+</li>
+<li>IP doesn't help: offices all use the same IP
+</li>
+<li>So how do we tell one user from another?
+</li>
+<li>ie, how can we provide information about the request?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> HTTP Headers are Meta-information&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<dl class="org-dl">
+<dt> <code>Host</code> </dt><dd>The host we're trying to contact
+</dd>
+<dt> <code>Content-Type</code> </dt><dd>The type and format of data in the response or request
+</dd>
+<dt> <code>Cookie</code> </dt><dd>Information about client, set by server
+</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Cookies&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-http">GET /?name=World&amp;title=Hello HTTP/1.1
+Host: localhost
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 231
+Set-Cookie: visitor-id=1234
+Set-Cookie: language=en
+Date: Fri, 21 Sep 2012 04:17:46 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+...
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">GET /?name=World&amp;title=Hello HTTP/1.1
+Host: localhost
+Cookie: visitor-id=1234; language=en
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Breakdown&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Send a request (no cookies)
+</li>
+<li>Server response normally, PLUS we get a cookie
+</li>
+<li>Subsequent requests include the cookie
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Cookie's Life&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+
+<div class="figure">
+<p><img src="img/cookie_desktop.jpg"  alt="cookie_desktop.jpg"/></p>
+</div>
+<ul class="org-ul">
+<li>Initial request to server
+</li>
+<li>Server response with <code>Set-Cookie</code> headers
+<ul class="org-ul">
+<li>Key-Value pairs, one per header
+</li>
+</ul>
+</li>
+<li>Client saves cookie values
+</li>
+<li>Subsequent requests, client sends cookie values
+<ul class="org-ul">
+<li>Key-Value pairs, many per header
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Cookie Attributes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Specified after key-value in <code>Set-Cookie</code>
+</li>
+</ul>
+
+
+<dl class="org-dl">
+<dt> Domain and Path </dt><dd>Scope of a cookie - when is it active?
+</dd>
+<dt> Expires and Max-Age </dt><dd>When should the browser delete the cookie?
+</dd>
+<dt> Secure and HttpOnly </dt><dd>Further limits scope to a protocol
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Security note&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>HTTP requests are in plain text, you can see an copy other cookies
+</li>
+<li>So private cookies are only sent with HTTPS
+</li>
+<li>Further reading in <a href="http://en.wikipedia.org/wiki/HTTP_cookie#Cookie_attributes">Cookie attributes</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 2034?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Maximum amount of time one can set
+</li>
+<li>~20 years (can depend on browser)
+</li>
+<li>Year 2034
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/conan-year-2000.jpg"  alt="conan-year-2000.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Demo&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Open Chrome to check cookies
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Authentication&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+
+<pre class="src src-http">PUT /login HTTP/1.1
+Host: localhost
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+
+username=jim&amp;password=XXXX
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 231
+Set-Cookie: user-id=5678
+Set-Cookie: logged-in=true
+Date: Fri, 21 Sep 2012 04:17:46 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+...
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">GET /homepage HTP/1.1
+Host: localhost
+Cookie: user-id=5678; logged-in=true
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Security&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Is there anything limiting you from connecting with Telnet and sending an
+arbitrary user-id?  Or setting logged-in?
+</li>
+<li>So what do we send back instead?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Secure Authentication&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+
+<pre class="src src-http">PUT /login HTTP/1.1
+Host: localhost
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+
+username=jim&amp;password=XXXX
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 231
+Set-Cookie: visitor-id=e734a88a1110fa3d657454b2dd348822
+Date: Fri, 21 Sep 2012 04:17:46 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+...
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-http">GET /homepage
+Host: localhost
+Cookie: visitor-id=e734a88a1110fa3d657454b2dd348822
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-2-1" class="outline-4">
+<h4 id="sec-8-2-1"><span class="section-number-4">8.2.1</span> What is a visitor-id?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-8-2-1">
+<ul class="org-ul">
+<li>Nearly impossible to guess ID
+</li>
+<li>ID is stored in a database, associated with status:
+<ul class="org-ul">
+<li>logged in
+</li>
+<li>name
+</li>
+<li>email
+</li>
+</ul>
+</li>
+<li>Server creates the ID
+</li>
+<li>It is opaque to client, it just sends it back
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Types of Cookies&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<dl class="org-dl">
+<dt> Session </dt><dd>Exists until browser is closed
+</dd>
+<dt> Persistent </dt><dd>Exists for a specified time
+</dd>
+<dt> Secure </dt><dd>Only sent over secure connections (HTTPS)
+</dd>
+<dt> Third-party </dt><dd>Set for another domain, eg. advertiser
+</dd>
+<dt> Ever / Zombie </dt><dd>Tricks to avoid clearing cookies
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Secure&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>HTTP is plain text, so if someone can see your requests, they can see your
+cookie
+</li>
+<li>How would they use your cookie?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Cookie Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Are cookies stored on the client or server?
+</li>
+<li>Are cookies generated on the client or server?
+</li>
+<li>Can a server trust the cookies being sent?
+</li>
+<li>Can the browser decide which cookies to send?
+</li>
+<li>What happens if we clear the <code>visitor-id</code> cookie from the example?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> The Auths&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<dl class="org-dl">
+<dt> Authentication </dt><dd>Who are you?
+</dd>
+<dt> Authorization </dt><dd>What are you allowed to do?
+</dd>
+<dt> Access Controls </dt><dd>What can you do to which resources?
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Real World&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>ID is proven by sending username and password via a form
+</li>
+<li>Subsequently, ID is proven by providing token via a cookie
+</li>
+<li>The <b>server</b> handles authorization since we cannot trust the cookie
+contents
+</li>
+<li>Variety of ACL schemes that allow you to give RWX privileges for
+different resources
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Multi-step Wizards&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Process that takes input from multiple pages
+</li>
+<li>Doesn't do anything until final page is complete
+</li>
+<li>How is the handled by HTTP?
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+
+<div class="figure">
+<p><img src="img/WordPress-Easy-Install-1.jpg"  alt="WordPress-Easy-Install-1.jpg"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
+
+<div class="figure">
+<p><img src="img/WordPress-Easy-Install-2.jpg"  alt="WordPress-Easy-Install-2.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-12-2-1" class="outline-4">
+<h4 id="sec-12-2-1"><span class="section-number-4">12.2.1</span> Where are the choices?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-12-2-1">
+<ul class="org-ul">
+<li>Where are the options we selected in step 1?
+</li>
+<li>We don't have any account yet, so usually can't store them in DB
+</li>
+<li>Often they are in <code>hidden</code> input types in the form
+</li>
+<li>Passed along in the wizard
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-3" class="outline-3">
+<h3 id="sec-12-3"><span class="section-number-3">12.3</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-3">
+
+<div class="figure">
+<p><img src="img/WordPress-Easy-Install-4.jpg"  alt="WordPress-Easy-Install-4.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-12-3-1" class="outline-4">
+<h4 id="sec-12-3-1"><span class="section-number-4">12.3.1</span> Final Step&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-12-3-1">
+<ul class="org-ul">
+<li>The final step has all of the data, mixed between last page options and
+      <code>hidden</code> fields
+</li>
+<li>It creates the account with all of the options
+</li>
+<li>Another alternative is using a Cookie to track user
+<ul class="org-ul">
+<li>Storing state for that user
+</li>
+<li>But how long do we store the data for? (We don't know for sure that the
+user is done)
+</li>
+<li>What if the user explores options by using different tabs?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> HTTP is Stateless&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Cookies can simulate state
+</li>
+<li>But must be passed along each request
+</li>
+<li>And cannot be trusted by the server
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Good Things&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Seems like a PITA, but turns out to be the right choice
+</li>
+<li>Composability leads to flexibility:
+<ul class="org-ul">
+<li>Can use any datastore to keep user ID info
+</li>
+<li>Can use any authentication scheme: email, OpenID, etc.
+</li>
+</ul>
+</li>
+<li>Lack of trust leads to better security
+<ul class="org-ul">
+<li>vallet key
+</li>
+<li>DRM trusted the DVD players, but what happened when the players got
+hacked?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Cookies&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+<div class="figure">
+<p><img src="img/cookie-monster.jpg"  alt="cookie-monster.jpg"/></p>
+</div>
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-09-28 Sun 11:24</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

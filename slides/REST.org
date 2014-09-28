@@ -1,0 +1,224 @@
+* REST :slide:center:
+Representational State Transfer
+
+* Good news, everyone! :slide:two_col:
+  + You already know REST
+  + Representations
+  + State
+  + Transfer
+[[file:img/good_news_everyone.png]]
+** Definitions :notes:
+   + Representations :: concrete version (bytes) of a resource
+   + State :: The status of a representation (bank account)
+   + Transfer :: HTTP
+
+* History :slide:two_col:
+  + Roy Fielding co-wrote HTTP specs
+  + Defined REST in his 2000 PhD dissertation
+  + Defined core set of constraints and why they were important
+[[file:img/roy_fielding_sq.jpg]]
+** Relation to HTTP :notes:
+   + HTTP/1.0 1996
+   + HTTP/1.1 1999
+   + ReST defined in thesis 2000
+   + REST was designed as the principles of HTTP
+   + HTTP came out of and embodies these principles
+   + But HTTP is not REST!
+
+* Constraints :slide:
+  + Client-server :: Two separate systems talk to each other through a well
+    defined interface
+  + Stateless :: No context is stored between requests
+  + Cacheable :: Clients or intermediaries can cache results, and requests and
+    results can specify caching information
+  + Layered :: Requests can go through intermediaries (proxies)
+  + Uniform Interface :: The protocol between client and server follows the
+    same rules regardless of the specific application
+  + Code Transfer (Optional):: Servers may send code to clients to execute
+** Describes the Web :notes:
+   + Browsers, webservers
+   + HTTP is stateless
+   + We have caching layers, CDNs (in another lecture)
+   + Proxies, both front end backend (another lecture)
+   + HTTP is uniform if you're getting a page from your portfolio or a CSS file
+     from NYT
+
+** Client-Server :slide:two_col:
+   + Browsers don't care what webserver is providing representations, or what
+     database is holding data
+   + Servers don't care which clients are connecting
+
+
+   + Overhead of transferring data
+   + Fewer, simpler failure modes
+** Flexibility :notes:
+   + Theme of many of these constraints
+   + We are trading off flexibility for performance
+
+** Stateless :slide:two_col:
+   + Simplifies server design and storage
+   + Simplifies request grammar
+   + Improves scalability, error recovery
+
+
+   + Overhead of transferring client state
+   + Not convenient for interactivity at protocol level
+*** Grammar :notes:
+   + Must cover all possible states, eg. in a directory that is deleted
+
+** Cacheable :slide:two_col:
+   + Browsers can store CSS and JavaScript
+   + Businesses can cache responses, even from external sites
+   + Servers can specify how long things should be cached for
+
+
+   + Cache invalidation is hard
+   + Can't rely on updated resources updating "everywhere"
+*** Consistency is hard anyway :notes:
+    + Cache invalidation is hard, but alternative is basically not feasible
+    + Can't update mobile phones in "real time" when they are disconnected
+
+** Layered :slide:two_col:
+  + Apache webserver is an intermediary to =app.py=, but the browser doesn't know!
+  + Allows "one" hostname to be served by hundreds of '=app.py=' servers
+  + Can also separate caching, or authentication and authorization
+
+
+  + Can't rely on server specific details - our request could be passed along
+    to anyone
+  + Server identification more difficult - "Man in the Middle" attacks
+*** Man in the Middle :notes:
+    + Where an adversary intercepts your requests and returns back potentially
+      altered results
+
+** Uniform Interface :slide:two_col:
+  + Client and server know how to interact regardless of application hosted
+  + Yelp uses same interface as Twitter
+  + Wider variety of clients that can handle multiple applications
+
+
+  + For really unique applications, must jam into old paradigms
+  + Difficult to optimize for performance of single application
+*** Clients :notes:
+    + Imagine using a different application for Yelp and Twitter: one has no
+      back button, other can't select text, etc...
+      + Actually don't have to imagine too hard, just use your phone
+    + Difficult to think about what a "resource" is for search
+
+** Code on Demand :slide:two_col:
+   + Server sends code to execute on client
+   + JavaScript, Java, Flash, VisualBasic
+   + Can allow interaction without rebuilding representation
+
+
+   + Difficult to ensure code safety and isolation
+   + Sandboxing limits performance and flexibility
+*** Sandbox :notes:
+    + An area for a program to run that won't let it do real damage
+    + Prevent a virus from reading your personal finances
+    + But this means can't allow the program to helpfully read data
+
+* REST is not HTTP :slide:two_col:
+  + Other protocols are "RESTful"
+  + Waka is Roy Fielding's next protocol
+  + SPDY lowers latency of HTTP-style requests
+  + Must embrace REST constraints
+[[file:img/MagrittePipe.jpg]]
+** New Protocols? :notes:
+   + If you want to make it RESTful, try following Fielding advice
+   + Worked pretty well for the Web
+
+* Web is RESTful :slide:
+  + Web is build on these ideas
+  + Better leverage attained by embracing REST
+  + Flexibility, scalability, visibility, simplicity
+
+* How to Spot RESTfulness :slide:
+  + Should think through constraints, but here are some heuristics
+
+** Uses HTTP :slide:
+   + HTTP can be a Uniform Interface
+   + vs. FTP not RESTful
+
+** Uses HTTP commands :slide:
+   + =GET= =POST= =PUT= ...
+   + vs. Uses POST for everything
+
+** Uses HTTP return codes :slide:
+   + =404= =200=
+   + vs. always responses with =200= but has an error message
+
+** URLs point to resources :slide:
+   + =/api/users/jblomo= =/api/classes/i253=
+   + vs. URLs point to commands =/api/command= =/api/user= =/api/getClasses/=
+*** =/api/user= :notes:
+    + Where =/api/user= then only takes =POST= commands with a =user=jblomo=
+      argument
+    + Fielding called this "Identification of resources"
+
+** Representation links :slide:
+   + A representation links to new possible actions
+   + Client only needs to have representation
+   + Hypermedia as the engine of application state (HATEOAS)
+*** HATEOAS :notes:
+    + HTTP contains links to the next action: the business you want to view,
+      or forms with actions for the review you want to submit
+    + You don't need to memorize the prefix of businesses, then type in an ID
+    + Contains the full URL link
+
+** Example :slide:
+#+begin_src json
+{"business": "http://yelp.com/biz/27",
+ "user": "http://yelp.com/user/5"
+ "review_text": "..."}
+#+end_src
+*** Trade-offs :notes:
+    + Can easily follow links without known a priori structure
+    + Only need "entry" URL to start using API/website
+
+** Counter Example :slide:
+#+begin_src json
+{"business_id": 27,
+ "user_id": 5
+ "review_text": "..."}
+#+end_src
+#+begin_src python
+url.open("http://yelp.com/biz/" + business_id)
+#+end_src
+*** Trade-offs :notes:
+    + Less data transfered
+    + Got back just a simple ID... what do we do with it?
+    + Some APIs require you to read the documentation, then hard code the path
+      and stick the ID you got in the response in
+    + Note HATEOAS: Instead should receive the whole URL in this response
+
+** Uses Headers for Metadata :slide:
+   + =Content-Type= XML or JSON
+   + vs. response has extra metadata in XML
+*** SOAP :notes:
+    + For example [[http://en.wikipedia.org/wiki/SOAP][SOAP]] has a
+      =<soap:Header>= section
+    + Self-descriptive: client can figure out how to parse from the message
+      content, not some external source
+
+* A place for the RESTless :slide:
+  + Communicating over many protocols
+  + Performance critical
+  + Prototypes
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
