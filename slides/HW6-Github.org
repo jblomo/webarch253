@@ -9,7 +9,7 @@ Use Github's API
 
 * Show Headers :slide:
 #+begin_src bash
-curl -i http://people.ischool.berkeley.edu/~jblomo/webarch2014
+curl -i http://people.ischool.berkeley.edu/~jblomo/webarch2014/index.html
 #+end_src
 
 #+begin_src http
