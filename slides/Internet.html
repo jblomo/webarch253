@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Internet</title>
+<!-- 2014-10-10 Fri 08:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Internet</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. The Web Is Built On The Internet</a></li>
+<li><a href="#sec-2">2. We Use These Phrases</a></li>
+<li><a href="#sec-3">3. Internet Architecture is Composable</a></li>
+<li><a href="#sec-4">4. Two Computers Need to Communicate</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Imagine</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Three Computers Need to Communicate</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Wires</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Circuit Switching</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Electronic circuits</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Network</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Problems</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. ARPANET :: Network</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Packet Switching</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Postal</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Trade-offs</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Communication</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Internet Protocol</a>
+<ul>
+<li><a href="#sec-11-1">11.1. End-to-end</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Internet Protocol</a>
+<ul>
+<li><a href="#sec-12-1">12.1. IP</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Packets travel over networks</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Routing Details</a></li>
+<li><a href="#sec-13-2">13.2. <code>traceroute</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. IP Address</a>
+<ul>
+<li><a href="#sec-14-1">14.1. IPv4 notation</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. Routing</a>
+<ul>
+<li><a href="#sec-15-1">15.1. More information</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. Ethernet</a>
+<ul>
+<li><a href="#sec-16-1">16.1. Trade-offs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> The Web Is Built On The Internet&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> We Use These Phrases&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>"Connects to server"
+</li>
+<li>"Sends response to client"
+</li>
+<li>"Closes the connection"
+</li>
+</ul>
+<p>
+What do they mean?
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Internet Architecture is Composable&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="img/composable_inception.jpg"  alt="composable_inception.jpg"/></p>
+</div>
+<ul class="org-ul">
+<li>Emphasize flexibility
+</li>
+<li>Allow for growth, incremental adoption
+</li>
+<li>Interchangeable parts
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Two Computers Need to Communicate&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>String a wire between them
+</li>
+<li>Send bits across via voltage changes
+</li>
+<li>Wait for response?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Imagine&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>A time before the Internet and Web
+</li>
+<li>Wire could be connected in any way
+</li>
+<li>Bit could be sent in anyway
+</li>
+<li>Other computer may respond, may not
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Three Computers Need to Communicate&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Get more wire
+</p>
+
+
+<div class="figure">
+<p><img src="img/3c-communication.png"  alt="3c-communication.png"/></p>
+</div>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Wires&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Multiple wires between computers?
+<ul class="org-ul">
+<li>One sending, one receiving?
+</li>
+</ul>
+</li>
+<li>Each computer hooked up to every other, no message passing
+</li>
+<li>Mostly workable
+</li>
+<li>Disadvantage: what happens when you want to connect another computer?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Circuit Switching&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>New computer joins network: wire it up
+</li>
+<li>Switch the electronic circuit
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/telephone-operators.jpg"  alt="telephone-operators.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Electronic circuits&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Very similar to phone "networks": wire up the two parties
+</li>
+<li>Doesn't scale well, but can be fine for small networks
+</li>
+<li>Computers better when multiple can communicate: conference line
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="img/3c-communication.png"  alt="3c-communication.png"/></p>
+</div>
+<ul class="org-ul">
+<li>Now we have a network
+</li>
+<li>Mostly computer-to-computer
+</li>
+<li>How to we communicate between networks?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Problems&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Can't put whole world on same medium
+</li>
+<li>Composability: allow different LAN to work independently
+</li>
+<li>Need some way to address computers that is independent from local network
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> ARPANET :: Network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Circuit Switching -&gt; Packet Switching
+</li>
+<li>Relied on Interface Message Processors (IMPs)
+</li>
+<li>Government, no commercial traffic
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Leonard-Kleinrock-and-IMP1.png"  alt="Leonard-Kleinrock-and-IMP1.png"/></p>
+</div>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>First pass: academic inter-network
+</li>
+<li>Instead of connecting on same medium, use packets that were routed to a
+destination with IMPs
+</li>
+<li>Installation planned at 9 months
+</li>
+<li>Speed 50 kbit/second (home cable is 245x faster)
+<ul class="org-ul">
+<li>loading yelp.com would take ~19 seconds
+</li>
+<li>but wouldn't have fit into memory
+</li>
+</ul>
+</li>
+<li>IMPs were early routers, but more complexity: added reliable routing
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Packet Switching&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Send small packets of information
+</li>
+<li>Addressed to a receiver
+</li>
+<li>Can share medium
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/pony-express.jpg"  alt="pony-express.jpg"/></p>
+</div>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Postal&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>More similar to post mail than circuit switched telephones:
+</li>
+<li>Address a small packet/letter to a person/address
+</li>
+<li>All mail handled by the same middle layer
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Big, expensive IMPs required
+</li>
+<li>Connection to LAN up to owners
+</li>
+<li>Couldn't handle multiple connections
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Communication&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>Can't rely on the sophistication of the carrier network
+</li>
+<li>Can't all be carrying around IMPs
+</li>
+<li>But we'd still like to send packets of data over some link
+</li>
+<li>IMPs only expected networks to talk to each other, not applications on
+specific hosts
+</li>
+<li>So next iteration designed to solve these problems
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Internet Protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Moves much responsibility to host software
+</li>
+<li>Keeps packet switching and routing
+</li>
+<li>Adds concept of ports*
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> End-to-end&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>End-to-end principle: application-specific functionality must reside on
+end-hosts, because they know exactly what is required
+</li>
+<li>Many of the limitations of ARPANET were not able to be composed with new
+solution because all of the logic was in the big iron
+</li>
+<li>Packet switching was a great idea.
+</li>
+<li>Ports added in TCP/UDP layer
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Internet Protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Where is the destination? (host addressing)
+</li>
+<li>How do I get there? (routing)
+</li>
+<li>Stateless!
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> IP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Simplify: tease apart central concepts to implement composability
+</li>
+<li>Best effort delivery: send it off and hope for the best
+</li>
+<li>Don't even guarantee we got the same data!
+</li>
+<li>Very simple, but flexible enough to build on top of
+</li>
+<li>But one of the first things stipulated about the Web was we either
+expect the data to show up, or see an error. How does that happen?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Packets travel over networks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Packets sent to Yelp from ischool
+</li>
+<li>Destination is specified with a number (IP address)
+</li>
+<li>Routing is done by forwarding to the next best network
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/ip-communication.png"  alt="ip-communication.png"/></p>
+</div>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Routing Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>We want to send data to Yelp. But where is Yelp?
+</li>
+<li>Happens to be in SF, but what if it moves?
+</li>
+<li>Networks hand off to the next network it thinks is "closer" to Yelp
+</li>
+<li>That network hands it off&#x2026; etc.
+</li>
+<li>Until we get to Yelp
+</li>
+<li>Lots of problems can happen:
+<ul class="org-ul">
+<li>No route to host
+</li>
+<li>It can go different ways
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> <code>traceroute</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-2">
+<div class="org-src-container">
+
+<pre class="src src-bash">harbinger:~$ traceroute yelp.com
+traceroute to yelp.com (199.255.189.160), 30 hops max, 60 byte packets
+ 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  0.960 ms  1.151 ms  1.056 ms
+ 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  0.930 ms  1.068 ms  1.194 ms
+ 3  xe-5-1-0.inr-001-sut.Berkeley.EDU (128.32.0.66)  17.730 ms  17.766 ms  17.687 ms
+ 4  dc-sfo-agg-1--ucb-10ge.cenic.net (137.164.50.16)  1.554 ms  1.596 ms  1.552 ms
+ 5  svl-agg2--sfo-agg1-10g.cenic.net (137.164.22.27)  3.430 ms  3.392 ms  3.291 ms
+ 6  dc-oak-core1--svl-core1-ge-1.cenic.net (137.164.46.213)  4.361 ms  3.971 ms  3.992 ms
+ 7  dc-paix-px1--oak-core1-ge.cenic.net (137.164.47.18)  5.479 ms  5.370 ms  5.189 ms
+ 8  abovenet--paix-px1-ge2.cenic.net (198.32.251.78)  5.613 ms  5.519 ms  5.567 ms
+ 9  xe-3-0-0.cr1.sjc2.us.above.net (64.125.31.66)  7.367 ms  7.501 ms  7.345 ms
+10  xe-0-0-0.cr2.sjc2.us.above.net (64.125.30.126)  6.403 ms  6.287 ms  6.261 ms
+11  xe-0-1-0.mpr4.sfo7.us.above.net (64.125.26.61)  7.303 ms  7.264 ms  7.240 ms
+12  209.66.115.62.t01325-02.above.net (209.66.115.62)  7.326 ms  7.279 ms  7.318 ms
+13  www.sfo1.yelp.com (199.255.189.160)  7.356 ms  7.293 ms  7.407 ms
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> IP Address&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>Numbers, often represented as "dotted decimal" (199.255.189.160)
+</li>
+<li>But can also be represented as just a number (3355426208)
+</li>
+<li>IPs assigned by Internet Assigned Numbers Authority
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> IPv4 notation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>"IP" short for "IP Address"
+</li>
+<li>"dotted quads"
+</li>
+<li>IP version 4 : 32 bit, IPv6 : 128 bit
+</li>
+<li>IANA typically assigns ranges, then delegated out
+</li>
+<li>ischool gets an IP from a range assigned to Berkeley, which has a range
+assigned to UC system (example)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Routing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>Border Gateway Protocol tracks routes to IPs
+</li>
+<li>ISPs manually configure peers to share information
+</li>
+<li>Routers use BGP to forward packets
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> More information&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li>Routing and peering big topics, please follow up with a networking class if
+you're interested
+</li>
+<li>Take-away: networks can communicate with each other even if not directly
+connected: packets are forwarded along
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Ethernet&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>All computers on the same physical medium
+</li>
+<li>"Frames" addressed to a receiver
+</li>
+<li>Interruptions happen with re-tries
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/http-stack.gif"  alt="http-stack.gif"/></p>
+</div>
+</div>
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>Don't have to wire new computers up with separate cables
+</li>
+<li>Still have to wire computers on the same physical line
+</li>
+<li>All computer recieve all messages &#x2013; just choose to ignore the ones not for
+it
+</li>
+<li>Implications about security, bandwidth
+</li>
+<li>Ethernet just one type of LAN, now dominate
+</li>
+</ul>
+
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-10-10 Fri 08:08</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>
