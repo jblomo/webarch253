@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Midterm-Review</title>
+<!-- 2014-10-16 Thu 22:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Jim Blomo"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Midterm-Review</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Midterm</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Covers</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Browsers</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Answers</a></li>
+<li><a href="#sec-2-2">2.2. Homework</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. HTML</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Answers</a></li>
+<li><a href="#sec-3-2">3.2. CSS</a></li>
+<li><a href="#sec-3-3">3.3. Answers</a></li>
+<li><a href="#sec-3-4">3.4. Homework</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Forms</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Answers</a></li>
+<li><a href="#sec-4-2">4.2. Javascript</a>
+<ul>
+<li><a href="#sec-4-2-1">4.2.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-3">4.3. Homework: Madlibs</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. URIs &amp; HTTP</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Answers</a></li>
+<li><a href="#sec-5-2">5.2. Web Servers</a></li>
+<li><a href="#sec-5-3">5.3. Answers</a></li>
+<li><a href="#sec-5-4">5.4. Homework: Telnet</a>
+<ul>
+<li><a href="#sec-5-4-1">5.4.1. Redirects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-6">6. State &amp; Dynamic Webpages</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Answers</a></li>
+<li><a href="#sec-6-2">6.2. HTTP Data</a>
+<ul>
+<li><a href="#sec-6-2-1">6.2.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-3">6.3. Homework</a></li>
+<li><a href="#sec-6-4">6.4. Cookies</a>
+<ul>
+<li><a href="#sec-6-4-1">6.4.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-5">6.5. REST</a>
+<ul>
+<li><a href="#sec-6-5-1">6.5.1. Answers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-7">7. TCP/IP</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. DNS</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Answers</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Performance</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Answers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Midterm&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Designed for <b>1.5 hours</b>, 3 hours available
+</li>
+<li>May bring <b>8.5x11 cheat sheet</b>
+</li>
+<li>Question types including:
+<ul class="org-ul">
+<li>Fill in the blank
+</li>
+<li>Short sentences
+</li>
+<li>Multiple choice
+</li>
+</ul>
+</li>
+<li>Covers all lectures and reading including frontend performance
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Covers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>I haven't heard of many questions from reading, hopefully this means you
+</li>
+</ul>
+<p>
+understand all of it. Questions may be pulled from reading that were not
+directly covered by slides.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Browsers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>What are the essential tasks of a browser?
+</li>
+<li>What is the DOM?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Browser
+<ul class="org-ul">
+<li>DNS hostname lookup
+</li>
+<li>send receive data over TCP/IP via HTTP(S)
+</li>
+<li>discover and download dependencies
+</li>
+<li>create DOM
+</li>
+<li>apply CSS
+</li>
+<li>Display
+</li>
+<li>executing code
+</li>
+<li>Respond to user actions
+</li>
+</ul>
+</li>
+<li>Tree structure used to model HTML
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Homework&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Purpose of homework was to make sure every one tried different browsers
+</li>
+<li>Think of the trade-offs the browsers made
+</li>
+<li>Think about what technologies were behind that flexibility and features
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> HTML&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>What are some examples of non-semantic tags?
+</li>
+<li>What are the advantages of using tags as opposed to ASCII marks?
+</li>
+<li>What is another example of HyperText?
+</li>
+<li>What elements are used for 1) the content of the page, 2) the metadata of
+the page?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><code>blink</code>, <code>font</code>
+</li>
+<li>Easier to compose, can't get confused when you want to use markup character
+</li>
+<li>wiki text
+</li>
+<li><code>body</code>, <code>head</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> CSS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Why separate style and content?
+</li>
+<li>What does cascading mean?
+</li>
+<li>What are some CSS selectors?
+</li>
+<li>When should you use the <code>style</code> HTML attribute?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>You can present content in different ways (like these slides)
+</li>
+<li>Styles can "cascade" over one another, applying the result of all
+stylesheets to the elements
+</li>
+<li><code>.class</code> <code>#id</code> <code>parent descendent</code>
+</li>
+<li>When you don't have access to the stylesheet
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Homework&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Purpose was to use different elements appropriately
+</li>
+<li><code>table</code> used for tabular data, <code>div</code> for layout
+</li>
+<li>use CSS instead of <code>font</code> tag to set text styles
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Forms&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>What does the <code>method</code> attribute in the form specify?
+</li>
+<li>What are some <code>input</code> types?
+</li>
+<li>Why is Javascript useful with forms?
+</li>
+<li>Can the server trust data if there is Javascript validation?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>HTTP method, <code>GET</code> or <code>POST</code>
+</li>
+<li><code>text</code> <code>checkbox</code> <code>password</code>
+</li>
+<li>Helpful to provide instant validation
+</li>
+<li>No, must re-validate to avoid manual attacks
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Javascript&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>What are two conceptual ways to remove elements from a page?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ul class="org-ul">
+<li>Set the CSS property (eg. <code>display: hidden</code>) or remove from the DOM
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Homework: Madlibs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Purpose was to practice using Javascript
+</li>
+<li>Get used to event driven nature (stuff happens when you interact with page)
+</li>
+<li>Pracice updating a page after an interaction
+</li>
+<li>Steps to change an element (select element, modify some attribute like
+</li>
+</ul>
+<p>
+text, or css)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> URIs &amp; HTTP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><code>foo://example.com:8042/over/there/index.dtb?type=animal&amp;name=narwhal#nose</code>
+</li>
+<li>what are the parts of this URL?
+</li>
+<li>How is a filesystem like a DOM?
+</li>
+<li>Does HTTP use relative or absolute paths?
+</li>
+<li>webservers map _ to resources and return _
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>parts:
+<dl class="org-dl">
+<dt> foo </dt><dd>schema
+</dd>
+<dt> example.com </dt><dd>domain / authority
+</dd>
+<dt> 8042 </dt><dd>port
+</dd>
+<dt> /over/there/index.dtb </dt><dd>path
+</dd>
+<dt> type=animal&amp;name=narwhal </dt><dd>query
+</dd>
+<dt> nose </dt><dd>fragment
+</dd>
+</dl>
+</li>
+<li>both represented by trees
+</li>
+<li>absolute
+</li>
+<li>URLs, representations
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Web Servers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>What are the <code>OK</code> and <code>NOT FOUND</code> return codes?
+</li>
+<li>How do we create a custom <code>NOT FOUND</code> page?
+</li>
+<li>Why is HTTP/1.1 connection reuse helpful?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li><code>200</code>, <code>404</code>
+</li>
+<li>Write HTML content in the response body
+</li>
+<li>Setting up connections causes page load latency
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Homework: Telnet&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>purpose was to practice speaking HTTP
+</li>
+<li>HTTP request consists of a method, absolute path, version, headers, and
+body/content
+</li>
+<li>Browser helps by "following" redirects, running searches, etc.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-http">PUT /foo HTTP/1.1
+Host: localhost
+
+HTTP/1.0 500 INTERNAL SERVER ERROR
+Content-Type: text/html; charset=utf-8
+Connection: close
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 05 Oct 2012 07:20:41 GMT
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Redirects&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>Browswer GETs <a href="http://people.ischool.berkeley.edu/">http://people.ischool.berkeley.edu/</a>~&lt;USER&gt;/server/foo
+</li>
+<li>Server returns a <code>302</code> with <code>Location</code> /
+</li>
+<li>Browser GETS <a href="http://people.ischool.berkeley.edu/">http://people.ischool.berkeley.edu/</a>
+</li>
+<li>Server returns a <code>301</code> with <code>Location</code>  <a href="http://www.people.ischool.berkeley.edu/index.php">http://www.people.ischool.berkeley.edu/index.php</a>
+</li>
+<li>Browser GETs <a href="http://www.people.ischool.berkeley.edu/index.php">http://www.people.ischool.berkeley.edu/index.php</a>
+</li>
+<li>(Sometimes would return a https if logged in)
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> State &amp; Dynamic Webpages&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Does HTTP have state?
+</li>
+<li>How can you tell?
+</li>
+<li>What are the disadvantages to server generated pages?
+</li>
+<li>Should images on <code>yelp.com</code> homepage be served dynamically or statically?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>No
+</li>
+<li>It must resend all context for each request
+</li>
+<li>Usually slower than static
+</li>
+<li>Static since they do not change
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> HTTP Data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Where are query arguments in a <code>GET</code> request?
+</li>
+<li>Where are query arguements in a <code>POST</code> request?
+</li>
+<li>Why is <code>Content-Length</code> needed to send data in a <code>PUT</code> request?
+</li>
+<li>What are some example MIME types?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-6-2-1">
+<ul class="org-ul">
+<li>query section of the URL
+</li>
+<li>Request body
+</li>
+<li>So the server knows how long to wait for data
+</li>
+<li><code>audio/mp4</code> <code>text/html</code>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Homework&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>Purpose was to practice sending data to the server, see how the server can
+respond dynamically
+</li>
+<li>Understand how <code>Content-Type</code> affects the interpretation of data
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Cookies&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>Why are cookies used?
+</li>
+<li>In normal usage, how is the cookie data set?
+</li>
+<li>Cookies are structured as _ - _ pairs
+</li>
+<li>How do we prevent important cookies from being spied and intercepted?
+</li>
+<li>Without cookies, can we tell if a user is logged in with a typical <code>GET</code>
+request?
+</li>
+<li>Why set cookie expire times in 2037?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1"><span class="section-number-4">6.4.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-6-4-1">
+<ul class="org-ul">
+<li>Synchronize state between client and server
+</li>
+<li>Set-Cookie server response header (ie by the server)
+</li>
+<li>key-value
+</li>
+<li>HTTPS Only cookie attribute
+</li>
+<li>No
+</li>
+<li>So we can stay logged in (or at least remembered) after the browser
+restarts
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> REST&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>What is an example of a RESTful system?
+</li>
+<li>Is a Noun endpoint / URL an indicator of a non-RESTful, or RESTful system?
+</li>
+<li>Is using <code>POST</code> for all commands an indicator of a non-RESTful, or RESTful system?
+</li>
+<li>What is the primary trade-off for composable systems like REST?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-6-5-1">
+<ul class="org-ul">
+<li>The Web
+</li>
+<li>RESTful because a Noun typically indicates a Resource
+</li>
+<li>non-RESTful because it is not using a Uniform Interface (<code>GET</code>, <code>PUT</code>, &#x2026;)
+</li>
+<li>Flexibility for single-purpose performance
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> TCP/IP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>What does TCP provide on top of IP?
+</li>
+<li>Why does does DNS use UDP?
+</li>
+<li>What is the difference between packet switching and circuit switching?
+</li>
+<li>Can the sender countrol the path of an IP packet to its destination?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Correctness, reliability with retries or error, ordering of
+</li>
+</ul>
+<p>
+packets, congestion control
+</p>
+<ul class="org-ul">
+<li>Only one packet typically needed for request, one for response
+</li>
+<li>No
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> DNS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Why does a browser make a DNS request first?
+</li>
+<li>Why is it useful to cache a DNS response?
+</li>
+<li>What is a TLD?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>It needs to know the IP address to which it will send the HTTP request
+</li>
+<li>Caching can improve the performance of a client, and at a network level
+</li>
+</ul>
+<p>
+reduce traffic and improve performance of all clients on the network
+</p>
+<ul class="org-ul">
+<li>Top Level Domain, such as .com .edu
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Performance&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>What is a 3 way handshake and how does it affect performance?
+</li>
+<li>Would a CDN be more helpful for downloading 1 large file or 100 small files?
+</li>
+<li>How can you tell a website you want a compressed version of the HTML?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Answers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Needed to establish a TCP/IP connection, it requires 3 round trips so can
+</li>
+</ul>
+<p>
+be slow depending on server
+</p>
+<ul class="org-ul">
+<li>Assuming same bandwidth, the 100 files would be improved more since you'd
+have to wait for the latency of sending the request and getting the first
+byte back
+</li>
+<li>Accept-Encoding header
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-10-16 Thu 22:31</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0.6)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+* Midterm :slide:
+  + Designed for *1.5 hours*, 3 hours available
+  + May bring *8.5x11 cheat sheet*
+  + Question types including:
+    + Fill in the blank
+    + Short sentences
+    + Multiple choice
+  + Covers all lectures and reading including frontend performance
+** Covers :notes:
+  + I haven't heard of many questions from reading, hopefully this means you
+  understand all of it. Questions may be pulled from reading that were not
+  directly covered by slides.
+
+* Browsers :slide:
+  + What are the essential tasks of a browser?
+  + What is the DOM?
+** Answers :notes:
+   + Browser
+     + DNS hostname lookup
+     + send receive data over TCP/IP via HTTP(S)
+     + discover and download dependencies
+     + create DOM
+     + apply CSS
+     + Display
+     + executing code
+     + Respond to user actions
+   + Tree structure used to model HTML
+
+** Homework :slide:
+   + Purpose of homework was to make sure every one tried different browsers
+   + Think of the trade-offs the browsers made
+   + Think about what technologies were behind that flexibility and features
+
+* HTML :slide:
+  + What are some examples of non-semantic tags?
+  + What are the advantages of using tags as opposed to ASCII marks?
+  + What is another example of HyperText?
+  + What elements are used for 1) the content of the page, 2) the metadata of
+    the page?
+** Answers :notes:
+   + =blink=, =font=
+   + Easier to compose, can't get confused when you want to use markup character
+   + wiki text
+   + =body=, =head=
+
+** CSS :slide:
+   + Why separate style and content?
+   + What does cascading mean?
+   + What are some CSS selectors?
+   + When should you use the =style= HTML attribute?
+** Answers :notes:
+   + You can present content in different ways (like these slides)
+   + Styles can "cascade" over one another, applying the result of all
+     stylesheets to the elements
+   + =.class= =#id= =parent descendent=
+   + When you don't have access to the stylesheet
+
+** Homework :slide:
+   + Purpose was to use different elements appropriately
+   + =table= used for tabular data, =div= for layout
+   + use CSS instead of =font= tag to set text styles
+
+* Forms :slide:
+  + What does the =method= attribute in the form specify?
+  + What are some =input= types?
+  + Why is Javascript useful with forms?
+  + Can the server trust data if there is Javascript validation?
+** Answers :notes:
+   + HTTP method, =GET= or =POST=
+   + =text= =checkbox= =password=
+   + Helpful to provide instant validation
+   + No, must re-validate to avoid manual attacks
+
+** Javascript :slide:
+   + What are two conceptual ways to remove elements from a page?
+*** Answers :notes:
+    + Set the CSS property (eg. =display: hidden=) or remove from the DOM
+
+** Homework: Madlibs :slide:
+   + Purpose was to practice using Javascript
+   + Get used to event driven nature (stuff happens when you interact with page)
+   + Pracice updating a page after an interaction
+   + Steps to change an element (select element, modify some attribute like
+   text, or css)
+
+* URIs & HTTP :slide:
+  + =foo://example.com:8042/over/there/index.dtb?type=animal&name=narwhal#nose=
+  + what are the parts of this URL?
+  + How is a filesystem like a DOM?
+  + Does HTTP use relative or absolute paths?
+  + webservers map _ to resources and return _
+** Answers :notes:
+   + parts:
+     + foo :: schema
+     + example.com :: domain / authority
+     + 8042 :: port
+     + /over/there/index.dtb :: path
+     + type=animal&name=narwhal :: query
+     + nose :: fragment
+   + both represented by trees
+   + absolute
+   + URLs, representations
+
+** Web Servers :slide:
+   + What are the =OK= and =NOT FOUND= return codes?
+   + How do we create a custom =NOT FOUND= page?
+   + Why is HTTP/1.1 connection reuse helpful?
+** Answers :notes:
+   + =200=, =404=
+   + Write HTML content in the response body
+   + Setting up connections causes page load latency
+
+** Homework: Telnet :slide:
+   + purpose was to practice speaking HTTP
+   + HTTP request consists of a method, absolute path, version, headers, and
+     body/content
+   + Browser helps by "following" redirects, running searches, etc.
+#+begin_src http
+PUT /foo HTTP/1.1
+Host: localhost
+
+HTTP/1.0 500 INTERNAL SERVER ERROR
+Content-Type: text/html; charset=utf-8
+Connection: close
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Fri, 05 Oct 2012 07:20:41 GMT
+#+end_src
+
+*** Redirects :slide:
+    + Browswer GETs http://people.ischool.berkeley.edu/~<USER>/server/foo
+    + Server returns a =302= with =Location= /
+    + Browser GETS http://people.ischool.berkeley.edu/
+    + Server returns a =301= with =Location=  http://www.people.ischool.berkeley.edu/index.php
+    + Browser GETs http://www.people.ischool.berkeley.edu/index.php
+    + (Sometimes would return a https if logged in)
+
+* State & Dynamic Webpages :slide:
+  + Does HTTP have state?
+  + How can you tell?
+  + What are the disadvantages to server generated pages?
+  + Should images on =yelp.com= homepage be served dynamically or statically?
+** Answers :notes:
+   + No
+   + It must resend all context for each request
+   + Usually slower than static
+   + Static since they do not change
+
+** HTTP Data :slide:
+   + Where are query arguments in a =GET= request?
+   + Where are query arguements in a =POST= request?
+   + Why is =Content-Length= needed to send data in a =PUT= request?
+   + What are some example MIME types?
+*** Answers :notes:
+   + query section of the URL
+   + Request body
+   + So the server knows how long to wait for data
+   + =audio/mp4= =text/html=
+
+** Homework :slide:
+   + Purpose was to practice sending data to the server, see how the server can
+     respond dynamically
+   + Understand how =Content-Type= affects the interpretation of data
+
+** Cookies :slide:
+  + Why are cookies used?
+  + In normal usage, how is the cookie data set?
+  + Cookies are structured as _ - _ pairs
+  + How do we prevent important cookies from being spied and intercepted?
+  + Without cookies, can we tell if a user is logged in with a typical =GET=
+    request?
+  + Why set cookie expire times in 2037?
+*** Answers :notes:
+   + Synchronize state between client and server
+   + Set-Cookie server response header (ie by the server)
+   + key-value
+   + HTTPS Only cookie attribute
+   + No
+   + So we can stay logged in (or at least remembered) after the browser
+     restarts
+
+** REST :slide:
+   + What is an example of a RESTful system?
+   + Is a Noun endpoint / URL an indicator of a non-RESTful, or RESTful system?
+   + Is using =POST= for all commands an indicator of a non-RESTful, or RESTful system?
+   + What is the primary trade-off for composable systems like REST?
+*** Answers :notes:
+    + The Web
+    + RESTful because a Noun typically indicates a Resource
+    + non-RESTful because it is not using a Uniform Interface (=GET=, =PUT=, ...)
+    + Flexibility for single-purpose performance
+
+* TCP/IP :slide:
+  + What does TCP provide on top of IP?
+  + Why does does DNS use UDP?
+  + What is the difference between packet switching and circuit switching?
+  + Can the sender countrol the path of an IP packet to its destination?
+** Answers :notes:
+   + Correctness, reliability with retries or error, ordering of
+   packets, congestion control
+   + Only one packet typically needed for request, one for response
+   + No
+
+* DNS :slide:
+  + Why does a browser make a DNS request first?
+  + Why is it useful to cache a DNS response?
+  + What is a TLD?
+** Answers :notes:
+   + It needs to know the IP address to which it will send the HTTP request
+   + Caching can improve the performance of a client, and at a network level
+   reduce traffic and improve performance of all clients on the network
+   + Top Level Domain, such as .com .edu
+
+* Performance :slide:
+  + What is a 3 way handshake and how does it affect performance?
+  + Would a CDN be more helpful for downloading 1 large file or 100 small files?
+  + How can you tell a website you want a compressed version of the HTML?
+** Answers :notes:
+   + Needed to establish a TCP/IP connection, it requires 3 round trips so can
+   be slow depending on server
+   + Assuming same bandwidth, the 100 files would be improved more since you'd
+     have to wait for the latency of sending the request and getting the first
+     byte back
+   + Accept-Encoding header
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
