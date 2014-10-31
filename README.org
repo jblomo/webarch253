@@ -17,7 +17,7 @@
 | Oct 10 | [[http://www.objc.io/issue-10/ip-tcp-http.html][IP, TCP, and HTTP]]; [[http://www.garykessler.net/library/tcpip.html][TCP/IP Overview]] (Figure 2; Figure 4; TCP; Rest for Overview); [[http://amar-linux.blogspot.com/2012/05/how-dns-works.html][How DNS Works]]; [[http://dyn.com/dns-why-its-important-how-it-works/][DNS Steps]] | [[file:slides/Internet.html][Internet]] & [[file:slides/TCP-DNS.html][TCP and DNS]] | [[file:slides/HW7-DNS.html][HW7 - DNS]] |
 | Oct 17 | [[http://developer.yahoo.com/performance/rules.html][Best Practices for Speeding Up Your Web Site]] & (Optional) [[http://www.stevesouders.com/blog/][Steve Souder's Blog]]; [[https://developers.google.com/speed/docs/insights/rules][Google Speed Rules]] | [[file:slides/frontend_performance.pdf][Front-end Performance (PDF)]] & [[file:slides/Midterm-Review.html][Midterm Review]]| +HW8 - GZIP (see frontend slides)+ canceled |
 | Oct 24 | Midterm | | Project Part 1 Due (Oct 30) |
-| Oct 31  | | Storage Systems | |
+| Oct 31  | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] ; [[http://dev.mysql.com/doc/refman/5.5/en/select.html][MySQL SELECT]] (for HW reference) ; Optional: [[https://www.youtube.com/watch?v=2wSYcyWCtx4][Distributed System Design]] | [[file:slides/StorageSystems.pdf][Storage Systems]] | [[file:slides/HW8-DB.html][HW9 - DB]] ; start [[file:slides/Project2.org][Project Part 2]] |
 | Nov 7  | | Search & SEO | |
 | Nov 14 | | Mobile | |
 | Nov 21 | | Data Mining | |
