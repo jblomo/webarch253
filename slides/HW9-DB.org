@@ -11,10 +11,10 @@
 
 * Queries :slide:
   1. =SELECT=
-    1. How many links were added afer 2013-10-14?
-    1. How many links that were added before 2013-10-14 have fewer than 40 hits?
+    1. How many links were added afer 2014-10-14?
+    1. How many links that were added before 2014-10-14 have fewer than 40 hits?
   1. =INSERT=
-    1. Insert your own URL with a date before 2013-10-14 with greater than 40
+    1. Insert your own URL with a date before 2014-10-14 with greater than 40
       hits.
     1. Is it possible that someone querying the database at the same time could
       see your insert partially complete (eg. only see some fields filled in)?
