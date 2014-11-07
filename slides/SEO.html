@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>SEO</title>
+<!-- 2014-11-06 Thu 23:12 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jim Blomo" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">SEO</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>Search Engine Optimization</b></a></li>
+<li><a href="#sec-2">2. Search Engines</a>
+<ul>
+<li><a href="#sec-2-1">2.1. SEO</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Optimization</a>
+<ul>
+<li><a href="#sec-3-1">3.1. What are we optimizing?</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Elements of a Search</a>
+<ul>
+<li><a href="#sec-4-1">4.1. What steps do we need understand?</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Matching User Intent</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Ideal Case</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Web Crawler discovery</a>
+<ul>
+<li><a href="#sec-6-1">6.1. pages for Bots</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Be linked</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Power of links</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Provide data</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Later</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. "Black Hat"</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Huge Problem</a></li>
+<li><a href="#sec-9-2">9.2. "Stuffing"</a></li>
+<li><a href="#sec-9-3">9.3. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Summaries</a>
+<ul>
+<li><a href="#sec-10-1">10.1. History</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Microformats &amp; Microdata</a>
+<ul>
+<li><a href="#sec-11-1">11.1. What works for you?</a></li>
+<li><a href="#sec-11-2">11.2. Microdata</a></li>
+<li><a href="#sec-11-3">11.3. <code>itemprop</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Microdata Usage</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Types</a></li>
+<li><a href="#sec-12-2">12.2. Microformat</a></li>
+<li><a href="#sec-12-3">12.3. Open Graph</a></li>
+<li><a href="#sec-12-4">12.4. <code>og:</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Preventing Crawling</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Go Away</a></li>
+<li><a href="#sec-13-2">13.2. <code>robots.txt</code></a></li>
+<li><a href="#sec-13-3">13.3. <code>User-Agent</code></a></li>
+<li><a href="#sec-13-4">13.4. Purely Advisory!</a>
+<ul>
+<li><a href="#sec-13-4-1">13.4.1. No Privacy</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-5">13.5. <code>nofollow</code></a>
+<ul>
+<li><a href="#sec-13-5-1">13.5.1. Don't trust the user</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-14">14. <code>humans.txt</code></a></li>
+<li><a href="#sec-15">15. Some Tips</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Search Engine Optimization</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Search Engines&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Search helps users find content
+</li>
+<li>Producers often want user to find <i>their</i> content
+</li>
+<li>Optimize website for discovery by search
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> SEO&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Producers want to structure their websites to allow search engines to
+easily understand it, think highly of it, and return it in search results
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Optimization&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>The amount of targeted traffic arriving through "organic" search results
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> What are we optimizing?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>More people on you site
+</li>
+<li>Usually targeted (the Saturn auto website may not care much about astronomers
+much), but first order is just attracting more traffic
+</li>
+<li>"Organic" search is that which comes without payment (eg. ads)
+</li>
+<li>Once you have more people, need to consider what they're doing next
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Elements of a Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<dl class="org-dl">
+<dt> User </dt><dd>Has "intent", inputs query terms
+</dd>
+<dt> Search Engine </dt><dd>Has index, matches sites to query
+</dd>
+<dt> User </dt><dd>Sees options, clicks one
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> What steps do we need understand?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Intent is something like "I want to buy a camera" "How tall is Michael
+Jordan?" "What cars does Saturn offer?"
+</li>
+<li>Intent translated to something like "best camera" or "Jordan height"
+"Saturn"
+</li>
+<li>Search engines now try to figure out original intent
+</li>
+<li>Then match the intent to sites that seem like they address it
+</li>
+<li>Does a site address an intent?
+<ul class="org-ul">
+<li>Use a similar process: analyze the text, figure out intent of site
+</li>
+<li>and usefulness
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Matching User Intent&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Search engine must figure out intent from queries and page content
+</li>
+<li>If words in query neatly match words in content, probably relevant
+</li>
+<li>Understand the user, optimize page content
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Ideal Case&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>SEO as its best used actually addresses the concerns of a user in the
+language they're using
+</li>
+<li>Stays focused on what the user wants: don't dilute page contents
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Web Crawler discovery&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>To be in search index, must be crawled
+</li>
+<li>Bots are not people
+</li>
+<li>Make pages accessible to bots as well
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> pages for Bots&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Bots can't see layouts: semantic meaning
+</li>
+<li>Bots don't run javascript: keep as much static content on the page (this is
+changing)
+</li>
+<li>Bots look at all the data (update meta tags as appropriate)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Be linked&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Incoming links are a vote of confidence
+</li>
+<li>Who is linking to you? Why?
+</li>
+<li>Who are you linking to?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Power of links&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Are leaders in your area linking to you?
+</li>
+<li>Medical advice? Links from Mayo Clinic?
+</li>
+<li>Danger! Don't go overboard: buy links, trade links
+</li>
+<li>Are you linking to spammy sites?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Provide data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Pithy, relevant content
+</li>
+<li>Useful annotations
+</li>
+<li>Make full use of HTML and new formats
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Later&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Remember: we want to have discoverable content, have others recognize it,
+and show immediate value to user
+</li>
+<li>We'll cover the specifics later
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> "Black Hat"&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Doing manipulative things to increase rank
+</li>
+<li>Buying or planting links
+</li>
+<li>Spam
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Huge Problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>For all of these techniques, possible to go too far, or be sneaky
+</li>
+<li>Much of dealing with relevance now is counter adversarial SEO
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> "Stuffing"&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li>Adding content just for the sake of the bot
+</li>
+<li>Every variation of possible queries, no semantic meaning
+</li>
+<li>"web architecture, website, web site, web arch, ischool web&#x2026;"
+</li>
+<li>How to avoid: is this useful to a user?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-3">
+<ul class="org-ul">
+<li>keyword stuffing in meta tags
+</li>
+<li>small pages with just these key phrases, linking to mothership
+<ul class="org-ul">
+<li>BMW
+</li>
+</ul>
+</li>
+<li>JCPenny got caught, too (reading)
+</li>
+<li>If it wouldn't make sense to a user, probably a bad idea
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Summaries&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Originally, results summarized from meta tags
+</li>
+<li>Now, Keyword in Context (KWIC)
+</li>
+<li>Google providing deep links to content
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/deep-links.png" alt="deep-links.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> History&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>KWIC coined by Hans Peter Luhn 1960
+</li>
+<li>Which is more effective depends on context:
+<ul class="org-ul">
+<li>web pages may be useful
+</li>
+<li>legal briefings maybe not?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Microformats &amp; Microdata&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Semantic information can be used to show better summaries
+</li>
+<li>Better summaries can help users decide if a result is relevant
+</li>
+<li>Different markup methods
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> What works for you?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>We can use HTML attributes to annotate elements with more semantic
+information
+</li>
+<li>Some search engines, like Google, can use these annotations
+</li>
+<li>Advanced technique, mostly driven by industry
+</li>
+<li>Another reason to separate presentation
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="section-number-3">11.2</span> Microdata&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li><a href="http://dev.w3.org/html5/md/">HTML5 Specification</a>
+</li>
+<li><code>itemscope</code>, <code>itemprop</code>, <code>datePublished</code>
+</li>
+<li><a href="http://www.yelp.com/biz/paseo-seattle">Microdata on Yelp</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-11-3" class="outline-3">
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> <code>itemprop</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-3">
+<ul class="org-ul">
+<li>aggregate rating
+</li>
+<li>Many of these techniques are changing rapidly
+</li>
+<li>Important part: Annotation to improve machine understanding, to help human
+understanding
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Microdata Usage&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Wrap concept in tag with <code>itemscope</code> attribute
+</li>
+<li>Type concept with <code>itemtype</code> attribute
+</li>
+<li>Wrap properties of concept in tags with <code>itemprop</code> attribute
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Types&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>See Schema.org for item types
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Microformat&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
+<ul class="org-ul">
+<li>Convention of using class attribute to annotate
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;<span style="color: #0000ff;">div</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"vcard"</span>&gt;
+   &lt;<span style="color: #0000ff;">img</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"photo"</span> <span style="color: #a0522d;">src</span>=<span style="color: #8b2252;">"www.example.com/bobsmith.jpg"</span> /&gt;
+   &lt;<span style="color: #0000ff;">strong</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"fn"</span>&gt;<span style="font-weight: bold;">Bob Smith</span>&lt;/<span style="color: #0000ff;">strong</span>&gt;
+   &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"title"</span>&gt;Senior editor&lt;/<span style="color: #0000ff;">span</span>&gt; at &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"org"</span>&gt;ACME Reviews&lt;/<span style="color: #0000ff;">span</span>&gt;
+   &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"adr"</span>&gt;
+      &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"street-address"</span>&gt;200 Main St&lt;/<span style="color: #0000ff;">span</span>&gt;
+      &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"locality"</span>&gt;Desertville&lt;/<span style="color: #0000ff;">span</span>&gt;, &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"region"</span>&gt;AZ&lt;/<span style="color: #0000ff;">span</span>&gt;
+      &lt;<span style="color: #0000ff;">span</span> <span style="color: #a0522d;">class</span>=<span style="color: #8b2252;">"postal-code"</span>&gt;12345&lt;/<span style="color: #0000ff;">span</span>&gt;
+   &lt;/<span style="color: #0000ff;">span</span>&gt;
+&lt;/<span style="color: #0000ff;">div</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-3" class="outline-3">
+<h3 id="sec-12-3"><span class="section-number-3">12.3</span> <a href="http://ogp.me/">Open Graph</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-3">
+<ul class="org-ul">
+<li>Allow web page to contain graph information
+</li>
+<li>Used by Facebook
+</li>
+<li><code>meta</code> tags with <code>og:</code> namespace
+</li>
+<li><a href="http://www.yelp.com/biz/paseo-seattle">Open Graph on Yelp</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-12-4" class="outline-3">
+<h3 id="sec-12-4"><span class="section-number-3">12.4</span> <code>og:</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-4">
+<ul class="org-ul">
+<li>Similar semantic information: location, name, title
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Preventing Crawling&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>What if you <b>don't</b> want to be indexed?
+</li>
+<li>Decrease load on server
+</li>
+<li>Pages only useful from another context
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Go Away&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Spent all this time talking about trying to get noticed, what if you don't
+want to be?
+</li>
+<li>redirect links
+</li>
+<li>message displayed after signup
+</li>
+<li>directly loading advertisements
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> <code>robots.txt</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>Requests to bots on crawling
+</li>
+<li><code>Disallow</code> : "Please do not crawl this page"
+</li>
+<li><a href="http://yelp.com/robots.txt">Yelp.com/robots.txt</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-13-3" class="outline-3">
+<h3 id="sec-13-3"><span class="section-number-3">13.3</span> <code>User-Agent</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-3">
+<ul class="org-ul">
+<li>Specify rules for different user agents
+</li>
+<li>Only allow a few reputable crawlers:
+<ul class="org-ul">
+<li>Google, Bing, Yahoo, Internet Archive
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-13-4" class="outline-3">
+<h3 id="sec-13-4"><span class="section-number-3">13.4</span> Purely Advisory!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-4">
+<ul class="org-ul">
+<li>Not enforced
+</li>
+<li>Client and Server are decoupled, so server can't control the client
+</li>
+<li>Crawlers that ignore <code>robots.txt</code> detected and return HTTP error codes
+</li>
+<li>Does not make pages private!
+</li>
+<li><a href="https://www.google.com/?q=login%20password%20filetype:xls">Clever Searches</a>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-4-1" class="outline-4">
+<h4 id="sec-13-4-1"><span class="section-number-4">13.4.1</span> No Privacy&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-4-1">
+<ul class="org-ul">
+<li>Bots can ignore it
+</li>
+<li>People can look at it, wonder why you're hiding it
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-5" class="outline-3">
+<h3 id="sec-13-5"><span class="section-number-3">13.5</span> <code>nofollow</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-5">
+<ul class="org-ul">
+<li><code>robots.txt</code> works at the site level
+</li>
+<li>At the link tag level, use attribute rel="nofollow"
+</li>
+<li>Crawlers may follow them, but won't count them as "endorsement"
+</li>
+<li>Useful for user generated content
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-5-1" class="outline-4">
+<h4 id="sec-13-5-1"><span class="section-number-4">13.5.1</span> Don't trust the user&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-5-1">
+<ul class="org-ul">
+<li>Some users are spammy
+</li>
+<li>You don't want to be associated with the links they post
+</li>
+<li>So tell the crawler not to follow them
+</li>
+<li>Also disincentives spam (a little bit)
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> <code>humans.txt</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>"We are people, not machines."
+</li>
+<li>Dedicated to all the people that make a site possible
+</li>
+<li>Have some fun
+</li>
+<li><a href="http://www.googleventures.com/humans.txt">Google Ventures</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Some Tips&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<iframe width="560" height="315" src="http://www.youtube.com/embed/fnSJBpB_OKQ" frameborder="0" allowfullscreen></iframe>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-11-06 Thu 23:12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+* *Search Engine Optimization* :slide:
+
+* Search Engines :slide:
+  + Search helps users find content
+  + Producers often want user to find /their/ content
+  + Optimize website for discovery by search
+** SEO :notes:
+   + Producers want to structure their websites to allow search engines to
+     easily understand it, think highly of it, and return it in search results
+
+* Optimization :slide:
+  + The amount of targeted traffic arriving through "organic" search results
+** What are we optimizing? :notes:
+   + More people on you site
+   + Usually targeted (the Saturn auto website may not care much about astronomers
+     much), but first order is just attracting more traffic
+   + "Organic" search is that which comes without payment (eg. ads)
+   + Once you have more people, need to consider what they're doing next
+
+* Elements of a Search :slide:
+  + User :: Has "intent", inputs query terms
+  + Search Engine :: Has index, matches sites to query
+  + User :: Sees options, clicks one
+** What steps do we need understand? :notes:
+   + Intent is something like "I want to buy a camera" "How tall is Michael
+     Jordan?" "What cars does Saturn offer?"
+   + Intent translated to something like "best camera" or "Jordan height"
+     "Saturn"
+   + Search engines now try to figure out original intent
+   + Then match the intent to sites that seem like they address it
+   + Does a site address an intent?
+     + Use a similar process: analyze the text, figure out intent of site
+     + and usefulness
+
+* Matching User Intent :slide:
+  + Search engine must figure out intent from queries and page content
+  + If words in query neatly match words in content, probably relevant
+  + Understand the user, optimize page content
+** Ideal Case :notes:
+   + SEO as its best used actually addresses the concerns of a user in the
+     language they're using
+   + Stays focused on what the user wants: don't dilute page contents
+
+* Web Crawler discovery :slide:
+  + To be in search index, must be crawled
+  + Bots are not people
+  + Make pages accessible to bots as well
+** pages for Bots :notes:
+   + Bots can't see layouts: semantic meaning
+   + Bots don't run javascript: keep as much static content on the page (this is
+     changing)
+   + Bots look at all the data (update meta tags as appropriate)
+
+* Be linked :slide:
+  + Incoming links are a vote of confidence
+  + Who is linking to you? Why?
+  + Who are you linking to?
+** Power of links :notes:
+   + Are leaders in your area linking to you?
+   + Medical advice? Links from Mayo Clinic?
+   + Danger! Don't go overboard: buy links, trade links
+   + Are you linking to spammy sites?
+
+* Provide data :slide:
+  + Pithy, relevant content
+  + Useful annotations
+  + Make full use of HTML and new formats
+** Later :notes:
+   + Remember: we want to have discoverable content, have others recognize it,
+     and show immediate value to user
+   + We'll cover the specifics later
+
+* "Black Hat" :slide:
+  + Doing manipulative things to increase rank
+  + Buying or planting links
+  + Spam
+** Huge Problem :notes:
+   + For all of these techniques, possible to go too far, or be sneaky
+   + Much of dealing with relevance now is counter adversarial SEO
+
+** "Stuffing" :slide:
+   + Adding content just for the sake of the bot
+   + Every variation of possible queries, no semantic meaning
+   + "web architecture, website, web site, web arch, ischool web..."
+   + How to avoid: is this useful to a user?
+** Details :notes:
+   + keyword stuffing in meta tags
+   + small pages with just these key phrases, linking to mothership
+     + BMW
+   + JCPenny got caught, too (reading)
+   + If it wouldn't make sense to a user, probably a bad idea
+
+* Summaries :slide:
+  + Originally, results summarized from meta tags
+  + Now, Keyword in Context (KWIC)
+  + Google providing deep links to content
+[[file:img/deep-links.png]]
+** History :notes:
+   + KWIC coined by Hans Peter Luhn 1960
+   + Which is more effective depends on context:
+     + web pages may be useful
+     + legal briefings maybe not?
+
+* Microformats & Microdata :slide:
+  + Semantic information can be used to show better summaries
+  + Better summaries can help users decide if a result is relevant
+  + Different markup methods
+** What works for you? :notes:
+   + We can use HTML attributes to annotate elements with more semantic
+     information
+   + Some search engines, like Google, can use these annotations
+   + Advanced technique, mostly driven by industry
+   + Another reason to separate presentation
+
+** Microdata :slide:
+   + [[http://dev.w3.org/html5/md/][HTML5 Specification]]
+   + =itemscope=, =itemprop=, =datePublished=
+   + [[http://www.yelp.com/biz/paseo-seattle][Microdata on Yelp]]
+** =itemprop= :notes:
+   + aggregate rating
+   + Many of these techniques are changing rapidly
+   + Important part: Annotation to improve machine understanding, to help human
+     understanding
+
+* Microdata Usage :slide:
+  + Wrap concept in tag with =itemscope= attribute
+  + Type concept with =itemtype= attribute
+  + Wrap properties of concept in tags with =itemprop= attribute
+** Types :notes:
+   + See Schema.org for item types
+
+** Microformat :slide:
+  + Convention of using class attribute to annotate
+#+begin_src html
+<div class="vcard">
+   <img class="photo" src="www.example.com/bobsmith.jpg" />
+   <strong class="fn">Bob Smith</strong>
+   <span class="title">Senior editor</span> at <span class="org">ACME Reviews</span>
+   <span class="adr">
+      <span class="street-address">200 Main St</span>
+      <span class="locality">Desertville</span>, <span class="region">AZ</span>
+      <span class="postal-code">12345</span>
+   </span>
+</div>
+#+end_src
+
+** [[http://ogp.me/][Open Graph]] :slide:
+   + Allow web page to contain graph information
+   + Used by Facebook
+   + =meta= tags with =og:= namespace
+   + [[http://www.yelp.com/biz/paseo-seattle][Open Graph on Yelp]]
+** =og:= :notes:
+   + Similar semantic information: location, name, title
+
+* Preventing Crawling :slide:
+  + What if you *don't* want to be indexed?
+  + Decrease load on server
+  + Pages only useful from another context
+** Go Away :notes:
+   + Spent all this time talking about trying to get noticed, what if you don't
+     want to be?
+   + redirect links
+   + message displayed after signup
+   + directly loading advertisements
+
+** =robots.txt= :slide:
+   + Requests to bots on crawling
+   + =Disallow= : "Please do not crawl this page"
+   + [[http://yelp.com/robots.txt][Yelp.com/robots.txt]]
+** =User-Agent= :notes:
+   + Specify rules for different user agents
+   + Only allow a few reputable crawlers:
+     + Google, Bing, Yahoo, Internet Archive
+
+** Purely Advisory! :slide:
+   + Not enforced
+   + Client and Server are decoupled, so server can't control the client
+   + Crawlers that ignore =robots.txt= detected and return HTTP error codes
+   + Does not make pages private!
+   + [[https://www.google.com/?q=login%20password%20filetype:xls][Clever Searches]]
+*** No Privacy :notes:
+   + Bots can ignore it
+   + People can look at it, wonder why you're hiding it
+
+** =nofollow= :slide:
+  + =robots.txt= works at the site level
+  + At the link tag level, use attribute rel="nofollow"
+  + Crawlers may follow them, but won't count them as "endorsement"
+  + Useful for user generated content
+*** Don't trust the user :notes:
+   + Some users are spammy
+   + You don't want to be associated with the links they post
+   + So tell the crawler not to follow them
+   + Also disincentives spam (a little bit)
+
+* =humans.txt= :slide:
+  + "We are people, not machines."
+  + Dedicated to all the people that make a site possible
+  + Have some fun
+  + [[http://www.googleventures.com/humans.txt][Google Ventures]]
+
+* Some Tips :slide:center:
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/fnSJBpB_OKQ" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

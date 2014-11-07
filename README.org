@@ -18,7 +18,7 @@
 | Oct 17 | [[http://developer.yahoo.com/performance/rules.html][Best Practices for Speeding Up Your Web Site]] & (Optional) [[http://www.stevesouders.com/blog/][Steve Souder's Blog]]; [[https://developers.google.com/speed/docs/insights/rules][Google Speed Rules]] | [[file:slides/frontend_performance.pdf][Front-end Performance (PDF)]] & [[file:slides/Midterm-Review.html][Midterm Review]]| +HW8 - GZIP (see frontend slides)+ canceled |
 | Oct 24 | Midterm | | Project Part 1 Due (Oct 30) |
 | Oct 31  | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] ; [[http://dev.mysql.com/doc/refman/5.5/en/select.html][MySQL SELECT]] (for HW reference) ; Optional: [[https://www.youtube.com/watch?v=2wSYcyWCtx4][Distributed System Design]] | [[file:slides/StorageSystems.pdf][Storage Systems]] | [[file:slides/HW9-DB.html][HW9 - DB]] ; start [[file:slides/Project2.org][Project Part 2]] |
-| Nov 7  | | Search & SEO | |
+| Nov 7  | [[http://www.uwtv.org/video/player.aspx?mediaid=16204855][Google: A Behind-the-Scenes Look]]; [[http://www.nytimes.com/2011/02/13/business/13search.html?pagewanted=all][The Dirty Little Secrets of Search]]; [[http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf][SEO Starter Guide]] (skim); [[http://www.w3.org/TR/microdata/][Microdata Specification]] (HW reference) ; [[http://infolab.stanford.edu/pub/papers/google.pdf][PageRank]] (Original paper, optional) | [[file:slides/Search.html][Search]] & [[file:slides/SEO.html][SEO]] | [[file:slides/HW10-Microdata.html][HW10 Microdata]] |
 | Nov 14 | | Mobile | |
 | Nov 21 | | Data Mining | |
 | Nov 28 | Thanksgiving | | |
