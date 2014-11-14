@@ -1,0 +1,43 @@
+* Mobile Homework :slide:
+  + Create a dynamic page
+  + Respond to touch event
+  + Extra Credit: use another Javascript API
+
+* Mobile Layout :slide:
+  + 3 columns (content of your choosing)
+  + As screen width shrinks, changes to 2 columns, then 1 column
+  + =ontouchstart= column background color must change
+** Flexible :notes:
+   + We're now beyond starting with skeleton code, you guys should be able to
+     create pages from scratch
+   + If you use existing templates (HTML5Boilerplate) must comment
+   + You may use JS/CSS frameworks, but must write CSS with media queries
+
+* Page :slide:
+  + Can be new, or from your portfolio, or from =app.py=
+  + May use "filler" content
+  + Columns should be =div=, kept aligned by =float:left= CSS
+  + [[http://arnaudbrousseau.github.io/mobile-web-lecture-berkeley/rwd.html][media query demo]]
+** TMTOWTDI :notes:
+   + simplist, new page in public_html
+   + Remember, if you use a template, please reference it in comments
+
+* Submit :slide:
+  + Pull Request on GitHub
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

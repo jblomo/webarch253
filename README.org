@@ -19,7 +19,7 @@
 | Oct 24 | Midterm | | Project Part 1 Due (Oct 30) |
 | Oct 31  | [[http://qr.ae/8jOUH][Why is it hard to scale a database, in layman’s terms?]]; [[http://static.usenix.org/publications/login/2011-10/openpdfs/Burd.pdf][NoSQL History]] ; [[http://dev.mysql.com/doc/refman/5.5/en/select.html][MySQL SELECT]] (for HW reference) ; Optional: [[https://www.youtube.com/watch?v=2wSYcyWCtx4][Distributed System Design]] | [[file:slides/StorageSystems.pdf][Storage Systems]] | [[file:slides/HW9-DB.html][HW9 - DB]] ; start [[file:slides/Project2.org][Project Part 2]] |
 | Nov 7  | [[http://www.uwtv.org/video/player.aspx?mediaid=16204855][Google: A Behind-the-Scenes Look]]; [[http://www.nytimes.com/2011/02/13/business/13search.html?pagewanted=all][The Dirty Little Secrets of Search]]; [[http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf][SEO Starter Guide]] (skim); [[http://www.w3.org/TR/microdata/][Microdata Specification]] (HW reference) ; [[http://infolab.stanford.edu/pub/papers/google.pdf][PageRank]] (Original paper, optional) | [[file:slides/Search.html][Search]] & [[file:slides/SEO.html][SEO]] | [[file:slides/HW10-Microdata.html][HW10 Microdata]] |
-| Nov 14 | | Mobile | |
+| Nov 14 | [[http://a16z.com/2014/10/28/mobile-is-eating-the-world/][Mobile is Eating the World]]; [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] (both parts); [[http://www.html5rocks.com/en/mobile/touch/][Multi-touch Web Development]]; [[http://www.w3.org/TR/mwabp/][Mobile Best Practices]] (skim); | [[file:slides/Mobile.html][Mobile Web]] & [[file:slides/Mobile-Features.html][Mobile Development]] | [[file:slides/HW11-Mobile.html][HW11 Mobile Page]] |
 | Nov 21 | | Data Mining | |
 | Nov 28 | Thanksgiving | | |
 | Dec 5 | | Security & Your Website | Project Code Due |
@@ -33,7 +33,6 @@
 
 #+BEGIN_HTML
 <script type="text/javascript" src="slides/production/org-html-slideshow.js"></script>
-<a href="https://github.com/jblomo/webarch253"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 #+END_HTML
 
 # Local Variables:

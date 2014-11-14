@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Mobile</title>
+<!-- 2014-11-14 Fri 00:09 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jim Blomo" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Mobile</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>Mobile</b></a></li>
+<li><a href="#sec-2">2. Internet Users</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Mobile subscriptions</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Mobile subscripts per capita</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1. Crazy Part</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Internet changing lives</a></li>
+<li><a href="#sec-5">5. Mobile Catalyst</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Delivery</a></li>
+<li><a href="#sec-5-2">5.2. Context</a>
+<ul>
+<li><a href="#sec-5-2-1">5.2.1. Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-6">6. $$</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Lag</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Not just new users</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Reasons</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Mobile Yelp:slide:</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Reasons</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. How to Capitalize</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Mobile</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Bold</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Mobile Software Stack</a>
+<ul>
+<li><a href="#sec-11-1">11.1. Review</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. "Native" Applications</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Trade-offs</a></li>
+<li><a href="#sec-12-2">12.2. Native Features</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Web Applications</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Most</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. Mobile Web is the same</a>
+<ul>
+<li><a href="#sec-14-1">14.1. Still the web</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. Mobile Web is different</a>
+<ul>
+<li><a href="#sec-15-1">15.1. Differences</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. Closing the Gap</a>
+<ul>
+<li><a href="#sec-16-1">16.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17. Mobile First</a>
+<ul>
+<li><a href="#sec-17-1">17.1. Write the app for a phone</a></li>
+<li><a href="#sec-17-2">17.2. Example</a></li>
+<li><a href="#sec-17-3">17.3. Notes</a></li>
+<li><a href="#sec-17-4">17.4. Benefits</a>
+<ul>
+<li><a href="#sec-17-4-1">17.4.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-17-5">17.5. Example</a></li>
+<li><a href="#sec-17-6">17.6. Notes</a></li>
+<li><a href="#sec-17-7">17.7. Drawbacks</a></li>
+<li><a href="#sec-17-8">17.8. Details</a></li>
+<li><a href="#sec-17-9">17.9. Advice</a>
+<ul>
+<li><a href="#sec-17-9-1">17.9.1. Pinterest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Mobile</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Internet Users&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+<div class="figure">
+<p><img src="img/internet-users.png" alt="internet-users.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>China, India, Indonesia, Turkey fastest growing countries
+</li>
+<li>Numbers growth driven by emerging markets
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><a href="http://www.internetlivestats.com/internet-users/">http://www.internetlivestats.com/internet-users/</a>
+</li>
+<li>44 million in the first internet bubble
+</li>
+<li>3 billion now
+</li>
+<li>where is that growth coming from?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Mobile subscriptions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<iframe frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="http://www.google.com/publicdata/embed?ds=d5bncppjof8f9_&amp;ctype=l&amp;strail=false&amp;bcs=d&amp;nselm=h&amp;met_y=it_cel_sets&amp;scale_y=lin&amp;ind_y=false&amp;rdim=region&amp;idim=region:ECA:LAC:MNA:SAS:NAC:SSA:EAP&amp;idim=country:CHN&amp;ifdim=region&amp;tstart=973584000000&amp;tend=1320652800000&amp;hl=en_US&amp;dl=en&amp;ind=false&amp;q=global+internet+users"></iframe>
+<ul class="org-ul">
+<li>Similar story: emerging markets driving mobile adoption
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Mobile subscripts per capita&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<iframe frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="http://www.google.com/publicdata/embed?ds=d5bncppjof8f9_&amp;ctype=l&amp;strail=false&amp;bcs=d&amp;nselm=h&amp;met_y=it_cel_sets_p2&amp;scale_y=lin&amp;ind_y=false&amp;rdim=region&amp;idim=country:CHN&amp;idim=region:SAS:NAC:MEA:LCN:ECS&amp;ifdim=region&amp;tstart=816249600000&amp;tend=1321171200000&amp;hl=en_US&amp;dl=en&amp;ind=false&amp;q=global+internet+users"></iframe>
+<ul class="org-ul">
+<li>China near the bottom!
+</li>
+<li>So much potential growth in the areas that are already surpassing US in raw
+numbers
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> Crazy Part&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>We're seeing overwhelming numbers, and it only tip of the iceburg
+</li>
+<li>1B Smartphone users
+</li>
+<li>5B "Feature" phone users
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Internet changing lives&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Find businesses with Yelp
+</li>
+<li>Contact friends on Facebook
+</li>
+<li>Share pictures with Instagram
+</li>
+<li>Read with Kindle
+</li>
+<li>Watch with Netflix Streaming
+</li>
+<li>Pay with Square
+</li>
+<li>Inspiration with Pinterest
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Mobile Catalyst&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Bridges divide between real life and digital
+</li>
+<li>Captures and delivers content to <i>you</i>
+</li>
+<li>Starting to capture context
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Delivery&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Mobile can be where you are
+</li>
+<li>Often is where you are
+</li>
+<li>Delivered to <i>you</i>, not your house, not your work
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Context&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Location
+</li>
+<li>Time (now)
+</li>
+<li>Movement
+</li>
+<li>Mode
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-2-1" class="outline-4">
+<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-5-2-1">
+<ul class="org-ul">
+<li>Mobile can capture where you are
+</li>
+<li>Yelp users search for dinner at dinner time; desktop search for dinner any
+time
+</li>
+<li>Waze traffic aggregation
+</li>
+<li>Checking work email, calendar, tickets?
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> $$&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<div class="figure">
+<p><img src="img/directory-revenue.png" alt="directory-revenue.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Advertising dollars still lagging
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Lag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>$14 Billion in revenue, mostly from Yellowpages and Newspapers
+</li>
+<li>Where's that money going?
+</li>
+<li>Not just mobile ad, but Internet advertising in general
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Not just new users&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="img/india-mobile.png" alt="india-mobile.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Mobile internet soon outpacing desktop
+</li>
+<li>Happening faster in emerging markets for a variety of reasons
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Reasons&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>phones are cheaper, easier to keep on your person
+</li>
+<li>essential for communicating
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Mobile Yelp:slide:</h2>
+<div class="outline-text-2" id="text-8">
+
+<div class="figure">
+<p><img src="img/yelp-mobile.png" alt="yelp-mobile.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>~50% of unique monthly visitors from mobile
+</li>
+<li>Even higher number of searches
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Reasons&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>location and timeliness
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> How to Capitalize&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>"Shoot ahead of the duck"
+</li>
+<li>Be bold
+</li>
+<li>Experiment
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Mobile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Trend is obviously toward mobile, but not majority yet: shoot there
+</li>
+<li>Keep a fresh outlook, and go 100% toward what you believe
+</li>
+<li>Bigger companies need to "invest": be sure where a technology will end up
+before the do something about it.
+</li>
+<li>Small companies can try things out, ditch what doesn't work (risky!)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Bold&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="386" id="utv2825" name="utv_n_548037"><param name="flashvars" value="loc=%2F&amp;autoplay=false&amp;vid=3848950" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.ustream.tv/flash/video/3848950" /><embed flashvars="loc=%2F&amp;autoplay=false&amp;vid=3848950" width="480" height="386" allowfullscreen="true" allowscriptaccess="always" id="utv2825" name="utv_n_548037" src="http://www.ustream.tv/flash/video/3848950" type="application/x-shockwave-flash" /></object>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>2:30 Privacy
+</li>
+<li>You may not agree with this statement, but you need to be doing stuff
+bigger companies are uncomfortable with
+</li>
+<li>Web Architecture helps you here: no one has to approve your idea (you can
+fail without a net or ceiling)
+</li>
+<li>Another example is iPod: evaluate what buttons you need, get rid of the
+rest, use technology to support your idea
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Mobile Software Stack&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+<div class="figure">
+<p><img src="img/mobile-stack.png" alt="mobile-stack.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>OS sites on top of hardware
+</li>
+<li>Libraries are used by any higher level for common functionality
+</li>
+<li>Services similar to libraries, but they "run" on their own, can contact
+external services
+</li>
+<li>UI Widgets are things like buttons, drop downs
+</li>
+<li>Apps written to use libraries and services
+</li>
+<li>Browsers special apps that essentially can download and run other (web)
+apps
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> "Native" Applications&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Written directly with libraries and services
+</li>
+<li>Platform specific language: Java, Objective-C
+</li>
+<li>Fewer constrains, but less compatibility
+</li>
+<li>Obtained through controlled marketplaces
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/path.png" alt="path.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Directly control UI, make use of phone's specific services
+</li>
+<li>OTOH, must directly control UI, make use of the specific services for each
+phone you want to support
+</li>
+<li>Marketplace for downloads
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Native Features&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-12-2">
+<ul class="org-ul">
+<li>Rotation
+</li>
+<li>Compass
+</li>
+<li>Gyroscope
+</li>
+<li>Services (contacts)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Web Applications&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+<div class="figure">
+<p><img src="img/yelp-mobile.png" alt="yelp-mobile.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Written for the browser
+</li>
+<li>Platform agnostic, no barriers to access
+</li>
+<li>Leverages existing technology stacks, but creates opaque dependencies
+</li>
+<li>Often slower
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Most&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Still have to test across devices
+</li>
+<li>Constraints are changing, technology like "canvas" allows arbitrary
+drawings
+</li>
+<li>Performance trade-off: must rely on browser's ability to render
+efficiently, can't update it for your app.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Mobile Web is the same&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>Web Browsers
+</li>
+<li>HTTP
+</li>
+<li>HTML
+</li>
+<li>Javascript
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Still the web&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>The mobile web is still the web
+</li>
+<li>Uses all the same technologies, in the same ways
+</li>
+<li>Mobile browser still a browser, with DOM, JS, etc.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Mobile Web is different&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>Browsers developed in world of standards
+</li>
+<li>Context available
+</li>
+<li>Interfaces different
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> Differences&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li>Much less variance between CSS, javascript support
+</li>
+<li>Means you can push HTML5 to its limits
+</li>
+<li>Geolocation
+</li>
+<li>Screen size, multitouch, finger "presses"
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Closing the Gap&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>Native apps in HTML5
+</li>
+<li>PhoneGap
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/phonegap.png" alt="phonegap.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>Write HTML5, Javascript, framework will render it for you
+</li>
+<li>Use javascript to call platform specific abilities
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Mobile First&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>Philosophy: develop your product for mobile
+</li>
+<li>Take advantage of mobile features 
+</li>
+<li>Contrast: desktop experience, pare down for mobile
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-17-1" class="outline-3">
+<h3 id="sec-17-1"><span class="section-number-3">17.1</span> Write the app for a phone&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-1">
+<ul class="org-ul">
+<li>If you're a new project/company, mobile is your edge
+</li>
+<li>So focus on your edge, build mobile first
+</li>
+<li>Alternative is to make your desktop app, then simplify it for mobile
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-17-2" class="outline-3">
+<h3 id="sec-17-2"><span class="section-number-3">17.2</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-17-2">
+
+<div class="figure">
+<p><img src="img/yelp-desktop.png" alt="yelp-desktop.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-17-3" class="outline-3">
+<h3 id="sec-17-3"><span class="section-number-3">17.3</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-3">
+<ul class="org-ul">
+<li>Just because you <b>can</b> display the desktop version doesn't mean you should
+</li>
+<li>Even if you reflow the content, the usage case of mobile may be so
+</li>
+</ul>
+<p>
+different you don't want to share HTML
+</p>
+</div>
+</div>
+<div id="outline-container-sec-17-4" class="outline-3">
+<h3 id="sec-17-4"><span class="section-number-3">17.4</span> Benefits&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-17-4">
+<ul class="org-ul">
+<li>Focus
+</li>
+<li>Simplicity
+</li>
+<li>Beauty
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-17-4-1" class="outline-4">
+<h4 id="sec-17-4-1"><span class="section-number-4">17.4.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-17-4-1">
+<ul class="org-ul">
+<li>For a desktop app, easy to start copying other desktop apps:
+<ul class="org-ul">
+<li>login screen
+</li>
+<li>cross promotion
+</li>
+<li>wizards
+</li>
+</ul>
+</li>
+<li>Instead mobile forces you to focus on the most essential elements&#x2026; and
+that's all that will fit on the screen!
+</li>
+<li>Makes you show how to use it: there's no hover effects for you mouse, just
+your fat fingers
+</li>
+<li>Many products are differentiated based on their user experience. Mobile
+has a tendency to draw that beauty out, or make it painfully obvious when
+it is not
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-17-5" class="outline-3">
+<h3 id="sec-17-5"><span class="section-number-3">17.5</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-17-5">
+
+<div class="figure">
+<p><img src="img/yelp-m.png" alt="yelp-m.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-17-6" class="outline-3">
+<h3 id="sec-17-6"><span class="section-number-3">17.6</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-6">
+<ul class="org-ul">
+<li>Focus on searching <b>now</b> and <b>near</b>
+</li>
+<li>remove elements you're less likely to do, such as write a review or read
+</li>
+</ul>
+<p>
+random reviews
+</p>
+</div>
+</div>
+<div id="outline-container-sec-17-7" class="outline-3">
+<h3 id="sec-17-7"><span class="section-number-3">17.7</span> Drawbacks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-17-7">
+<ul class="org-ul">
+<li>Need <i>some</i> story around desktop
+</li>
+<li>New platform to learn
+</li>
+<li>Limits experience
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-17-8" class="outline-3">
+<h3 id="sec-17-8"><span class="section-number-3">17.8</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-17-8">
+<ul class="org-ul">
+<li>Now you have to test all desktop browsers, too?
+</li>
+<li>Not many folks experienced with mobile development
+</li>
+<li>Are you editing photos? Writing code? Maybe you just can't do that on a
+small screen (though I'd still try designing for a tablet)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-17-9" class="outline-3">
+<h3 id="sec-17-9"><span class="section-number-3">17.9</span> Advice&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-17-9">
+<ul class="org-ul">
+<li>Make it so easy to use, people start using it by accident
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/pinterest.png" alt="pinterest.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-17-9-1" class="outline-4">
+<h4 id="sec-17-9-1"><span class="section-number-4">17.9.1</span> Pinterest&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-17-9-1">
+<ul class="org-ul">
+<li>Land on the home page, just start scrolling
+</li>
+<li>You're using the product! (discovering content)
+</li>
+<li>Next step is easy, click one button (repin)
+</li>
+<li>Twitter another good example
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-11-14 Fri 00:09</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
