@@ -1,0 +1,359 @@
+* *Analysis* :slide:
+
+* Overview :slide:
+  + What can you do with data?
+  + How?
+** Details :notes:
+   + Types of models
+   + Simple stats
+   + MapReduce for homework
+
+* Overview :slide:center:
+  [[file:img/overview.png]]
+** Overview :notes:
+   + A lot of what we've covered is between the client and the server
+   + We've covered writing Javascript in the client
+   + And some Python in the server
+   + Now we're going to be talking about a separate set of machines (batch) that
+     do these computations. The results are frequently stored back in the
+     database, then served by the web/application server
+
+* Data Overview :slide:center:
+  [[file:img/dataflow.png]]
+** DBs :notes:
+   + Data comes from log files and databases
+   + gets stored in intermediate forms (sometimes)
+   + gets processed by batch machines
+   + then put back onto databases where they are read from appserver
+
+* Types of Models :slide:animate:
+  + Recommenders
+  + Classifiers
+  + Regressions
+  + Outliers
+** Some examples :notes:
+   + Question: how are models used in the real world?
+   + Amazon or Netflix style recommendations based on prior history
+   + Spam/Ham for email, also clustering and discovering classifications
+   + Guessing the price of a house (Zillow or Redfin)
+   + find anomalous transactions, eg. finding fraud for credit cards
+
+** Simple to Sophisticated :slide:two_col:
+[[file:img/iceberg11.jpg]]
+   + Thousands of ways to calculate a model
+   + Combinatorially more ways to combine them
+   + In technique, large amount of overlap between purpose
+** Survey :notes:
+   + ML and DM fields churn these models out
+   + Newest methods combine multiple models (boosting & bagging)
+   + If you want to learn more, we'll cover some of this in Data Mining
+   + We're just going to go over the most well known model for each type
+   + In general, this is the right way to approach it: start very simple, get
+     sophisticated in order to correct for specific problems in your domain
+
+* Recommenders :slide:animate:
+  + Popularity
+  + Collaborative Filter
+** Simple :notes:
+   + For all of these, start simple
+   + If I told you the homework was a recommender system, and you could make it
+     as simple as you'd like, what technique would you use?
+   + Amazon Personalization team: just recommend Harry Potter
+   + Next step: Collaborative Filter
+   + What do people who are similar to you like?
+
+* Popular :slide:center:
+  [[file:img/harrypotter.jpg]]
+
+** Collaborative Filter :slide:two_col:
+   1. Find people similar you
+   1. Find what they like
+   1. Recommend new items to you
+
+
+   1. Find items you've liked
+   1. Find similar items to those
+   1. Recommend new items to you
+** Details :notes:
+   + In general, challenge is being specific about words
+   + What does it mean to be similar to you?
+     + Bought the same stuff
+     + Is a friend
+     + Same demographic
+   + What does it mean to be similar to an item?
+     + Bought by same people
+     + Same category
+     + Similar description
+       + What does it mean to have a similar description?
+
+* Classifiers :slide:two_col:animate:
+[[file:img/viagra-spam-email-message.jpg]]
+  + Spam/Ham decision
+  + Existence of word (eg. Viagra)
+  + Now what about V1agraa?
+  + Naive Bayes classifier
+** Simple :notes:
+   + Again, what would you do right now?
+   + Check for spammy words
+   + How do you keep learning the words that are spammy?
+   + Is "Russian" spammy? Maybe only for some people?
+
+** Naive Bayes :slide:
+[[file:img/bayes-theorem.png]]
+   + Probability of spam given it contains Viagra (W)
+   + Probability of spam * probability of that word given spam
+   + Over probability of that word in either
+** Probabilities :notes:
+   + We're not going to say /for sure/ spam or not, just calculate the
+     probability
+   + Learn that probability based on past examples
+   + Intuition: if Viagra is always showing up in spammy mail, a new mail with
+     Viagra is likely to be spam
+   + Lots of logical problems with Naive Bayes, but in practice, works quite
+     well
+
+* Definitions :slide:
+  + Class :: Group or type that an item belongs to
+  + Feature :: An extractable property of an item that may be useful in
+    classification. aka Signal
+  + Label :: True class or property of an item
+  + Training Set :: Items that have been labeled
+** Examples :notes:
+   + Class :: Spam/Ham
+   + Feature :: "contains word Viagra", "was purchased by Sally"
+   + Label :: Clicking "Spam" button in Gmail
+   + Training Set :: All of the email you've clicked Spam/Not Spam
+
+** Housing Example :slide:
+  + Class :: Customer likes it or not
+  + Features :: Price, city, square footage, # bed/bath
+  + Label :: Like/Don't Like
+  + Training Set :: Houses customer has toured or bid
+*** Setup :notes:
+   + Let's say you're Redfin trying to recommend a house to a customer
+   + Class :: Customer likes it
+   + Features :: Price, city, square footage, # bed/bath
+   + Label :: Like/Don't Like
+   + Training Set :: Houses customer has toured or bid
+
+* Regression Analysis :slide:
+  + Estimate the /price/ of the house
+  + Model the relationship of all the features to the outcome
+  + In general, features are numbers, estimate is a number
+[[file:img/sqft-price.png]]
+** Calculation :notes:
+   + In general want to minimize the space between the points and the line
+   + Like in the case of Yelp reviews, may need different formulas to draw lines
+   + Numbers in, number out
+   + So "city" may not be a good feature for regression, but what could you
+     replace it with?
+     + Average price of home in city
+   + And what would the training set be?
+
+* *Calculation* :slide:
+** Switch Gears :notes:
+   + Let's talk about how models and analysis are done
+
+* Tools :slide:
+  + Languages :: Matlab Python R SQL
+  + Tools :: Unix MySQL ReST scikit-learn
+  + Paradigms :: Single-Threaded Concurrent MapReduce
+** Details :notes:
+   + Languages are in alphabetical order. Real order depends on what you like,
+     what you're doing, interfacing with, etc.
+   + Unix tools like =less= =wget= =head= =cut=
+   + scikit-learn machine learning Python library
+   + Single-Threaded, what you're used to when running a single program
+   + How do you split up a task, eg. extracting all of the features from items?
+   + Concurrent programs trickier, many processes are happening at once. Track
+     shared state.
+   + MapReduce is what we'll focus on, widely used in industry, buys you a lot
+     of scalability, structured way to think about a problem
+
+* MapReduce :slide:
+  + Map :: Extract a property to summarize over
+  + Reduce :: Summarize all items with a particular propery
+
+
+  + Simple: Each operation stateless
+** Reading :notes:
+   + Reading this week includes a video explaining MapReduce much more generally
+   + This lecture will focus on it from a practical standpoint for homework
+   + MapReduce's main benefits are for running over many machine, fault
+     tolerance
+   + But we'll just practice on one machine
+
+** Example :slide:
+   + URL Shortener
+   + How many actions have we seen?
+   + Redirects: 200, Saves: 40, Loads: 60
+*** Details :notes:
+   + Redirects :: How many times have we expanded a short link to a long one?
+   + Saves :: How many times have we saved a new URL?
+   + Loads :: How many times have we just loaded the front page?
+   + First :: So first step in MapReduce is what?
+
+** Map :slide:
+   + Input :: Key, Value
+   + Output :: Keys, Values
+
+** Map Example :slide:
+   + Input Key :: Log line number
+   + Input Value :: Log line text
+   + Output Key :: Action
+   + Output Value :: times this action has occurred on this line
+*** Counts :notes:
+   + Log line number is not helpful in our specific case
+   + Log line text: we hope it is machine readable so we can accurately extract
+     the action
+   + It has datetime, cookie, action, etc.
+   + How many times has this action occurred? 1
+
+** Status? :slide:
+#+begin_src text
+load		1
+save		1
+redirect	1
+redirect	1
+load		1
+redirect	1
+load		1
+save		1
+redirect	1
+#+end_src
+*** Middle Step :notes:
+   + From log lines, we've extracted the information out that we care about
+   + The counts and the actions
+   + Next step summarize
+   + Next step after Map?
+
+** Reduce :slide:
+   + Input :: Key, Values
+   + Output :: Keys, Values
+*** Value*s* :notes:
+   + Note: The input is values! Plural
+   + Because we get a key and all of its associated values
+   + Remind me: what are we trying to get out of this computation?
+   + So what do you think the output keys are?
+   + Values?
+
+** Reduce Example :slide:
+   + Input Key :: Action
+   + Input Values :: Counts: =[1,1,1,1]=
+   + Output Key :: Action
+   + Output Value :: Total Count
+*** Details :notes:
+   + Action is *one of* load save redirect
+   + To get total count, sum all of the counts
+
+** Example Output :slide:
+   + Output Key :: Action
+   + Output Value :: Total Count
+#+begin_src html
+"redirect"  4
+"save"      2
+"load"      3
+#+end_src
+
+* Point? :slide:
+  + A lot of work for counting!
+  + More complex calculations can be done this way, eg. PageRank
+  + Stateless constraint means it can be used across thousands of computers
+** Details :notes:
+   + By only looking at keys and values, can optimize a lot of backend work
+   + Where to send the results?
+   + What to do when a computer fails? (Just restart failed part)
+
+** Implementation :slide:
+#+begin_src text
+load		1
+save		1
+redirect	1
+redirect	1
+load		1
+redirect	1
+load		1
+save		1
+redirect	1
+#+end_src
+** Intermediate :notes:
+   + This was the situation after map
+   + Keys all jumbled
+   + What Hadoop does is sort them and distribute them to computers
+
+** "Shuffle" :slide:
+#+begin_src text
+load		1
+load		1
+load		1
+redirect	1
+redirect	1
+redirect	1
+redirect	1
+save		1
+save		1
+#+end_src
+** Distribute :notes:
+   + Now it is easy to distribute, and can handle all the =load= at once
+
+** Inputs :slide:
+   + MapReduce distributes computing power by distributing input
+   + Input is distributed by splitting on lines (records)
+   + You cannot depend on lines being "together" in MapReduce
+*** Splitting Files :notes:
+   + Image you have a lot of large log files, GB each
+   + You'd like to let different machines work on the same file
+   + Split file down the middle, well, at least on a newline
+   + Enable two separate machines to work on the parts
+   + You don't know what line came before this one
+   + You don't know if you will process the next line
+   + Only view is this line
+   + Real life slightly more complicated, but mostly hacks around this
+
+** Incorrect Log Style :slide:
+   + URL Shortener logging
+#+begin_src python
+    app.logger.info("Handling request for " + cookie)
+    ...
+    # find redirect
+    ...
+    app.logger.info("Redirecting to " + destination)
+#+end_src
+    + Ability to associate the redirect with the
+      cookie?
+      + eg. which cookie had the most redirects?
+*** No! :notes:
+    + Must log everything on same line
+    + One machine could have the "Handling request.." Another could have
+      "Redirecting to..."
+    + Collect it all, then log it
+
+** Correct Log Style :slide:
+   + Logging once
+#+begin_src python
+    log_data['cookie'] = cookie
+    ...
+    # find redirect
+    log_data['action'] = 'redirect'
+    app.logger.info(json.dumps(log_data))
+#+end_src
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
+
+
+

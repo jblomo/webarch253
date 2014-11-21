@@ -1,0 +1,130 @@
+* Homework :slide:
+  + Analyze site traffic
+  + Transform web logs
+  + Analyze user behavior
+  + Analyze site stats
+
+* Data :slide:
+  + [[http://archive.ics.uci.edu/ml/machine-learning-databases/anonymous/][Anonymous web data from www.microsoft.com]]
+  + Contains information in CSV format
+  + use mrjob MapReduce Framework to find answers
+** Format :notes:
+   + Part of the task is to undertsand the data format given the website
+   + This is actually more information than you're typically given at a job
+
+* [[http://packages.python.org/mrjob/][mrjob]] :slide:
+#+begin_src html
+from mrjob.job import MRJob
+
+class MRWordCounter(MRJob):
+    def mapper(self, key, line):
+        for word in line.split():
+            yield word, 1
+
+    def reducer(self, word, occurrences):
+        yield word, sum(occurrences)
+
+if __name__ == '__main__':
+    MRWordCounter.run()
+#+end_src
+    More documentation: http://pythonhosted.org/mrjob/
+** Relation to HW :notes:
+   + =mapper= takes keys and values
+   + =reducer= takes the keys output by the mapper, and all relevant values
+   + =split= takes a string and splits on spaces, giving words
+   + =yield= essentially returns <key,value> pairs, but can be called more than
+     once
+
+** Output :slide:
+#+begin_src bash
+python data/top_pages.py < data/anonymous-msweb.data
+no configs found; falling back on auto-configuration
+creating tmp directory /tmp/top_pages.jim.20121116.052647.278066
+...
+reading from STDIN
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-mapper
+Counters from step 1:
+  (no counters found)
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-mapper-sorted
+writing to /tmp/top_pages.jim.20121116.052647.278066/step-0-reducer
+Counters from step 1:
+  (no counters found)
+Moving /tmp/top_pages.jim.20121116.052647.278066/step-0-reducer -> /tmp/top_pages.jim.20121116.052647.278066/output/part-00000
+Streaming final output from /tmp/top_pages.jim.20121116.052647.278066/output
+"1000"	912
+"1001"	4451
+"1002"	749
+"1003"	2968
+"1004"	8463
+"1007"	865
+...
+#+end_src
+** Running :notes:
+   + Run with python
+   + Output some debugging information while it is calculating
+   + Finally, output results
+
+* Pages with > 400 visits :slide:
+  + Find pages (aka Vroots) with more than 400 visits
+  + Start off with a template
+** Demo :notes:
+   + =csv_readline= takes in a CSV line, return a list of values
+
+* Transform Data :slide:
+  + MapReduce needs all information on one line
+  + This data format has user information on different line than visit
+  + Write single threaded program (not mrjob) to transform it
+** Demo :notes:
+   + fill in blanks
+   + What does the =>= character do? (redirects output)
+
+* Users > 20 visits :slide:
+  + Now that we have the new data file
+  + Find users with > 20 visits
+  + Must create this program from scratch
+
+* Most Common Title Words :slide:
+  + Vroots (pages) have titles
+  + What are the *10* most common title words?
+  + Must create this program from scratch
+
+* Extra Credit :slide:
+  + What *titles* were most browsed?
+  + Which URLs co-occured most frequently?
+
+* Submit via =git= :slide:
+  + Update programs
+  + Write new programs
+  + Save output of running mrjobs into =data/program_name.out=
+  + =git add= programs, output
+
+* Review :slide:
+  + Fill in =top_pages.py=
+  + Fill in =combine_user_visits.py=
+  + Write =top_users.py=
+  + Write =top_title_words.py=
+  + Run programs to create outputs: =top_pages.out= =user-visits_msweb.data=
+    =top_users.out= =top_title_words.out=
+
+* Moved Due Date :slide:
+  + Dec 5
+  + But start now!
+  + This is probably the most coding intensive assignment
+  + Aim to get at least =top_pages.py= done by Thanksgiving
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:

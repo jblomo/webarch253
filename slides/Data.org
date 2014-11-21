@@ -1,0 +1,236 @@
+* *Data* :slide:
+
+* The Web is Used by Humans :slide:two_col:
+  + Tool used to improve the lives of users
+  + How to improve the tools we have?
+  + Understand their use and their users
+[[file:img/fight-for-users.png]]
+
+* Understanding :slide:
+  + Collect
+  + Interperate
+  + Understand
+** Path to Understanding :notes:
+   + Collect data on the tool's usage: what features are used, what time of day,
+     for what purpose?
+   + Collect data on the user: ultimate goal, knowledge of problem space
+   + Find patterns, develop a story
+   + Have a mental model of who your users are and why they are using your tool
+   + This is the way the brain works in general: build a mental model of the
+     world around you so you can anticipate how things will work out
+
+* Big Data :slide:
+  + Never easier to collect data
+  + Advanced analytics tools available
+  + Financial incentives for understanding
+[[file:img/netflix-bigcheck.jpg]]
+** Modern World :notes:
+   + Positive feedback: more people use web tools, more data we collect, better
+     understand them, better tools, more people use the tools
+   + Always need to keep in mind user's end goal though (hint: it is not using
+     your product)
+   + Big Data means doing this a lot
+   + Netflix prize: $1MM for 10% improvement
+
+* Terminology :slide:
+  + Data :: Raw facts, represented in some way
+  + Information :: Interperated data with meaning
+  + Knowledge :: Information used to achieve some purpose
+** Philosiphical :notes:
+   + General idea is that there are different levels of abstraction for these
+     concepts
+   + No hard boundaries
+
+** Phonographic Records :slide:two_col:
+   + Data :: Grooves in the record material
+   + Information :: Sound heard by a human
+   + Knowledge :: Enjoyment of a song
+[[file:img/vinyl_record_lp_10inch.jpg]]
+** Notes :notes:
+   + Generally know how records work?
+   + Grooves cut into vinyl, needle moves over them, sound comes out
+   + image source: http://www.absurdintellectual.com/2009/04/17/celebrate-record-store-day-saturday-april-18/
+
+** Web logs :slide:
+   + Data :: Records of visits to a web page
+   + Information :: Summary of user behavior
+   + Knowledge :: Understanding shortcoming in a product
+** Storage :notes:
+   + Data is just 1s 0s on a digital machine
+   + At a slightly higher level, data is still just characters in a file
+   + Meaning extracted by a human, to get a bigger picture
+   + Knowledge is having that mental model of typical user behavior and applying
+     it to a purpose
+   + Similarity to 5 Whys?
+
+* Web Frontier :slide:
+  + Web particularly well suited to analysis
+  + Easiest to instrument
+  + Already requires high technology
+** Alternatives :notes:
+   + Medicine, global warming, education may be more "worthy"
+   + Because you must interact with central server, each interaction can be
+     logged
+   + How do you log health history? How many cigarets are being smoked? How many
+     hours of exercise happen?
+   + Already have programmers building the website, now can put them to use
+     building analysis tools or data infrastructure
+
+* Taxonomy of Data Science :slide:two_col:
+  + Obtain
+  + Scrub
+  + Explore
+  + Model
+  + iNterpret
+[[file:img/hilary_electronics.jpg]]
+** Mason & Wiggins :notes:
+   + [[http://www.dataists.com/2010/09/a-taxonomy-of-data-science/][Reading]] in
+     which Hilary Mason and Chris Wiggens explain their interpretation of data
+     science
+   + These are not absolute steps
+   + When I taught Data Mining last semester, the book had a different set of
+     steps
+   + OSEMN
+   + Mason Chief Scientist at Bit.ly, many good talks
+   + image source: http://www.hilarymason.com/about/
+
+* Obtain :slide:
+  + Where to get the data?
+  + Services
+  + Datasets
+** Examples :notes:
+   + Even for web, what do you do with the logs across many web servers?
+   + How to translate data in logs to information?
+   + Services eg: github
+   + Dataset eg: homework (microsoft weblogs)
+
+** Common Log Format :slide:
+#+begin_src apache_log
+127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] ...
+    "GET /apache_pb.gif HTTP/1.0" 200 2326
+#+end_src
+   + host ident authuser date
+   + request status bytes
+   + What are the trade-offs with this format?
+
+** JSON Alternative :slide:
+#+begin_src apache_log
+127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] ...
+    "GET /apache_pb.gif HTTP/1.0" 200 2326
+#+end_src
+#+begin_src json
+    {'host': '127.0.0.1',
+     'ident': 'user-identifier',
+     'authuser': 'frank',
+     'date': '10/Oct/2000:13:55:36 -0700',
+     'request': 'GET /apache_pb.gif HTTP/1.0',
+     'status': 200,
+     'bytes': 2326}
+#+end_src
+*** Trade-offs :notes:
+   + Developed at a time when logs were used operationally
+   + "Easy" to parse, but not standardized with other areas
+   + Hard to extend customize
+
+* Scrub :slide:
+  + Reconcile inconsistencies:
+    + Webserver has the wrong time
+    + Determine type of page
+    + Changed logging method
+** Consistency :notes:
+   + Make sure all activity happening in correct time zone
+   + If a server had the wrong internal time, add error to logs
+   + Bug in timezone handling
+   + Hypothertically interested in learning the *type* of resource downloaded
+     + 'gif|png|jpg' => image
+     + 'pdf|doc|xls' => document
+   + used to encode encrypted user\_id, now decrypted
+   + even different teams might log user\_id in different ways
+
+* Explore :slide:two_col:
+  + Don't under estimate scrolling through data
+  + Start simple: scatter plots, histograms
+  + Find correlations
+[[file:img/1_Vp_screenshot_7_tiny.jpg]]
+** Viewpoints :notes:
+   + An example program that can plot multi-dimensional records
+   + But don't do this advanced stuff first!
+   + Just take a look at the data, get a feel for all the variables
+     + Are mostly bots hitting your page?
+     + What are the unusual patterns?
+
+* Models :slide:two_col:
+  + Mathimatical description of a phenomena
+  + Main focus of Machine Learning (to some extent Data Mining)
+  + Generally, best models are most accurate
+[[file:img/yelp_reviews.png]]
+** Example :notes:
+   + Take the rate of reviews
+   + How do you mathmatically describe the behavior?
+   + image source: Yelp Factsheet http://yelp.com/press
+
+** Lines :slide:
+[[file:img/yelp_reviews-linear.png]]
+   + How well does this fit the data?
+*** Equation :notes:
+    + How to express mathmatically?
+    + y = mx + b
+
+** Exponential :slide:
+[[file:img/yelp_reviews-exponential.png]]
+   + Fit better? How far do we go?
+*** Equation :notes:
+    + How to express mathmatically?
+   + y = mx^2 + b
+
+** Coin Flip :slide:
+[[file:img/binomial.jpg]]
+   + Coin flips modeled as binomial distribution
+** Source :notes:
+   + How to express mathmatically?
+   http://wattsupwiththat.com/2010/04/10/response-to-dr-meiers-answer-9-the-coin-flip-in-the-context-of-climate-modeling/
+
+** Classification Model :slide:
+[[file:img/SVM_Example_of_Hyperplanes.png]]
+   + Which of these lines best separates the data?
+*** Model :notes:
+    + Model for how data is distributed into groups, or classes
+
+* Interpret :slide:
+  + Business model is working
+  + What to bet on a coin flip
+  + The characteristics of successful customers
+** Apply the information to your domain :notes:
+   + Will you run out of money?
+   + What's the likelyhood a customer will stay with you next year?
+
+* Analyzing the Real World :slide:
+  + How would you gain knowledge of rain forest data?
+  + Obtain
+  + Scrub
+  + Explore
+  + Model
+  + Interpret
+** Steps :notes:
+   + Place temperature recorders all over
+   + Try to normalize by how long they were in the sun, or an animal sat on them
+   + Just scroll through temperatures for a day, then plot on a map
+   + Develop estimates on daily temperature (perhaps double sin wave?)
+   + Temperature fluxuates less in some areas that are associated with a plant
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/common.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+
+#+BEGIN_HTML
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+#+END_HTML
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# buffer-file-coding-system: utf-8-unix
+# End:
