@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Analysis</title>
+<!-- 2014-11-21 Fri 01:32 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jim Blomo" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Analysis</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>Analysis</b></a></li>
+<li><a href="#sec-2">2. Overview</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Overview</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Overview</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Data Overview</a>
+<ul>
+<li><a href="#sec-4-1">4.1. DBs</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Types of Models</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Some examples</a></li>
+<li><a href="#sec-5-2">5.2. Simple to Sophisticated</a></li>
+<li><a href="#sec-5-3">5.3. Survey</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Recommenders</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Simple</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Popular</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Collaborative Filter</a></li>
+<li><a href="#sec-7-2">7.2. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Classifiers</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Simple</a></li>
+<li><a href="#sec-8-2">8.2. Naive Bayes</a></li>
+<li><a href="#sec-8-3">8.3. Probabilities</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Definitions</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Examples</a></li>
+<li><a href="#sec-9-2">9.2. Housing Example</a>
+<ul>
+<li><a href="#sec-9-2-1">9.2.1. Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Regression Analysis</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Calculation</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. <b>Calculation</b></a>
+<ul>
+<li><a href="#sec-11-1">11.1. Switch Gears</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Tools</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. MapReduce</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Reading</a></li>
+<li><a href="#sec-13-2">13.2. Example</a>
+<ul>
+<li><a href="#sec-13-2-1">13.2.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-3">13.3. Map</a></li>
+<li><a href="#sec-13-4">13.4. Map Example</a>
+<ul>
+<li><a href="#sec-13-4-1">13.4.1. Counts</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-5">13.5. Status?</a>
+<ul>
+<li><a href="#sec-13-5-1">13.5.1. Middle Step</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-6">13.6. Reduce</a>
+<ul>
+<li><a href="#sec-13-6-1">13.6.1. Value*s*</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-7">13.7. Reduce Example</a>
+<ul>
+<li><a href="#sec-13-7-1">13.7.1. Details</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-8">13.8. Example Output</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. Point?</a>
+<ul>
+<li><a href="#sec-14-1">14.1. Details</a></li>
+<li><a href="#sec-14-2">14.2. Implementation</a></li>
+<li><a href="#sec-14-3">14.3. Intermediate</a></li>
+<li><a href="#sec-14-4">14.4. "Shuffle"</a></li>
+<li><a href="#sec-14-5">14.5. Distribute</a></li>
+<li><a href="#sec-14-6">14.6. Inputs</a>
+<ul>
+<li><a href="#sec-14-6-1">14.6.1. Splitting Files</a></li>
+</ul>
+</li>
+<li><a href="#sec-14-7">14.7. Incorrect Log Style</a>
+<ul>
+<li><a href="#sec-14-7-1">14.7.1. No!</a></li>
+</ul>
+</li>
+<li><a href="#sec-14-8">14.8. Correct Log Style</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Analysis</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Overview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>What can you do with data?
+</li>
+<li>How?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Types of models
+</li>
+<li>Simple stats
+</li>
+<li>MapReduce for homework
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Overview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="img/overview.png" alt="overview.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Overview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>A lot of what we've covered is between the client and the server
+</li>
+<li>We've covered writing Javascript in the client
+</li>
+<li>And some Python in the server
+</li>
+<li>Now we're going to be talking about a separate set of machines (batch) that
+do these computations. The results are frequently stored back in the
+database, then served by the web/application server
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Data Overview&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+<div class="figure">
+<p><img src="img/dataflow.png" alt="dataflow.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> DBs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Data comes from log files and databases
+</li>
+<li>gets stored in intermediate forms (sometimes)
+</li>
+<li>gets processed by batch machines
+</li>
+<li>then put back onto databases where they are read from appserver
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Types of Models&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Recommenders
+</li>
+<li>Classifiers
+</li>
+<li>Regressions
+</li>
+<li>Outliers
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Some examples&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Question: how are models used in the real world?
+</li>
+<li>Amazon or Netflix style recommendations based on prior history
+</li>
+<li>Spam/Ham for email, also clustering and discovering classifications
+</li>
+<li>Guessing the price of a house (Zillow or Redfin)
+</li>
+<li>find anomalous transactions, eg. finding fraud for credit cards
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Simple to Sophisticated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+
+<div class="figure">
+<p><img src="img/iceberg11.jpg" alt="iceberg11.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Thousands of ways to calculate a model
+</li>
+<li>Combinatorially more ways to combine them
+</li>
+<li>In technique, large amount of overlap between purpose
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Survey&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>ML and DM fields churn these models out
+</li>
+<li>Newest methods combine multiple models (boosting &amp; bagging)
+</li>
+<li>If you want to learn more, we'll cover some of this in Data Mining
+</li>
+<li>We're just going to go over the most well known model for each type
+</li>
+<li>In general, this is the right way to approach it: start very simple, get
+sophisticated in order to correct for specific problems in your domain
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Recommenders&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Popularity
+</li>
+<li>Collaborative Filter
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Simple&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>For all of these, start simple
+</li>
+<li>If I told you the homework was a recommender system, and you could make it
+as simple as you'd like, what technique would you use?
+</li>
+<li>Amazon Personalization team: just recommend Harry Potter
+</li>
+<li>Next step: Collaborative Filter
+</li>
+<li>What do people who are similar to you like?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Popular&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="center">center</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="img/harrypotter.jpg" alt="harrypotter.jpg" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Collaborative Filter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li>Find people similar you
+</li>
+<li>Find what they like
+</li>
+<li>Recommend new items to you
+</li>
+</ol>
+
+
+<ol class="org-ol">
+<li>Find items you've liked
+</li>
+<li>Find similar items to those
+</li>
+<li>Recommend new items to you
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>In general, challenge is being specific about words
+</li>
+<li>What does it mean to be similar to you?
+<ul class="org-ul">
+<li>Bought the same stuff
+</li>
+<li>Is a friend
+</li>
+<li>Same demographic
+</li>
+</ul>
+</li>
+<li>What does it mean to be similar to an item?
+<ul class="org-ul">
+<li>Bought by same people
+</li>
+<li>Same category
+</li>
+<li>Similar description
+<ul class="org-ul">
+<li>What does it mean to have a similar description?
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Classifiers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span>&#xa0;<span class="animate">animate</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+<div class="figure">
+<p><img src="img/viagra-spam-email-message.jpg" alt="viagra-spam-email-message.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Spam/Ham decision
+</li>
+<li>Existence of word (eg. Viagra)
+</li>
+<li>Now what about V1agraa?
+</li>
+<li>Naive Bayes classifier
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Simple&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Again, what would you do right now?
+</li>
+<li>Check for spammy words
+</li>
+<li>How do you keep learning the words that are spammy?
+</li>
+<li>Is "Russian" spammy? Maybe only for some people?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Naive Bayes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-2">
+
+<div class="figure">
+<p><img src="img/bayes-theorem.png" alt="bayes-theorem.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Probability of spam given it contains Viagra (W)
+</li>
+<li>Probability of spam * probability of that word given spam
+</li>
+<li>Over probability of that word in either
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> Probabilities&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>We're not going to say <i>for sure</i> spam or not, just calculate the
+probability
+</li>
+<li>Learn that probability based on past examples
+</li>
+<li>Intuition: if Viagra is always showing up in spammy mail, a new mail with
+Viagra is likely to be spam
+</li>
+<li>Lots of logical problems with Naive Bayes, but in practice, works quite
+well
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Definitions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<dl class="org-dl">
+<dt> Class </dt><dd>Group or type that an item belongs to
+</dd>
+<dt> Feature </dt><dd>An extractable property of an item that may be useful in
+classification. aka Signal
+</dd>
+<dt> Label </dt><dd>True class or property of an item
+</dd>
+<dt> Training Set </dt><dd>Items that have been labeled
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Examples&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<dl class="org-dl">
+<dt> Class </dt><dd>Spam/Ham
+</dd>
+<dt> Feature </dt><dd>"contains word Viagra", "was purchased by Sally"
+</dd>
+<dt> Label </dt><dd>Clicking "Spam" button in Gmail
+</dd>
+<dt> Training Set </dt><dd>All of the email you've clicked Spam/Not Spam
+</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Housing Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-9-2">
+<dl class="org-dl">
+<dt> Class </dt><dd>Customer likes it or not
+</dd>
+<dt> Features </dt><dd>Price, city, square footage, # bed/bath
+</dd>
+<dt> Label </dt><dd>Like/Don't Like
+</dd>
+<dt> Training Set </dt><dd>Houses customer has toured or bid
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-9-2-1" class="outline-4">
+<h4 id="sec-9-2-1"><span class="section-number-4">9.2.1</span> Setup&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-9-2-1">
+<ul class="org-ul">
+<li>Let's say you're Redfin trying to recommend a house to a customer
+</li>
+<li id="Class">Customer likes it
+</li>
+<li id="Features">Price, city, square footage, # bed/bath
+</li>
+<li id="Label">Like/Don't Like
+</li>
+<li id="Training Set">Houses customer has toured or bid
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Regression Analysis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Estimate the <i>price</i> of the house
+</li>
+<li>Model the relationship of all the features to the outcome
+</li>
+<li>In general, features are numbers, estimate is a number
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/sqft-price.png" alt="sqft-price.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Calculation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>In general want to minimize the space between the points and the line
+</li>
+<li>Like in the case of Yelp reviews, may need different formulas to draw lines
+</li>
+<li>Numbers in, number out
+</li>
+<li>So "city" may not be a good feature for regression, but what could you
+replace it with?
+<ul class="org-ul">
+<li>Average price of home in city
+</li>
+</ul>
+</li>
+<li>And what would the training set be?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> <b>Calculation</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Switch Gears&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Let's talk about how models and analysis are done
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Tools&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<dl class="org-dl">
+<dt> Languages </dt><dd>Matlab Python R SQL
+</dd>
+<dt> Tools </dt><dd>Unix MySQL ReST scikit-learn
+</dd>
+<dt> Paradigms </dt><dd>Single-Threaded Concurrent MapReduce
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Languages are in alphabetical order. Real order depends on what you like,
+what you're doing, interfacing with, etc.
+</li>
+<li>Unix tools like <code>less</code> <code>wget</code> <code>head</code> <code>cut</code>
+</li>
+<li>scikit-learn machine learning Python library
+</li>
+<li>Single-Threaded, what you're used to when running a single program
+</li>
+<li>How do you split up a task, eg. extracting all of the features from items?
+</li>
+<li>Concurrent programs trickier, many processes are happening at once. Track
+shared state.
+</li>
+<li>MapReduce is what we'll focus on, widely used in industry, buys you a lot
+of scalability, structured way to think about a problem
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> MapReduce&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<dl class="org-dl">
+<dt> Map </dt><dd>Extract a property to summarize over
+</dd>
+<dt> Reduce </dt><dd>Summarize all items with a particular propery
+</dd>
+</dl>
+
+
+<ul class="org-ul">
+<li>Simple: Each operation stateless
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Reading&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Reading this week includes a video explaining MapReduce much more generally
+</li>
+<li>This lecture will focus on it from a practical standpoint for homework
+</li>
+<li>MapReduce's main benefits are for running over many machine, fault
+tolerance
+</li>
+<li>But we'll just practice on one machine
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>URL Shortener
+</li>
+<li>How many actions have we seen?
+</li>
+<li>Redirects: 200, Saves: 40, Loads: 60
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-2-1" class="outline-4">
+<h4 id="sec-13-2-1"><span class="section-number-4">13.2.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-2-1">
+<dl class="org-dl">
+<dt> Redirects </dt><dd>How many times have we expanded a short link to a long one?
+</dd>
+<dt> Saves </dt><dd>How many times have we saved a new URL?
+</dd>
+<dt> Loads </dt><dd>How many times have we just loaded the front page?
+</dd>
+<dt> First </dt><dd>So first step in MapReduce is what?
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-3" class="outline-3">
+<h3 id="sec-13-3"><span class="section-number-3">13.3</span> Map&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-3">
+<dl class="org-dl">
+<dt> Input </dt><dd>Key, Value
+</dd>
+<dt> Output </dt><dd>Keys, Values
+</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-sec-13-4" class="outline-3">
+<h3 id="sec-13-4"><span class="section-number-3">13.4</span> Map Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-4">
+<dl class="org-dl">
+<dt> Input Key </dt><dd>Log line number
+</dd>
+<dt> Input Value </dt><dd>Log line text
+</dd>
+<dt> Output Key </dt><dd>Action
+</dd>
+<dt> Output Value </dt><dd>times this action has occurred on this line
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-13-4-1" class="outline-4">
+<h4 id="sec-13-4-1"><span class="section-number-4">13.4.1</span> Counts&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-4-1">
+<ul class="org-ul">
+<li>Log line number is not helpful in our specific case
+</li>
+<li>Log line text: we hope it is machine readable so we can accurately extract
+the action
+</li>
+<li>It has datetime, cookie, action, etc.
+</li>
+<li>How many times has this action occurred? 1
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-5" class="outline-3">
+<h3 id="sec-13-5"><span class="section-number-3">13.5</span> Status?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-5">
+<div class="org-src-container">
+
+<pre class="src src-text">load            1
+save            1
+redirect        1
+redirect        1
+load            1
+redirect        1
+load            1
+save            1
+redirect        1
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-13-5-1" class="outline-4">
+<h4 id="sec-13-5-1"><span class="section-number-4">13.5.1</span> Middle Step&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-5-1">
+<ul class="org-ul">
+<li>From log lines, we've extracted the information out that we care about
+</li>
+<li>The counts and the actions
+</li>
+<li>Next step summarize
+</li>
+<li>Next step after Map?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-6" class="outline-3">
+<h3 id="sec-13-6"><span class="section-number-3">13.6</span> Reduce&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-6">
+<dl class="org-dl">
+<dt> Input </dt><dd>Key, Values
+</dd>
+<dt> Output </dt><dd>Keys, Values
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-13-6-1" class="outline-4">
+<h4 id="sec-13-6-1"><span class="section-number-4">13.6.1</span> Value*s*&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-6-1">
+<ul class="org-ul">
+<li>Note: The input is values! Plural
+</li>
+<li>Because we get a key and all of its associated values
+</li>
+<li>Remind me: what are we trying to get out of this computation?
+</li>
+<li>So what do you think the output keys are?
+</li>
+<li>Values?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-7" class="outline-3">
+<h3 id="sec-13-7"><span class="section-number-3">13.7</span> Reduce Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-7">
+<dl class="org-dl">
+<dt> Input Key </dt><dd>Action
+</dd>
+<dt> Input Values </dt><dd>Counts: <code>[1,1,1,1]</code>
+</dd>
+<dt> Output Key </dt><dd>Action
+</dd>
+<dt> Output Value </dt><dd>Total Count
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-13-7-1" class="outline-4">
+<h4 id="sec-13-7-1"><span class="section-number-4">13.7.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-13-7-1">
+<ul class="org-ul">
+<li>Action is <b>one of</b> load save redirect
+</li>
+<li>To get total count, sum all of the counts
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13-8" class="outline-3">
+<h3 id="sec-13-8"><span class="section-number-3">13.8</span> Example Output&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-13-8">
+<dl class="org-dl">
+<dt> Output Key </dt><dd>Action
+</dd>
+<dt> Output Value </dt><dd>Total Count
+</dd>
+</dl>
+<div class="org-src-container">
+
+<pre class="src src-html">"redirect"  4
+"save"      2
+"load"      3
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Point?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>A lot of work for counting!
+</li>
+<li>More complex calculations can be done this way, eg. PageRank
+</li>
+<li>Stateless constraint means it can be used across thousands of computers
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> Details&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>By only looking at keys and values, can optimize a lot of backend work
+</li>
+<li>Where to send the results?
+</li>
+<li>What to do when a computer fails? (Just restart failed part)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-14-2" class="outline-3">
+<h3 id="sec-14-2"><span class="section-number-3">14.2</span> Implementation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-14-2">
+<div class="org-src-container">
+
+<pre class="src src-text">load            1
+save            1
+redirect        1
+redirect        1
+load            1
+redirect        1
+load            1
+save            1
+redirect        1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-14-3" class="outline-3">
+<h3 id="sec-14-3"><span class="section-number-3">14.3</span> Intermediate&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-3">
+<ul class="org-ul">
+<li>This was the situation after map
+</li>
+<li>Keys all jumbled
+</li>
+<li>What Hadoop does is sort them and distribute them to computers
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-14-4" class="outline-3">
+<h3 id="sec-14-4"><span class="section-number-3">14.4</span> "Shuffle"&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-14-4">
+<div class="org-src-container">
+
+<pre class="src src-text">load            1
+load            1
+load            1
+redirect        1
+redirect        1
+redirect        1
+redirect        1
+save            1
+save            1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-14-5" class="outline-3">
+<h3 id="sec-14-5"><span class="section-number-3">14.5</span> Distribute&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-14-5">
+<ul class="org-ul">
+<li>Now it is easy to distribute, and can handle all the <code>load</code> at once
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-14-6" class="outline-3">
+<h3 id="sec-14-6"><span class="section-number-3">14.6</span> Inputs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-14-6">
+<ul class="org-ul">
+<li>MapReduce distributes computing power by distributing input
+</li>
+<li>Input is distributed by splitting on lines (records)
+</li>
+<li>You cannot depend on lines being "together" in MapReduce
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-6-1" class="outline-4">
+<h4 id="sec-14-6-1"><span class="section-number-4">14.6.1</span> Splitting Files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-14-6-1">
+<ul class="org-ul">
+<li>Image you have a lot of large log files, GB each
+</li>
+<li>You'd like to let different machines work on the same file
+</li>
+<li>Split file down the middle, well, at least on a newline
+</li>
+<li>Enable two separate machines to work on the parts
+</li>
+<li>You don't know what line came before this one
+</li>
+<li>You don't know if you will process the next line
+</li>
+<li>Only view is this line
+</li>
+<li>Real life slightly more complicated, but mostly hacks around this
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14-7" class="outline-3">
+<h3 id="sec-14-7"><span class="section-number-3">14.7</span> Incorrect Log Style&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-14-7">
+<ul class="org-ul">
+<li>URL Shortener logging
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">app.logger.info(<span style="color: #8b2252;">"Handling request for "</span> + cookie)
+...
+<span style="color: #b22222;"># find redirect</span>
+...
+app.logger.info(<span style="color: #8b2252;">"Redirecting to "</span> + destination)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Ability to associate the redirect with the
+cookie?
+<ul class="org-ul">
+<li>eg. which cookie had the most redirects?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-14-7-1" class="outline-4">
+<h4 id="sec-14-7-1"><span class="section-number-4">14.7.1</span> No!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-14-7-1">
+<ul class="org-ul">
+<li>Must log everything on same line
+</li>
+<li>One machine could have the "Handling request.." Another could have
+"Redirecting to&#x2026;"
+</li>
+<li>Collect it all, then log it
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14-8" class="outline-3">
+<h3 id="sec-14-8"><span class="section-number-3">14.8</span> Correct Log Style&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-14-8">
+<ul class="org-ul">
+<li>Logging once
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">log_data[<span style="color: #8b2252;">'cookie'</span>] = cookie
+...
+<span style="color: #b22222;"># find redirect</span>
+log_data[<span style="color: #8b2252;">'action'</span>] = <span style="color: #8b2252;">'redirect'</span>
+app.logger.info(json.dumps(log_data))
+</pre>
+</div>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-11-21 Fri 01:32</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Data</title>
+<!-- 2014-11-21 Fri 01:32 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jim Blomo" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="production/common.css" />
+<link rel="stylesheet" type="text/css" href="production/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="production/projection.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/color-blue.css" media="projection" />
+<link rel="stylesheet" type="text/css" href="production/presenter.css" media="presenter" />
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700|Yanone+Kaffeesatz:700|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Data</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <b>Data</b></a></li>
+<li><a href="#sec-2">2. The Web is Used by Humans</a></li>
+<li><a href="#sec-3">3. Understanding</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Path to Understanding</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Big Data</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Modern World</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Terminology</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Philosiphical</a></li>
+<li><a href="#sec-5-2">5.2. Phonographic Records</a></li>
+<li><a href="#sec-5-3">5.3. Notes</a></li>
+<li><a href="#sec-5-4">5.4. Web logs</a></li>
+<li><a href="#sec-5-5">5.5. Storage</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Web Frontier</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Alternatives</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Taxonomy of Data Science</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Mason &amp; Wiggins</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Obtain</a>
+<ul>
+<li><a href="#sec-8-1">8.1. Examples</a></li>
+<li><a href="#sec-8-2">8.2. Common Log Format</a></li>
+<li><a href="#sec-8-3">8.3. JSON Alternative</a>
+<ul>
+<li><a href="#sec-8-3-1">8.3.1. Trade-offs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Scrub</a>
+<ul>
+<li><a href="#sec-9-1">9.1. Consistency</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Explore</a>
+<ul>
+<li><a href="#sec-10-1">10.1. Viewpoints</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Models</a>
+<ul>
+<li><a href="#sec-11-1">11.1. Example</a></li>
+<li><a href="#sec-11-2">11.2. Lines</a>
+<ul>
+<li><a href="#sec-11-2-1">11.2.1. Equation</a></li>
+</ul>
+</li>
+<li><a href="#sec-11-3">11.3. Exponential</a>
+<ul>
+<li><a href="#sec-11-3-1">11.3.1. Equation</a></li>
+</ul>
+</li>
+<li><a href="#sec-11-4">11.4. Coin Flip</a></li>
+<li><a href="#sec-11-5">11.5. Source</a></li>
+<li><a href="#sec-11-6">11.6. Classification Model</a>
+<ul>
+<li><a href="#sec-11-6-1">11.6.1. Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Interpret</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Apply the information to your domain</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Analyzing the Real World</a>
+<ul>
+<li><a href="#sec-13-1">13.1. Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Data</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> The Web is Used by Humans&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Tool used to improve the lives of users
+</li>
+<li>How to improve the tools we have?
+</li>
+<li>Understand their use and their users
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/fight-for-users.png" alt="fight-for-users.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Understanding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Collect
+</li>
+<li>Interperate
+</li>
+<li>Understand
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Path to Understanding&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Collect data on the tool's usage: what features are used, what time of day,
+for what purpose?
+</li>
+<li>Collect data on the user: ultimate goal, knowledge of problem space
+</li>
+<li>Find patterns, develop a story
+</li>
+<li>Have a mental model of who your users are and why they are using your tool
+</li>
+<li>This is the way the brain works in general: build a mental model of the
+world around you so you can anticipate how things will work out
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Big Data&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Never easier to collect data
+</li>
+<li>Advanced analytics tools available
+</li>
+<li>Financial incentives for understanding
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/netflix-bigcheck.jpg" alt="netflix-bigcheck.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Modern World&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Positive feedback: more people use web tools, more data we collect, better
+understand them, better tools, more people use the tools
+</li>
+<li>Always need to keep in mind user's end goal though (hint: it is not using
+your product)
+</li>
+<li>Big Data means doing this a lot
+</li>
+<li>Netflix prize: $1MM for 10% improvement
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Terminology&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt> Data </dt><dd>Raw facts, represented in some way
+</dd>
+<dt> Information </dt><dd>Interperated data with meaning
+</dd>
+<dt> Knowledge </dt><dd>Information used to achieve some purpose
+</dd>
+</dl>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Philosiphical&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>General idea is that there are different levels of abstraction for these
+concepts
+</li>
+<li>No hard boundaries
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Phonographic Records&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+<dl class="org-dl">
+<dt> Data </dt><dd>Grooves in the record material
+</dd>
+<dt> Information </dt><dd>Sound heard by a human
+</dd>
+<dt> Knowledge </dt><dd>Enjoyment of a song
+</dd>
+</dl>
+
+<div class="figure">
+<p><img src="img/vinyl_record_lp_10inch.jpg" alt="vinyl_record_lp_10inch.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Generally know how records work?
+</li>
+<li>Grooves cut into vinyl, needle moves over them, sound comes out
+</li>
+<li>image source: <a href="http://www.absurdintellectual.com/2009/04/17/celebrate-record-store-day-saturday-april-18/">http://www.absurdintellectual.com/2009/04/17/celebrate-record-store-day-saturday-april-18/</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Web logs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-5-4">
+<dl class="org-dl">
+<dt> Data </dt><dd>Records of visits to a web page
+</dd>
+<dt> Information </dt><dd>Summary of user behavior
+</dd>
+<dt> Knowledge </dt><dd>Understanding shortcoming in a product
+</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Storage&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>Data is just 1s 0s on a digital machine
+</li>
+<li>At a slightly higher level, data is still just characters in a file
+</li>
+<li>Meaning extracted by a human, to get a bigger picture
+</li>
+<li>Knowledge is having that mental model of typical user behavior and applying
+it to a purpose
+</li>
+<li>Similarity to 5 Whys?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Web Frontier&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Web particularly well suited to analysis
+</li>
+<li>Easiest to instrument
+</li>
+<li>Already requires high technology
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Alternatives&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Medicine, global warming, education may be more "worthy"
+</li>
+<li>Because you must interact with central server, each interaction can be
+logged
+</li>
+<li>How do you log health history? How many cigarets are being smoked? How many
+hours of exercise happen?
+</li>
+<li>Already have programmers building the website, now can put them to use
+building analysis tools or data infrastructure
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Taxonomy of Data Science&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Obtain
+</li>
+<li>Scrub
+</li>
+<li>Explore
+</li>
+<li>Model
+</li>
+<li>iNterpret
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/hilary_electronics.jpg" alt="hilary_electronics.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Mason &amp; Wiggins&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li><a href="http://www.dataists.com/2010/09/a-taxonomy-of-data-science/">Reading</a> in
+which Hilary Mason and Chris Wiggens explain their interpretation of data
+science
+</li>
+<li>These are not absolute steps
+</li>
+<li>When I taught Data Mining last semester, the book had a different set of
+steps
+</li>
+<li>OSEMN
+</li>
+<li>Mason Chief Scientist at Bit.ly, many good talks
+</li>
+<li>image source: <a href="http://www.hilarymason.com/about/">http://www.hilarymason.com/about/</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Obtain&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Where to get the data?
+</li>
+<li>Services
+</li>
+<li>Datasets
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Examples&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>Even for web, what do you do with the logs across many web servers?
+</li>
+<li>How to translate data in logs to information?
+</li>
+<li>Services eg: github
+</li>
+<li>Dataset eg: homework (microsoft weblogs)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Common Log Format&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+
+<pre class="src src-apache_log">127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] ...
+    "GET /apache_pb.gif HTTP/1.0" 200 2326
+</pre>
+</div>
+<ul class="org-ul">
+<li>host ident authuser date
+</li>
+<li>request status bytes
+</li>
+<li>What are the trade-offs with this format?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> JSON Alternative&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-8-3">
+<div class="org-src-container">
+
+<pre class="src src-apache_log">127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] ...
+    "GET /apache_pb.gif HTTP/1.0" 200 2326
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-json">{'host': '127.0.0.1',
+ 'ident': 'user-identifier',
+ 'authuser': 'frank',
+ 'date': '10/Oct/2000:13:55:36 -0700',
+ 'request': 'GET /apache_pb.gif HTTP/1.0',
+ 'status': 200,
+ 'bytes': 2326}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-3-1" class="outline-4">
+<h4 id="sec-8-3-1"><span class="section-number-4">8.3.1</span> Trade-offs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-8-3-1">
+<ul class="org-ul">
+<li>Developed at a time when logs were used operationally
+</li>
+<li>"Easy" to parse, but not standardized with other areas
+</li>
+<li>Hard to extend customize
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Scrub&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Reconcile inconsistencies:
+<ul class="org-ul">
+<li>Webserver has the wrong time
+</li>
+<li>Determine type of page
+</li>
+<li>Changed logging method
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Consistency&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Make sure all activity happening in correct time zone
+</li>
+<li>If a server had the wrong internal time, add error to logs
+</li>
+<li>Bug in timezone handling
+</li>
+<li>Hypothertically interested in learning the <b>type</b> of resource downloaded
+<ul class="org-ul">
+<li>'gif|png|jpg' =&gt; image
+</li>
+<li>'pdf|doc|xls' =&gt; document
+</li>
+</ul>
+</li>
+<li>used to encode encrypted user\<sub>id</sub>, now decrypted
+</li>
+<li>even different teams might log user\<sub>id</sub> in different ways
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Explore&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Don't under estimate scrolling through data
+</li>
+<li>Start simple: scatter plots, histograms
+</li>
+<li>Find correlations
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/1_Vp_screenshot_7_tiny.jpg" alt="1_Vp_screenshot_7_tiny.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> Viewpoints&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>An example program that can plot multi-dimensional records
+</li>
+<li>But don't do this advanced stuff first!
+</li>
+<li>Just take a look at the data, get a feel for all the variables
+<ul class="org-ul">
+<li>Are mostly bots hitting your page?
+</li>
+<li>What are the unusual patterns?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Models&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span>&#xa0;<span class="two_col">two_col</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Mathimatical description of a phenomena
+</li>
+<li>Main focus of Machine Learning (to some extent Data Mining)
+</li>
+<li>Generally, best models are most accurate
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/yelp_reviews.png" alt="yelp_reviews.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> Example&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Take the rate of reviews
+</li>
+<li>How do you mathmatically describe the behavior?
+</li>
+<li>image source: Yelp Factsheet <a href="http://yelp.com/press">http://yelp.com/press</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="section-number-3">11.2</span> Lines&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-2">
+
+<div class="figure">
+<p><img src="img/yelp_reviews-linear.png" alt="yelp_reviews-linear.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>How well does this fit the data?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-2-1" class="outline-4">
+<h4 id="sec-11-2-1"><span class="section-number-4">11.2.1</span> Equation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-11-2-1">
+<ul class="org-ul">
+<li>How to express mathmatically?
+</li>
+<li>y = mx + b
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11-3" class="outline-3">
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> Exponential&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-3">
+
+<div class="figure">
+<p><img src="img/yelp_reviews-exponential.png" alt="yelp_reviews-exponential.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Fit better? How far do we go?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-3-1" class="outline-4">
+<h4 id="sec-11-3-1"><span class="section-number-4">11.3.1</span> Equation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-11-3-1">
+<ul class="org-ul">
+<li>How to express mathmatically?
+</li>
+<li>y = mx<sup>2</sup> + b
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11-4" class="outline-3">
+<h3 id="sec-11-4"><span class="section-number-3">11.4</span> Coin Flip&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-4">
+
+<div class="figure">
+<p><img src="img/binomial.jpg" alt="binomial.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Coin flips modeled as binomial distribution
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-11-5" class="outline-3">
+<h3 id="sec-11-5"><span class="section-number-3">11.5</span> Source&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-11-5">
+<ul class="org-ul">
+<li>How to express mathmatically?
+</li>
+</ul>
+<p>
+<a href="http://wattsupwiththat.com/2010/04/10/response-to-dr-meiers-answer-9-the-coin-flip-in-the-context-of-climate-modeling/">http://wattsupwiththat.com/2010/04/10/response-to-dr-meiers-answer-9-the-coin-flip-in-the-context-of-climate-modeling/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-11-6" class="outline-3">
+<h3 id="sec-11-6"><span class="section-number-3">11.6</span> Classification Model&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h3>
+<div class="outline-text-3" id="text-11-6">
+
+<div class="figure">
+<p><img src="img/SVM_Example_of_Hyperplanes.png" alt="SVM_Example_of_Hyperplanes.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Which of these lines best separates the data?
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-11-6-1" class="outline-4">
+<h4 id="sec-11-6-1"><span class="section-number-4">11.6.1</span> Model&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h4>
+<div class="outline-text-4" id="text-11-6-1">
+<ul class="org-ul">
+<li>Model for how data is distributed into groups, or classes
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Interpret&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Business model is working
+</li>
+<li>What to bet on a coin flip
+</li>
+<li>The characteristics of successful customers
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Apply the information to your domain&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Will you run out of money?
+</li>
+<li>What's the likelyhood a customer will stay with you next year?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Analyzing the Real World&#xa0;&#xa0;&#xa0;<span class="tag"><span class="slide">slide</span></span></h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>How would you gain knowledge of rain forest data?
+</li>
+<li>Obtain
+</li>
+<li>Scrub
+</li>
+<li>Explore
+</li>
+<li>Model
+</li>
+<li>Interpret
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Steps&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span></span></h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Place temperature recorders all over
+</li>
+<li>Try to normalize by how long they were in the sun, or an animal sat on them
+</li>
+<li>Just scroll through temperatures for a day, then plot on a map
+</li>
+<li>Develop estimates on daily temperature (perhaps double sin wave?)
+</li>
+<li>Temperature fluxuates less in some areas that are associated with a plant
+</li>
+</ul>
+
+<script type="text/javascript" src="production/org-html-slideshow.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jim Blomo</p>
+<p class="date">Created: 2014-11-21 Fri 01:32</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
