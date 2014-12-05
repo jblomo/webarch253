@@ -22,8 +22,8 @@
 | Nov 14 | [[http://a16z.com/2014/10/28/mobile-is-eating-the-world/][Mobile is Eating the World]]; [[http://www.quirksmode.org/mobile/viewports.html][Tale of Two Viewports]] (both parts); [[http://www.html5rocks.com/en/mobile/touch/][Multi-touch Web Development]]; [[http://www.w3.org/TR/mwabp/][Mobile Best Practices]] (skim); | [[file:slides/Mobile.html][Mobile Web]] & [[file:slides/Mobile-Features.html][Mobile Development]] | [[file:slides/HW11-Mobile.html][HW11 Mobile Page]] |
 | Nov 21 | [[http://www.dataists.com/2010/09/a-taxonomy-of-data-science/][A Taxonomy of Data Science]]; [[http://www.youtube.com/watch?v=SS27F-hYWfU][Apache Hadoop: Petabytes and Terawatts]] ([[http://prezi.com/u0ukvqzpyh5p/apache-hadoop-petabytes-and-terawatts/][slides]]); [[http://packages.python.org/mrjob/][mrjob]] (for homework) | [[file:slides/Data.html][Data Mining]] & [[file:slides/Analysis.html][Analysis]] | [[file:slides/HW12-mrjob.html][HW12 - mrjob]] |
 | Nov 28 | Thanksgiving | | |
-| Dec 5 | | Security & Your Website | Project Code Due |
-| Dec 12 | Project Presentations | | |
+| Dec 5 | [[http://www.unixwiz.net/techtips/sql-injection.html][SQL Injection]]; [[http://www.acunetix.com/websitesecurity/xss/][XSS example]] | [[file:slides/Security-Privacy.pdf][Security]] [[file:slides/HTTPS.html][HTTPS]] & [[file:slides/Your-Website.html][Your Website]] | Presentaion time signup (see Piazza) |
+| Dec 12 | Project Presentations | | Project Code Due |
 | Dec 19 | - | | Project Reports Due |
 
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="slides/production/common.css" />
